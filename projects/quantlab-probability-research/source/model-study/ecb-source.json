@@ -1,0 +1,13 @@
+{
+  "source": "European Central Bank",
+  "source_url": "https://www.ecb.europa.eu/stats/policy_and_exchange_rates/euro_reference_exchange_rates/html/index.en.html",
+  "download_url": "https://www.ecb.europa.eu/stats/eurofxref/eurofxref-hist.zip",
+  "archive_sha256": "0fb2b9f2261c9a09b55339cc088fd4155857804240d6ee265d7553f60931a34d",
+  "csv_sha256": "b1cfd17feb05a929600dc293073a04dbb8ec08d2aa9b892c02ae1b5fcf4dc865",
+  "series": "USD per EUR reference rate",
+  "rows": 2500,
+  "first_date": "2017-01-18",
+  "last_date": "2026-10-26",
+  "processing": "Select USD nonmissing numeric reference rates, sort ascending, retain latest 2500. No imputation or outlier deletion. All other currency columns excluded.",
+  "limitation": "Reference observations, not adjusted equity closes or executable transaction prices. No costs/trading backtest. Retrieved after synthetic development and confirmation design was frozen."
+}

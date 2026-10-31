@@ -1,0 +1,491 @@
+{
+  "validation": {
+    "available": true,
+    "observations": 200,
+    "class_counts": [
+      0,
+      115,
+      85
+    ],
+    "comparisons": {
+      "empirical_raw": {
+        "mean_difference": -0.004026172301053361,
+        "intervals": [
+          {
+            "block": 5,
+            "reps": 400,
+            "percentile95": [
+              -0.008218336708073724,
+              -0.00009938046366338182
+            ],
+            "estimable": true
+          },
+          {
+            "block": 20,
+            "reps": 400,
+            "percentile95": [
+              -0.008373702069031055,
+              -0.0005009772864833403
+            ],
+            "estimable": true
+          },
+          {
+            "block": 60,
+            "reps": 400,
+            "percentile95": [
+              -0.006277617280173491,
+              -0.0010288097843418338
+            ],
+            "estimable": true
+          }
+        ]
+      },
+      "empirical_calibrated": {
+        "mean_difference": -0.003207634084552397,
+        "intervals": [
+          {
+            "block": 5,
+            "reps": 400,
+            "percentile95": [
+              -0.0072761236650539605,
+              0.0005586828087591392
+            ],
+            "estimable": true
+          },
+          {
+            "block": 20,
+            "reps": 400,
+            "percentile95": [
+              -0.007327503544591522,
+              0.00024230291925118002
+            ],
+            "estimable": true
+          },
+          {
+            "block": 60,
+            "reps": 400,
+            "percentile95": [
+              -0.005376737472008294,
+              -0.0002954110076252484
+            ],
+            "estimable": true
+          }
+        ]
+      }
+    },
+    "rolling": [
+      {
+        "end_target_index": 2399,
+        "observations": 100,
+        "log_loss": 0.6919290123307889,
+        "raw_log_loss": 0.6934587747284404,
+        "brier": 0.4987822090603507,
+        "raw_brier": 0.49979623488019487,
+        "downside_count": 0,
+        "mean_entropy": 0.6928708261250945
+      },
+      {
+        "end_target_index": 2419,
+        "observations": 100,
+        "log_loss": 0.6904963207517452,
+        "raw_log_loss": 0.6933762152716797,
+        "brier": 0.49734993690249163,
+        "raw_brier": 0.49971371811897775,
+        "downside_count": 0,
+        "mean_entropy": 0.6928640966714796
+      },
+      {
+        "end_target_index": 2439,
+        "observations": 100,
+        "log_loss": 0.6910894342359929,
+        "raw_log_loss": 0.6934587747284402,
+        "brier": 0.497942815975875,
+        "raw_brier": 0.49979623488019487,
+        "downside_count": 0,
+        "mean_entropy": 0.6928541784673038
+      },
+      {
+        "end_target_index": 2459,
+        "observations": 100,
+        "log_loss": 0.6901598328936093,
+        "raw_log_loss": 0.6934174950000603,
+        "brier": 0.4970137478565875,
+        "raw_brier": 0.4997549764995863,
+        "downside_count": 0,
+        "mean_entropy": 0.6926260781977734
+      },
+      {
+        "end_target_index": 2479,
+        "observations": 100,
+        "log_loss": 0.6866453412758677,
+        "raw_log_loss": 0.6932110963581586,
+        "brier": 0.4935019777935741,
+        "raw_brier": 0.4995486845965436,
+        "downside_count": 0,
+        "mean_entropy": 0.6924476337203447
+      },
+      {
+        "end_target_index": 2499,
+        "observations": 100,
+        "log_loss": 0.6867297938820843,
+        "raw_log_loss": 0.6932523760865388,
+        "brier": 0.4935872436366886,
+        "raw_brier": 0.4995899429771523,
+        "downside_count": 0,
+        "mean_entropy": 0.6924393573985199
+      }
+    ],
+    "movement": {
+      "window": 100,
+      "early": {
+        "end_target_index": 2399,
+        "observations": 100,
+        "log_loss": 0.6919290123307889,
+        "raw_log_loss": 0.6934587747284404,
+        "brier": 0.4987822090603507,
+        "raw_brier": 0.49979623488019487,
+        "downside_count": 0,
+        "mean_entropy": 0.6928708261250945
+      },
+      "recent": {
+        "end_target_index": 2499,
+        "observations": 100,
+        "log_loss": 0.6867297938820843,
+        "raw_log_loss": 0.6932523760865388,
+        "brier": 0.4935872436366886,
+        "raw_brier": 0.4995899429771523,
+        "downside_count": 0,
+        "mean_entropy": 0.6924393573985199
+      }
+    },
+    "warnings": [
+      "Intervals condition on fixed out-of-sample predictions; refitting and model-selection uncertainty are omitted.",
+      "Moving-block intervals assume sufficient local stationarity; regime shifts and block boundaries can limit interpretation.",
+      "Repeated research and multiple comparisons are not adjusted for.",
+      "Fold 1 temperature: downside has 0 events, below the heuristic minimum support of 10; this is not a statistical guarantee.",
+      "Fold 1 selection: downside has 0 events, below the heuristic minimum support of 10; this is not a statistical guarantee.",
+      "Fold 1 test: downside has 0 events, below the heuristic minimum support of 10; this is not a statistical guarantee."
+    ],
+    "interpretation": "Negative paired loss differences favor the selected policy. Intervals are descriptive; crossing zero leaves advantage unresolved and does not establish equality. These diagnostics do not establish market edge or trigger trading or retraining."
+  },
+  "source": {
+    "source": "European Central Bank",
+    "source_url": "https://www.ecb.europa.eu/stats/policy_and_exchange_rates/euro_reference_exchange_rates/html/index.en.html",
+    "download_url": "https://www.ecb.europa.eu/stats/eurofxref/eurofxref-hist.zip",
+    "archive_sha256": "0fb2b9f2261c9a09b55339cc088fd4155857804240d6ee265d7553f60931a34d",
+    "csv_sha256": "b1cfd17feb05a929600dc293073a04dbb8ec08d2aa9b892c02ae1b5fcf4dc865",
+    "series": "USD per EUR reference rate",
+    "rows": 2500,
+    "first_date": "2017-01-18",
+    "last_date": "2026-10-26",
+    "processing": "Select USD nonmissing numeric reference rates, sort ascending, retain latest 2500. No imputation or outlier deletion. All other currency columns excluded.",
+    "limitation": "Reference observations, not adjusted equity closes or executable transaction prices. No costs/trading backtest. Retrieved after synthetic development and confirmation design was frozen."
+  },
+  "data_quality": {
+    "rows": 2500,
+    "bomRemoved": false,
+    "normalizedHeaderFields": 0,
+    "trimmedValues": 0,
+    "rowsDropped": 0,
+    "imputedValues": 0,
+    "largeMoveCount": 0,
+    "unchangedCloseCount": 17,
+    "largeMoveThresholdSimpleReturn": 0.2,
+    "warnings": [
+      "Calendar gaps exceed four days. Check missing observations and the 252-observation annualization assumption.",
+      "Repeated closing prices were retained. Check stale prices or illiquidity if unexpected."
+    ],
+    "calendarGapMaxDays": 5,
+    "note": "No rows sorted, deduplicated, dropped, interpolated or winsorized. Adjusted-price status cannot be verified from date/close alone."
+  },
+  "test_dates": {
+    "first": "2026-01-15",
+    "last": "2026-10-26"
+  },
+  "selected": {
+    "log_loss": 0.689329403106436,
+    "brier_multiclass": 0.4961847263485191,
+    "up_brier": 0.24809236317348282,
+    "downside_brier": 2.1841155686232383e-21,
+    "accuracy": 0.57
+  },
+  "raw": {
+    "log_loss": 0.6933555754074894,
+    "brier_multiclass": 0.4996930889286723,
+    "up_brier": 0.24980826369829096,
+    "downside_brier": 2.6597718288139003e-7,
+    "accuracy": 0.575
+  },
+  "calibrated": {
+    "log_loss": 0.6925370371909894,
+    "brier_multiclass": 0.4993893278954975,
+    "up_brier": 0.2496946251091059,
+    "downside_brier": 2.8355723819611426e-13,
+    "accuracy": 0.575
+  },
+  "online_mixture_log_loss": 0.6892104589976107,
+  "folds": [
+    {
+      "train_feature_start": 60,
+      "train_feature_end": 1995,
+      "train_label_end": 1996,
+      "calibration_feature_start": 2148,
+      "calibration_label_end": 2298,
+      "temperature_feature_start": 1997,
+      "temperature_feature_end": 2146,
+      "temperature_label_end": 2147,
+      "selection_feature_start": 2148,
+      "selection_feature_end": 2297,
+      "selection_label_end": 2298,
+      "test_feature_start": 2299,
+      "test_feature_end": 2498,
+      "test_observations": 200,
+      "selected": "ewma",
+      "calibration_log_loss": {
+        "empirical": 0.6929360745653322,
+        "ridge": 0.6914289230977231,
+        "softmax": 0.6919433790950094,
+        "ewma": 0.690984349629834
+      },
+      "temperatures": {
+        "empirical": 0.5,
+        "ridge": 0.5,
+        "softmax": 0.5,
+        "ewma": 0.5
+      },
+      "test_metrics": {
+        "log_loss": 0.689329403106436,
+        "brier_multiclass": 0.4961847263485191,
+        "up_brier": 0.24809236317348282,
+        "downside_brier": 2.1841155686232383e-21,
+        "accuracy": 0.57
+      },
+      "raw_empirical_metrics": {
+        "log_loss": 0.6933555754074894,
+        "brier_multiclass": 0.4996930889286723,
+        "up_brier": 0.24980826369829096,
+        "downside_brier": 2.6597718288139003e-7,
+        "accuracy": 0.575
+      },
+      "calibrated_empirical_metrics": {
+        "log_loss": 0.6925370371909894,
+        "brier_multiclass": 0.4993893278954975,
+        "up_brier": 0.2496946251091059,
+        "downside_brier": 2.8355723819611426e-13,
+        "accuracy": 0.575
+      },
+      "training_class_counts": [
+        0,
+        970,
+        966
+      ],
+      "temperature_class_counts": [
+        0,
+        76,
+        74
+      ],
+      "selection_class_counts": [
+        0,
+        79,
+        71
+      ],
+      "test_class_counts": [
+        0,
+        115,
+        85
+      ],
+      "fit_metadata": {
+        "training_observations": 1936,
+        "scaling_mean": [
+          0.000012925308706923645,
+          0.00004840470846016889,
+          0.00014455904566222687,
+          0.004057045346646094,
+          0.004295195014293039,
+          -0.022863486375460113
+        ],
+        "scaling_scale": [
+          0.004512258687822746,
+          0.009921266811756391,
+          0.018797501485634208,
+          0.0020168993159517773,
+          0.001444578977604694,
+          0.017865724917980445
+        ],
+        "ridge_coefficients": [
+          0.000014361625195034184,
+          -0.000004366130866416032,
+          -0.000005665278194521132,
+          -0.00003809494911129402,
+          0.00003172828594730413,
+          0.00004470875405924398,
+          -0.00001702680924859217
+        ],
+        "softmax_coefficients": [
+          [
+            -2.0294599181367423,
+            1.016819928950694,
+            1.0126399891860511
+          ],
+          [
+            -0.0002554627123357197,
+            0.020955171067392128,
+            -0.020699708355056416
+          ],
+          [
+            0.000024041100115239486,
+            0.0014246080351004368,
+            -0.001448649135215668
+          ],
+          [
+            0.00009002262279341179,
+            -0.01691417919413671,
+            0.016824156571343292
+          ],
+          [
+            0.0002793338232267234,
+            -0.025982478906803438,
+            0.02570314508357671
+          ],
+          [
+            0.00020478183173181777,
+            -0.006663932304965177,
+            0.006459150473233331
+          ],
+          [
+            -0.000045869499817403724,
+            0.015884002128975762,
+            -0.015838132629158376
+          ]
+        ]
+      }
+    }
+  ],
+  "latest_forecast": {
+    "train_feature_start": 60,
+    "train_feature_end": 1995,
+    "train_label_end": 1996,
+    "calibration_feature_start": 2148,
+    "calibration_label_end": 2298,
+    "temperature_feature_start": 1997,
+    "temperature_feature_end": 2146,
+    "temperature_label_end": 2147,
+    "selection_feature_start": 2148,
+    "selection_feature_end": 2297,
+    "selection_label_end": 2298,
+    "fit_metadata": {
+      "training_observations": 1936,
+      "scaling_mean": [
+        0.000012925308706923645,
+        0.00004840470846016889,
+        0.00014455904566222687,
+        0.004057045346646094,
+        0.004295195014293039,
+        -0.022863486375460113
+      ],
+      "scaling_scale": [
+        0.004512258687822746,
+        0.009921266811756391,
+        0.018797501485634208,
+        0.0020168993159517773,
+        0.001444578977604694,
+        0.017865724917980445
+      ],
+      "ridge_coefficients": [
+        0.000014361625195034184,
+        -0.000004366130866416032,
+        -0.000005665278194521132,
+        -0.00003809494911129402,
+        0.00003172828594730413,
+        0.00004470875405924398,
+        -0.00001702680924859217
+      ],
+      "softmax_coefficients": [
+        [
+          -2.0294599181367423,
+          1.016819928950694,
+          1.0126399891860511
+        ],
+        [
+          -0.0002554627123357197,
+          0.020955171067392128,
+          -0.020699708355056416
+        ],
+        [
+          0.000024041100115239486,
+          0.0014246080351004368,
+          -0.001448649135215668
+        ],
+        [
+          0.00009002262279341179,
+          -0.01691417919413671,
+          0.016824156571343292
+        ],
+        [
+          0.0002793338232267234,
+          -0.025982478906803438,
+          0.02570314508357671
+        ],
+        [
+          0.00020478183173181777,
+          -0.006663932304965177,
+          0.006459150473233331
+        ],
+        [
+          -0.000045869499817403724,
+          0.015884002128975762,
+          -0.015838132629158376
+        ]
+      ]
+    },
+    "fit_frozen_from_fold": 0,
+    "candidate_volatility_annualized": {
+      "ewma": 0.04733392593439258,
+      "ridge": 0.07161936450315085
+    },
+    "ewma_sigma": 0.002981757061875081,
+    "probabilities": [
+      1.9787408141126849e-22,
+      0.49987475966252526,
+      0.5001252403374746
+    ],
+    "model": "ewma",
+    "candidate_probabilities": {
+      "empirical": [
+        5.325009278828664e-7,
+        0.50206370734601,
+        0.4979357601530621
+      ],
+      "ridge": [
+        4.3204388331936946e-11,
+        0.49991257890191965,
+        0.5000874210548759
+      ],
+      "softmax": [
+        0.001129099099356963,
+        0.532364952750219,
+        0.46650594815042407
+      ],
+      "ewma": [
+        1.9787408141126849e-22,
+        0.49987475966252526,
+        0.5001252403374746
+      ]
+    },
+    "feature_index": 2499,
+    "target_index": 2500,
+    "calibration_log_loss": {
+      "empirical": 0.6929360745653322,
+      "ridge": 0.6914289230977231,
+      "softmax": 0.6919433790950094,
+      "ewma": 0.690984349629834
+    },
+    "temperatures": {
+      "empirical": 0.5,
+      "ridge": 0.5,
+      "softmax": 0.5,
+      "ewma": 0.5
+    }
+  },
+  "note": "One frozen historical FX reference-rate slice; no market generalization or profitability claim. Both challengers failed prespecified synthetic promotion gates."
+}

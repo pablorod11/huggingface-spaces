@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="A reproducible image-classification system with distributed training, verified recovery, and browser inference.">
+  <title>Imperial ML | Model workbench</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='5' fill='%23222c3f'/%3E%3Cpath d='M9 23V9m7 14V5m7 18V12' stroke='white' stroke-width='3'/%3E%3C/svg%3E">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <header><a class="brand" href="#">Imperial <strong>ML</strong></a><span>Model workbench <span class="version">v0.2</span></span><a href="source.zip" download>Download source</a></header>
+  <main>
+    <div class="intro"><p class="overline">Distributed image classification</p><h1>Inspect the model. Test the system.</h1><p>A small, reproducible digit classifier with a training pipeline you can inspect. Predictions run locally in your browser; the system evidence comes from recorded Python runs.</p></div>
+    <nav aria-label="Workbench sections"><button class="tab active" data-view="inference" aria-pressed="true">Inference</button><button class="tab" data-view="evidence" aria-pressed="false">Training & evaluation</button><button class="tab" data-view="implementation" aria-pressed="false">Implementation</button></nav>
+    <p id="error" role="alert"></p>
+    <section id="inference" class="view">
+      <div class="workbench">
+        <section class="input-panel"><div class="section-title"><h2>Input image</h2><span>8 × 8 grayscale</span></div><canvas id="digit" width="320" height="320" aria-label="Handwritten digit input" tabindex="0" aria-describedby="drawing-note"></canvas><div class="sample-nav"><button id="previous">Previous</button><span id="sample-count">Loading model…</span><button id="next">Next</button></div><p id="input-description" class="secondary">Samples come from the revised held-out test split.</p><div class="input-actions"><button id="draw">Draw your own</button><button id="clear" hidden>Clear drawing</button><button id="use-sample" hidden>Use dataset sample</button></div><p id="drawing-note" class="secondary" hidden>Draw with a pointer, or use arrow keys and Space to shade a cell. Hold Shift while drawing to erase; use Delete or Backspace to erase the keyboard cell. Custom drawings can differ substantially from the training data.</p></section>
+        <section class="output-panel"><div class="section-title"><h2>Prediction</h2><span>Local execution</span></div><div class="prediction" role="status" aria-live="polite"><strong id="predicted">—</strong><div><p id="score">Ready when you are</p><p id="comparison" class="secondary">Classify the image to compare with its dataset label.</p></div></div><button id="classify" class="primary" disabled>Classify image</button><div id="probabilities" aria-label="Class probability distribution"></div><p class="secondary">Scores are uncalibrated softmax probabilities, not guarantees of correctness.</p><details><summary>Model identity and inference details</summary><p id="identity" class="mono"></p><p class="secondary">64 inputs → 64 hidden units → 10 classes. Exported weights are evaluated with the same linear, ReLU and softmax operations as the Python model.</p></details></section>
+      </div>
+      <div class="summary"><div><span>Reserved test accuracy</span><strong id="test-accuracy">—</strong></div><div><span>Test examples</span><strong id="test-count">—</strong></div><div><span>Selected epoch</span><strong id="best-epoch">—</strong></div><div><span>Recovery verification</span><strong id="recovery-status">Pending</strong></div></div>
+    </section>
+    <section id="evidence" class="view" hidden>
+      <div class="section-title"><h2>Training and validation</h2><span id="split-details"></span></div>
+      <p>Weights are selected using validation loss. The reserved test split is evaluated after selection. Epoch checkpoints retain optimizer state separately from the selected model weights.</p>
+      <div class="chart-wrap"><svg id="learning-chart" viewBox="0 0 900 260" role="img" aria-label="Training and validation loss by epoch"></svg><p class="legend"><span>Training loss</span><span>Validation loss</span></p></div>
+      <h2>Where the model makes mistakes</h2><p>Rows are actual classes; columns are predictions on the reserved test split. Per-class results prevent a single accuracy number from hiding uneven performance.</p><div id="class-results" class="table-scroll"></div>
+      <h2>One worker versus two</h2><p id="benchmark-method">No measured benchmark loaded.</p><div id="benchmark-results" class="table-scroll"></div><p id="runtime-note" class="secondary"></p>
+    </section>
+    <section id="implementation" class="view" hidden>
+      <h2>A recoverable training pipeline</h2><ol class="pipeline"><li>Split the public dataset deterministically into training, validation and test partitions.</li><li>Synchronize gradients between CPU Gloo worker processes.</li><li>Atomically checkpoint the current model, optimizer, epoch and selected validation model.</li><li>Interrupt one worker and restore the group from its last complete checkpoint.</li><li>Promote only a completed, validated artifact and identify predictions by its digest.</li></ol>
+      <h2>Verified behavior</h2><ul id="verification"></ul><h2>Boundaries</h2><p>This is a single-host distributed-process reference, not a deployed multi-node platform. The free public Space runs browser inference and recorded evidence. The downloadable local app provides actual training, recovery and promotion controls.</p><p id="limitations" class="secondary"></p>
+      <div class="resources"><a href="source.zip" download>Source, tests & architecture</a><a href="walkthrough.mp4">Original workflow walkthrough</a><a href="showcase.json">Model & measured evidence</a><a href="https://scikit-learn.org/stable/modules/generated/sklearn.datasets.load_digits.html" target="_blank" rel="noopener">Dataset provenance</a></div>
+    </section>
+  </main>
+  <footer>Imperial ML · Reproducible engineering reference · No external inference API</footer>
+</body>
+</html>

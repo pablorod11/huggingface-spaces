@@ -1,0 +1,73 @@
+{
+  "runs": [
+    {
+      "workers": 1,
+      "repeat": 1,
+      "wall_seconds": 12.631083025989938,
+      "train_seconds": 0.3554365746676922,
+      "accuracy": 0.9694444444444444,
+      "global_batch_size": 128,
+      "optimizer_steps_per_epoch": 9
+    },
+    {
+      "workers": 2,
+      "repeat": 1,
+      "wall_seconds": 12.55918362099328,
+      "train_seconds": 0.4193789176642895,
+      "accuracy": 0.9694444444444444,
+      "global_batch_size": 128,
+      "optimizer_steps_per_epoch": 9
+    },
+    {
+      "workers": 2,
+      "repeat": 2,
+      "wall_seconds": 24.503668260003906,
+      "train_seconds": 0.5016521047800779,
+      "accuracy": 0.9694444444444444,
+      "global_batch_size": 128,
+      "optimizer_steps_per_epoch": 9
+    },
+    {
+      "workers": 1,
+      "repeat": 2,
+      "wall_seconds": 13.061251709004864,
+      "train_seconds": 0.41970294713974,
+      "accuracy": 0.9694444444444444,
+      "global_batch_size": 128,
+      "optimizer_steps_per_epoch": 9
+    },
+    {
+      "workers": 1,
+      "repeat": 3,
+      "wall_seconds": 13.15986156600411,
+      "train_seconds": 0.43551584146916866,
+      "accuracy": 0.9694444444444444,
+      "global_batch_size": 128,
+      "optimizer_steps_per_epoch": 9
+    },
+    {
+      "workers": 2,
+      "repeat": 3,
+      "wall_seconds": 12.830753447997267,
+      "train_seconds": 0.4632299691438675,
+      "accuracy": 0.9694444444444444,
+      "global_batch_size": 128,
+      "optimizer_steps_per_epoch": 9
+    }
+  ],
+  "medians": {
+    "1": {
+      "wall_seconds": 13.061251709004864,
+      "train_seconds": 0.41970294713974,
+      "accuracy": 0.9694444444444444
+    },
+    "2": {
+      "wall_seconds": 12.830753447997267,
+      "train_seconds": 0.4632299691438675,
+      "accuracy": 0.9694444444444444
+    }
+  },
+  "wall_speedup": 1.0179645148620307,
+  "train_speedup": 0.9060358247447304,
+  "notes": "Measured on this host; this small workload can be slower with two workers. Wall includes startup, data loading, evaluation and checkpoint writes. Training sums epoch maximum worker times. Global batch size, padded sample work and optimizer steps are held equal; floating-point reduction order can differ."
+}

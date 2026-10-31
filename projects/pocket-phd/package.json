@@ -1,0 +1,9 @@
+{
+  "name": "pocket-phd-static",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Reproducible browser runtime bundle for Pocket PhD",
+  "scripts": { "build:vendor": "node build-webllm.mjs" },
+  "dependencies": { "@mlc-ai/web-llm": "0.2.80" },
+  "devDependencies": { "esbuild": "0.25.12" }
+}

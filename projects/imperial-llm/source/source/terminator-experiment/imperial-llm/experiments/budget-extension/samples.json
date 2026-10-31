@@ -1,0 +1,110 @@
+[
+  {
+    "prompt": "tom lost his red ball. he looked under the bed and",
+    "seed": 42,
+    "temperature": 0.7,
+    "new_characters": 160,
+    "baseline_004": "tom lost his red ball. he looked under the bed and some the prot. Then, but the dog house. Tim brock to frass. I ding was a big was back abe friend. Tim was sooring and fan the bily. The camed and so athis hit ",
+    "reference_2400": "tom lost his red ball. he looked under the bed and said the proved the can wanted a lother to so fan to frabor the share of the want the said,  I see like with hings that the smalled started to park and is thei",
+    "extended_7200": "tom lost his red ball. he looked under the bed and had to they had all dong. She fall. They could anyted to do to in the ball tree buy stabe. Lily were swing to play with the surple. The came and ear athis litt"
+  },
+  {
+    "prompt": "tom lost his red ball. he looked under the bed and",
+    "seed": 1729,
+    "temperature": 0.7,
+    "new_characters": 160,
+    "baseline_004": "tom lost his red ball. he looked under the bed and help so cat. Tim want he boy liked would went the tried the wave was shat ball other. She ara loved to pulle tree. They loved toget. The didn't went the to pay",
+    "reference_2400": "tom lost his red ball. he looked under the bed and help should. They pot he herelp you out a littlest. He sunny saw was shaw and to sunny laud a lon neved the push and small want too. She diffed went the came a",
+    "extended_7200": "tom lost his red ball. he looked under the bed and help. The pored the rock her liked and the toys sturprised to her friend. They played the around. He was played in the grave to her. The didn't went take the d"
+  },
+  {
+    "prompt": "tom lost his red ball. he looked under the bed and",
+    "seed": 2026,
+    "temperature": 0.7,
+    "new_characters": 160,
+    "baseline_004": "tom lost his red ball. he looked under the bed and get too the to the tree, to the drog floods and bally and them were the bird saw pinborted the buill wented to pay and was cold block and his me sloran. It wit",
+    "reference_2400": "tom lost his red ball. he looked under the bed and get a came booked and lon they day ad said,  Thera. The he memom are listle glat piecere with the mo wellearn. He wanted the said,  Then, his meall and said,  ",
+    "extended_7200": "tom lost his red ball. he looked under the bed and get to go eeto the tree, the box and his a big prante and them were the bird said,  Now, Max brisked to and the cloar that could not happy that help. The but t"
+  },
+  {
+    "prompt": "lily and her dog went to the park. the dog saw",
+    "seed": 42,
+    "temperature": 0.7,
+    "new_characters": 160,
+    "baseline_004": "lily and her dog went to the park. the dog saw and so freand. Then, but the dog house. Tim brock to frass. I ding was a big was back abe friend. Tim was sooring and fan the bily. The camed and so athis hit ",
+    "reference_2400": "lily and her dog went to the park. the dog saw a lart wery had the can wanted a lother to so fan to frabor the share of the want the said,  I see like with hings that the smalled started to park and is thei",
+    "extended_7200": "lily and her dog went to the park. the dog saw a lart whey had a day. But the flood, the bird and peopple. The bird and the was happy. The picked is was so hings that the share. The bird magian, the could a"
+  },
+  {
+    "prompt": "lily and her dog went to the park. the dog saw",
+    "seed": 1729,
+    "temperature": 0.7,
+    "new_characters": 160,
+    "baseline_004": "lily and her dog went to the park. the dog saw a little big wanter. They mudlly puzzziked to momy friendss. The wat shat preatetter. She ara loved to pulle tree. They loved toget. The didn't went the to pay",
+    "reference_2400": "lily and her dog went to the park. the dog saw a little bird. They himbird the pot out a littlest. He sunny saw was shaw and to sunny laud a lon neved the push and small want too. She diffed went the came a",
+    "extended_7200": "lily and her dog went to the park. the dog saw a little bird. They he was she because the toys sturprised to her friend. They played the around. He was played in the grave to her. The didn't went take the d"
+  },
+  {
+    "prompt": "lily and her dog went to the park. the dog saw",
+    "seed": 2026,
+    "temperature": 0.7,
+    "new_characters": 160,
+    "baseline_004": "lily and her dog went to the park. the dog saw a ball.\nOne dog but friend move had doone. Lily and said,  Wem's said care. He crit bard friend. The wented to pay and was cold block and his me sloran. It wit",
+    "reference_2400": "lily and her dog went to the park. the dog saw a big came booked and lon they day ad said,  Thera. The he memom are listle glat piecere with the mo wellearn. He wanted the said,  Then, his meall and said,  ",
+    "extended_7200": "lily and her dog went to the park. the dog saw a big cat the all and he toy and kned the day with the crures. They the played to the game friend with lan, they hear that could not happy that help. The but t"
+  },
+  {
+    "prompt": "the rabbit hid a carrot under a tree. later,",
+    "seed": 42,
+    "temperature": 0.7,
+    "new_characters": 160,
+    "baseline_004": "the rabbit hid a carrot under a tree. later, had said,  Noved and but and dog house. The balked to paying pling the to pot. Tim but beren with a so need of   You boy it with herst to on the ear at is litt",
+    "reference_2400": "the rabbit hid a carrot under a tree. later, had said, you had neved that dog hoomes. The smalled frabor to ralle. I wanted to seellbe. Lily was so neeved the madils it smalled started to park and is thei",
+    "extended_7200": "the rabbit hid a carrot under a tree. later, he creat her for and becaughing. They said,  I careful asked  Tim mom was very truck to eat in the made with his so hims it with he store. They anymaked to muc"
+  },
+  {
+    "prompt": "the rabbit hid a carrot under a tree. later,",
+    "seed": 1729,
+    "temperature": 0.7,
+    "new_characters": 160,
+    "baseline_004": "the rabbit hid a carrot under a tree. later, help so cathels and himby mudll and of time. They went to said friends mom and stry would a ball, but the goodse happpy. I was ther to spreen. They bett to pay",
+    "reference_2400": "the rabbit hid a carrot under a tree. later, help saw a big named the bother. The bird not momy friends a said their to back the soome. Bob buy came the push and pretty and too. She diffed went the came a",
+    "extended_7200": "the rabbit hid a carrot under a tree. later, he deay,  One she rock fire the borest. They allst it. Sue was saw the more the trea. She wanted to the tree. The can reach and her toys.  Mom mom saw the star"
+  },
+  {
+    "prompt": "the rabbit hid a carrot under a tree. later,",
+    "seed": 2026,
+    "temperature": 0.7,
+    "new_characters": 160,
+    "baseline_004": "the rabbit hid a carrot under a tree. later,  Mia and see ont tail. They to day ad snow a boppare was not pict they surprise things and foun. The wented to pay and was cold block and his me sloran. It wit",
+    "reference_2400": "the rabbit hid a carrot under a tree. later,  Mommy sad boy the sad and said,  The can said,  Mia was not push they said.\nWhere the beet want. He welled to park. They loved thought and the had a little I ",
+    "extended_7200": "the rabbit hid a carrot under a tree. later,  Max anged bookt the bean the on its. He liked in he was not play with his friends. \nMax friend. The wented to ple and was a swis and go not. The loved they it"
+  },
+  {
+    "prompt": "sam gave mia a blue box. inside the box was",
+    "seed": 42,
+    "temperature": 0.7,
+    "new_characters": 160,
+    "baseline_004": "sam gave mia a blue box. inside the box was havard they good and but and dog horses, buig faster frabopped in the of the water. They want together berst the smalked it of her. The came and ear at is litt",
+    "reference_2400": "sam gave mia a blue box. inside the box was have the prootiked to not and fave. They could a spoed a spacked.\n Sue wanted to came about mo the made with hings that the smalled started to park and is thei",
+    "extended_7200": "sam gave mia a blue box. inside the box was have the proud the friend and fach. They could anyted to do to in the ball tree buy stabe. Lily were swing to play with the surple. The came and ear athis litt"
+  },
+  {
+    "prompt": "sam gave mia a blue box. inside the box was",
+    "seed": 1729,
+    "temperature": 0.7,
+    "new_characters": 160,
+    "baseline_004": "sam gave mia a blue box. inside the box was help thought is and himby mudll and of time. They went to said friends mom and stry would a ball, but the goodse happpy. I was ther to spreen. They bett to pay",
+    "reference_2400": "sam gave mia a blue box. inside the box was help. The pretty ever her mud. She want so heam so noise surpre red his the traked too gave and fon the tree. They said,  Whan there plain the momy so said,   ",
+    "extended_7200": "sam gave mia a blue box. inside the box was hold. The prouse ever he smiled and looking. The said,  The was red his to had other on the all bird and play said,  The water the make it was mom.\nThe and had"
+  },
+  {
+    "prompt": "sam gave mia a blue box. inside the box was",
+    "seed": 2026,
+    "temperature": 0.7,
+    "new_characters": 160,
+    "baseline_004": "sam gave mia a blue box. inside the box was get toogether. One ins the move had doone. Lily and said,  Wem's said care. He crit bard friend. The wented to pay and was cold block and his me sloran. It wit",
+    "reference_2400": "sam gave mia a blue box. inside the box was get too the so the speed to the park. He went with they he meade wanted to squicked bark friend. The wented to park. They loved the rage. His meall and said,  ",
+    "extended_7200": "sam gave mia a blue box. inside the box was get to go eet at think the started to make and prands. He was dog rate surprised to bag and her. The wented to ple and was a swis and go not. The loved they it"
+  }
+]

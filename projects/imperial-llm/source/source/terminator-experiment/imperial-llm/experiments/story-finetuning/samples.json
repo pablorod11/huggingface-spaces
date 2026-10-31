@@ -1,0 +1,34 @@
+[
+  {
+    "prompt": "The little",
+    "seed": 42,
+    "temperature": 0.7,
+    "new_characters": 160,
+    "baseline": "The little have the hard. The found and day, They you in the to frabor to in the ball too they so be fling the sow with hings the said, dog to sthe pot and ear ate sad ti",
+    "candidate": "The little good the prog. The found and day, Then, the ball wiled and nembing the to pot. Tim but beren with a so need of   You boy it with herst to on the ear at is litt"
+  },
+  {
+    "prompt": "One day",
+    "seed": 42,
+    "temperature": 0.7,
+    "new_characters": 160,
+    "baseline": "One day, Lily kney whould fun. But the found, she   They was finds. I ding with a was fun a so be fling the sown the tings the said, dog to sthe pot and ear ate sad ti",
+    "candidate": "One day, Lily knew the dold you was happy was so very for to frass. I ding was a big was back abe friend. Tim was sooring and fan the bily. The camed and so athis hit "
+  },
+  {
+    "prompt": "The sun",
+    "seed": 42,
+    "temperature": 0.7,
+    "new_characters": 160,
+    "baseline": "The sun had  Sue had to the can was happy of not cored and to saw his sing the and to fun a so be fling the sow with hings the said, dog to sthe pot and ear ate sad ti",
+    "candidate": "The sun had said,  Noo'd loved to and fall. They could and see and nembing the to pot. Tim but beren with a so need of   You boy it with herst to on the ear at is litt"
+  },
+  {
+    "prompt": "A little girl found",
+    "seed": 42,
+    "temperature": 0.7,
+    "new_characters": 160,
+    "baseline": "A little girl found hom. She had to he found and day how, said,  Hen the fress. I ding with a was fun a so be fling the sown the tings the said, dog to sthe pot and ear ate sad ti",
+    "candidate": "A little girl found have the had to the can was happy was so very fave ond a botcare. The balked was back abe friend. Tim was sooring and fan the bily. The camed and so athis hit "
+  }
+]

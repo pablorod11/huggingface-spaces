@@ -1,0 +1,243 @@
+{
+  "schedule": "constant",
+  "max_steps": 7200,
+  "executed_steps": 7200,
+  "selected_step": 7200,
+  "validation_ce": 1.2693498954176903,
+  "history": [
+    {
+      "step": 0,
+      "validation_ce": 4.118823101744056
+    },
+    {
+      "step": 200,
+      "validation_ce": 2.319374470040202,
+      "learning_rate": 0.001
+    },
+    {
+      "step": 400,
+      "validation_ce": 2.187936362810433,
+      "learning_rate": 0.001
+    },
+    {
+      "step": 600,
+      "validation_ce": 2.0378925148397684,
+      "learning_rate": 0.001
+    },
+    {
+      "step": 800,
+      "validation_ce": 1.9051783122122288,
+      "learning_rate": 0.001
+    },
+    {
+      "step": 1000,
+      "validation_ce": 1.7939691301435232,
+      "learning_rate": 0.001
+    },
+    {
+      "step": 1200,
+      "validation_ce": 1.7082981625571847,
+      "learning_rate": 0.001
+    },
+    {
+      "step": 1400,
+      "validation_ce": 1.6471856432035565,
+      "learning_rate": 0.001
+    },
+    {
+      "step": 1600,
+      "validation_ce": 1.5944352205842733,
+      "learning_rate": 0.001
+    },
+    {
+      "step": 1800,
+      "validation_ce": 1.555553582496941,
+      "learning_rate": 0.001
+    },
+    {
+      "step": 2000,
+      "validation_ce": 1.5172465750947595,
+      "learning_rate": 0.001
+    },
+    {
+      "step": 2200,
+      "validation_ce": 1.4901499543339014,
+      "learning_rate": 0.001
+    },
+    {
+      "step": 2400,
+      "validation_ce": 1.4673375221900642,
+      "learning_rate": 0.001
+    },
+    {
+      "step": 2600,
+      "validation_ce": 1.4473277213983238,
+      "learning_rate": 0.001
+    },
+    {
+      "step": 2800,
+      "validation_ce": 1.4266530191525817,
+      "learning_rate": 0.001
+    },
+    {
+      "step": 3000,
+      "validation_ce": 1.4165305332280695,
+      "learning_rate": 0.001
+    },
+    {
+      "step": 3200,
+      "validation_ce": 1.398683614563197,
+      "learning_rate": 0.001
+    },
+    {
+      "step": 3400,
+      "validation_ce": 1.3874706905335188,
+      "learning_rate": 0.001
+    },
+    {
+      "step": 3600,
+      "validation_ce": 1.3693886729888618,
+      "learning_rate": 0.001
+    },
+    {
+      "step": 3800,
+      "validation_ce": 1.3746855519711971,
+      "learning_rate": 0.001
+    },
+    {
+      "step": 4000,
+      "validation_ce": 1.357897398993373,
+      "learning_rate": 0.001
+    },
+    {
+      "step": 4200,
+      "validation_ce": 1.3562593441456556,
+      "learning_rate": 0.001
+    },
+    {
+      "step": 4400,
+      "validation_ce": 1.340276027098298,
+      "learning_rate": 0.001
+    },
+    {
+      "step": 4600,
+      "validation_ce": 1.338623168412596,
+      "learning_rate": 0.001
+    },
+    {
+      "step": 4800,
+      "validation_ce": 1.3297930909320712,
+      "learning_rate": 0.001
+    },
+    {
+      "step": 5000,
+      "validation_ce": 1.3278206470422447,
+      "learning_rate": 0.001
+    },
+    {
+      "step": 5200,
+      "validation_ce": 1.3123088125139475,
+      "learning_rate": 0.001
+    },
+    {
+      "step": 5400,
+      "validation_ce": 1.305674122646451,
+      "learning_rate": 0.001
+    },
+    {
+      "step": 5600,
+      "validation_ce": 1.3048783871345222,
+      "learning_rate": 0.001
+    },
+    {
+      "step": 5800,
+      "validation_ce": 1.2979575390927494,
+      "learning_rate": 0.001
+    },
+    {
+      "step": 6000,
+      "validation_ce": 1.2935480740852654,
+      "learning_rate": 0.001
+    },
+    {
+      "step": 6200,
+      "validation_ce": 1.2845964962616563,
+      "learning_rate": 0.001
+    },
+    {
+      "step": 6400,
+      "validation_ce": 1.2805926213040948,
+      "learning_rate": 0.001
+    },
+    {
+      "step": 6600,
+      "validation_ce": 1.2779440130107105,
+      "learning_rate": 0.001
+    },
+    {
+      "step": 6800,
+      "validation_ce": 1.2723245960660279,
+      "learning_rate": 0.001
+    },
+    {
+      "step": 7000,
+      "validation_ce": 1.2708153910934925,
+      "learning_rate": 0.001
+    },
+    {
+      "step": 7200,
+      "validation_ce": 1.2693498954176903,
+      "learning_rate": 0.001
+    }
+  ],
+  "runtime_seconds": 568.4259550640127,
+  "optimizer": "AdamW, default betas and weight_decay0.01; clip1.0",
+  "batch_size": 16,
+  "verified_prefix_step": 7200,
+  "patience_validation_checks": 37,
+  "validation_every_steps": 200,
+  "arm": "legacy",
+  "config": {
+    "n_head": 4,
+    "n_embed": 64,
+    "context_length": 64,
+    "vocab_size": 51,
+    "N_BLOCKS": 2
+  },
+  "parameter_count": 110387,
+  "initialization": "exact_archived_capacity_width64_seed1729",
+  "initialization_seed": 1729,
+  "initial_checkpoint_sha256": "7c820215fbb0ca2045bdde8617c5e13062cb99049cae51c8b17af900fd149f60",
+  "checkpoint_sha256": "56ba2fec53d6fe31070d29a23978c6271f616ef9a5890f2fbcda039b7064caaf",
+  "reference_raw7200_checkpoint_sha256": "56ba2fec53d6fe31070d29a23978c6271f616ef9a5890f2fbcda039b7064caaf",
+  "training_plan_sha256": "ff1999ef6e6b03b7fa3ef2989a2a1b6ef7e505987a2047ce805ad4cf89eb9528",
+  "manifest_sha256": "099bb847ddfc80144d4e3bc4f399ec94a9e1cf190505ac048cc6c324ea0ec185",
+  "source_sha256": {
+    "scripts/compare_terminator_policy.py": "eebbc1fad436050a73b0cc5e2486c24c2352eda5ceffed55d30196b454af2e7c",
+    "scripts/prepare_terminator_corpus.py": "7a1571137cd9a3f62327ff17ddd3d9b9f782253f2e4c931901072d8cec38509f",
+    "scripts/compare_model_capacity.py": "b408032e0bbab4216fa4f052fb5fb524b1c51c68f9f0e023f54244dad48a29aa",
+    "scripts/compare_story_context.py": "b78b5b619c8851592edf93fd38aef7bd640656b4330c600cd1638770864d29f2",
+    "scripts/finetune_stories.py": "b5f3fe2185942266eb77d4aef391e595aba5dfef04af019b6d74109f99e62e80",
+    "scripts/refinement_experiment.py": "78f546e3b396781ee892047213860524202a2692da66efaee2967149b8cc0248",
+    "src/models/transformer.py": "ec63ac30e4443c73f7dae268cc5198868701afb90c612d62a22e69b6e4f71165",
+    "src/models/transformer_block.py": "b3469698eb6825f1ec4ea50883680ed7900e882add125222571924040289b23e",
+    "src/models/attention.py": "b4fc10105c98444f2b0df9d332b2c72325210669c2e00a65b16df7fbf43ec00e",
+    "src/models/mlp.py": "b83cebb2a63b67eddf7d5971c0e1607a73639814aa0c0f9142aac81054f7e3c3",
+    "src/inference/sampling.py": "11f6b66167225a38c0a45ac967e404b7f31939a67571a51774ec3434b1e59e10",
+    "space/inference.js": "b3c70c34d6be5bb9b37238f90e935823b6467c4b81d994c1bfe8dea4750c6c85",
+    "space/generation-worker.js": "5e97bf0db507c3462ca9b0ebd1fbe61614911c8d7d71c0d8f39c7a65de6ffafc",
+    "space/test_inference.cjs": "e018e04ec8678e57db6e45e8520de9f7626e6e23276a9b6829ca9d6d8c8c4059",
+    "space/test_generation.cjs": "fd6941701d8810f4fb09dcb33fa1b0fc3797c047a7429f44ed457bedcd81015a"
+  },
+  "training_file_sha256": "d95af01b263ca905aeeb131c165c556f28ef9a375047212b3f6fc9a45fa7e7c5",
+  "canonical_validation_sha256": "1270c12bc3e2e0d158ff0e2c535d98ba565134c155fcbc0672225f058f79bb54",
+  "optimizer_character_predictions": 7372800,
+  "training_stories": 4096,
+  "validation_stories": 128,
+  "torch_version": "2.2.2",
+  "device": "cpu",
+  "threads": 1,
+  "final_test_read": false,
+  "selection": "Minimum CE on shared repaired_val seed3802 windows only; no syntax-pair selection.",
+  "policy_confound": "Punctuation substitution changes trimming,character lengths,and sampled offsets; part of data-policy treatment."
+}

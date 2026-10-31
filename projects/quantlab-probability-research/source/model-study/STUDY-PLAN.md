@@ -1,0 +1,13 @@
+# Model testing and improvement plan
+
+Keep the free static app, beginner interface and strict chronology. No new dependencies or market-profit claims.
+
+1. Freeze a stress-study design before seeing results. Development seeds 41001–41012; confirmation seeds 51001–51012, disjoint RNG streams. Six synthetic mechanisms at 1,200 prices: built-in regimes, independent Gaussian, symmetric heavy-tail jumps, autocorrelated returns, upward volatility shift, downward volatility shift. Each strict run reserves 200 test outcomes. Cohorts are constructed experiments, not market replications.
+2. Compare the existing selected policy, raw training frequency, and one prespecified conservative challenger: 50% existing selected probabilities + 50% raw training frequencies. No weight optimization. Paired comparisons use identical targets. Report all cohorts, loss, multiclass/downside Brier and worst per-row loss. Do not silently choose a winning subset.
+3. Acceptance for promoting the challenger: development and confirmation cohort-average log-loss difference versus existing <=0, with no cohort worse by >0.02. Otherwise expose only as an experimental comparison or reject. This heuristic is a development decision, not a significance test. A new independent future evaluation would still be required.
+4. Run independent numerical edge-case and leakage checks. Fix confirmed correctness defects regardless of challenger outcome.
+5. If feasible, run a separate frozen sanity check on primary-source public FX reference prices, documenting dates, source, gaps and non-tradability. Do not tune to that result. Never present synthetic improvement as market alpha.
+6. Integrate only supported changes, bump model/asset revision if output changes, update exports/methods and run regression/browser checks before existing authorized publication.
+
+## Second challenger, after development-stage rejection of fixed blending
+The fixed blend failed the development gate, especially volatility shifts. Do not promote or optimize its weight. Before opening confirmation seeds, test one alternative informed by that development evidence: an online log-loss mixture of five existing experts (raw frequency, calibrated frequency, ridge, softmax, EWMA). Start each evaluation block with equal weights. Predict with current weights, then update log weights using that row's observed outcome; do not fit coefficients or temperatures on evaluation labels. No forgetting rate, weight search or extra hyperparameters. Candidate forecasts come from the existing fit. This is a distinct adaptive policy, not the frozen strict selected policy. Use the same development/confirmation gate and disclose the second development attempt.

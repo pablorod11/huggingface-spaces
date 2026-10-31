@@ -1,0 +1,14 @@
+const assert=require('node:assert/strict'),fs=require('node:fs'),vm=require('node:vm');
+const context=vm.createContext({document:{getElementById:()=>null}});
+vm.runInContext(fs.readFileSync(__dirname+'/app.js','utf8').split('async function request')[0],context);
+const parse=raw=>{context.raw=raw;return vm.runInContext('parseEvidence(raw)',context);};
+assert.equal(parse('  ').length,0);
+assert.equal(parse('[{"title":"Study","extraction":{"provider":"Crawl4AI","truncated":true}}]')[0].extraction.provider,'Crawl4AI');
+for(const raw of ['{','{}','[null]','[{"title":""}]','[{"title":7}]',JSON.stringify(Array.from({length:21},()=>({title:'Study'}))),' '.repeat(250001)])assert.throws(()=>parse(raw));
+context.largeSources=Array.from({length:13},()=>({title:'T',abstract:'x'.repeat(19150)}));
+context.largeSources[0].abstract+='x'.repeat(685);
+const formatted=vm.runInContext('formatEvidence(largeSources)',context);
+assert.ok(formatted.length<=250000,'Import formatting must keep accepted evidence usable');
+assert.equal(parse(formatted).length,13);
+assert.equal(parse(formatted)[0].abstract.length,19835);
+console.log('PASS: evidence parser rejects malformed, oversized and excess records while retaining extraction metadata');

@@ -1,0 +1,59 @@
+{
+  "runtime": {
+    "python": "3.12.14",
+    "torch": "2.2.2",
+    "platform": "macOS-14.8.7-x86_64-i386-64bit",
+    "supported_dependency_contract": false
+  },
+  "integration_tests": {
+    "status": "passed",
+    "count": 6,
+    "duration_seconds": 60.046,
+    "coverage": [
+      "actual API train/recover/promote/predict/restart",
+      "busy rejection",
+      "read-only control denial",
+      "corrupt artifact isolation",
+      "supervisor shutdown",
+      "eight-epoch recovery vs uninterrupted exact weight and learning metric equality"
+    ]
+  },
+  "reference": {
+    "test_accuracy": 0.9638888888888889,
+    "test_samples": 360,
+    "epochs": 16,
+    "selected_epoch": 15,
+    "workers": 2,
+    "checkpoint_sha256": "87a9a20f62674a5b58d62ba015b9c6abfe2bf47824996bc2aeb64ea47f24bde0"
+  },
+  "recovery": {
+    "test_epochs": 8,
+    "restart_count": 1,
+    "model_weights_exactly_equal": true,
+    "non_timing_learning_metrics_exactly_equal": true
+  },
+  "not_verified": [
+    "Linux/PyTorch>=2.6",
+    "Docker build",
+    "remote CI",
+    "multi-node distribution"
+  ],
+  "browser_inference": {
+    "status": "passed",
+    "vectors": 171,
+    "maximum_probability_error": 5.728289273476683e-07,
+    "tolerance": 1e-06,
+    "invalid_input_cases": 5
+  },
+  "browser": {
+    "sample_prediction": true,
+    "blank_rejected": true,
+    "keyboard_drawing": true,
+    "tabs": true,
+    "responsive_widths": [
+      375,
+      1280
+    ],
+    "mobile_horizontal_overflow": false
+  }
+}

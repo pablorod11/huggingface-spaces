@@ -1,0 +1,12 @@
+'use strict';
+const assert=require('node:assert/strict'),fs=require('node:fs');
+const html=fs.readFileSync(require.resolve('./index.html'),'utf8');
+const policy=html.match(/<meta\s+http-equiv="Content-Security-Policy"\s+content="([^"]+)"/i)?.[1];
+assert(policy,'An explicit page security policy is required');
+const directives=new Map(policy.split(';').map(s=>s.trim().split(/\s+/)).filter(a=>a[0]).map(([k,...v])=>[k,v]));
+assert.deepEqual(directives.get('form-action'),["'none'"],'Native fallback submissions must be blocked even if JavaScript fails');
+assert.deepEqual(directives.get('connect-src'),["'self'"]);
+assert.deepEqual(directives.get('script-src'),["'self'"]);
+assert.deepEqual(directives.get('object-src'),["'none'"]);
+assert(!/<form\b[^>]*\baction\s*=\s*["']https?:/i.test(html),'Local calculators must not submit to remote endpoints');
+console.log('Privacy policy tests passed: fail-closed native form submission, same-origin connections/scripts and no object plugins');

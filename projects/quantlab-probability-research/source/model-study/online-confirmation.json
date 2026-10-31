@@ -1,0 +1,1722 @@
+{
+  "stage": "confirmation",
+  "design": {
+    "protocol": "strict",
+    "n": 1200,
+    "seeds": [
+      51001,
+      51002,
+      51003,
+      51004,
+      51005,
+      51006,
+      51007,
+      51008,
+      51009,
+      51010,
+      51011,
+      51012
+    ],
+    "mechanisms": [
+      "built_in_regimes",
+      "iid_gaussian",
+      "heavy_tail",
+      "autocorrelated",
+      "volatility_up",
+      "volatility_down"
+    ],
+    "challenger": "Online 5-expert log-loss mixture, equal priors, update after outcome; second development attempt, no weight tuning",
+    "model_sha256": "08c5d9973883cd22ba96d562b9c811d0ac983d18404422ba8ae69df1280a2dc3",
+    "caveat": "Constructed synthetic tests; reused seeds across mechanisms are paired, not independent replications. No trading result. Heuristic acceptance was fixed in work/model-next/PLAN.md before results."
+  },
+  "cohorts": [
+    {
+      "kind": "built_in_regimes",
+      "runs": [
+        {
+          "seed": 51001,
+          "selected": {
+            "log_loss": 0.8047688677200152,
+            "brier": 0.5292979096219151,
+            "downside_brier": 0.028720797482598558,
+            "worst_row_loss": 3.521892356058948
+          },
+          "raw": {
+            "log_loss": 0.8089908269769037,
+            "brier": 0.5290968870080166,
+            "downside_brier": 0.029214245654766557,
+            "worst_row_loss": 3.201807916356053
+          },
+          "online": {
+            "log_loss": 0.8078742764864526,
+            "brier": 0.5305003048262326,
+            "downside_brier": 0.02899262256318104,
+            "worst_row_loss": 3.6309480491659345
+          },
+          "downside_events": 6
+        },
+        {
+          "seed": 51002,
+          "selected": {
+            "log_loss": 0.8316903323964094,
+            "brier": 0.5416355114230376,
+            "downside_brier": 0.030502153151810544,
+            "worst_row_loss": 4.395057615153207
+          },
+          "raw": {
+            "log_loss": 0.8114510061168518,
+            "brier": 0.5325675387746377,
+            "downside_brier": 0.029119614225082864,
+            "worst_row_loss": 3.368862001019219
+          },
+          "online": {
+            "log_loss": 0.8185367111465238,
+            "brier": 0.5370427866392731,
+            "downside_brier": 0.029320323330862777,
+            "worst_row_loss": 3.97221770478229
+          },
+          "downside_events": 6
+        },
+        {
+          "seed": 51003,
+          "selected": {
+            "log_loss": 0.7931614536004513,
+            "brier": 0.5222483472572564,
+            "downside_brier": 0.028898507176530752,
+            "worst_row_loss": 5.197019613564067
+          },
+          "raw": {
+            "log_loss": 0.8269047497912037,
+            "brier": 0.528915044780939,
+            "downside_brier": 0.0319028656375743,
+            "worst_row_loss": 2.489612540825413
+          },
+          "online": {
+            "log_loss": 0.8011993492459447,
+            "brier": 0.5229445669803784,
+            "downside_brier": 0.029421370326768836,
+            "worst_row_loss": 5.1836206635661135
+          },
+          "downside_events": 6
+        },
+        {
+          "seed": 51004,
+          "selected": {
+            "log_loss": 0.8891170886583625,
+            "brier": 0.5556588566348579,
+            "downside_brier": 0.05722375288069936,
+            "worst_row_loss": 3.4641721808235437
+          },
+          "raw": {
+            "log_loss": 0.8891170886583625,
+            "brier": 0.5556588566348579,
+            "downside_brier": 0.05722375288069936,
+            "worst_row_loss": 3.4641721808235437
+          },
+          "online": {
+            "log_loss": 0.8817483297616824,
+            "brier": 0.5520925427677836,
+            "downside_brier": 0.05722961842720639,
+            "worst_row_loss": 3.56251149069006
+          },
+          "downside_events": 12
+        },
+        {
+          "seed": 51005,
+          "selected": {
+            "log_loss": 0.925169385710671,
+            "brier": 0.5686084477653561,
+            "downside_brier": 0.07490910337700028,
+            "worst_row_loss": 3.1276999442023308
+          },
+          "raw": {
+            "log_loss": 0.925169385710671,
+            "brier": 0.5686084477653562,
+            "downside_brier": 0.07490910337700028,
+            "worst_row_loss": 3.1276999442023308
+          },
+          "online": {
+            "log_loss": 0.9101336829118251,
+            "brier": 0.5657530480651186,
+            "downside_brier": 0.07438142250107077,
+            "worst_row_loss": 3.4452184396139836
+          },
+          "downside_events": 16
+        },
+        {
+          "seed": 51006,
+          "selected": {
+            "log_loss": 0.7998256766366676,
+            "brier": 0.5168297542269079,
+            "downside_brier": 0.02480059964344862,
+            "worst_row_loss": 6.717183880484541
+          },
+          "raw": {
+            "log_loss": 0.7939000630970233,
+            "brier": 0.5203135523277039,
+            "downside_brier": 0.024790483467663927,
+            "worst_row_loss": 3.092608624391061
+          },
+          "online": {
+            "log_loss": 0.7889390543249233,
+            "brier": 0.5180682814689216,
+            "downside_brier": 0.024562095935716188,
+            "worst_row_loss": 4.481972046507843
+          },
+          "downside_events": 5
+        },
+        {
+          "seed": 51007,
+          "selected": {
+            "log_loss": 0.8297882436066958,
+            "brier": 0.5282689193108662,
+            "downside_brier": 0.030535269058319922,
+            "worst_row_loss": 2.3989023878633016
+          },
+          "raw": {
+            "log_loss": 0.7992563639149437,
+            "brier": 0.518433291454517,
+            "downside_brier": 0.02567336727721585,
+            "worst_row_loss": 2.7963428082478883
+          },
+          "online": {
+            "log_loss": 0.8072885415587878,
+            "brier": 0.5205639491568901,
+            "downside_brier": 0.027008101630032613,
+            "worst_row_loss": 2.7912691410457313
+          },
+          "downside_events": 5
+        },
+        {
+          "seed": 51008,
+          "selected": {
+            "log_loss": 0.9322585047932335,
+            "brier": 0.5783640528393331,
+            "downside_brier": 0.08601225658596079,
+            "worst_row_loss": 5.1996728623300115
+          },
+          "raw": {
+            "log_loss": 0.9622918360644254,
+            "brier": 0.5884941014544903,
+            "downside_brier": 0.09164284962076445,
+            "worst_row_loss": 2.822318294651149
+          },
+          "online": {
+            "log_loss": 0.9239845712541525,
+            "brier": 0.5786075038034841,
+            "downside_brier": 0.08631626377795687,
+            "worst_row_loss": 4.205810338790612
+          },
+          "downside_events": 20
+        },
+        {
+          "seed": 51009,
+          "selected": {
+            "log_loss": 0.8730258879927854,
+            "brier": 0.555850467906857,
+            "downside_brier": 0.0555268792282851,
+            "worst_row_loss": 3.781296315303359
+          },
+          "raw": {
+            "log_loss": 0.8653342316942856,
+            "brier": 0.5477476299284156,
+            "downside_brier": 0.051999223650020826,
+            "worst_row_loss": 2.994168551577808
+          },
+          "online": {
+            "log_loss": 0.8718806907730077,
+            "brier": 0.550741072501675,
+            "downside_brier": 0.05400920252060509,
+            "worst_row_loss": 2.6675893806990265
+          },
+          "downside_events": 11
+        },
+        {
+          "seed": 51010,
+          "selected": {
+            "log_loss": 0.8918876602086285,
+            "brier": 0.5643757608681628,
+            "downside_brier": 0.06665782726681051,
+            "worst_row_loss": 3.6759454182511493
+          },
+          "raw": {
+            "log_loss": 0.9288116150098463,
+            "brier": 0.5746436994423538,
+            "downside_brier": 0.07077685203553066,
+            "worst_row_loss": 3.2818506240295893
+          },
+          "online": {
+            "log_loss": 0.8991436671178975,
+            "brier": 0.5660977723426652,
+            "downside_brier": 0.06773616310402562,
+            "worst_row_loss": 3.69219612085428
+          },
+          "downside_events": 15
+        },
+        {
+          "seed": 51011,
+          "selected": {
+            "log_loss": 0.8091360496652019,
+            "brier": 0.5315274899218996,
+            "downside_brier": 0.028461590946461657,
+            "worst_row_loss": 5.633143531158135
+          },
+          "raw": {
+            "log_loss": 0.8091155168152264,
+            "brier": 0.5305812828632374,
+            "downside_brier": 0.02910168715299992,
+            "worst_row_loss": 3.4641721808235437
+          },
+          "online": {
+            "log_loss": 0.811232887436977,
+            "brier": 0.534035647917025,
+            "downside_brier": 0.029154075752434658,
+            "worst_row_loss": 4.240041734336994
+          },
+          "downside_events": 6
+        },
+        {
+          "seed": 51012,
+          "selected": {
+            "log_loss": 0.9189424110645633,
+            "brier": 0.5645811635528459,
+            "downside_brier": 0.0729950978402075,
+            "worst_row_loss": 4.770794777674273
+          },
+          "raw": {
+            "log_loss": 0.9116059831975485,
+            "brier": 0.5652107533043865,
+            "downside_brier": 0.07372415330095676,
+            "worst_row_loss": 2.6757148204592736
+          },
+          "online": {
+            "log_loss": 0.8811924456006791,
+            "brier": 0.5517148510312101,
+            "downside_brier": 0.06855385997060039,
+            "worst_row_loss": 3.627902452327515
+          },
+          "downside_events": 16
+        }
+      ],
+      "summary": {
+        "selected_loss": 0.8582309635044738,
+        "raw_loss": 0.8609957222539412,
+        "online_loss": 0.8502628506349045,
+        "online_minus_selected": -0.007968112869569333,
+        "online_minus_raw": -0.01073287161903654,
+        "online_wins": 8,
+        "selected_brier": 0.5464372234441081,
+        "online_brier": 0.5440135272917215,
+        "selected_downside_brier": 0.048770319553177795,
+        "online_downside_brier": 0.048057093320038435
+      }
+    },
+    {
+      "kind": "iid_gaussian",
+      "runs": [
+        {
+          "seed": 51001,
+          "selected": {
+            "log_loss": 0.888051688696927,
+            "brier": 0.5641024514878576,
+            "downside_brier": 0.05245676636031407,
+            "worst_row_loss": 3.603337806933926
+          },
+          "raw": {
+            "log_loss": 0.8677990380652286,
+            "brier": 0.5502524239507658,
+            "downside_brier": 0.051976790319380954,
+            "worst_row_loss": 2.8763855159214247
+          },
+          "online": {
+            "log_loss": 0.8750149705250396,
+            "brier": 0.5528970996448527,
+            "downside_brier": 0.05236199059299171,
+            "worst_row_loss": 3.757854689726843
+          },
+          "downside_events": 11
+        },
+        {
+          "seed": 51002,
+          "selected": {
+            "log_loss": 0.9257263342507221,
+            "brier": 0.5711411450961005,
+            "downside_brier": 0.07077481635552084,
+            "worst_row_loss": 3.5871276664195713
+          },
+          "raw": {
+            "log_loss": 0.9280254614602022,
+            "brier": 0.5690350239150078,
+            "downside_brier": 0.07115045515660481,
+            "worst_row_loss": 3.4153820166541116
+          },
+          "online": {
+            "log_loss": 0.9264864129994826,
+            "brier": 0.571888559790108,
+            "downside_brier": 0.0708446395689254,
+            "worst_row_loss": 3.463010566869334
+          },
+          "downside_events": 15
+        },
+        {
+          "seed": 51003,
+          "selected": {
+            "log_loss": 0.8441811736662791,
+            "brier": 0.5381752378120773,
+            "downside_brier": 0.03993501561763066,
+            "worst_row_loss": 2.53604068916882
+          },
+          "raw": {
+            "log_loss": 0.8310727277654065,
+            "brier": 0.5350053022009648,
+            "downside_brier": 0.03843103832523922,
+            "worst_row_loss": 3.368862001019219
+          },
+          "online": {
+            "log_loss": 0.8384447336948504,
+            "brier": 0.5363405363682417,
+            "downside_brier": 0.0391895408147908,
+            "worst_row_loss": 3.288478481459722
+          },
+          "downside_events": 8
+        },
+        {
+          "seed": 51004,
+          "selected": {
+            "log_loss": 0.9227510414494854,
+            "brier": 0.570484998274575,
+            "downside_brier": 0.07434940141883306,
+            "worst_row_loss": 3.1688840918302033
+          },
+          "raw": {
+            "log_loss": 0.9235387219245419,
+            "brier": 0.5722897916100322,
+            "downside_brier": 0.0743178038846887,
+            "worst_row_loss": 2.9335439297613735
+          },
+          "online": {
+            "log_loss": 0.9276972859885781,
+            "brier": 0.5715583386714684,
+            "downside_brier": 0.0747125226138238,
+            "worst_row_loss": 3.7059101593798696
+          },
+          "downside_events": 16
+        },
+        {
+          "seed": 51005,
+          "selected": {
+            "log_loss": 0.8209953590240207,
+            "brier": 0.53270189385312,
+            "downside_brier": 0.03385276534883109,
+            "worst_row_loss": 3.1276999442023308
+          },
+          "raw": {
+            "log_loss": 0.8209953590240207,
+            "brier": 0.53270189385312,
+            "downside_brier": 0.03385276534883109,
+            "worst_row_loss": 3.1276999442023308
+          },
+          "online": {
+            "log_loss": 0.8208164984035692,
+            "brier": 0.5322037271983535,
+            "downside_brier": 0.03382152575667145,
+            "worst_row_loss": 3.7114138738763556
+          },
+          "downside_events": 7
+        },
+        {
+          "seed": 51006,
+          "selected": {
+            "log_loss": 0.8158822226748369,
+            "brier": 0.5271825597997681,
+            "downside_brier": 0.03391776323039959,
+            "worst_row_loss": 3.0587070727153796
+          },
+          "raw": {
+            "log_loss": 0.8158822226748369,
+            "brier": 0.527182559799768,
+            "downside_brier": 0.03391776323039959,
+            "worst_row_loss": 3.0587070727153796
+          },
+          "online": {
+            "log_loss": 0.8199258042163854,
+            "brier": 0.5283426744353885,
+            "downside_brier": 0.03427112216154157,
+            "worst_row_loss": 3.0504303496611826
+          },
+          "downside_events": 7
+        },
+        {
+          "seed": 51007,
+          "selected": {
+            "log_loss": 0.8880993790396071,
+            "brier": 0.5532989331012768,
+            "downside_brier": 0.06133543182607734,
+            "worst_row_loss": 3.354753997749894
+          },
+          "raw": {
+            "log_loss": 0.8902641162942813,
+            "brier": 0.5522314551541565,
+            "downside_brier": 0.061616363106477195,
+            "worst_row_loss": 3.3244102384483853
+          },
+          "online": {
+            "log_loss": 0.8905346250267094,
+            "brier": 0.5545457515721703,
+            "downside_brier": 0.06142270684519668,
+            "worst_row_loss": 3.448100621713696
+          },
+          "downside_events": 13
+        },
+        {
+          "seed": 51008,
+          "selected": {
+            "log_loss": 0.7682519909143195,
+            "brier": 0.5119287073004981,
+            "downside_brier": 0.01551576437180114,
+            "worst_row_loss": 2.96664069920012
+          },
+          "raw": {
+            "log_loss": 0.7669871880106647,
+            "brier": 0.515979976538069,
+            "downside_brier": 0.015040654289149942,
+            "worst_row_loss": 3.4641721808235437
+          },
+          "online": {
+            "log_loss": 0.7655258302352778,
+            "brier": 0.5098944647393869,
+            "downside_brier": 0.015444227694954753,
+            "worst_row_loss": 3.258317644051641
+          },
+          "downside_events": 3
+        },
+        {
+          "seed": 51009,
+          "selected": {
+            "log_loss": 0.8241007377487597,
+            "brier": 0.5324518944653854,
+            "downside_brier": 0.03423031144614161,
+            "worst_row_loss": 2.8763855159214247
+          },
+          "raw": {
+            "log_loss": 0.8241007377487601,
+            "brier": 0.5324518944653854,
+            "downside_brier": 0.03423031144614161,
+            "worst_row_loss": 2.8763855159214247
+          },
+          "online": {
+            "log_loss": 0.8265351899543133,
+            "brier": 0.5346626447522125,
+            "downside_brier": 0.03424572459796702,
+            "worst_row_loss": 2.927140858039801
+          },
+          "downside_events": 7
+        },
+        {
+          "seed": 51010,
+          "selected": {
+            "log_loss": 0.8137316047396852,
+            "brier": 0.5272293219599048,
+            "downside_brier": 0.03006432385541079,
+            "worst_row_loss": 3.4290784347751653
+          },
+          "raw": {
+            "log_loss": 0.8115120556769214,
+            "brier": 0.528223872884321,
+            "downside_brier": 0.029568427781083956,
+            "worst_row_loss": 2.9633968929110543
+          },
+          "online": {
+            "log_loss": 0.8123861239715577,
+            "brier": 0.5274136863194274,
+            "downside_brier": 0.029793790082060782,
+            "worst_row_loss": 3.0115388118790323
+          },
+          "downside_events": 6
+        },
+        {
+          "seed": 51011,
+          "selected": {
+            "log_loss": 0.8757372502227837,
+            "brier": 0.5513050567042815,
+            "downside_brier": 0.056486605279732184,
+            "worst_row_loss": 3.038288094257812
+          },
+          "raw": {
+            "log_loss": 0.8712614613691971,
+            "brier": 0.5477831901861532,
+            "downside_brier": 0.056400283110591774,
+            "worst_row_loss": 2.822318294651149
+          },
+          "online": {
+            "log_loss": 0.8738465344319261,
+            "brier": 0.5494452189098716,
+            "downside_brier": 0.05650439737688076,
+            "worst_row_loss": 2.957388652175705
+          },
+          "downside_events": 12
+        },
+        {
+          "seed": 51012,
+          "selected": {
+            "log_loss": 0.894475066232728,
+            "brier": 0.5581832430857108,
+            "downside_brier": 0.061444586489551284,
+            "worst_row_loss": 3.241028629509334
+          },
+          "raw": {
+            "log_loss": 0.894475066232728,
+            "brier": 0.5581832430857108,
+            "downside_brier": 0.061444586489551284,
+            "worst_row_loss": 3.241028629509334
+          },
+          "online": {
+            "log_loss": 0.8900781444113622,
+            "brier": 0.5564866450361077,
+            "downside_brier": 0.0612547034435525,
+            "worst_row_loss": 3.1657433464169027
+          },
+          "downside_events": 13
+        }
+      ],
+      "summary": {
+        "selected_loss": 0.8568319873883462,
+        "raw_loss": 0.8538261796872325,
+        "online_loss": 0.8556076794882544,
+        "online_minus_selected": -0.00122430790009187,
+        "online_minus_raw": 0.0017814998010218797,
+        "online_wins": 7,
+        "selected_brier": 0.544848786911713,
+        "online_brier": 0.5438066122864658,
+        "selected_downside_brier": 0.04703029596668697,
+        "online_downside_brier": 0.0469889076291131
+      }
+    },
+    {
+      "kind": "heavy_tail",
+      "runs": [
+        {
+          "seed": 51001,
+          "selected": {
+            "log_loss": 0.9477582340085391,
+            "brier": 0.5832733078361804,
+            "downside_brier": 0.0772074812229909,
+            "worst_row_loss": 3.523855899447442
+          },
+          "raw": {
+            "log_loss": 0.9336228323856979,
+            "brier": 0.578167960991474,
+            "downside_brier": 0.07479830819379828,
+            "worst_row_loss": 3.092608624391061
+          },
+          "online": {
+            "log_loss": 0.9309137050574579,
+            "brier": 0.5770887085197615,
+            "downside_brier": 0.07462077125948917,
+            "worst_row_loss": 3.12332833274175
+          },
+          "downside_events": 16
+        },
+        {
+          "seed": 51002,
+          "selected": {
+            "log_loss": 0.8438889559309086,
+            "brier": 0.5402234761376511,
+            "downside_brier": 0.043000788595247474,
+            "worst_row_loss": 2.994168551577808
+          },
+          "raw": {
+            "log_loss": 0.8438889559309086,
+            "brier": 0.5402234761376511,
+            "downside_brier": 0.043000788595247474,
+            "worst_row_loss": 2.994168551577808
+          },
+          "online": {
+            "log_loss": 0.8472459766907228,
+            "brier": 0.5413409353796085,
+            "downside_brier": 0.043281304276550386,
+            "worst_row_loss": 2.9797362858890106
+          },
+          "downside_events": 9
+        },
+        {
+          "seed": 51003,
+          "selected": {
+            "log_loss": 0.9263344070891464,
+            "brier": 0.5679511067176681,
+            "downside_brier": 0.07560136187635673,
+            "worst_row_loss": 3.3725172825472605
+          },
+          "raw": {
+            "log_loss": 0.9241103465524081,
+            "brier": 0.5713784008170069,
+            "downside_brier": 0.07449531128695346,
+            "worst_row_loss": 2.994168551577808
+          },
+          "online": {
+            "log_loss": 0.9189173573151593,
+            "brier": 0.567532025249952,
+            "downside_brier": 0.07452759448846819,
+            "worst_row_loss": 2.9806309322288573
+          },
+          "downside_events": 16
+        },
+        {
+          "seed": 51004,
+          "selected": {
+            "log_loss": 0.8763849545654822,
+            "brier": 0.5587237869075516,
+            "downside_brier": 0.04579868635526882,
+            "worst_row_loss": 3.20153287148082
+          },
+          "raw": {
+            "log_loss": 0.8578916402922441,
+            "brier": 0.5533059774050283,
+            "downside_brier": 0.04301913200643606,
+            "worst_row_loss": 2.9633968929110543
+          },
+          "online": {
+            "log_loss": 0.8619245020939046,
+            "brier": 0.5541229437727127,
+            "downside_brier": 0.043408537399418023,
+            "worst_row_loss": 3.0889716449878986
+          },
+          "downside_events": 9
+        },
+        {
+          "seed": 51005,
+          "selected": {
+            "log_loss": 0.8467748338727007,
+            "brier": 0.5423872884323839,
+            "downside_brier": 0.043070513150192925,
+            "worst_row_loss": 2.904556392888121
+          },
+          "raw": {
+            "log_loss": 0.8467748338727007,
+            "brier": 0.5423872884323839,
+            "downside_brier": 0.043070513150192925,
+            "worst_row_loss": 2.904556392888121
+          },
+          "online": {
+            "log_loss": 0.837638770092562,
+            "brier": 0.5324708924802164,
+            "downside_brier": 0.0432460602955715,
+            "worst_row_loss": 4.053711562571453
+          },
+          "downside_events": 9
+        },
+        {
+          "seed": 51006,
+          "selected": {
+            "log_loss": 0.8439998610674683,
+            "brier": 0.5399548614261606,
+            "downside_brier": 0.04302948078169024,
+            "worst_row_loss": 3.2802489554690757
+          },
+          "raw": {
+            "log_loss": 0.8485279996580676,
+            "brier": 0.540962478050359,
+            "downside_brier": 0.04354418459986143,
+            "worst_row_loss": 2.6757148204592736
+          },
+          "online": {
+            "log_loss": 0.8486093357382749,
+            "brier": 0.5438666353597539,
+            "downside_brier": 0.0431727525588609,
+            "worst_row_loss": 3.384299124869221
+          },
+          "downside_events": 9
+        },
+        {
+          "seed": 51007,
+          "selected": {
+            "log_loss": 0.8417965077239645,
+            "brier": 0.5348241259498663,
+            "downside_brier": 0.03380037672453354,
+            "worst_row_loss": 2.3170969474957657
+          },
+          "raw": {
+            "log_loss": 0.8129665902346885,
+            "brier": 0.5305108480827632,
+            "downside_brier": 0.02944274235221799,
+            "worst_row_loss": 3.0259172498923887
+          },
+          "online": {
+            "log_loss": 0.8209857029661173,
+            "brier": 0.5306975955728498,
+            "downside_brier": 0.03063544655595142,
+            "worst_row_loss": 3.0236805983153867
+          },
+          "downside_events": 6
+        },
+        {
+          "seed": 51008,
+          "selected": {
+            "log_loss": 0.9232644924238564,
+            "brier": 0.5774399179794597,
+            "downside_brier": 0.07033711779796002,
+            "worst_row_loss": 2.9905454007347774
+          },
+          "raw": {
+            "log_loss": 0.9158550566430032,
+            "brier": 0.5685168041810265,
+            "downside_brier": 0.07016189468579834,
+            "worst_row_loss": 3.0587070727153796
+          },
+          "online": {
+            "log_loss": 0.9105959459001444,
+            "brier": 0.5677590530479454,
+            "downside_brier": 0.06976938634985935,
+            "worst_row_loss": 2.509062358907679
+          },
+          "downside_events": 15
+        },
+        {
+          "seed": 51009,
+          "selected": {
+            "log_loss": 0.9292289018377347,
+            "brier": 0.5740283807920966,
+            "downside_brier": 0.07481570354482803,
+            "worst_row_loss": 3.257207851705896
+          },
+          "raw": {
+            "log_loss": 0.9207215088173788,
+            "brier": 0.5708364497539942,
+            "downside_brier": 0.07415988891093023,
+            "worst_row_loss": 2.8763855159214247
+          },
+          "online": {
+            "log_loss": 0.9247549406604475,
+            "brier": 0.5725791674177779,
+            "downside_brier": 0.07452527327336594,
+            "worst_row_loss": 2.9169230172068343
+          },
+          "downside_events": 16
+        },
+        {
+          "seed": 51010,
+          "selected": {
+            "log_loss": 0.855808798614179,
+            "brier": 0.5496442259888711,
+            "downside_brier": 0.04323205272322524,
+            "worst_row_loss": 2.7963428082478883
+          },
+          "raw": {
+            "log_loss": 0.855808798614179,
+            "brier": 0.5496442259888711,
+            "downside_brier": 0.04323205272322524,
+            "worst_row_loss": 2.7963428082478883
+          },
+          "online": {
+            "log_loss": 0.8593822071823883,
+            "brier": 0.5519634782981102,
+            "downside_brier": 0.04324593620980411,
+            "worst_row_loss": 4.027184952605987
+          },
+          "downside_events": 9
+        },
+        {
+          "seed": 51011,
+          "selected": {
+            "log_loss": 0.9191087470073873,
+            "brier": 0.5748195659787236,
+            "downside_brier": 0.0697841281736673,
+            "worst_row_loss": 2.9045563928881206
+          },
+          "raw": {
+            "log_loss": 0.9191087470073873,
+            "brier": 0.5748195659787236,
+            "downside_brier": 0.0697841281736673,
+            "worst_row_loss": 2.904556392888121
+          },
+          "online": {
+            "log_loss": 0.9219383697613904,
+            "brier": 0.5770989538043042,
+            "downside_brier": 0.06983173147447228,
+            "worst_row_loss": 3.073070926962031
+          },
+          "downside_events": 15
+        },
+        {
+          "seed": 51012,
+          "selected": {
+            "log_loss": 0.9124176760400027,
+            "brier": 0.5644496301576376,
+            "downside_brier": 0.07403950438677795,
+            "worst_row_loss": 2.7873480007001405
+          },
+          "raw": {
+            "log_loss": 0.9141157167747845,
+            "brier": 0.5678954548014907,
+            "downside_brier": 0.07366420046972859,
+            "worst_row_loss": 2.63126305788844
+          },
+          "online": {
+            "log_loss": 0.9138167426645222,
+            "brier": 0.5668427324180989,
+            "downside_brier": 0.07381011555609206,
+            "worst_row_loss": 2.6359331289735346
+          },
+          "downside_events": 16
+        }
+      ],
+      "summary": {
+        "selected_loss": 0.8888971975151141,
+        "raw_loss": 0.8827827522319539,
+        "online_loss": 0.8830602963435911,
+        "online_minus_selected": -0.00583690117152319,
+        "online_minus_raw": 0.00027754411163694037,
+        "online_wins": 7,
+        "selected_brier": 0.5589766395253543,
+        "online_brier": 0.5569469267767576,
+        "selected_downside_brier": 0.05780976627772827,
+        "online_downside_brier": 0.057006242474825275
+      }
+    },
+    {
+      "kind": "autocorrelated",
+      "runs": [
+        {
+          "seed": 51001,
+          "selected": {
+            "log_loss": 0.9190129690476232,
+            "brier": 0.5777184261333345,
+            "downside_brier": 0.06418328658426238,
+            "worst_row_loss": 4.269865450525067
+          },
+          "raw": {
+            "log_loss": 0.900400209557985,
+            "brier": 0.5645398840618042,
+            "downside_brier": 0.0651182525513017,
+            "worst_row_loss": 2.7222348360941666
+          },
+          "online": {
+            "log_loss": 0.9013308421620365,
+            "brier": 0.5633872442924169,
+            "downside_brier": 0.0650155328966495,
+            "worst_row_loss": 3.912371066406535
+          },
+          "downside_events": 14
+        },
+        {
+          "seed": 51002,
+          "selected": {
+            "log_loss": 0.8797114389071382,
+            "brier": 0.5321767985748328,
+            "downside_brier": 0.07408232686399625,
+            "worst_row_loss": 4.230861637242364
+          },
+          "raw": {
+            "log_loss": 0.9348229982242315,
+            "brier": 0.5724950712797063,
+            "downside_brier": 0.07540126518107063,
+            "worst_row_loss": 3.2818506240295893
+          },
+          "online": {
+            "log_loss": 0.8876519946482878,
+            "brier": 0.5373897092946022,
+            "downside_brier": 0.07437964372387251,
+            "worst_row_loss": 4.103873905295971
+          },
+          "downside_events": 16
+        },
+        {
+          "seed": 51003,
+          "selected": {
+            "log_loss": 0.7965258199159332,
+            "brier": 0.5096261571611468,
+            "downside_brier": 0.033927040381481165,
+            "worst_row_loss": 3.825114253472755
+          },
+          "raw": {
+            "log_loss": 0.8156966278816046,
+            "brier": 0.528423299315978,
+            "downside_brier": 0.03377598751962308,
+            "worst_row_loss": 3.3244102384483853
+          },
+          "online": {
+            "log_loss": 0.8043083040768392,
+            "brier": 0.5139961996341269,
+            "downside_brier": 0.034253908474487796,
+            "worst_row_loss": 3.621782003468902
+          },
+          "downside_events": 7
+        },
+        {
+          "seed": 51004,
+          "selected": {
+            "log_loss": 0.8998574035552896,
+            "brier": 0.5523568566635972,
+            "downside_brier": 0.08509979271506882,
+            "worst_row_loss": 3.233518599331909
+          },
+          "raw": {
+            "log_loss": 0.9519784876812477,
+            "brier": 0.5843709728375471,
+            "downside_brier": 0.08723752880699244,
+            "worst_row_loss": 2.822318294651149
+          },
+          "online": {
+            "log_loss": 0.9025322358624215,
+            "brier": 0.5542799527097158,
+            "downside_brier": 0.08469793861613878,
+            "worst_row_loss": 3.0171301353806665
+          },
+          "downside_events": 19
+        },
+        {
+          "seed": 51005,
+          "selected": {
+            "log_loss": 0.7797569089578146,
+            "brier": 0.48995044677913974,
+            "downside_brier": 0.03376438916302298,
+            "worst_row_loss": 5.1434949622263995
+          },
+          "raw": {
+            "log_loss": 0.8241842254786098,
+            "brier": 0.5335280086010762,
+            "downside_brier": 0.03410653627905493,
+            "worst_row_loss": 2.9335439297613735
+          },
+          "online": {
+            "log_loss": 0.7813775596017953,
+            "brier": 0.4911833433274236,
+            "downside_brier": 0.03396314393039158,
+            "worst_row_loss": 4.394895963720744
+          },
+          "downside_events": 7
+        },
+        {
+          "seed": 51006,
+          "selected": {
+            "log_loss": 0.8234701416152356,
+            "brier": 0.5249169220353701,
+            "downside_brier": 0.03845958971182495,
+            "worst_row_loss": 4.871268606130808
+          },
+          "raw": {
+            "log_loss": 0.8264347620773413,
+            "brier": 0.52879379213903,
+            "downside_brier": 0.03866693116445145,
+            "worst_row_loss": 2.8763855159214247
+          },
+          "online": {
+            "log_loss": 0.8135327540262063,
+            "brier": 0.5186808737825312,
+            "downside_brier": 0.038271891793200064,
+            "worst_row_loss": 4.277669987806295
+          },
+          "downside_events": 8
+        },
+        {
+          "seed": 51007,
+          "selected": {
+            "log_loss": 0.8586223685264572,
+            "brier": 0.5241001525960965,
+            "downside_brier": 0.07235666950605736,
+            "worst_row_loss": 3.4803475086969944
+          },
+          "raw": {
+            "log_loss": 0.9212122526870022,
+            "brier": 0.5637999515087382,
+            "downside_brier": 0.0750247966673278,
+            "worst_row_loss": 3.164067588373206
+          },
+          "online": {
+            "log_loss": 0.8505257205528466,
+            "brier": 0.5195681590248763,
+            "downside_brier": 0.07237941585001226,
+            "worst_row_loss": 3.3839120195691192
+          },
+          "downside_events": 16
+        },
+        {
+          "seed": 51008,
+          "selected": {
+            "log_loss": 0.7431518259491259,
+            "brier": 0.4811889432439544,
+            "downside_brier": 0.024489513746910295,
+            "worst_row_loss": 3.89063406162231
+          },
+          "raw": {
+            "log_loss": 0.8062984001593704,
+            "brier": 0.528137421293536,
+            "downside_brier": 0.025261436467876885,
+            "worst_row_loss": 2.904556392888121
+          },
+          "online": {
+            "log_loss": 0.7397192851634327,
+            "brier": 0.4760724979129393,
+            "downside_brier": 0.024626176604681846,
+            "worst_row_loss": 3.8131449884362167
+          },
+          "downside_events": 5
+        },
+        {
+          "seed": 51009,
+          "selected": {
+            "log_loss": 0.8113081965503863,
+            "brier": 0.5096126685808707,
+            "downside_brier": 0.04368581841697254,
+            "worst_row_loss": 3.5347759484424
+          },
+          "raw": {
+            "log_loss": 0.8515500421759201,
+            "brier": 0.5426612640545039,
+            "downside_brier": 0.04370332410040156,
+            "worst_row_loss": 2.63126305788844
+          },
+          "online": {
+            "log_loss": 0.8117066336027179,
+            "brier": 0.5122903008337601,
+            "downside_brier": 0.042842831388193586,
+            "worst_row_loss": 3.541221280123469
+          },
+          "downside_events": 9
+        },
+        {
+          "seed": 51010,
+          "selected": {
+            "log_loss": 0.7964093997060262,
+            "brier": 0.5015603907953059,
+            "downside_brier": 0.04263863408333133,
+            "worst_row_loss": 2.888275942173011
+          },
+          "raw": {
+            "log_loss": 0.8463154106786679,
+            "brier": 0.5388806600689141,
+            "downside_brier": 0.043544184599861514,
+            "worst_row_loss": 2.6757148204592736
+          },
+          "online": {
+            "log_loss": 0.8002689618142811,
+            "brier": 0.5051671280804535,
+            "downside_brier": 0.042348045347436,
+            "worst_row_loss": 3.0159652809178468
+          },
+          "downside_events": 9
+        },
+        {
+          "seed": 51011,
+          "selected": {
+            "log_loss": 0.8718171125934471,
+            "brier": 0.5480367866116211,
+            "downside_brier": 0.06359448107766066,
+            "worst_row_loss": 3.3775791800419865
+          },
+          "raw": {
+            "log_loss": 0.9014296366635756,
+            "brier": 0.5654149064094184,
+            "downside_brier": 0.06513407343732003,
+            "worst_row_loss": 2.746332387673227
+          },
+          "online": {
+            "log_loss": 0.8781455529296471,
+            "brier": 0.5508434567274072,
+            "downside_brier": 0.06401132245548712,
+            "worst_row_loss": 3.4436410185251622
+          },
+          "downside_events": 14
+        },
+        {
+          "seed": 51012,
+          "selected": {
+            "log_loss": 0.8304948256822865,
+            "brier": 0.5279059223953392,
+            "downside_brier": 0.04672193825878232,
+            "worst_row_loss": 3.84664961994569
+          },
+          "raw": {
+            "log_loss": 0.8624609023694855,
+            "brier": 0.5501949691541737,
+            "downside_brier": 0.047658704793532465,
+            "worst_row_loss": 2.7710250002635983
+          },
+          "online": {
+            "log_loss": 0.8367197962543365,
+            "brier": 0.5320062851713786,
+            "downside_brier": 0.047127524085226184,
+            "worst_row_loss": 3.865477545492431
+          },
+          "downside_events": 10
+        }
+      ],
+      "summary": {
+        "selected_loss": 0.8341782009172304,
+        "raw_loss": 0.8702319963029203,
+        "online_loss": 0.833984970057904,
+        "online_minus_selected": -0.0001932308593262655,
+        "online_minus_raw": -0.036247026245016106,
+        "online_wins": 4,
+        "selected_brier": 0.5232625392975506,
+        "online_brier": 0.522905429232636,
+        "selected_downside_brier": 0.051916956709114254,
+        "online_downside_brier": 0.051993114597148095
+      }
+    },
+    {
+      "kind": "volatility_up",
+      "runs": [
+        {
+          "seed": 51001,
+          "selected": {
+            "log_loss": 1.0161155217671478,
+            "brier": 0.6108049975647692,
+            "downside_brier": 0.20656759047984508,
+            "worst_row_loss": 1.5800660725509985
+          },
+          "raw": {
+            "log_loss": 1.8189877849372187,
+            "brier": 0.7906237004709525,
+            "downside_brier": 0.2837663260033166,
+            "worst_row_loss": 4.513994305322221
+          },
+          "online": {
+            "log_loss": 1.0241627113293184,
+            "brier": 0.6162964825722458,
+            "downside_brier": 0.2041275028648129,
+            "worst_row_loss": 3.8659115663277017
+          },
+          "downside_events": 58
+        },
+        {
+          "seed": 51002,
+          "selected": {
+            "log_loss": 1.0129691252735937,
+            "brier": 0.6113769260521902,
+            "downside_brier": 0.239224206872154,
+            "worst_row_loss": 1.8931426837513727
+          },
+          "raw": {
+            "log_loss": 2.4402214159109574,
+            "brier": 0.8364519091597055,
+            "downside_brier": 0.3428501718011063,
+            "worst_row_loss": 5.766757273817589
+          },
+          "online": {
+            "log_loss": 1.021016314835764,
+            "brier": 0.6121756023691175,
+            "downside_brier": 0.23858873562179977,
+            "worst_row_loss": 4.751812670682623
+          },
+          "downside_events": 69
+        },
+        {
+          "seed": 51003,
+          "selected": {
+            "log_loss": 1.1307510690172073,
+            "brier": 0.691002572346304,
+            "downside_brier": 0.2331024642536293,
+            "worst_row_loss": 2.0091234021377637
+          },
+          "raw": {
+            "log_loss": 2.16266880876803,
+            "brier": 0.8266915490508678,
+            "downside_brier": 0.33084513164887375,
+            "worst_row_loss": 5.073610093257644
+          },
+          "online": {
+            "log_loss": 1.138798258579378,
+            "brier": 0.6923361361746995,
+            "downside_brier": 0.2343542548988011,
+            "worst_row_loss": 3.6244026357540045
+          },
+          "downside_events": 67
+        },
+        {
+          "seed": 51004,
+          "selected": {
+            "log_loss": 1.075947147333881,
+            "brier": 0.6516635120126931,
+            "downside_brier": 0.2229413927276453,
+            "worst_row_loss": 1.5466911684809888
+          },
+          "raw": {
+            "log_loss": 1.9873211147528353,
+            "brier": 0.8120136853113108,
+            "downside_brier": 0.31898487954330007,
+            "worst_row_loss": 4.66814498514948
+          },
+          "online": {
+            "log_loss": 1.0839943368960518,
+            "brier": 0.654326238069969,
+            "downside_brier": 0.22472213309517047,
+            "worst_row_loss": 3.0745106181127175
+          },
+          "downside_events": 65
+        },
+        {
+          "seed": 51005,
+          "selected": {
+            "log_loss": 1.0315713051144462,
+            "brier": 0.6233104612091739,
+            "downside_brier": 0.2173682018669392,
+            "worst_row_loss": 1.8353117084413686
+          },
+          "raw": {
+            "log_loss": 1.8571841826238673,
+            "brier": 0.7863983483582763,
+            "downside_brier": 0.298437687505664,
+            "worst_row_loss": 4.513994305322221
+          },
+          "online": {
+            "log_loss": 1.039618494676617,
+            "brier": 0.6259221802466678,
+            "downside_brier": 0.21918298732737704,
+            "worst_row_loss": 2.919313356143499
+          },
+          "downside_events": 61
+        },
+        {
+          "seed": 51006,
+          "selected": {
+            "log_loss": 1.0118775886154148,
+            "brier": 0.6085964256268798,
+            "downside_brier": 0.2065146258708318,
+            "worst_row_loss": 2.022909597956155
+          },
+          "raw": {
+            "log_loss": 1.8036238561112867,
+            "brier": 0.7494159007251606,
+            "downside_brier": 0.27973605325222023,
+            "worst_row_loss": 4.66814498514948
+          },
+          "online": {
+            "log_loss": 1.019924778177585,
+            "brier": 0.6100224528529904,
+            "downside_brier": 0.20749163130784837,
+            "worst_row_loss": 3.965418186735401
+          },
+          "downside_events": 57
+        },
+        {
+          "seed": 51007,
+          "selected": {
+            "log_loss": 1.0102987237677021,
+            "brier": 0.6019820155744333,
+            "downside_brier": 0.17226150900589018,
+            "worst_row_loss": 1.677179633961809
+          },
+          "raw": {
+            "log_loss": 1.6475316888087232,
+            "brier": 0.7020649684929288,
+            "downside_brier": 0.21728488125763779,
+            "worst_row_loss": 5.073610093257644
+          },
+          "online": {
+            "log_loss": 1.018345913329873,
+            "brier": 0.604955072991686,
+            "downside_brier": 0.17358676004976073,
+            "worst_row_loss": 2.909463754648192
+          },
+          "downside_events": 44
+        },
+        {
+          "seed": 51008,
+          "selected": {
+            "log_loss": 1.1147755977229974,
+            "brier": 0.6771696408795687,
+            "downside_brier": 0.20158227966696088,
+            "worst_row_loss": 2.0972802666125148
+          },
+          "raw": {
+            "log_loss": 1.7510123034633442,
+            "brier": 0.7552626732399241,
+            "downside_brier": 0.26011164010668014,
+            "worst_row_loss": 4.66814498514948
+          },
+          "online": {
+            "log_loss": 1.122822787285168,
+            "brier": 0.6800420176253439,
+            "downside_brier": 0.2024267728191135,
+            "worst_row_loss": 3.5517234391261603
+          },
+          "downside_events": 53
+        },
+        {
+          "seed": 51009,
+          "selected": {
+            "log_loss": 1.0651350019290344,
+            "brier": 0.6434209411941768,
+            "downside_brier": 0.21523959658502687,
+            "worst_row_loss": 1.9162567072905752
+          },
+          "raw": {
+            "log_loss": 2.026705556646928,
+            "brier": 0.792634887747629,
+            "downside_brier": 0.3012207185033339,
+            "worst_row_loss": 5.073610093257644
+          },
+          "online": {
+            "log_loss": 1.0731821914912048,
+            "brier": 0.6452607386108901,
+            "downside_brier": 0.21679819861003705,
+            "worst_row_loss": 3.1254560765860844
+          },
+          "downside_events": 61
+        },
+        {
+          "seed": 51010,
+          "selected": {
+            "log_loss": 0.9658062789906902,
+            "brier": 0.5735027374303197,
+            "downside_brier": 0.17766174937373402,
+            "worst_row_loss": 1.7785252977693815
+          },
+          "raw": {
+            "log_loss": 1.6496324113851508,
+            "brier": 0.6879570240080726,
+            "downside_brier": 0.22222228344856096,
+            "worst_row_loss": 5.073610093257644
+          },
+          "online": {
+            "log_loss": 0.9738534685528619,
+            "brier": 0.5779699063667547,
+            "downside_brier": 0.17989250949141902,
+            "worst_row_loss": 2.09584663590935
+          },
+          "downside_events": 45
+        },
+        {
+          "seed": 51011,
+          "selected": {
+            "log_loss": 1.0879369954958704,
+            "brier": 0.655240755305514,
+            "downside_brier": 0.20686501102568755,
+            "worst_row_loss": 2.3781594633215546
+          },
+          "raw": {
+            "log_loss": 1.690613303688108,
+            "brier": 0.7692062862306898,
+            "downside_brier": 0.2674518944653848,
+            "worst_row_loss": 4.2626798770413155
+          },
+          "online": {
+            "log_loss": 1.095984185058041,
+            "brier": 0.6563993377988241,
+            "downside_brier": 0.20796579436675597,
+            "worst_row_loss": 3.439317843669242
+          },
+          "downside_events": 55
+        },
+        {
+          "seed": 51012,
+          "selected": {
+            "log_loss": 1.0124439771573719,
+            "brier": 0.6088574529417685,
+            "downside_brier": 0.20933969121988422,
+            "worst_row_loss": 1.7052232168430994
+          },
+          "raw": {
+            "log_loss": 1.9334669304599736,
+            "brier": 0.780984960362068,
+            "downside_brier": 0.2953663906583292,
+            "worst_row_loss": 4.850466541943434
+          },
+          "online": {
+            "log_loss": 1.0204911667195422,
+            "brier": 0.6118574033992694,
+            "downside_brier": 0.21153051171620985,
+            "worst_row_loss": 2.665402568450942
+          },
+          "downside_events": 60
+        }
+      ],
+      "summary": {
+        "selected_loss": 1.0446356943487798,
+        "raw_loss": 1.8974141131297022,
+        "online_loss": 1.0526828839109506,
+        "online_minus_selected": 0.008047189562170645,
+        "online_minus_raw": -0.8447312292187515,
+        "online_wins": 0,
+        "selected_brier": 0.6297440365114827,
+        "online_brier": 0.6322969640898716,
+        "selected_downside_brier": 0.2090556932456857,
+        "online_downside_brier": 0.2100556493474255
+      }
+    },
+    {
+      "kind": "volatility_down",
+      "runs": [
+        {
+          "seed": 51001,
+          "selected": {
+            "log_loss": 0.6935239793981437,
+            "brier": 0.4995528983936914,
+            "downside_brier": 1.5715898765419645e-06,
+            "worst_row_loss": 0.7706864117914368
+          },
+          "raw": {
+            "log_loss": 1.0027581197673547,
+            "brier": 0.6029610282106477,
+            "downside_brier": 0.06113817315298498,
+            "worst_row_loss": 1.300849155163006
+          },
+          "online": {
+            "log_loss": 0.7015711689603138,
+            "brier": 0.4987037056253611,
+            "downside_brier": 0.0016009696977211663,
+            "worst_row_loss": 1.109419261382419
+          },
+          "downside_events": 0
+        },
+        {
+          "seed": 51002,
+          "selected": {
+            "log_loss": 0.7249090652320181,
+            "brier": 0.5060751150037901,
+            "downside_brier": 0.0008413554968751563,
+            "worst_row_loss": 0.8387635178888343
+          },
+          "raw": {
+            "log_loss": 1.0164511511092125,
+            "brier": 0.6102534035721884,
+            "downside_brier": 0.05883851185709287,
+            "worst_row_loss": 1.378500089393072
+          },
+          "online": {
+            "log_loss": 0.7329562547941887,
+            "brier": 0.5064303366152038,
+            "downside_brier": 0.003438336108524891,
+            "worst_row_loss": 1.1347572286947696
+          },
+          "downside_events": 0
+        },
+        {
+          "seed": 51003,
+          "selected": {
+            "log_loss": 0.6982295501479642,
+            "brier": 0.4908697150507904,
+            "downside_brier": 0.0002470194925225404,
+            "worst_row_loss": 0.8494931612065821
+          },
+          "raw": {
+            "log_loss": 1.0474365442251163,
+            "brier": 0.6397981000242485,
+            "downside_brier": 0.052921598448279566,
+            "worst_row_loss": 1.318240897874875
+          },
+          "online": {
+            "log_loss": 0.7062767397101346,
+            "brier": 0.49309465249319606,
+            "downside_brier": 0.0014114435765296507,
+            "worst_row_loss": 1.0713974810493734
+          },
+          "downside_events": 0
+        },
+        {
+          "seed": 51004,
+          "selected": {
+            "log_loss": 0.7053600695030076,
+            "brier": 0.49509446085914505,
+            "downside_brier": 0.00039466833393677264,
+            "worst_row_loss": 0.8728782513751048
+          },
+          "raw": {
+            "log_loss": 1.0351405251440322,
+            "brier": 0.6324526046909128,
+            "downside_brier": 0.05078357468756192,
+            "worst_row_loss": 1.3124099775640818
+          },
+          "online": {
+            "log_loss": 0.7134072590651782,
+            "brier": 0.4984387977938689,
+            "downside_brier": 0.0013507796937465674,
+            "worst_row_loss": 1.1491090412476777
+          },
+          "downside_events": 0
+        },
+        {
+          "seed": 51005,
+          "selected": {
+            "log_loss": 0.7840079303015192,
+            "brier": 0.5797086438100443,
+            "downside_brier": 5.638395444808833e-06,
+            "worst_row_loss": 1.4075495998606955
+          },
+          "raw": {
+            "log_loss": 0.9878813177507747,
+            "brier": 0.5979502891107681,
+            "downside_brier": 0.049382716049382894,
+            "worst_row_loss": 1.3124099775640818
+          },
+          "online": {
+            "log_loss": 0.7920551198636895,
+            "brier": 0.577134942145473,
+            "downside_brier": 0.0010960919073764576,
+            "worst_row_loss": 1.4075495998606955
+          },
+          "downside_events": 0
+        },
+        {
+          "seed": 51006,
+          "selected": {
+            "log_loss": 0.761590127654355,
+            "brier": 0.5556770377386439,
+            "downside_brier": 0.00011510826575611482,
+            "worst_row_loss": 1.0957447036410388
+          },
+          "raw": {
+            "log_loss": 1.0810611960625085,
+            "brier": 0.6367658288454386,
+            "downside_brier": 0.0683016548254929,
+            "worst_row_loss": 1.6157173679189434
+          },
+          "online": {
+            "log_loss": 0.7696373172165251,
+            "brier": 0.5585539873460442,
+            "downside_brier": 0.0008957103306098126,
+            "worst_row_loss": 1.2853279466327916
+          },
+          "downside_events": 0
+        },
+        {
+          "seed": 51007,
+          "selected": {
+            "log_loss": 0.7628986722387411,
+            "brier": 0.5397540861478792,
+            "downside_brier": 0.00518222465926623,
+            "worst_row_loss": 4.844382279005156
+          },
+          "raw": {
+            "log_loss": 1.0027187236478288,
+            "brier": 0.5989294941969675,
+            "downside_brier": 0.05920421678042533,
+            "worst_row_loss": 1.4360239335312583
+          },
+          "online": {
+            "log_loss": 0.7709458618009115,
+            "brier": 0.5421308106524065,
+            "downside_brier": 0.006627961435112407,
+            "worst_row_loss": 4.844382278967709
+          },
+          "downside_events": 1
+        },
+        {
+          "seed": 51008,
+          "selected": {
+            "log_loss": 0.8535825001482589,
+            "brier": 0.619146943155953,
+            "downside_brier": 0.004906709403290982,
+            "worst_row_loss": 4.380768928228123
+          },
+          "raw": {
+            "log_loss": 1.0332844757859379,
+            "brier": 0.6248792249235278,
+            "downside_brier": 0.059935528664947293,
+            "worst_row_loss": 1.4294665329850993
+          },
+          "online": {
+            "log_loss": 0.8616296897100605,
+            "brier": 0.6178527833712919,
+            "downside_brier": 0.006745212629263615,
+            "worst_row_loss": 4.380768926585922
+          },
+          "downside_events": 1
+        },
+        {
+          "seed": 51009,
+          "selected": {
+            "log_loss": 0.7130422248544843,
+            "brier": 0.5151932258291935,
+            "downside_brier": 2.3589178569361115e-05,
+            "worst_row_loss": 0.887996451227466
+          },
+          "raw": {
+            "log_loss": 1.0562685875517546,
+            "brier": 0.6365805334528468,
+            "downside_brier": 0.06036672128056089,
+            "worst_row_loss": 1.4100484471279977
+          },
+          "online": {
+            "log_loss": 0.7210894144166546,
+            "brier": 0.5170995720408844,
+            "downside_brier": 0.0010257670023795906,
+            "worst_row_loss": 1.2461209435264033
+          },
+          "downside_events": 0
+        },
+        {
+          "seed": 51010,
+          "selected": {
+            "log_loss": 0.6801288525723745,
+            "brier": 0.4793015631090806,
+            "downside_brier": 0.00015635509724347418,
+            "worst_row_loss": 0.9844895539022314
+          },
+          "raw": {
+            "log_loss": 0.9416026356017417,
+            "brier": 0.558081509400693,
+            "downside_brier": 0.04868963389098296,
+            "worst_row_loss": 1.4294665329850993
+          },
+          "online": {
+            "log_loss": 0.6881760421345452,
+            "brier": 0.48145054577542035,
+            "downside_brier": 0.0014107582255841909,
+            "worst_row_loss": 1.1866742933986025
+          },
+          "downside_events": 0
+        },
+        {
+          "seed": 51011,
+          "selected": {
+            "log_loss": 0.7232119089765742,
+            "brier": 0.5271433628429163,
+            "downside_brier": 6.281694659000113e-06,
+            "worst_row_loss": 1.0835493110715393
+          },
+          "raw": {
+            "log_loss": 1.0810135903207871,
+            "brier": 0.6458016609481255,
+            "downside_brier": 0.07847012522010886,
+            "worst_row_loss": 1.4426246175626105
+          },
+          "online": {
+            "log_loss": 0.7312590985387444,
+            "brier": 0.5296301272318006,
+            "downside_brier": 0.0009345753961741442,
+            "worst_row_loss": 1.1236274829139195
+          },
+          "downside_events": 0
+        },
+        {
+          "seed": 51012,
+          "selected": {
+            "log_loss": 0.7059692279546791,
+            "brier": 0.5112830954609053,
+            "downside_brier": 2.226875248352765e-06,
+            "worst_row_loss": 0.9899566263184609
+          },
+          "raw": {
+            "log_loss": 1.050546782325749,
+            "brier": 0.6267717800456011,
+            "downside_brier": 0.06506890412200224,
+            "worst_row_loss": 1.4694718675987986
+          },
+          "online": {
+            "log_loss": 0.7140164175168493,
+            "brier": 0.5141248533319692,
+            "downside_brier": 0.0005923679339769622,
+            "worst_row_loss": 1.4071462028654917
+          },
+          "downside_events": 0
+        }
+      ],
+      "summary": {
+        "selected_loss": 0.73387117574851,
+        "raw_loss": 1.0280136374410664,
+        "online_loss": 0.7419183653106497,
+        "online_minus_selected": 0.008047189562139631,
+        "online_minus_raw": -0.2860952721304169,
+        "online_wins": 0,
+        "selected_brier": 0.5265666789501694,
+        "online_brier": 0.5278870928685765,
+        "selected_downside_brier": 0.0009902290402241114,
+        "online_downside_brier": 0.0022608311614166214
+      }
+    }
+  ],
+  "overall_online_minus_selected": 0.00014530438729993636,
+  "passes_prespecified_stage_gate": false
+}

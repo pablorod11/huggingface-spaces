@@ -1,0 +1,25 @@
+{"schedule": "constant", "step": 200, "validation_ce": 1.602541683241725, "learning_rate": 0.001}
+{"schedule": "constant", "step": 400, "validation_ce": 1.5971812531352043, "learning_rate": 0.001}
+{"schedule": "constant", "step": 600, "validation_ce": 1.5843291226774454, "learning_rate": 0.001}
+{"schedule": "constant", "step": 800, "validation_ce": 1.5765492040663958, "learning_rate": 0.001}
+{"schedule": "constant", "step": 1000, "validation_ce": 1.5645307898521423, "learning_rate": 0.001}
+{"schedule": "constant", "step": 1200, "validation_ce": 1.5598520152270794, "learning_rate": 0.001}
+{"schedule": "constant", "step": 1400, "validation_ce": 1.5524972770363092, "learning_rate": 0.001}
+{"schedule": "constant", "step": 1600, "validation_ce": 1.545160325244069, "learning_rate": 0.001}
+{"schedule": "constant", "step": 1800, "validation_ce": 1.5331217795610428, "learning_rate": 0.001}
+{"schedule": "constant", "step": 2000, "validation_ce": 1.5263326279819012, "learning_rate": 0.001}
+{"schedule": "constant", "step": 2200, "validation_ce": 1.5214303340762854, "learning_rate": 0.001}
+{"schedule": "constant", "step": 2400, "validation_ce": 1.5089398957788944, "learning_rate": 0.001}
+{"schedule": "cosine", "step": 200, "validation_ce": 1.5943550243973732, "learning_rate": 0.0002954456119181535}
+{"schedule": "cosine", "step": 400, "validation_ce": 1.5875266958028078, "learning_rate": 0.0002820016866150611}
+{"schedule": "cosine", "step": 600, "validation_ce": 1.585143119096756, "learning_rate": 0.0002605842897235816}
+{"schedule": "cosine", "step": 800, "validation_ce": 1.5798855926841497, "learning_rate": 0.00023265298144794743}
+{"schedule": "cosine", "step": 1000, "validation_ce": 1.575289150699973, "learning_rate": 0.00020011123428847363}
+{"schedule": "cosine", "step": 1200, "validation_ce": 1.574043620377779, "learning_rate": 0.00016517671453629846}
+{"schedule": "cosine", "step": 1400, "validation_ce": 1.5695176254957914, "learning_rate": 0.00013023015198050916}
+{"schedule": "cosine", "step": 1600, "validation_ce": 1.567318832501769, "learning_rate": 9.765309710735752e-05}
+{"schedule": "cosine", "step": 1800, "validation_ce": 1.564744133502245, "learning_rate": 6.966562237032019e-05}
+{"schedule": "cosine", "step": 2000, "validation_ce": 1.562430303543806, "learning_rate": 4.817502792123731e-05}
+{"schedule": "cosine", "step": 2200, "validation_ce": 1.5619347840547562, "learning_rate": 3.4645862256927525e-05}
+{"schedule": "cosine", "step": 2400, "validation_ce": 1.5616922713816166, "learning_rate": 3.0000115659410066e-05}
+{"baseline_val_loss": 1.610060304403305, "candidate_val_loss": 1.5089398957788944, "baseline_test_loss": 1.6156829353421926, "candidate_test_loss": 1.5154386833310127, "relative_test_ce_reduction": 0.06204450750725343, "test_stories": 64, "test_char_predictions": 16384, "stories_with_lower_ce": 62, "worst_story_ce_increase": 0.022554397583007812, "method": "4 seeded windows per story, context64, full-window CE; windows may overlap. Equal token counts per story. Final fresh test evaluated after schedule/checkpoint selection.", "metric_gate_passed": true, "promotion": false}

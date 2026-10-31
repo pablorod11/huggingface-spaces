@@ -1,0 +1,39 @@
+{
+  "focused_tests": {
+    "passed": 21,
+    "failed": 0
+  },
+  "syntax_and_lint": "PASS",
+  "trajectory_check": {
+    "verified_raw_step": 2400,
+    "method": "Exact equality for all model state tensors against the archived2400-step checkpoint; training replay starts from unchanged model004 with same data,draws,LR,AdamW and seed."
+  },
+  "budget": {
+    "reference_steps": 2400,
+    "long_executed_steps": 7200,
+    "long_selected_step": 7000,
+    "early_stopping_disabled": true,
+    "long_optimizer_predicted_characters": 7372800
+  },
+  "split_integrity": "PASS:128 new final-test stories exclude all448 earlier evaluation stories and4096 training stories; same128-story validation retained.",
+  "selection": "Checkpoints/arm preference frozen before new final-test reading/scoring; no post-test tuning.",
+  "reload_parity": "PASS for reference and candidate on3 contexts each",
+  "javascript_parity": {
+    "reference_max_absolute_error": 5.6037849018863994e-06,
+    "long_max_absolute_error": 3.834485736931015e-06,
+    "tolerance": 0.0001
+  },
+  "worker_generation": "PASS for both models:determinism,length,streaming,input rejection",
+  "independent_read_only_review": "No actionable correctness/leakage/export findings.",
+  "source_files_sha256": {
+    "scripts/compare_story_corpora.py": "82ffc31b04cdc3db0711617603d97f32cd4a4a6e12023ec28c3a694a1891fd96",
+    "scripts/finetune_stories.py": "051c34731fdfd88998f6180dfe2f7fb9ea2daddeb07b4a0865d7599ed06b3bfa",
+    "tests/test_extended_budget.py": "32d10d35b925710ce3568e5550dfd2535c5be638fcf9d51304d0be17864ff689"
+  },
+  "quality_gate": "Reliable coherence improvement remains unestablished in the unblinded qualitative review.",
+  "promotion": false,
+  "new_candidate_browser_UI": "NOT TESTED; this is an experiment, not a prepared release.",
+  "full_upstream_suite": "Not rerun; prior legacy-runtime compile/RMSNorm/distributed failures remain documented. No full-suite pass claimed.",
+  "coverage": "NOT MEASURED",
+  "statistical_significance": "NOT ESTABLISHED"
+}

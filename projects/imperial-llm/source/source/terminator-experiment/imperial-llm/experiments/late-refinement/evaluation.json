@@ -1,0 +1,27 @@
+{
+  "metrics": {
+    "baseline": {
+      "val": 1.1837651515379548,
+      "test": 1.188995100557804
+    },
+    "constant": {
+      "val": 1.174068813212216,
+      "test": 1.1824133419431746
+    },
+    "cosine": {
+      "val": 1.1302933059632778,
+      "test": 1.137957594357431
+    }
+  },
+  "selected_policy": "cosine",
+  "relative_regression_test_ce_reduction": 0.04292490875398014,
+  "quality_review": "Pending manual review of all12 selected continuations.",
+  "promotion": false,
+  "limitations": [
+    "Previously observed wide-budget test; regression evidence, not an untouched final test.",
+    "One training seed; repeated validation; no independent human quality ratings.",
+    "Policies differ in both learning-rate scale and schedule shape.",
+    "Fresh optimizer state; checkpoint lacks optimizer/RNG state for exact continuation.",
+    "Character loss does not establish grammar, coherence or assistant capability."
+  ]
+}

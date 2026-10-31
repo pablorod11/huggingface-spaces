@@ -1,0 +1,22 @@
+services:
+  dashboard:
+    build: .
+    image: distributed-ml-foundation:local
+    environment:
+      DEMO_READ_ONLY: "false"
+      DEMO_RUNS_DIR: /app/artifacts/runs
+      DEMO_ACTIVE_MODEL: /app/artifacts/active-model.json
+    command: ["python", "-m", "uvicorn", "serve:app", "--host", "0.0.0.0", "--port", "8000"]
+    ports:
+      - "127.0.0.1:8000:8000"
+    volumes:
+      - model-artifacts:/app/artifacts
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8000/health/ready', timeout=2)"]
+      interval: 10s
+      timeout: 3s
+      retries: 5
+      start_period: 10s
+
+volumes:
+  model-artifacts:

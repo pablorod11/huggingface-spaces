@@ -1,0 +1,779 @@
+{
+  "schedule": "constant",
+  "max_steps": 14400,
+  "executed_steps": 14400,
+  "selected_step": 14000,
+  "validation_ce": 1.183765145484358,
+  "history": [
+    {
+      "step": 0,
+      "validation_ce": 4.116844106465578,
+      "training_ce": 4.112341722473502
+    },
+    {
+      "step": 200,
+      "validation_ce": 2.3349342215806246,
+      "learning_rate": 0.001,
+      "training_ce": 2.3380437921732664
+    },
+    {
+      "step": 400,
+      "validation_ce": 2.2083643283694983,
+      "learning_rate": 0.001,
+      "training_ce": 2.204484979622066
+    },
+    {
+      "step": 600,
+      "validation_ce": 2.055874583311379,
+      "learning_rate": 0.001,
+      "training_ce": 2.0636145463213325
+    },
+    {
+      "step": 800,
+      "validation_ce": 1.911696725524962,
+      "learning_rate": 0.001,
+      "training_ce": 1.9262528996914625
+    },
+    {
+      "step": 1000,
+      "validation_ce": 1.7976562194526196,
+      "learning_rate": 0.001,
+      "training_ce": 1.812572923488915
+    },
+    {
+      "step": 1200,
+      "validation_ce": 1.7054835865274072,
+      "learning_rate": 0.001,
+      "training_ce": 1.7224357277154922
+    },
+    {
+      "step": 1400,
+      "validation_ce": 1.6447176914662123,
+      "learning_rate": 0.001,
+      "training_ce": 1.662344453856349
+    },
+    {
+      "step": 1600,
+      "validation_ce": 1.5877616228535771,
+      "learning_rate": 0.001,
+      "training_ce": 1.6052621500566602
+    },
+    {
+      "step": 1800,
+      "validation_ce": 1.5533105796203017,
+      "learning_rate": 0.001,
+      "training_ce": 1.5717737572267652
+    },
+    {
+      "step": 2000,
+      "validation_ce": 1.512613101862371,
+      "learning_rate": 0.001,
+      "training_ce": 1.5298181679099798
+    },
+    {
+      "step": 2200,
+      "validation_ce": 1.485892296768725,
+      "learning_rate": 0.001,
+      "training_ce": 1.5064922850579023
+    },
+    {
+      "step": 2400,
+      "validation_ce": 1.462035359814763,
+      "learning_rate": 0.001,
+      "training_ce": 1.4768958389759064
+    },
+    {
+      "step": 2600,
+      "validation_ce": 1.4418129567056894,
+      "learning_rate": 0.001,
+      "training_ce": 1.4591797022148967
+    },
+    {
+      "step": 2800,
+      "validation_ce": 1.4247046886011958,
+      "learning_rate": 0.001,
+      "training_ce": 1.4397440496832132
+    },
+    {
+      "step": 3000,
+      "validation_ce": 1.408600240945816,
+      "learning_rate": 0.001,
+      "training_ce": 1.421459974721074
+    },
+    {
+      "step": 3200,
+      "validation_ce": 1.3945428673177958,
+      "learning_rate": 0.001,
+      "training_ce": 1.4062797063961625
+    },
+    {
+      "step": 3400,
+      "validation_ce": 1.3866771692410111,
+      "learning_rate": 0.001,
+      "training_ce": 1.3949320064857602
+    },
+    {
+      "step": 3600,
+      "validation_ce": 1.3731277505867183,
+      "learning_rate": 0.001,
+      "training_ce": 1.3807689817622304
+    },
+    {
+      "step": 3800,
+      "validation_ce": 1.3704592902213335,
+      "learning_rate": 0.001,
+      "training_ce": 1.3767953058704734
+    },
+    {
+      "step": 4000,
+      "validation_ce": 1.3561440748162568,
+      "learning_rate": 0.001,
+      "training_ce": 1.3607308492064476
+    },
+    {
+      "step": 4200,
+      "validation_ce": 1.3504863702692091,
+      "learning_rate": 0.001,
+      "training_ce": 1.358229137957096
+    },
+    {
+      "step": 4400,
+      "validation_ce": 1.333208550233394,
+      "learning_rate": 0.001,
+      "training_ce": 1.3458740441128612
+    },
+    {
+      "step": 4600,
+      "validation_ce": 1.332140853162855,
+      "learning_rate": 0.001,
+      "training_ce": 1.3439700361341238
+    },
+    {
+      "step": 4800,
+      "validation_ce": 1.3249385338276625,
+      "learning_rate": 0.001,
+      "training_ce": 1.3336950046941638
+    },
+    {
+      "step": 5000,
+      "validation_ce": 1.317963753361255,
+      "learning_rate": 0.001,
+      "training_ce": 1.321398181375116
+    },
+    {
+      "step": 5200,
+      "validation_ce": 1.3060502484440804,
+      "learning_rate": 0.001,
+      "training_ce": 1.3162184772081673
+    },
+    {
+      "step": 5400,
+      "validation_ce": 1.2988063329830766,
+      "learning_rate": 0.001,
+      "training_ce": 1.309362470638007
+    },
+    {
+      "step": 5600,
+      "validation_ce": 1.2922172821126878,
+      "learning_rate": 0.001,
+      "training_ce": 1.3042250773869455
+    },
+    {
+      "step": 5800,
+      "validation_ce": 1.2872231514193118,
+      "learning_rate": 0.001,
+      "training_ce": 1.2971287607215345
+    },
+    {
+      "step": 6000,
+      "validation_ce": 1.2842905120924115,
+      "learning_rate": 0.001,
+      "training_ce": 1.2977440459653735
+    },
+    {
+      "step": 6200,
+      "validation_ce": 1.2762155928649008,
+      "learning_rate": 0.001,
+      "training_ce": 1.2858374970965087
+    },
+    {
+      "step": 6400,
+      "validation_ce": 1.276498664636165,
+      "learning_rate": 0.001,
+      "training_ce": 1.2839283868670464
+    },
+    {
+      "step": 6600,
+      "validation_ce": 1.2724647084251046,
+      "learning_rate": 0.001,
+      "training_ce": 1.2836259426549077
+    },
+    {
+      "step": 6800,
+      "validation_ce": 1.2687049736268818,
+      "learning_rate": 0.001,
+      "training_ce": 1.277841645758599
+    },
+    {
+      "step": 7000,
+      "validation_ce": 1.2665789369493723,
+      "learning_rate": 0.001,
+      "training_ce": 1.2715443358756602
+    },
+    {
+      "step": 7200,
+      "validation_ce": 1.2589238034561276,
+      "learning_rate": 0.001,
+      "training_ce": 1.2630311688408256
+    },
+    {
+      "step": 7400,
+      "validation_ce": 1.2615134199149907,
+      "learning_rate": 0.001,
+      "training_ce": 1.2711900020949543
+    },
+    {
+      "step": 7600,
+      "validation_ce": 1.2531120721250772,
+      "learning_rate": 0.001,
+      "training_ce": 1.25861202692613
+    },
+    {
+      "step": 7800,
+      "validation_ce": 1.2490557618439198,
+      "learning_rate": 0.001,
+      "training_ce": 1.2610946632921696
+    },
+    {
+      "step": 8000,
+      "validation_ce": 1.2484248471446335,
+      "learning_rate": 0.001,
+      "training_ce": 1.2521331631578505
+    },
+    {
+      "step": 8200,
+      "validation_ce": 1.2456007883884013,
+      "learning_rate": 0.001,
+      "training_ce": 1.256100914441049
+    },
+    {
+      "step": 8400,
+      "validation_ce": 1.2380089042708278,
+      "learning_rate": 0.001,
+      "training_ce": 1.2505026832222939
+    },
+    {
+      "step": 8600,
+      "validation_ce": 1.2392950057983398,
+      "learning_rate": 0.001,
+      "training_ce": 1.2451178962364793
+    },
+    {
+      "step": 8800,
+      "validation_ce": 1.234162260312587,
+      "learning_rate": 0.001,
+      "training_ce": 1.240624561905861
+    },
+    {
+      "step": 9000,
+      "validation_ce": 1.2377827572636306,
+      "learning_rate": 0.001,
+      "training_ce": 1.2374524124898016
+    },
+    {
+      "step": 9200,
+      "validation_ce": 1.237720719538629,
+      "learning_rate": 0.001,
+      "training_ce": 1.2407950265333056
+    },
+    {
+      "step": 9400,
+      "validation_ce": 1.2256135856732726,
+      "learning_rate": 0.001,
+      "training_ce": 1.2346563627943397
+    },
+    {
+      "step": 9600,
+      "validation_ce": 1.2245925818569958,
+      "learning_rate": 0.001,
+      "training_ce": 1.229895509313792
+    },
+    {
+      "step": 9800,
+      "validation_ce": 1.222375160548836,
+      "learning_rate": 0.001,
+      "training_ce": 1.2297517387196422
+    },
+    {
+      "step": 10000,
+      "validation_ce": 1.2204769412055612,
+      "learning_rate": 0.001,
+      "training_ce": 1.2274833652190864
+    },
+    {
+      "step": 10200,
+      "validation_ce": 1.2147853835485876,
+      "learning_rate": 0.001,
+      "training_ce": 1.2195742730982602
+    },
+    {
+      "step": 10400,
+      "validation_ce": 1.215701091568917,
+      "learning_rate": 0.001,
+      "training_ce": 1.218358579557389
+    },
+    {
+      "step": 10600,
+      "validation_ce": 1.207745616324246,
+      "learning_rate": 0.001,
+      "training_ce": 1.2119032517075539
+    },
+    {
+      "step": 10800,
+      "validation_ce": 1.2123115216381848,
+      "learning_rate": 0.001,
+      "training_ce": 1.2190063195303082
+    },
+    {
+      "step": 11000,
+      "validation_ce": 1.2073198757134378,
+      "learning_rate": 0.001,
+      "training_ce": 1.209196526557207
+    },
+    {
+      "step": 11200,
+      "validation_ce": 1.2073041102848947,
+      "learning_rate": 0.001,
+      "training_ce": 1.2149702366441488
+    },
+    {
+      "step": 11400,
+      "validation_ce": 1.2123485868796706,
+      "learning_rate": 0.001,
+      "training_ce": 1.2175570502877235
+    },
+    {
+      "step": 11600,
+      "validation_ce": 1.2005416569299996,
+      "learning_rate": 0.001,
+      "training_ce": 1.2040062062442303
+    },
+    {
+      "step": 11800,
+      "validation_ce": 1.1995249185711145,
+      "learning_rate": 0.001,
+      "training_ce": 1.1973637426272035
+    },
+    {
+      "step": 12000,
+      "validation_ce": 1.1982014528475702,
+      "learning_rate": 0.001,
+      "training_ce": 1.2028034287504852
+    },
+    {
+      "step": 12200,
+      "validation_ce": 1.1986687346361578,
+      "learning_rate": 0.001,
+      "training_ce": 1.2077772077172995
+    },
+    {
+      "step": 12400,
+      "validation_ce": 1.1929465704597533,
+      "learning_rate": 0.001,
+      "training_ce": 1.2012445204891264
+    },
+    {
+      "step": 12600,
+      "validation_ce": 1.1914716502651572,
+      "learning_rate": 0.001,
+      "training_ce": 1.1967757963575423
+    },
+    {
+      "step": 12800,
+      "validation_ce": 1.1952510252594948,
+      "learning_rate": 0.001,
+      "training_ce": 1.2015093923546374
+    },
+    {
+      "step": 13000,
+      "validation_ce": 1.1957365330308676,
+      "learning_rate": 0.001,
+      "training_ce": 1.1947583202272654
+    },
+    {
+      "step": 13200,
+      "validation_ce": 1.1909860707819462,
+      "learning_rate": 0.001,
+      "training_ce": 1.1916281459853053
+    },
+    {
+      "step": 13400,
+      "validation_ce": 1.194129868876189,
+      "learning_rate": 0.001,
+      "training_ce": 1.1953613157384098
+    },
+    {
+      "step": 13600,
+      "validation_ce": 1.1882624235004187,
+      "learning_rate": 0.001,
+      "training_ce": 1.1901750513352454
+    },
+    {
+      "step": 13800,
+      "validation_ce": 1.1862769247964025,
+      "learning_rate": 0.001,
+      "training_ce": 1.1887553273700178
+    },
+    {
+      "step": 14000,
+      "validation_ce": 1.183765145484358,
+      "learning_rate": 0.001,
+      "training_ce": 1.188850849866867
+    },
+    {
+      "step": 14200,
+      "validation_ce": 1.188342418987304,
+      "learning_rate": 0.001,
+      "training_ce": 1.188587901648134
+    },
+    {
+      "step": 14400,
+      "validation_ce": 1.1863346081227064,
+      "learning_rate": 0.001,
+      "training_ce": 1.1859954027459025
+    }
+  ],
+  "runtime_seconds": 1036.4217515120108,
+  "optimizer": "AdamW, default betas and weight_decay0.01; clip1.0",
+  "batch_size": 16,
+  "verified_prefix_step": 7200,
+  "patience_validation_checks": 73,
+  "validation_every_steps": 200,
+  "config": {
+    "n_head": 4,
+    "n_embed": 64,
+    "context_length": 64,
+    "vocab_size": 51,
+    "N_BLOCKS": 2
+  },
+  "width": 64,
+  "context": 64,
+  "parameter_count": 110387,
+  "initialization": "exact_replay_archived_capacity_width64_seed1729",
+  "initialization_seed": 1729,
+  "initial_checkpoint_sha256": "7c820215fbb0ca2045bdde8617c5e13062cb99049cae51c8b17af900fd149f60",
+  "checkpoint_sha256": "1824789127877372dc2f472c566f74685bb65745e0bf77fcb91e5a8163eb01c0",
+  "reference_7200_checkpoint_sha256": "56ba2fec53d6fe31070d29a23978c6271f616ef9a5890f2fbcda039b7064caaf",
+  "reference_7200_selection_sha256": "394ae00c31507fdbe9087266c6ec5baddf834ebf1d02dc7fb4ba422cb6ecc3b3",
+  "reference_7200_initial_sha256": "7c820215fbb0ca2045bdde8617c5e13062cb99049cae51c8b17af900fd149f60",
+  "training_corpus_sha256": "0ca43706a7bf9edee70216a93de5b1288aaf7ffc8137a89b3d763431e2f54512",
+  "validation_corpus_sha256": "baed96076f1a47cf0140d710f191806f45df720864d74c0494975020ecfd4725",
+  "training_stories": 4096,
+  "validation_stories": 128,
+  "optimizer_character_predictions": 14745600,
+  "planned_optimizer_steps": 14400,
+  "learning_rate": 0.001,
+  "validation_window_seed": 3702,
+  "diagnostic_training_story_indices": [
+    2499,
+    3754,
+    3542,
+    2277,
+    1647,
+    469,
+    3887,
+    1884,
+    2525,
+    1773,
+    1636,
+    909,
+    1618,
+    3266,
+    97,
+    1891,
+    1876,
+    2157,
+    3727,
+    2105,
+    324,
+    0,
+    474,
+    3184,
+    2233,
+    1543,
+    694,
+    4082,
+    3397,
+    2092,
+    2621,
+    1101,
+    729,
+    4047,
+    403,
+    766,
+    1340,
+    1952,
+    2034,
+    582,
+    728,
+    3036,
+    1563,
+    3562,
+    3155,
+    85,
+    834,
+    743,
+    4032,
+    1326,
+    3385,
+    2991,
+    3430,
+    2116,
+    1003,
+    2268,
+    2398,
+    1259,
+    1901,
+    3830,
+    2699,
+    1281,
+    3544,
+    688,
+    3433,
+    1703,
+    515,
+    3619,
+    88,
+    2627,
+    2266,
+    2600,
+    1157,
+    2260,
+    859,
+    3410,
+    1745,
+    2853,
+    3908,
+    3151,
+    1131,
+    2815,
+    3711,
+    2346,
+    3906,
+    1945,
+    534,
+    131,
+    3959,
+    3242,
+    2805,
+    781,
+    3387,
+    858,
+    1389,
+    3109,
+    2368,
+    945,
+    3854,
+    3554,
+    789,
+    1475,
+    1772,
+    1380,
+    1756,
+    846,
+    29,
+    2508,
+    235,
+    2623,
+    1152,
+    1368,
+    1899,
+    958,
+    769,
+    4031,
+    1470,
+    3197,
+    3616,
+    1874,
+    1864,
+    2690,
+    4041,
+    2420,
+    3395,
+    2071,
+    3271,
+    3918
+  ],
+  "diagnostic_training_story_hashes": [
+    "09e86518e27e72bd6c94d13a207334bcec438bfb3c0dc13314a89456f1fef243",
+    "07704f12737c96b8ebf4a713096152f471f54f6f049e181619945a5a53bea68f",
+    "fb65527cd1a35f665452f42ffb9eebb9f9dd3db7eb43b5ce593455da1892108a",
+    "62cd9aabfee49d2f08f8927ab340f359403174506c41e96e95d1536b41e56ea9",
+    "b2bfbdf3efebe8d35c1254e15128904dfd81d2559cf8fa219278bd0e7b5d68ce",
+    "22dea112e26ac501c3cf1e12b237356738617411f08ecac7063751a157404366",
+    "b19daf22438657fc691819bc195760f30bfa1c2db4eadb26746284e432e57291",
+    "2b94d3ec14d16e03f1bf9e8c2541e7a4c251fd452e698f9fe229dd40697de7b3",
+    "599b6a110a9f0aa7ebc4cefc065db9f31f4d00b51b5a250489dbc7be13876625",
+    "fcb55b1c1a7c985e47e61c34d531d34e141df4d6410f68a2d2e64dcc47ee9d6c",
+    "81b4399fd1531ea39994ad2875f1431b67965cbf665879e59b25dd4e536bd71b",
+    "1aa88a828ae9158c011034de2564e732bd3e1f3f74f3b3e3f958a23be6cd0d7e",
+    "37ec2b8d7d200171d122c6656a9aefb9f5133c6ed7e6cb377f7d16394ea1a68c",
+    "ad64c219d450f48550a9cef87f11dcc2e46701439648faca07923cb8728c3286",
+    "9532bfa8406c2269c2db7d0d1ff22b24bee6b3c9699afb921385d597b2d5232b",
+    "21ff04eb1671465a25178d0cec1af6cef6bf18699badc7faa01a8c7ac5945976",
+    "f0d1bc0fc068efd7c3f66c1f7f1fd2b175fbf375226547326af42108bcbdbdf0",
+    "768fadbd919a2ed5c148e65e118a33c7eb33935f877090be48bc6073d3cb3e74",
+    "505179c7bd78285432a0939e062da9f221cf6b8a6a3c00f2605116766d72cf66",
+    "f7dad562e81f039a0b43da86fc619bc3d28a52a6d1e6543073077e2fb04d7473",
+    "9fae9b2e9e846b1eafb29ce5807a787f223fad83adff57757ea721cb34cbe67f",
+    "bedb7bd048bc9bd8b8f7e77e45e15664d1ff07ed23ea1fcd8630d614d88f08b7",
+    "cd063c6ee180283c942910153b4a42c794bf25d6d9ecd30d557ab765fc577779",
+    "2d48ea41827930f3db60b4e3bb3a5d0c63c37b0a98cdaa1f48136302ad489171",
+    "69dcc070dfa57e65026d24d909e01dd44f27e0ffd2b600453f70ae58044ec9cd",
+    "ccd7a35e9b50d297910cf1877285da96cdfb906cd468b8dd1f4675a1aeded242",
+    "ac5805ed4c5a6e64d7bbe24476883e0969e4b441e7e351b1489394033e63df05",
+    "aa9a117289f5d37a40e30e12b2088982d0befea6f7583384f00e79a57f8e6809",
+    "7495bab3307164dfca97cb232217d09fa64e4000f18b32548c5f556f01f451c8",
+    "b161005833496abad70d278a3e13b4c307d6f04bea999e99a9f6bf82a5606034",
+    "6d51923efb78423879c3c0f386c2fe57be104f981b0b499be8b6d7f2621e2abc",
+    "d41ff9c6d0ee31c9b4183e0f4fdc462e86604da66a59a08f9189f74f771a8037",
+    "e80544011061e552ddf4832b78462996ee3367de6540643737747c7b24eca985",
+    "08f3d71f738749eeb82e5237e03bfe32c189a162ddc5e1fcc20aec072470fe96",
+    "795c17b3cd029e2bd6bce3bd1939fa7637c4c8be0a27b6159aa5e70ebe27e7ba",
+    "3c9ef72c25c3cf59ee514967b6697d2842311406c122cfd9d75f1e198e2c67ab",
+    "7f3a3fc9c3e0bcbf86d7b59be608a3372122ba9c797ae2af4e2c5bb21f166684",
+    "45515827419f29007e34327387a510a8b3fddabf9a0754bbe497e4be47824e50",
+    "b377d60c90b848155759bfed71f8c224b66bc6075550054b7ccd69ca21ad6d67",
+    "4cd4577b36b9bc726d5722a6f638ad7bd5b8c38ed284d694e459c73a11d2e9a5",
+    "85380681f5f35081a9cd0eaf108b53994a875aea8129c40db4aef93d62176838",
+    "51642b2d8a1f378ec1e7d6c19a9eb632bb7b6b0d6c57a9e31bb3324230670f45",
+    "3600c7ad459e4ff84393a649426db96e88b02c3ffbf5c88f51e7fd9be7ac535c",
+    "925eac3d071aca7413e537c7379741b2dd60793db330b52f5e9ad4261c9a7558",
+    "3bdfd1b1343682c7d722fc88f7181b6ca841894a54b94792891f16e77b9d95f7",
+    "4ca7c3d4b36b710d20ae9846f15edccac26db9b552d44e84f6071430e0c0c52a",
+    "efec391161ddc67cee2cb64142b2a6e3b101e043cd159736cda24b9991e3ae84",
+    "9c47bc4948972ea272a13499d87baab0db0dfd23b458cc2f5e142388513e34f3",
+    "06c08e4af33f0d8e4599236124db372188b830728426ab730ad5635e849d312c",
+    "4902be06f9bbdd594eadea9b08fd9f88ea04336c4aa03d3234a1bb6fa3206876",
+    "6590e87d4d8fdc1bd239c6f8a6548d26696359e1d2a3b9f38868da376300abac",
+    "cd33c7abed4fd86211d0fbac5a916f453172cce44402276d8f821270bda62be0",
+    "b407e1c807f8570c519a609be9ae147dcf4765760b0af807c5f31f3b07e1f1d8",
+    "9dae18f1b9be581efe960c65a89650dc3f07d7df9c05ac123f532e70816a08e0",
+    "bb8f9ccda562a09070277b4998b62d431dec9f76ca67654767f6cb1206ac23b9",
+    "973bf5bdd72f197de303cb01f69901d74004e78d43a187cf2ec655dffc85fa37",
+    "4fe6567b439f46d25c131c40b2c416a23808d98cb493479222124d0dab281106",
+    "6bcd13057540742cd29c228eb5b1f3c9ab3f64ffc82a482fec49028162fd5cea",
+    "b1510283ae16c35890c468e2d5ffb028b78b19acbf9f9b7c3217eac4e3ac4e43",
+    "1d44df77aaffef5ceeacb12c97e8db34b0d1f005fe24637d6f72dad120b93697",
+    "28862c7e0c6a1e17f0e24d7862fac2e49d725fde5b1ec011dca60965c222d560",
+    "148088aa939e771fd94ab9b8a8a71e3feda8738aa9bd45d894add9f8eb2c36fa",
+    "36faae21613738d8f66594ef33933478a15b6878c8e4ae201c907a3e3ca83f50",
+    "b57600386eae789fbf4b598ebe9b36eaec53e1e172a3dd4ea63b1bfc1662e87b",
+    "3bb7c981ce8e9ca05a1f2242147896568534f99995920d928bdd3d4ee2489ee8",
+    "085a2ca3bfd0fc906979b2075ec4807ecec4dc15b5cf96b0bd9e7a33be79eca1",
+    "fe9f036d7c6f9b68ccca9ac821059cb979ae66b989fb379dbd8cf9d9be8eade8",
+    "bc0fd3c40a7f5c2978425ab6501e6680a039a90ed78bc61c179c7bf67d7f130f",
+    "216163b30062336da1e651fb5600baf91e30967911672a15ec2de4bf1e0617f0",
+    "3ec380eb57fa5b57cd787a1021b297f716a034382b1c8f1f4aa4eec3c5fbe178",
+    "5c551080b8e7016a083346e642f5c67da02ff8bdf364596673537f09c9c42370",
+    "976285a886c0dd935406dddb26bab1483a10ed3b15bb3c8ac76b662047232d21",
+    "c4e874c2e6df5269b2bdec15647494e44f3158429717d105cc9d44b8907bfb39",
+    "89b9b92c0acf954b4d0659279a4b0134cf9b945cd2270fe561115338d64d9ffd",
+    "cd4b35b92248e38dde5b4a1384723f67d3e4d861d316810329c0648017019faf",
+    "95f82b11fdb808b6ce6b1b1237598e1454f5ec2d6a800c63c0dedd460efb7cf2",
+    "0f8195755f1870c9a211d45bf01a3ba4ed89ec9fc18920043f1948035fb8f00c",
+    "3b27b4cb32c040b0232d9468223df9e2c02dd0fb4dee04b4a6243d3d4f627b73",
+    "8eeb3185cf025810d3f5faf84c2985ea992d8f597df01ef809be778763a3bc21",
+    "d17a06d397ce3edfc69ed90f147fe6651906d151c6a0cace029de1d540142b4f",
+    "b0cd524691e19bcc125e169d5e7fde404d92b74af397f0373ad59f1f1239fa90",
+    "6536a6897cf4731b2a2602753118f35fa3a9d3852b88e57c47a8f564dbaf8fc3",
+    "592ac6445dd896968bd6cf607fac0ef7b01661afc2d01d28c643ce1d2fd1eca5",
+    "6c9d6f6d1413bf310e28f8288d693a7c4d3ff9d12132dfb0088ff9b3e48c6a6f",
+    "2e2ed650d2358962cfcb5f90198ab29e359876fa64d7e00d58e78a88181e70c0",
+    "e3752fbca0a4f2795d56b0ae1aad54dcee276e683403c3a5fbf4950aa7c87873",
+    "d4d21dee401c1f991b65d72be8e50aeb4ed0e3964b1ec1adf30f6c38f37125d2",
+    "90c09284ed30c46434cd7fc7f5b0000047b7f1bf96cd15b389070a5f111b0757",
+    "c8b242fac8857609a0e8d4cb79c13086e11fe80cef750a018518985ddb7b4d08",
+    "aeab1bdb6feedff8c95602b3238a1d4b036f4b400d17c4207dbfb971b77c1e0a",
+    "5595ec8dc2254b79177f33ce22f004983a4a328b78bc56f84054d211a3208851",
+    "a764e23f6b24b25685492aebc44eb3b24a68d794232f5fd8a50cbd913c138415",
+    "2e9e5e28c955cf18c629209a635e6793e405d75dc956994426d6b27473c756c8",
+    "17f13997bc00fc63d49cc0ce0b7e6acb3388a7d91a7372cb347bcf6f37588175",
+    "5b838235d0321dba27a9a7fb5220f8b159141b14b4a2e1b61e609015bed8234b",
+    "c5626be0c1f1d5beda336a65fe2f75c2e854c00438778afe7de40135e2694f67",
+    "825b7ef8691c50206ed780254cc408427d28d655409518973cdbdfcf1d07916c",
+    "c5fcedcf6eceb23319e65508f568470a39fcfd350ca1afd77292738da5b611f3",
+    "cbb45776dd854b15fd4206d7bb247141c95d403594f126c3b71bc493ead5807c",
+    "08a554c40de411bbaff2b9e3759459367098dde752c15fec2be6f9e6c0147146",
+    "baf3a21687566b0aba8774ce41b0c3e776e99d2d467159e5bac8e983b3d3b19b",
+    "a010ff27e866080f4caf0b09aa896ad2055de8669e1d172c29ce4c858f0eb043",
+    "731e93ee9aa5314c54a74a11b8ec34e3da5b8c2343218c4ceca52edb177f9865",
+    "658dae7c0381fdd3ed91c6f0f1fd02115224c87f97753108352d2bf10459e765",
+    "89ba95d980cf748c98639f42859c139184e376fbffa06e6f860f397b7caaf4e4",
+    "b4f46d69366b961f1bfa6698c42e8d8de1405f7d4d67b767e498b86e3c336c64",
+    "ed31c3e0345ad2f7233607b584f2c0ef3ca29408bf702d4de19ab5e3969cd981",
+    "6f4c16d4eb312f604061212a10a869482bea4547267148d770b7d229270a519e",
+    "f875208cdc101ffe58f04050900a668e75631a0192b80af97c2f9b19d25e6da7",
+    "2626d884958c8bd8bf85be794feff24771c60add26c00f3d6489717bda59b5e4",
+    "58ee5d892eeb7a871728f6e3a74e00b7aab2215f5b5ce08f2d4d77e7e37d8395",
+    "c6b4b5e1a1d6f17470de4dfe074ad76a51c091a8d22d47960b2bf22bd7db3afe",
+    "31a1457eff9defcc93f75ad079d37e1636ab6ba0c00db4c0596b7ed7e3fd1dd7",
+    "fd20216fada4148acf7ba72b256aeea82dea825d29f9d598845e8a2cd380bd80",
+    "65e5bab7636ca5c7e42def3d5c876e2fe88ec73e64dc49e9633601a045c8cdd2",
+    "588404a3b123367f378ddc1d8e756a60425565604c5cbe1a475e1c3b85887b04",
+    "07592831439e872d78df33eeff8ddbd6ea46024467d41fb11e48bed583de2254",
+    "ad3f648733c52e2a007cb87a652f738ec523df6d216afd407766427ce19c69ec",
+    "b48e722f3a03bc5d1e004a2e075813c63007a5c3ab7e39d6acc0a3f5e124c7bb",
+    "756d13d4f48ee868fbf848214d8af7ba5007c13775d398d40a2014150204d0ff",
+    "55e9c24287a540a554c3142c8cdc2d000b7ec3091da39d131f14ca6b0b09bab7",
+    "0bdcabdfa8ffa478a63bc561f46d1fa90cea0a68fc0f3e471d4fd26a6bf08d86",
+    "ad56453685e5cf1ef4a57d30c641a106ce88afc792d8e6535a99d992c590eefa",
+    "9a96268f9f9ca476b2b4335419c2c7d97d41d971c0a62772c9e5ec7f7ccb5783",
+    "d6ab6588e67260b897fe17c2ce2da4a458d9034b920f0a5522238072514d499d",
+    "520dfcbaae133991d9ceec1256d3c8e00898bf058a37b28dd9068d6db60865c3",
+    "e99cb5d676d5b7185eb38b1ffbcceeaa99907a74a9ea1bb167c3fd9dcdd27582",
+    "cb51f3a2c4a99789812858a4a8353527e02d996327e64d6517467b8743f5cfcf"
+  ],
+  "diagnostic_story_seed": 4700,
+  "diagnostic_window_seed": 4701,
+  "diagnostic_method": "128 unique training stories,four64-character windows each; CE is diagnostic only.",
+  "checkpoint_selection": "Minimum validation CE only; training diagnostic never selects checkpoints.",
+  "source_sha256": {
+    "scripts/extend_wide_budget.py": "90089588aedac59df7935735296be532b03b3617f0e68c4dd68ca10542600bad",
+    "scripts/finetune_stories.py": "b5f3fe2185942266eb77d4aef391e595aba5dfef04af019b6d74109f99e62e80",
+    "scripts/compare_model_capacity.py": "b408032e0bbab4216fa4f052fb5fb524b1c51c68f9f0e023f54244dad48a29aa",
+    "scripts/compare_story_context.py": "b78b5b619c8851592edf93fd38aef7bd640656b4330c600cd1638770864d29f2",
+    "scripts/refinement_experiment.py": "78f546e3b396781ee892047213860524202a2692da66efaee2967149b8cc0248",
+    "src/models/transformer.py": "ec63ac30e4443c73f7dae268cc5198868701afb90c612d62a22e69b6e4f71165",
+    "src/models/transformer_block.py": "b3469698eb6825f1ec4ea50883680ed7900e882add125222571924040289b23e",
+    "src/models/attention.py": "b4fc10105c98444f2b0df9d332b2c72325210669c2e00a65b16df7fbf43ec00e",
+    "src/models/mlp.py": "b83cebb2a63b67eddf7d5971c0e1607a73639814aa0c0f9142aac81054f7e3c3",
+    "src/inference/sampling.py": "11f6b66167225a38c0a45ac967e404b7f31939a67571a51774ec3434b1e59e10",
+    "space/inference.js": "b3c70c34d6be5bb9b37238f90e935823b6467c4b81d994c1bfe8dea4750c6c85",
+    "space/generation-worker.js": "5e97bf0db507c3462ca9b0ebd1fbe61614911c8d7d71c0d8f39c7a65de6ffafc",
+    "space/test_inference.cjs": "e018e04ec8678e57db6e45e8520de9f7626e6e23276a9b6829ca9d6d8c8c4059",
+    "space/test_generation.cjs": "fd6941701d8810f4fb09dcb33fa1b0fc3797c047a7429f44ed457bedcd81015a",
+    "data/context_probes.json": "2c4a21bc0b855e2681febb285b6278f0742bffc9a25a06d76e7be798a5db3448"
+  },
+  "torch_version": "2.2.2",
+  "device": "cpu",
+  "threads": 1,
+  "final_test_read": false,
+  "generation_prompts": [
+    "tom lost his red ball. he looked under the bed and",
+    "lily and her dog went to the park. the dog saw",
+    "the rabbit hid a carrot under a tree. later,",
+    "sam gave mia a blue box. inside the box was"
+  ],
+  "generation_seeds": [
+    42,
+    1729,
+    2026
+  ],
+  "generation_sampling": {
+    "temperature": 0.7,
+    "top_k": 20,
+    "new_characters": 160,
+    "rng": "PyTorch multinomial; browser PRNG differs"
+  }
+}

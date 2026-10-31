@@ -1,0 +1,15 @@
+{
+  "sft_ckpt": "models/sft.pt",
+  "pref_path": "data/preferences.jsonl",
+  "test_path": "data/preferences_test.jsonl",
+  "out_ckpt": "models/reward.pt",
+  "batch_size": 8,
+  "epochs": 1,
+  "eval_steps": 200,
+  "warmup_steps": 50,
+  "lr": 1e-05,
+  "weight_decay": 0.0,
+  "grad_clip": 1.0,
+  "max_len": 768,
+  "save_every": 500
+}

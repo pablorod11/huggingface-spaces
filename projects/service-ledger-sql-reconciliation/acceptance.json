@@ -1,0 +1,96 @@
+{
+  "total": 18,
+  "passed": 18,
+  "tests": [
+    {
+      "id": "test_as_of_is_inclusive_and_one_second_later_is_excluded",
+      "label": "as of is inclusive and one second later is excluded",
+      "status": "pass"
+    },
+    {
+      "id": "test_charges_after_as_of_do_not_enter_current_run",
+      "label": "charges after as of do not enter current run",
+      "status": "pass"
+    },
+    {
+      "id": "test_clean_and_inactive_controls",
+      "label": "clean and inactive controls",
+      "status": "pass"
+    },
+    {
+      "id": "test_conflicts_and_disagreement_suppress_uncertain_variances",
+      "label": "conflicts and disagreement suppress uncertain variances",
+      "status": "pass"
+    },
+    {
+      "id": "test_effective_cutoff_is_inclusive",
+      "label": "effective cutoff is inclusive",
+      "status": "pass"
+    },
+    {
+      "id": "test_empty_sources_produce_no_phantom_services",
+      "label": "empty sources produce no phantom services",
+      "status": "pass"
+    },
+    {
+      "id": "test_exact_expected_exception_set",
+      "label": "exact expected exception set",
+      "status": "pass"
+    },
+    {
+      "id": "test_fractional_and_non_numeric_cents_are_rejected",
+      "label": "fractional and non numeric cents are rejected",
+      "status": "pass"
+    },
+    {
+      "id": "test_inactive_order_without_activation_has_zero_expectation",
+      "label": "inactive order without activation has zero expectation",
+      "status": "pass"
+    },
+    {
+      "id": "test_invalid_currency_and_negative_charge_are_rejected",
+      "label": "invalid currency and negative charge are rejected",
+      "status": "pass"
+    },
+    {
+      "id": "test_line_conflict_quarantines_every_affected_service",
+      "label": "line conflict quarantines every affected service",
+      "status": "pass"
+    },
+    {
+      "id": "test_one_cent_mismatch_and_exact_match_boundary",
+      "label": "one cent mismatch and exact match boundary",
+      "status": "pass"
+    },
+    {
+      "id": "test_only_one_run_configuration_is_allowed",
+      "label": "only one run configuration is allowed",
+      "status": "pass"
+    },
+    {
+      "id": "test_population_and_exception_grains_are_unique",
+      "label": "population and exception grains are unique",
+      "status": "pass"
+    },
+    {
+      "id": "test_rebuild_is_idempotent",
+      "label": "rebuild is idempotent",
+      "status": "pass"
+    },
+    {
+      "id": "test_replays_do_not_multiply_money",
+      "label": "replays do not multiply money",
+      "status": "pass"
+    },
+    {
+      "id": "test_verified_amounts_and_exposure",
+      "label": "verified amounts and exposure",
+      "status": "pass"
+    },
+    {
+      "id": "test_zero_plan_is_not_missing_charge",
+      "label": "zero plan is not missing charge",
+      "status": "pass"
+    }
+  ]
+}

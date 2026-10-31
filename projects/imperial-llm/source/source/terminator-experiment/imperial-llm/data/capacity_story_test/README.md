@@ -1,0 +1,1 @@
+Modified normalized TinyStories V2 GPT-4 by Ronen Eldan and Yuanzhi Li, pinned revision f54c09fd23315a6f9c86f9dc80f725de7d8f9c64. Data license CDLA-Sharing-1.0, https://cdla.dev/sharing-1-0/ .128 new final-test stories exclude576 prior evaluation and4096 training stories; full provenance,normalization and hashes in manifest.json. Near duplicates not assessed.

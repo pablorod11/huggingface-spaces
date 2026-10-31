@@ -1,0 +1,37 @@
+const assert=require('node:assert/strict');
+const fs=require('node:fs');
+const path=require('node:path');
+const {generate}=require('./generation-worker.js');
+const payload=JSON.parse(fs.readFileSync(path.join(__dirname,'model.json')));
+const request={payload,prompt:'The little',seed:42,temperature:0.7,length:64};
+const messages=[];
+const first=generate(request,message=>messages.push(message));
+const repeat=generate(request,()=>{});
+assert.equal(first.text,repeat.text,'same settings must reproduce output');
+assert.equal([...first.text].length,64);
+assert.deepEqual(messages.filter(x=>x.type==='progress').map(x=>x.count),[16,32,48,64]);
+assert.equal(messages.at(-1).type,'done');
+assert.equal(first.logits.length,payload.vocab.length);
+assert.ok(first.logits.every(Number.isFinite));
+assert.throws(()=>generate({...request,prompt:'🤖'},()=>{}),/Unsupported character/);
+assert.throws(()=>generate({...request,length:100000},()=>{}),/Choose/);
+assert.throws(()=>generate({...request,temperature:0},()=>{}),/Temperature/);
+assert.throws(()=>generate({...request,seed:-1},()=>{}),/seed/);
+console.log('PASS: deterministic seeded generation, 64-character output, batched streaming, final logits, invalid request rejection.');
+
+// Exercise history beyond both candidate context windows with supported vocabulary.
+const cropSize=payload.config.context_length;
+const safeToken=payload.vocab.find(c=>c.trim().length>0);
+assert.ok(safeToken);
+const longPrompt=safeToken.repeat(Math.max(129,cropSize+17));
+assert.ok(longPrompt.length>128 && longPrompt.length<=300);
+const longRequest={...request,prompt:longPrompt,length:64};
+const longFirst=generate(longRequest,()=>{});
+const longRepeat=generate(longRequest,()=>{});
+const suffixOnly=generate({...longRequest,prompt:longPrompt.slice(-cropSize)},()=>{});
+assert.equal(longFirst.text,longRepeat.text,'long history must be reproducible');
+assert.equal(longFirst.text,suffixOnly.text,'worker must crop history to actual context');
+assert.deepEqual(longFirst.logits,suffixOnly.logits);
+assert.equal([...longFirst.text].length,64);
+assert.ok(longFirst.logits.every(Number.isFinite));
+console.log('PASS: long-history deterministic generation and context cropping.');

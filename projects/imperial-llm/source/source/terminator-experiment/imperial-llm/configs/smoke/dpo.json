@@ -1,0 +1,10 @@
+{
+  "sft_ckpt": "models/smoke/sft.pt",
+  "out_ckpt": "models/smoke/dpo.pt",
+  "batch_size": 4,
+  "epochs": 1,
+  "eval_steps": 10000,
+  "warmup_steps": 2,
+  "max_len": 256,
+  "save_every": 10000
+}

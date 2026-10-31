@@ -1,0 +1,12 @@
+.F                                                                       [100%]
+=================================== FAILURES ===================================
+_____ test_loss_gate_rejects_expansion_that_loses_to_equal_budget_control ______
+
+    def test_loss_gate_rejects_expansion_that_loses_to_equal_budget_control():
+>       from scripts.compare_story_corpora import loss_gate
+E       ModuleNotFoundError: No module named 'scripts.compare_story_corpora'
+
+work/corpus-expansion/imperial-llm/tests/test_expanded_corpus.py:13: ModuleNotFoundError
+=========================== short test summary info ============================
+FAILED work/corpus-expansion/imperial-llm/tests/test_expanded_corpus.py::test_loss_gate_rejects_expansion_that_loses_to_equal_budget_control
+1 failed, 1 passed in 0.30s

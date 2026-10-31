@@ -1,0 +1,98 @@
+{
+  "plan_sha256": "f826fa6b692d4f6f1186378df870382056f91f1e69fe24f237f7ed6e2044f56d",
+  "summaries": {
+    "legacy": {
+      "selected_step": 7200,
+      "total": {
+        "pairs": 28,
+        "grammatical": 21,
+        "ungrammatical": 7,
+        "ties": 0,
+        "credit": 21.0,
+        "preference_rate_with_half_ties": 0.75,
+        "mean_joint_margin": 4.336612183877328,
+        "mean_character_margin": 0.21368705256348086
+      },
+      "categories": {
+        "subject_verb_agreement": {
+          "pairs": 16,
+          "grammatical": 9,
+          "ungrammatical": 7,
+          "ties": 0,
+          "credit": 9.0,
+          "preference_rate_with_half_ties": 0.5625,
+          "mean_joint_margin": 1.9680170581747607,
+          "mean_character_margin": 0.10653214744306617
+        },
+        "word_order": {
+          "pairs": 12,
+          "grammatical": 12,
+          "ungrammatical": 0,
+          "ties": 0,
+          "credit": 12.0,
+          "preference_rate_with_half_ties": 1.0,
+          "mean_joint_margin": 7.494739018147418,
+          "mean_character_margin": 0.3565602593907004
+        }
+      }
+    },
+    "repaired": {
+      "selected_step": 7200,
+      "total": {
+        "pairs": 28,
+        "grammatical": 20,
+        "ungrammatical": 8,
+        "ties": 0,
+        "credit": 20.0,
+        "preference_rate_with_half_ties": 0.7142857142857143,
+        "mean_joint_margin": 4.303284909552593,
+        "mean_character_margin": 0.20893078724754915
+      },
+      "categories": {
+        "subject_verb_agreement": {
+          "pairs": 16,
+          "grammatical": 8,
+          "ungrammatical": 8,
+          "ties": 0,
+          "credit": 8.0,
+          "preference_rate_with_half_ties": 0.5,
+          "mean_joint_margin": 1.4632729066533563,
+          "mean_character_margin": 0.07850559578828874
+        },
+        "word_order": {
+          "pairs": 12,
+          "grammatical": 12,
+          "ungrammatical": 0,
+          "ties": 0,
+          "credit": 12.0,
+          "preference_rate_with_half_ties": 1.0,
+          "mean_joint_margin": 8.089967580084908,
+          "mean_character_margin": 0.382831042526563
+        }
+      }
+    }
+  },
+  "paired_legacy_to_repaired": {
+    "transition_counts": {
+      "grammatical->ungrammatical": 1,
+      "ungrammatical->ungrammatical": 7,
+      "grammatical->grammatical": 20
+    },
+    "net_credit_change": -1.0
+  },
+  "secondary_reused_diagnostic": true,
+  "training_or_checkpoint_selection": false,
+  "significance_claim": false,
+  "promotion": false,
+  "limitations": [
+    "Synthetic teacher-forced sentence likelihood diagnostic, not a standardized grammar benchmark or independent evidence of general grammar competence.",
+    "Labels concern standard written English; they do not evaluate dialects or speakers.",
+    "Preference may reflect lexical frequency or memorized patterns rather than grammatical abstraction. Equal character length removes a simple length difference, not every confound.",
+    "Agreement pairs intentionally change a same-length verb; word-order pairs preserve the exact character and word multisets.",
+    "All pairs fit the64-character model context. No claim about long-distance syntax, generation coherence, or release readiness.",
+    "Do not use these pairs to train, tune, select checkpoints, or claim a fresh independent test after repeated inspection.",
+    "Secondary diagnostic on the same28 previously authored and inspected pairs; not an independent benchmark.",
+    "No training,tuning,checkpoint selection,significance,or publication decision uses these scores.",
+    "Equal-length pairs still have lexical and template confounds; preferences are not general grammar competence."
+  ]
+}

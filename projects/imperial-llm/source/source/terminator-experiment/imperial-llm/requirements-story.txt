@@ -1,0 +1,7 @@
+# Security minimum for CVE-2025-32434; choose and record an exact tested version
+# on a supported host before reproducing training. Official macOS x86 wheels
+# stopped after 2.2, so the historical local environment cannot satisfy this.
+torch>=2.6.0
+numpy==1.26.4
+jaxtyping==0.3.11
+pytest==9.1.1

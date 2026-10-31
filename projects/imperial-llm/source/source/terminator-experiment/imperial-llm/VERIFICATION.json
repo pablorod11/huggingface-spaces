@@ -1,0 +1,129 @@
+{
+  "checked_date": "2026-10-19",
+  "scope": "Local project verification and published UI observation; no deployment this turn.",
+  "definitions": {
+    "validation_ce": "Mean next-character cross entropy on the recorded fixed validation windows; repeatedly used for selection.",
+    "optimizer_tokens": "Executed optimizer steps times batch size times context length.",
+    "approximate_training_flops": "6 * parameter count * optimizer tokens; proxy excludes attention overhead and evaluation."
+  },
+  "axioms": {
+    "relative_reduction_percent": "100 * (baseline - candidate) / baseline for positive baseline.",
+    "disjoint_membership": "No shared recorded whole-story SHA256 between the checked groups.",
+    "artifact_identity": "Matching SHA256 establishes byte identity, not training quality or provenance truth."
+  },
+  "claims": [
+    {
+      "claim": "Relative adaptation validation-CE reduction",
+      "status": "VALID_WITHIN_RECORDED_PREMISES",
+      "value": "2.822440681214583995859987047 percent",
+      "sources": [
+        "experiments/lifecycle-smoke.json:post_training",
+        "REFINEMENT.md:23"
+      ]
+    },
+    {
+      "claim": "Scratch optimizer-token and approximate FLOP counts match formulas",
+      "status": "VALID_WITHIN_RECORDED_PREMISES",
+      "value": true,
+      "sources": [
+        "experiments/lifecycle-smoke.json:scratch_runs",
+        "scripts/refinement_experiment.py:budget"
+      ]
+    },
+    {
+      "claim": "Scratch/adaptation whole-story membership is disjoint",
+      "status": "VALID_WITHIN_RECORDED_PREMISES",
+      "value": {
+        "scratch": 384,
+        "adaptation": 128
+      },
+      "sources": [
+        "experiments/lifecycle-smoke.json:provenance"
+      ]
+    },
+    {
+      "claim": "Five local checkpoint hashes match records",
+      "status": "VALID_WITHIN_RECORDED_PREMISES",
+      "value": 5,
+      "sources": [
+        "experiments/lifecycle-smoke.json:checkpoint",
+        "work/refinement-run/*.pt"
+      ]
+    },
+    {
+      "claim": "Serving model bytes match recorded SHA256",
+      "status": "VALID_WITHIN_RECORDED_PREMISES",
+      "value": true,
+      "sources": [
+        "space/model.json",
+        "space/training.json:model_sha256"
+      ]
+    },
+    {
+      "claim": "Lifecycle report declares validation-only evidence and no promotion",
+      "status": "VALID_WITHIN_RECORDED_PREMISES",
+      "value": true,
+      "sources": [
+        "experiments/lifecycle-smoke.json:evaluation",
+        "REFINEMENT.md:23"
+      ]
+    }
+  ],
+  "runtime_checks": {
+    "offline_python_tests": {
+      "passed": 14
+    },
+    "browser_functional": {
+      "passed": 32,
+      "projects": [
+        "Chromium",
+        "Firefox",
+        "macOS WebKit",
+        "390x844 Chromium touch emulation"
+      ],
+      "intentional_visual_skips": 4
+    },
+    "visual_baseline": {
+      "passed": 1,
+      "scope": "Existing Darwin Chromium baseline; no update"
+    },
+    "node_inference_and_generation": "PASS",
+    "euclidean_capacity_checker_self_test": "PASS; checker self-test only, not a proof of LLM behavior",
+    "native_modifier_click": "Observed new local tab at #experiment using Command-click",
+    "sampling_seed_computed_font_size": "16px in local browser"
+  },
+  "design_sources": [
+    "https://raw.githubusercontent.com/vercel-labs/web-interface-guidelines/main/command.md",
+    "DESIGN.md"
+  ],
+  "design_changes": [
+    {
+      "file": "space/app.js",
+      "line": 9,
+      "change": "Removed redundant click interception; native anchor/hashchange navigation remains."
+    },
+    {
+      "file": "space/styles.css",
+      "line": 2,
+      "change": "Sampling inputs/selects now use16px text."
+    }
+  ],
+  "detector_advisories": [
+    {
+      "finding": "cream-palette",
+      "disposition": "Retained: deliberate established DESIGN.md palette."
+    },
+    {
+      "finding": "em-dash-overuse",
+      "disposition": "Metric loading placeholders are em dashes; retained as functional empty states."
+    }
+  ],
+  "unverified": [
+    "Generalization, instruction-following, RLHF, universal scaling laws: unsupported by this smoke experiment.",
+    "Physical iPhone focus-zoom and assistive-technology conformance.",
+    "CI execution and non-Darwin visual baselines."
+  ],
+  "conclusion": "Recorded arithmetic and artifact identities agree within checked premises. Local UI regressions passed. Broader model-quality claims remain unverified.",
+  "limits": "This receipt recomputes metadata and records executed checks. The capacity-only ecc.py cannot prove these LLM claims. It is not an independent rerun of training or a formal proof of runtime correctness.",
+  "integration_removal": "External workflow integration, tests, documentation, local checkout and preview removed at user request on 2026-10-20."
+}

@@ -1,0 +1,51 @@
+npm notice run test:browser
+npm notice run playwright test --project chromium --grep validation curve
+
+Running 1 test using 1 worker
+
+(node:92301) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  1 [chromium] › tests/browser/record.spec.cjs:6:1 › validation curve renders recorded points without inventing training history (16.2s)
+
+
+  1) [chromium] › tests/browser/record.spec.cjs:6:1 › validation curve renders recorded points without inventing training history 
+
+    Error: expect(locator).toHaveText(expected) failed
+
+    Locator:  locator('.chart-card h3')
+    Expected: "Validation curve"
+    Received: "Learning curve"
+    Timeout:  15000ms
+
+    Call log:
+      - Expect "toHaveText" with timeout 15000ms
+      - waiting for locator('.chart-card h3')
+        34 × locator resolved to <h3>Learning curve</h3>
+           - unexpected value "Learning curve"
+
+
+       7 |   await page.goto('/#experiment');
+       8 |   await expect(page.locator('#load-status')).toContainText('Model verified');
+    >  9 |   await expect(page.locator('.chart-card h3')).toHaveText('Validation curve');
+         |                                                ^
+      10 |   await expect(page.locator('.legend')).toHaveText('Validation');
+      11 |   const points=await page.locator('#loss-chart polyline').evaluateAll(lines=>lines.map(line=>line.getAttribute('points')));
+      12 |   expect(points).toHaveLength(1);
+        at /Users/sanjusrikanth/Documents/Codex/2026-10-21/https-huggingface-co-spaces-pablorod11-imperial/work/release-build/imperial-llm/tests/browser/record.spec.cjs:9:48
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/record-validation-curve-re-229a9--inventing-training-history-chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/record-validation-curve-re-229a9--inventing-training-history-chromium/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/record-validation-curve-re-229a9--inventing-training-history-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/record-validation-curve-re-229a9--inventing-training-history-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  1 failed
+    [chromium] › tests/browser/record.spec.cjs:6:1 › validation curve renders recorded points without inventing training history 

@@ -1,0 +1,9 @@
+{
+  "services": 21,
+  "potential_overcharge_cents": 11500,
+  "potential_underbilling_cents": 5001,
+  "unverified_billed_cents": 29000,
+  "services_with_unknown_billing": 1,
+  "exception_count": 16,
+  "affected_services": 15
+}

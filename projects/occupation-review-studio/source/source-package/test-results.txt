@@ -1,0 +1,42 @@
+test_diagram_has_accessible_name_and_no_remote_assets (test_app.IntegrationTests.test_diagram_has_accessible_name_and_no_remote_assets) ... ok
+test_expected_ui_denial_preserves_existing_outputs (test_app.IntegrationTests.test_expected_ui_denial_preserves_existing_outputs) ... ok
+test_full_escalation_correction_and_export (test_app.IntegrationTests.test_full_escalation_correction_and_export) ... ok
+test_guided_cases_and_presentation (test_app.IntegrationTests.test_guided_cases_and_presentation) ... ok
+test_invalid_demo_identity_and_missing_revision (test_app.IntegrationTests.test_invalid_demo_identity_and_missing_revision) ... ok
+test_model_predictions_and_input_guards (test_app.IntegrationTests.test_model_predictions_and_input_guards) ... ok
+test_rendered_record_escapes_untrusted_content (test_app.IntegrationTests.test_rendered_record_escapes_untrusted_content) ... ok
+test_session_isolation_and_out_of_scope (test_app.IntegrationTests.test_session_isolation_and_out_of_scope) ... ok
+test_split_isolation_and_manifest (test_app.IntegrationTests.test_split_isolation_and_manifest) ... ok
+test_spreadsheet_formula_guard (test_app.IntegrationTests.test_spreadsheet_formula_guard) ... ok
+test_ui_constructs (test_app.IntegrationTests.test_ui_constructs) ... <local-python-runtime>/lib/python3.12/asyncio/base_events.py:730: ResourceWarning: unclosed event loop <_UnixSelectorEventLoop running=False closed=False debug=False>
+  _warn(f"unclosed event loop {self!r}", ResourceWarning, source=self)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+<local-python-runtime>/lib/python3.12/asyncio/base_events.py:730: ResourceWarning: unclosed event loop <_UnixSelectorEventLoop running=False closed=False debug=False>
+  _warn(f"unclosed event loop {self!r}", ResourceWarning, source=self)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+ok
+test_corrupt_artifacts_fail_before_prediction (test_inference.InferenceTests.test_corrupt_artifacts_fail_before_prediction) ... ok
+test_invalid_text_and_unknown_vocabulary (test_inference.InferenceTests.test_invalid_text_and_unknown_vocabulary) ... ok
+test_model_repository_standalone_default_loader (test_inference.InferenceTests.test_model_repository_standalone_default_loader) ... ok
+test_sklearn_parity_on_frozen_heldout_and_token_edges (test_inference.InferenceTests.test_sklearn_parity_on_frozen_heldout_and_token_edges) ... <local-python-runtime>/lib/python3.12/asyncio/base_events.py:730: ResourceWarning: unclosed event loop <_UnixSelectorEventLoop running=False closed=False debug=False>
+  _warn(f"unclosed event loop {self!r}", ResourceWarning, source=self)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+ok
+test_threshold_boundaries_and_malformed_confidence (test_inference.InferenceTests.test_threshold_boundaries_and_malformed_confidence) ... ok
+test_audit_failure_does_not_create_an_untracked_prediction (test_review.ReviewTests.test_audit_failure_does_not_create_an_untracked_prediction) ... ok
+test_audit_write_failure_rolls_back_resolution (test_review.ReviewTests.test_audit_write_failure_rolls_back_resolution) ... ok
+test_auto_and_unresolved_final_labels (test_review.ReviewTests.test_auto_and_unresolved_final_labels) ... ok
+test_completed_decision_and_provenance_survive_reopening (test_review.ReviewTests.test_completed_decision_and_provenance_survive_reopening) ... ok
+test_concurrent_claims_have_one_owner_and_one_audit_event (test_review.ReviewTests.test_concurrent_claims_have_one_owner_and_one_audit_event) ... ok
+test_correction_history_and_immutable_resolution (test_review.ReviewTests.test_correction_history_and_immutable_resolution) ... ok
+test_disabled_auto_accept_and_threshold_validation (test_review.ReviewTests.test_disabled_auto_accept_and_threshold_validation) ... ok
+test_escalation_authorization_and_out_of_scope (test_review.ReviewTests.test_escalation_authorization_and_out_of_scope) ... ok
+test_forced_escalation_cannot_weaken_review (test_review.ReviewTests.test_forced_escalation_cannot_weaken_review) ... ok
+test_manual_escalation_and_claim_owner (test_review.ReviewTests.test_manual_escalation_and_claim_owner) ... ok
+test_routing_and_invalid_input (test_review.ReviewTests.test_routing_and_invalid_input) ... ok
+test_stale_competing_writer_and_persistence (test_review.ReviewTests.test_stale_competing_writer_and_persistence) ... ok
+
+----------------------------------------------------------------------
+Ran 28 tests in 4.792s
+
+OK

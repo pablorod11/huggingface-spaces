@@ -1,0 +1,13 @@
+{
+  "run_id": "4c08b422-5cec-46c2-b270-6af3130dbf42",
+  "checkpoint_sha256": "87a9a20f62674a5b58d62ba015b9c6abfe2bf47824996bc2aeb64ea47f24bde0",
+  "selection": "selected_state_dict",
+  "split_version": 2,
+  "files": {
+    "index.html": "f71bc2e7bec47cad8519c4fb70e6e8edcaf77e53beec05a908142e5fc96c9582",
+    "styles.css": "21aff1dd7b4855993efafffc803222d689c76a863ab8de6a6500d4baec0393e7",
+    "app.js": "d9a59cf4bf705b2195dd73d1e53527e97128b095f0fa958911a503d76961f890",
+    "showcase.json": "b248d7961343398d3c0f1078362b3925f7f3842b51b845d3d1b25ab6a2284c16",
+    "source.zip": "3d8fe16e033080693860452cab9ca5fa87c03a5e3c26c05185381e912ab1d3fa"
+  }
+}

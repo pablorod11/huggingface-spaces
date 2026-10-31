@@ -1,0 +1,22 @@
+'use strict';
+const assert=require('node:assert/strict'),fs=require('node:fs'),vm=require('node:vm');
+const E=require('./execution.js');
+const input={notional:1000,attempts:10,completed:8,movePercent:1,spreadBps:10,feeBps:5,slippageBps:2,delayBps:3};
+const original=JSON.stringify(input),r=E.costs(input);
+const near=(a,b)=>assert(Math.abs(a-b)<1e-9,`${a} differs from ${b}`);
+assert.equal(r.schema_version,1);assert.deepEqual(r.inputs,input);assert.equal(r.ideal,100);assert.equal(r.filledGross,80);assert.equal(r.missedEffect,20);assert.equal(r.delayCost,2.4);assert.equal(r.spreadCost,8);assert.equal(r.feeCost,8);assert.equal(r.slippageCost,3.2);near(r.totalCosts,21.6);near(r.net,58.4);assert.equal(r.completed,8);assert.equal(r.attempts,10);assert.equal(JSON.stringify(input),original);
+near(r.ideal,r.net+r.totalCosts+r.missedEffect);
+near(r.breakEvenMovePercent,.27);
+near(E.costs({...input,movePercent:r.breakEvenMovePercent}).net,0);
+assert.equal(E.costs({...input,completed:0}).breakEvenMovePercent,null);
+assert.equal(E.costs({...input,spreadBps:0,feeBps:0,slippageBps:0,delayBps:0}).breakEvenMovePercent,0);
+const loss=E.costs({...input,movePercent:-1});assert.equal(loss.missedEffect,-20);near(loss.net,-101.6);
+const none=E.costs({...input,completed:0});for(const key of ['filledGross','delayCost','spreadCost','feeCost','slippageCost','totalCosts','net'])assert.equal(none[key],0);assert.equal(none.missedEffect,none.ideal);
+const free=E.costs({...input,spreadBps:0,feeBps:0,slippageBps:0,delayBps:0});assert.equal(free.totalCosts,0);assert.equal(free.net,free.filledGross);
+const copied=E.costs(input);copied.inputs.notional=2;assert.equal(input.notional,1000);
+for(const key of Object.keys(input))for(const value of [NaN,Infinity,-Infinity,null,undefined,'1'])assert.throws(()=>E.costs({...input,[key]:value}),`${key}: ${value}`);
+for(const [key,values]of Object.entries({notional:[0,-1,1e9+1],attempts:[0,10001,1.5],completed:[-1,11,1.5],movePercent:[-100.001,100.001],spreadBps:[-.1,10000.1],feeBps:[-.1,10000.1],slippageBps:[-.1,10000.1],delayBps:[-.1,10000.1]}))for(const value of values)assert.throws(()=>E.costs({...input,[key]:value}));
+for(const value of [null,undefined,1,'x'])assert.throws(()=>E.costs(value));
+for(const movePercent of [-100,0,100])for(const completed of [0,10000]){const edge=E.costs({notional:1e9,attempts:10000,completed,movePercent,spreadBps:10000,feeBps:10000,slippageBps:10000,delayBps:10000});for(const key of ['ideal','filledGross','missedEffect','totalCosts','net'])assert(Number.isFinite(edge[key]));near(edge.ideal,edge.net+edge.totalCosts+edge.missedEffect);}
+const browser={};vm.runInNewContext(fs.readFileSync(require.resolve('./execution.js'),'utf8'),browser);assert.equal(typeof browser.QuantExecution.costs,'function');near(browser.QuantExecution.costs(input).net,58.4);
+console.log('Execution tests passed: explicit round-trip accounting, signed misses, zero fills/friction, bounds, no mutation and browser export');

@@ -1,0 +1,20 @@
+......F                                                                  [100%]
+=================================== FAILURES ===================================
+____________ test_browser_record_preserves_validation_only_history _____________
+
+    def test_browser_record_preserves_validation_only_history():
+        from scripts.prepare_story_release import browser_record
+        report = {'parameter_count':30643, 'selected_step':200,
+                  'selected_run':{'runtime_seconds':12, 'history':[{'step':0,'validation_ce':1.6},{'step':200,'validation_ce':1.4}]},
+                  'evaluation':{'candidate_val_loss':1.4}}
+        record = browser_record(report,1.3,{'train_characters':1000,'val_characters':200,'test_characters':300})
+>       assert record['history'] == [{'step':0,'val_loss':1.6},{'step':200,'val_loss':1.4}]
+E       AssertionError: assert [] == [{'step': 0, ...l_loss': 1.4}]
+E         
+E         Right contains 2 more items, first extra item: {'step': 0, 'val_loss': 1.6}
+E         Use -v to get more diff
+
+tests/test_finetune_stories.py:66: AssertionError
+=========================== short test summary info ============================
+FAILED tests/test_finetune_stories.py::test_browser_record_preserves_validation_only_history
+1 failed, 6 passed in 4.54s

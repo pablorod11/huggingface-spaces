@@ -1,0 +1,33 @@
+{
+  "training_data_focused_tests": {
+    "passed": 37,
+    "output": ".....................................                                    [100%]\n37 passed in 9.28s\n"
+  },
+  "scorer_controls": {
+    "passed": 4,
+    "output": "....                                                                     [100%]\n4 passed in 4.67s\n"
+  },
+  "legacy_raw7200_state_exact": true,
+  "model_integrity": "Frozen plans/selections,initial/selected/exportedweights,manifest/preparer/source hashes verified forbotharms.",
+  "node": {
+    "legacy": {
+      "inference": "PASS: checksum, three Python/JS logit cases (max error 0.000002399425567567448), roundtrip, input bounds, tensor validation.\n",
+      "generation": "PASS: deterministic seeded generation, 64-character output, batched streaming, final logits, invalid request rejection.\nPASS: long-history deterministic generation and context cropping.\n"
+    },
+    "repaired": {
+      "inference": "PASS: checksum, three Python/JS logit cases (max error 0.000001996744439125564), roundtrip, input bounds, tensor validation.\n",
+      "generation": "PASS: deterministic seeded generation, 64-character output, batched streaming, final logits, invalid request rejection.\nPASS: long-history deterministic generation and context cropping.\n"
+    }
+  },
+  "max_logit_error": {
+    "legacy": 2.399425567567448e-06,
+    "repaired": 1.996744439125564e-06
+  },
+  "parity_tolerance": 0.0001,
+  "syntax_diagnostic": "56modelpair records recomputed;legacy21,repaired20; frozeninputs unchanged.",
+  "publication": false,
+  "baseline_local_export_sha256": "986699bbf0668f6d1aa5da67c373fe53770f7ce5e9efb3e337b5c0d7a42fe376",
+  "browser_ui": "Notrun; noUIchangeordeployment.",
+  "broad_suite": "Notrerun;priorTorch2.2.2/Python3.12hostlimitsremain.",
+  "Graphify": "Didnotrun;sourceinspectionandrgused."
+}

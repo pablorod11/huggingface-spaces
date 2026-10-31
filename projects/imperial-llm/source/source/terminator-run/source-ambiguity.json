@@ -1,0 +1,26 @@
+{
+  "scope": "Read-only raw provenance ambiguity audit for selected training/validation legacy membership; no model loading or test scoring.",
+  "splits": {
+    "train": {
+      "selected_stories": 4096,
+      "cached_complete_source_stories": 9643,
+      "raw_prefix_sha256": "88e767bb2c9566c8becedfb12bfd4f93690cca559f9d5da516c6ca7024dd762b",
+      "legacy_hashes_with_distinct_raw_ambiguity": 0,
+      "ambiguous_members": [],
+      "legacy_hashes_with_duplicate_identical_raw_occurrences": 0,
+      "redundant_identical_raw_occurrences": 0,
+      "duplicate_raw_members": []
+    },
+    "val": {
+      "selected_stories": 128,
+      "cached_complete_source_stories": 1234,
+      "raw_prefix_sha256": "dbe7c92c1ee6454d903416730e3aea544bf15dd21c2ccb5ce12b466940448f6b",
+      "legacy_hashes_with_distinct_raw_ambiguity": 0,
+      "ambiguous_members": [],
+      "legacy_hashes_with_duplicate_identical_raw_occurrences": 0,
+      "redundant_identical_raw_occurrences": 0,
+      "duplicate_raw_members": []
+    }
+  },
+  "conclusion": "No ambiguous distinct raw source choices for selected legacy training/validation hashes."
+}

@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1120 1800" width="1120" height="1800" role="img" aria-labelledby="ors-title ors-desc" style="display:block;width:100%;height:auto;max-width:1120px;background:#f7f8fa">
+<title id="ors-title">Occupation Review Studio: current architecture, routing and review states</title>
+<desc id="ors-desc">Three panels document the portfolio demonstration. Offline preparation and training produce JSON for a Gradio app, whose workflow writes to temporary per-session SQLite. Zero known features or confidence below 0.50 escalates; scores from 0.50 to below 0.52 require ordinary review; scores at least 0.52 resolve automatically. Pending or escalated items must be claimed before human resolution. A senior can close claimed work out of scope. Simulated roles are not authentication. No production durability, SLA timers or automatic retraining is implemented.</desc>
+<defs><marker id="ors-arrow" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L8 4L0 8" fill="none" stroke="#475569" stroke-width="1.3"/></marker>
+<style>text{font-family:Arial,Helvetica,sans-serif;fill:#172535}.title{font-size:36px;font-weight:700;letter-spacing:-1px}.section{font-size:25px;font-weight:700}.node{font-size:21px;font-weight:700}.body{font-size:18px}.small{font-size:16px}.eyebrow{font-size:14px;letter-spacing:2px;font-weight:700;fill:#12615e}.muted{fill:#475569}.box{fill:#fff;stroke:#8795a5;stroke-width:1.2;rx:6}.accent{fill:#e3f3ef;stroke:#12615e;stroke-width:1.5;rx:6}.line{fill:none;stroke:#475569;stroke-width:1.5;marker-end:url(#ors-arrow)}.rule{stroke:#b8c3cf;stroke-width:1}.future{fill:#f7f8fa;stroke:#8795a5;stroke-dasharray:6 5;rx:6}</style></defs>
+<rect width="1120" height="1800" fill="#f7f8fa"/>
+<text x="48" y="48" class="eyebrow">PABLOROD11 / BUSINESS SYSTEMS ANALYSIS</text>
+<text x="48" y="98" class="title">The model suggests. The workflow decides.</text>
+<text x="48" y="132" class="body muted">Independent case study · simulated business requirements · current demo architecture</text>
+<line x1="48" y1="156" x2="1072" y2="156" class="rule"/>
+
+<text x="48" y="202" class="eyebrow">01 / COMPONENTS AND DATA</text>
+<text x="48" y="240" class="section">One application, with explicit responsibilities</text>
+<text x="48" y="278" class="small muted">OFFLINE BUILD</text>
+<rect x="48" y="296" width="260" height="106" class="box"/>
+<text x="68" y="332" class="node">Pinned O*NET® 31.0</text><text x="68" y="363" class="body muted">Tasks + occupation codes</text><text x="68" y="388" class="small muted">Source hashes + attribution</text>
+<path d="M308 348H352" class="line"/>
+<rect x="360" y="296" width="328" height="106" class="box"/>
+<text x="380" y="332" class="node">Prepare → train → evaluate</text><text x="380" y="363" class="body muted">Occupation-grouped splits</text><text x="380" y="388" class="small muted">Thresholds selected on validation</text>
+<path d="M688 348H732" class="line"/>
+<rect x="740" y="296" width="332" height="106" class="accent"/>
+<text x="760" y="332" class="node">Versioned JSON artifact</text><text x="760" y="363" class="body muted">TF-IDF + logistic regression</text><text x="760" y="388" class="small muted">Model, policy + evaluation evidence</text>
+<path d="M906 402V420H524V450" class="line"/>
+<text x="48" y="440" class="small muted">ONLINE DEMONSTRATION</text>
+<text x="310" y="445" class="small muted">score request</text>
+<text x="690" y="445" class="small muted">result</text>
+<rect x="48" y="458" width="260" height="118" class="box"/>
+<text x="68" y="496" class="node">Gradio presentation</text><text x="68" y="527" class="body muted">Input · queue · history</text><text x="68" y="555" class="small muted">Session lifecycle + CSV export</text>
+<path d="M308 514H352" class="line"/>
+<rect x="360" y="458" width="328" height="118" class="box"/>
+<text x="380" y="496" class="node">Standard-library inference</text><text x="380" y="527" class="body muted">Probabilities + routing policy</text><text x="380" y="555" class="small muted">No remote model call</text>
+<path d="M688 514H732" class="line"/>
+<rect x="740" y="458" width="332" height="118" class="box"/>
+<text x="760" y="496" class="node">Review workflow</text><text x="760" y="527" class="body muted">Rules · ownership · revision</text><text x="760" y="555" class="small muted">Atomic item + history transaction</text>
+<path d="M906 576V612" class="line"/>
+<rect x="740" y="620" width="332" height="84" class="accent"/>
+<text x="760" y="654" class="node">Per-session SQLite file</text><text x="760" y="684" class="body muted">Current items + decision history</text>
+<text x="48" y="622" class="small muted">Gradio also sends claim/decision actions directly to the review workflow.</text>
+<text x="48" y="649" class="small muted">Demo roles simulate identities; they are not authentication.</text>
+<text x="48" y="676" class="small muted">Temporary session storage; history is not tamper-proof.</text>
+<line x1="48" y1="736" x2="1072" y2="736" class="rule"/>
+
+<text x="48" y="780" class="eyebrow">02 / DECISION POLICY</text>
+<text x="48" y="818" class="section">Apply the frozen policy after input validation</text>
+<rect x="48" y="850" width="320" height="198" class="box"/>
+<text x="68" y="889" class="node">Valid description</text><text x="68" y="925" class="body muted">1. Extract known features</text><text x="68" y="958" class="body muted">2. Score five categories</text><text x="68" y="991" class="body muted">3. Route by these rules</text><text x="68" y="1024" class="small muted">Scores are uncalibrated probabilities.</text>
+<path d="M368 949H410V880H448" class="line"/>
+<path d="M410 949H448" class="line"/>
+<path d="M410 949V1020H448" class="line"/>
+<rect x="456" y="850" width="616" height="60" class="box"/>
+<text x="476" y="888" class="body">No known features OR score &lt; 0.50 → ESCALATE</text>
+<rect x="456" y="920" width="616" height="60" class="box"/>
+<text x="476" y="958" class="body">Known features AND 0.50 ≤ score &lt; 0.52 → REVIEW</text>
+<rect x="456" y="990" width="616" height="60" class="accent"/>
+<text x="476" y="1028" class="body">Known features AND score ≥ 0.52 → AUTO ACCEPT</text>
+<text x="48" y="1088" class="small muted">Rejected input: blank/non-text, more than 10,000 characters, or invalid confidence/threshold values.</text>
+<text x="48" y="1116" class="small muted">Only auto-accept writes a model final label. Human routes retain an empty final label until resolution.</text>
+<line x1="48" y1="1146" x2="1072" y2="1146" class="rule"/>
+
+<text x="48" y="1190" class="eyebrow">03 / HUMAN REVIEW STATE</text>
+<text x="48" y="1228" class="section">Claim ownership before changing the outcome</text>
+<rect x="48" y="1272" width="240" height="80" class="box"/>
+<text x="68" y="1306" class="node">pending</text><text x="68" y="1333" class="small muted">Ordinary human route</text>
+<path d="M288 1312H432" class="line"/><text x="333" y="1295" class="small muted">claim</text>
+<rect x="440" y="1272" width="240" height="80" class="accent"/>
+<text x="460" y="1306" class="node">in_review</text><text x="460" y="1333" class="small muted">Owned by claiming actor</text>
+<path d="M680 1312H824" class="line"/><text x="713" y="1295" class="small muted">resolve</text>
+<rect x="832" y="1272" width="240" height="80" class="box"/>
+<text x="852" y="1306" class="node">resolved</text><text x="852" y="1333" class="small muted">Human final label + reason</text>
+<rect x="48" y="1424" width="240" height="80" class="box"/>
+<text x="68" y="1458" class="node">escalated</text><text x="68" y="1485" class="small muted">Senior role required</text>
+<path d="M288 1464H348V1376H480V1360" class="line"/>
+<text x="300" y="1404" class="small muted">senior claim</text>
+<path d="M560 1352V1464H296" class="line"/>
+<text x="398" y="1450" class="small muted">escalate + reason</text>
+<path d="M680 1338H744V1464H824" class="line"/>
+<text x="762" y="1404" class="small muted">senior close</text>
+<rect x="832" y="1424" width="240" height="80" class="box"/>
+<text x="852" y="1458" class="node">out_of_scope</text><text x="852" y="1485" class="small muted">No final category issued</text>
+<text x="48" y="1540" class="small muted">Inference may enter escalated directly. AUTO_ACCEPT enters resolved with MODEL provenance.</text>
+<text x="48" y="1568" class="small muted">Denied role / wrong owner / stale revision / completed item → reject. Decision-write failure → rollback.</text>
+<text x="48" y="1596" class="small muted">Final states cannot reopen. Feedback export creates candidates; it does not train or deploy a model.</text>
+
+<rect x="48" y="1632" width="1024" height="112" class="future"/>
+<text x="68" y="1666" class="eyebrow">PROPOSED PRODUCTION WORK / NOT IMPLEMENTED</text>
+<text x="68" y="1698" class="body muted">Real identity + trusted roles · durable shared storage · retention + backups</text>
+<text x="68" y="1727" class="body muted">Business calendars + SLA alerts · reassignment + reopening · independent pilot evaluation</text>
+<text x="48" y="1780" class="small muted">Original diagrams · system fonts · no external assets · see DESIGN_AND_ARCHITECTURE.md for sources and limits</text>
+</svg>

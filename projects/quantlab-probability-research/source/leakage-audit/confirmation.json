@@ -1,0 +1,743 @@
+{
+  "stage": "confirmation",
+  "seeds": [
+    71001,
+    71002,
+    71003,
+    71004,
+    71005,
+    71006
+  ],
+  "model_sha256": "fd621d920e0ecdcd71722a181f4f5eafb1454251445397d34b7af3de1a074516",
+  "cohorts": [
+    {
+      "kind": "built_in_regimes",
+      "runs": [
+        {
+          "seed": 71001,
+          "current": {
+            "log_loss": 0.8400802743685947,
+            "brier_multiclass": 0.5403640282831176,
+            "up_brier": 0.24775320198469156,
+            "downside_brier": 0.04931891727122927,
+            "accuracy": 0.51
+          },
+          "challenger": {
+            "log_loss": 0.8400802743685947,
+            "brier_multiclass": 0.5403640282831176,
+            "up_brier": 0.24775320198469156,
+            "downside_brier": 0.04931891727122927,
+            "accuracy": 0.51
+          },
+          "selected_current": "softmax",
+          "selected_challenger": "softmax"
+        },
+        {
+          "seed": 71002,
+          "current": {
+            "log_loss": 0.8398773385264643,
+            "brier_multiclass": 0.5581118682669222,
+            "up_brier": 0.2649797975188275,
+            "downside_brier": 0.0395331810261755,
+            "accuracy": 0.385
+          },
+          "challenger": {
+            "log_loss": 0.8398773385264643,
+            "brier_multiclass": 0.5581118682669222,
+            "up_brier": 0.2649797975188275,
+            "downside_brier": 0.0395331810261755,
+            "accuracy": 0.385
+          },
+          "selected_current": "softmax",
+          "selected_challenger": "softmax"
+        },
+        {
+          "seed": 71003,
+          "current": {
+            "log_loss": 0.8093336098297352,
+            "brier_multiclass": 0.5325992671096828,
+            "up_brier": 0.2591771482723899,
+            "downside_brier": 0.024658618617188956,
+            "accuracy": 0.435
+          },
+          "challenger": {
+            "log_loss": 0.8093336098297352,
+            "brier_multiclass": 0.5325992671096828,
+            "up_brier": 0.2591771482723899,
+            "downside_brier": 0.024658618617188956,
+            "accuracy": 0.435
+          },
+          "selected_current": "softmax",
+          "selected_challenger": "softmax"
+        },
+        {
+          "seed": 71004,
+          "current": {
+            "log_loss": 0.8512546854453311,
+            "brier_multiclass": 0.5528083314293363,
+            "up_brier": 0.2580892649964678,
+            "downside_brier": 0.05018570382814852,
+            "accuracy": 0.5
+          },
+          "challenger": {
+            "log_loss": 0.8512546854453311,
+            "brier_multiclass": 0.5528083314293363,
+            "up_brier": 0.2580892649964678,
+            "downside_brier": 0.05018570382814852,
+            "accuracy": 0.5
+          },
+          "selected_current": "softmax",
+          "selected_challenger": "softmax"
+        },
+        {
+          "seed": 71005,
+          "current": {
+            "log_loss": 0.9713754477813141,
+            "brier_multiclass": 0.5757712822638673,
+            "up_brier": 0.24906276800909352,
+            "downside_brier": 0.0858104359430715,
+            "accuracy": 0.545
+          },
+          "challenger": {
+            "log_loss": 0.9369974146356012,
+            "brier_multiclass": 0.5736561675740406,
+            "up_brier": 0.2508487317576122,
+            "downside_brier": 0.08314093568540437,
+            "accuracy": 0.545
+          },
+          "selected_current": "empirical",
+          "selected_challenger": "empirical_raw"
+        },
+        {
+          "seed": 71006,
+          "current": {
+            "log_loss": 0.8679244453716841,
+            "brier_multiclass": 0.551768542003877,
+            "up_brier": 0.2518361302955285,
+            "downside_brier": 0.051770822820263164,
+            "accuracy": 0.485
+          },
+          "challenger": {
+            "log_loss": 0.8679244453716841,
+            "brier_multiclass": 0.551768542003877,
+            "up_brier": 0.2518361302955285,
+            "downside_brier": 0.051770822820263164,
+            "accuracy": 0.485
+          },
+          "selected_current": "ridge",
+          "selected_challenger": "ridge"
+        }
+      ],
+      "loss_difference": -0.005729672190952162,
+      "brier_difference": -0.0003525191149711208
+    },
+    {
+      "kind": "iid_gaussian",
+      "runs": [
+        {
+          "seed": 71001,
+          "current": {
+            "log_loss": 0.9118470394960765,
+            "brier_multiclass": 0.5618666566980537,
+            "up_brier": 0.25214584781116206,
+            "downside_brier": 0.06234741682647246,
+            "accuracy": 0.37
+          },
+          "challenger": {
+            "log_loss": 0.9118470394960765,
+            "brier_multiclass": 0.5618666566980537,
+            "up_brier": 0.25214584781116206,
+            "downside_brier": 0.06234741682647246,
+            "accuracy": 0.37
+          },
+          "selected_current": "empirical",
+          "selected_challenger": "empirical"
+        },
+        {
+          "seed": 71002,
+          "current": {
+            "log_loss": 0.9102380279442781,
+            "brier_multiclass": 0.5639653523442119,
+            "up_brier": 0.2495381081454677,
+            "downside_brier": 0.06619891165150489,
+            "accuracy": 0.5
+          },
+          "challenger": {
+            "log_loss": 0.9102380279442781,
+            "brier_multiclass": 0.5639653523442119,
+            "up_brier": 0.2495381081454677,
+            "downside_brier": 0.06619891165150489,
+            "accuracy": 0.5
+          },
+          "selected_current": "ewma",
+          "selected_challenger": "ewma"
+        },
+        {
+          "seed": 71003,
+          "current": {
+            "log_loss": 0.9293075782645401,
+            "brier_multiclass": 0.564851590724952,
+            "up_brier": 0.24889225576419274,
+            "downside_brier": 0.06697813580963025,
+            "accuracy": 0.51
+          },
+          "challenger": {
+            "log_loss": 0.9026792022380461,
+            "brier_multiclass": 0.5643972756728135,
+            "up_brier": 0.24896405034274502,
+            "downside_brier": 0.06543697238202291,
+            "accuracy": 0.45
+          },
+          "selected_current": "ewma",
+          "selected_challenger": "empirical_raw"
+        },
+        {
+          "seed": 71004,
+          "current": {
+            "log_loss": 0.8814540518391324,
+            "brier_multiclass": 0.5655336787031721,
+            "up_brier": 0.25551550436285614,
+            "downside_brier": 0.05167251053866817,
+            "accuracy": 0.46
+          },
+          "challenger": {
+            "log_loss": 0.8814540518391324,
+            "brier_multiclass": 0.5655336787031721,
+            "up_brier": 0.25551550436285614,
+            "downside_brier": 0.05167251053866817,
+            "accuracy": 0.46
+          },
+          "selected_current": "softmax",
+          "selected_challenger": "softmax"
+        },
+        {
+          "seed": 71005,
+          "current": {
+            "log_loss": 0.7892959416746044,
+            "brier_multiclass": 0.5202116044378734,
+            "up_brier": 0.24971875424179774,
+            "downside_brier": 0.024408116958803995,
+            "accuracy": 0.55
+          },
+          "challenger": {
+            "log_loss": 0.7892959416746044,
+            "brier_multiclass": 0.5202116044378734,
+            "up_brier": 0.24971875424179774,
+            "downside_brier": 0.024408116958803995,
+            "accuracy": 0.55
+          },
+          "selected_current": "empirical",
+          "selected_challenger": "empirical"
+        },
+        {
+          "seed": 71006,
+          "current": {
+            "log_loss": 0.7550472288530343,
+            "brier_multiclass": 0.5076305916920396,
+            "up_brier": 0.24823436976797603,
+            "downside_brier": 0.014843225057044497,
+            "accuracy": 0.58
+          },
+          "challenger": {
+            "log_loss": 0.7714326091394765,
+            "brier_multiclass": 0.5109148439585534,
+            "up_brier": 0.251176353898036,
+            "downside_brier": 0.015898141413250907,
+            "accuracy": 0.58
+          },
+          "selected_current": "empirical",
+          "selected_challenger": "empirical_raw"
+        }
+      ],
+      "loss_difference": -0.001707165956675305,
+      "brier_difference": 0.0004716562023958833
+    },
+    {
+      "kind": "heavy_tail",
+      "runs": [
+        {
+          "seed": 71001,
+          "current": {
+            "log_loss": 0.9065010965712003,
+            "brier_multiclass": 0.5641394393136746,
+            "up_brier": 0.25119566468538307,
+            "downside_brier": 0.06586986708986303,
+            "accuracy": 0.485
+          },
+          "challenger": {
+            "log_loss": 0.9065010965712003,
+            "brier_multiclass": 0.5641394393136746,
+            "up_brier": 0.25119566468538307,
+            "downside_brier": 0.06586986708986303,
+            "accuracy": 0.485
+          },
+          "selected_current": "empirical",
+          "selected_challenger": "empirical"
+        },
+        {
+          "seed": 71002,
+          "current": {
+            "log_loss": 0.8854139830481697,
+            "brier_multiclass": 0.5516177021177606,
+            "up_brier": 0.25520971791742675,
+            "downside_brier": 0.058721321757722524,
+            "accuracy": 0.56
+          },
+          "challenger": {
+            "log_loss": 0.8685696782184756,
+            "brier_multiclass": 0.5451292488017981,
+            "up_brier": 0.24954582301669578,
+            "downside_brier": 0.05641341003769078,
+            "accuracy": 0.56
+          },
+          "selected_current": "empirical",
+          "selected_challenger": "empirical_raw"
+        },
+        {
+          "seed": 71003,
+          "current": {
+            "log_loss": 0.8503980700794243,
+            "brier_multiclass": 0.5429819235413879,
+            "up_brier": 0.25022331002852644,
+            "downside_brier": 0.03997499792150754,
+            "accuracy": 0.51
+          },
+          "challenger": {
+            "log_loss": 0.8503980700794243,
+            "brier_multiclass": 0.5429819235413879,
+            "up_brier": 0.25022331002852644,
+            "downside_brier": 0.03997499792150754,
+            "accuracy": 0.51
+          },
+          "selected_current": "ridge",
+          "selected_challenger": "ridge"
+        },
+        {
+          "seed": 71004,
+          "current": {
+            "log_loss": 0.8892064204093089,
+            "brier_multiclass": 0.5608344061084692,
+            "up_brier": 0.2515646836859606,
+            "downside_brier": 0.053848667643336984,
+            "accuracy": 0.495
+          },
+          "challenger": {
+            "log_loss": 0.8892064204093089,
+            "brier_multiclass": 0.5608344061084692,
+            "up_brier": 0.2515646836859606,
+            "downside_brier": 0.053848667643336984,
+            "accuracy": 0.495
+          },
+          "selected_current": "softmax",
+          "selected_challenger": "softmax"
+        },
+        {
+          "seed": 71005,
+          "current": {
+            "log_loss": 0.9690692635949059,
+            "brier_multiclass": 0.5960871580753382,
+            "up_brier": 0.2666014304504249,
+            "downside_brier": 0.07615504680684093,
+            "accuracy": 0.475
+          },
+          "challenger": {
+            "log_loss": 0.9690692635949059,
+            "brier_multiclass": 0.5960871580753382,
+            "up_brier": 0.2666014304504249,
+            "downside_brier": 0.07615504680684093,
+            "accuracy": 0.475
+          },
+          "selected_current": "ridge",
+          "selected_challenger": "ridge"
+        },
+        {
+          "seed": 71006,
+          "current": {
+            "log_loss": 0.8349540534178417,
+            "brier_multiclass": 0.5460378301313896,
+            "up_brier": 0.26473109925005434,
+            "downside_brier": 0.03019698946779909,
+            "accuracy": 0.4
+          },
+          "challenger": {
+            "log_loss": 0.8349540534178417,
+            "brier_multiclass": 0.5460378301313896,
+            "up_brier": 0.26473109925005434,
+            "downside_brier": 0.03019698946779909,
+            "accuracy": 0.4
+          },
+          "selected_current": "softmax",
+          "selected_challenger": "softmax"
+        }
+      ],
+      "loss_difference": -0.0028073841382823352,
+      "brier_difference": -0.0010814088859937472
+    },
+    {
+      "kind": "autocorrelated",
+      "runs": [
+        {
+          "seed": 71001,
+          "current": {
+            "log_loss": 0.9132561822638766,
+            "brier_multiclass": 0.5614856907173097,
+            "up_brier": 0.24176864418245633,
+            "downside_brier": 0.0738756038116686,
+            "accuracy": 0.54
+          },
+          "challenger": {
+            "log_loss": 0.9132561822638766,
+            "brier_multiclass": 0.5614856907173097,
+            "up_brier": 0.24176864418245633,
+            "downside_brier": 0.0738756038116686,
+            "accuracy": 0.54
+          },
+          "selected_current": "ridge",
+          "selected_challenger": "ridge"
+        },
+        {
+          "seed": 71002,
+          "current": {
+            "log_loss": 0.8973923787432448,
+            "brier_multiclass": 0.5645836107477549,
+            "up_brier": 0.22630858972046675,
+            "downside_brier": 0.0824719892564605,
+            "accuracy": 0.505
+          },
+          "challenger": {
+            "log_loss": 0.8973923787432448,
+            "brier_multiclass": 0.5645836107477549,
+            "up_brier": 0.22630858972046675,
+            "downside_brier": 0.0824719892564605,
+            "accuracy": 0.505
+          },
+          "selected_current": "softmax",
+          "selected_challenger": "softmax"
+        },
+        {
+          "seed": 71003,
+          "current": {
+            "log_loss": 0.8918761060866922,
+            "brier_multiclass": 0.5527618919885683,
+            "up_brier": 0.2380795662428746,
+            "downside_brier": 0.0692499026829596,
+            "accuracy": 0.525
+          },
+          "challenger": {
+            "log_loss": 0.8918761060866922,
+            "brier_multiclass": 0.5527618919885683,
+            "up_brier": 0.2380795662428746,
+            "downside_brier": 0.0692499026829596,
+            "accuracy": 0.525
+          },
+          "selected_current": "ridge",
+          "selected_challenger": "ridge"
+        },
+        {
+          "seed": 71004,
+          "current": {
+            "log_loss": 0.8767821557408069,
+            "brier_multiclass": 0.5449580927263418,
+            "up_brier": 0.23207713454468062,
+            "downside_brier": 0.06502250785435439,
+            "accuracy": 0.565
+          },
+          "challenger": {
+            "log_loss": 0.8767821557408069,
+            "brier_multiclass": 0.5449580927263418,
+            "up_brier": 0.23207713454468062,
+            "downside_brier": 0.06502250785435439,
+            "accuracy": 0.565
+          },
+          "selected_current": "softmax",
+          "selected_challenger": "softmax"
+        },
+        {
+          "seed": 71005,
+          "current": {
+            "log_loss": 0.7711346350818541,
+            "brier_multiclass": 0.49276998532763366,
+            "up_brier": 0.22771098595816053,
+            "downside_brier": 0.03700778005273731,
+            "accuracy": 0.6
+          },
+          "challenger": {
+            "log_loss": 0.7711346350818541,
+            "brier_multiclass": 0.49276998532763366,
+            "up_brier": 0.22771098595816053,
+            "downside_brier": 0.03700778005273731,
+            "accuracy": 0.6
+          },
+          "selected_current": "ridge",
+          "selected_challenger": "ridge"
+        },
+        {
+          "seed": 71006,
+          "current": {
+            "log_loss": 0.7738420995997102,
+            "brier_multiclass": 0.5147695870378035,
+            "up_brier": 0.24675750630138577,
+            "downside_brier": 0.023956847126309463,
+            "accuracy": 0.55
+          },
+          "challenger": {
+            "log_loss": 0.7738420995997102,
+            "brier_multiclass": 0.5147695870378035,
+            "up_brier": 0.24675750630138577,
+            "downside_brier": 0.023956847126309463,
+            "accuracy": 0.55
+          },
+          "selected_current": "softmax",
+          "selected_challenger": "softmax"
+        }
+      ],
+      "loss_difference": 0,
+      "brier_difference": 0
+    },
+    {
+      "kind": "volatility_up",
+      "runs": [
+        {
+          "seed": 71001,
+          "current": {
+            "log_loss": 1.0376279979665204,
+            "brier_multiclass": 0.6241732862686494,
+            "up_brier": 0.255334448582261,
+            "downside_brier": 0.19893169190827176,
+            "accuracy": 0.53
+          },
+          "challenger": {
+            "log_loss": 1.0376279979665204,
+            "brier_multiclass": 0.6241732862686494,
+            "up_brier": 0.255334448582261,
+            "downside_brier": 0.19893169190827176,
+            "accuracy": 0.53
+          },
+          "selected_current": "ewma",
+          "selected_challenger": "ewma"
+        },
+        {
+          "seed": 71002,
+          "current": {
+            "log_loss": 1.0582728938910653,
+            "brier_multiclass": 0.6391823622491879,
+            "up_brier": 0.25087343969104053,
+            "downside_brier": 0.23494549238231754,
+            "accuracy": 0.47
+          },
+          "challenger": {
+            "log_loss": 1.0582728938910653,
+            "brier_multiclass": 0.6391823622491879,
+            "up_brier": 0.25087343969104053,
+            "downside_brier": 0.23494549238231754,
+            "accuracy": 0.47
+          },
+          "selected_current": "ewma",
+          "selected_challenger": "ewma"
+        },
+        {
+          "seed": 71003,
+          "current": {
+            "log_loss": 1.0301604634766588,
+            "brier_multiclass": 0.6169684220860426,
+            "up_brier": 0.24987298495899687,
+            "downside_brier": 0.1912401882810615,
+            "accuracy": 0.52
+          },
+          "challenger": {
+            "log_loss": 1.0301604634766588,
+            "brier_multiclass": 0.6169684220860426,
+            "up_brier": 0.24987298495899687,
+            "downside_brier": 0.1912401882810615,
+            "accuracy": 0.52
+          },
+          "selected_current": "ewma",
+          "selected_challenger": "ewma"
+        },
+        {
+          "seed": 71004,
+          "current": {
+            "log_loss": 1.045618025177413,
+            "brier_multiclass": 0.6327202364848343,
+            "up_brier": 0.2605739305525728,
+            "downside_brier": 0.21442272682108865,
+            "accuracy": 0.49
+          },
+          "challenger": {
+            "log_loss": 1.045618025177413,
+            "brier_multiclass": 0.6327202364848343,
+            "up_brier": 0.2605739305525728,
+            "downside_brier": 0.21442272682108865,
+            "accuracy": 0.49
+          },
+          "selected_current": "ewma",
+          "selected_challenger": "ewma"
+        },
+        {
+          "seed": 71005,
+          "current": {
+            "log_loss": 1.0906955040033863,
+            "brier_multiclass": 0.6623278324541044,
+            "up_brier": 0.2723360055860755,
+            "downside_brier": 0.21162586905126987,
+            "accuracy": 0.49
+          },
+          "challenger": {
+            "log_loss": 1.0906955040033863,
+            "brier_multiclass": 0.6623278324541044,
+            "up_brier": 0.2723360055860755,
+            "downside_brier": 0.21162586905126987,
+            "accuracy": 0.49
+          },
+          "selected_current": "ewma",
+          "selected_challenger": "ewma"
+        },
+        {
+          "seed": 71006,
+          "current": {
+            "log_loss": 1.0471546967211771,
+            "brier_multiclass": 0.6309987660740619,
+            "up_brier": 0.2542230851490344,
+            "downside_brier": 0.20791982133334752,
+            "accuracy": 0.5
+          },
+          "challenger": {
+            "log_loss": 1.0471546967211771,
+            "brier_multiclass": 0.6309987660740619,
+            "up_brier": 0.2542230851490344,
+            "downside_brier": 0.20791982133334752,
+            "accuracy": 0.5
+          },
+          "selected_current": "ewma",
+          "selected_challenger": "ewma"
+        }
+      ],
+      "loss_difference": 0,
+      "brier_difference": 0
+    },
+    {
+      "kind": "volatility_down",
+      "runs": [
+        {
+          "seed": 71001,
+          "current": {
+            "log_loss": 0.950508128782989,
+            "brier_multiclass": 0.6912645390105504,
+            "up_brier": 0.34557505058885213,
+            "downside_brier": 8.946288682038153e-8,
+            "accuracy": 0.52
+          },
+          "challenger": {
+            "log_loss": 0.950508128782989,
+            "brier_multiclass": 0.6912645390105504,
+            "up_brier": 0.34557505058885213,
+            "downside_brier": 8.946288682038153e-8,
+            "accuracy": 0.52
+          },
+          "selected_current": "ewma",
+          "selected_challenger": "ewma"
+        },
+        {
+          "seed": 71002,
+          "current": {
+            "log_loss": 0.9877794059265009,
+            "brier_multiclass": 0.5961844012980412,
+            "up_brier": 0.2920698310614939,
+            "downside_brier": 0.05249336713742945,
+            "accuracy": 0.53
+          },
+          "challenger": {
+            "log_loss": 0.9877794059265009,
+            "brier_multiclass": 0.5961844012980412,
+            "up_brier": 0.2920698310614939,
+            "downside_brier": 0.05249336713742945,
+            "accuracy": 0.53
+          },
+          "selected_current": "ewma",
+          "selected_challenger": "ewma"
+        },
+        {
+          "seed": 71003,
+          "current": {
+            "log_loss": 0.7298040478040665,
+            "brier_multiclass": 0.5332394657801892,
+            "up_brier": 0.26684909192636014,
+            "downside_brier": 0.000008410969945481064,
+            "accuracy": 0.48
+          },
+          "challenger": {
+            "log_loss": 0.7298040478040665,
+            "brier_multiclass": 0.5332394657801892,
+            "up_brier": 0.26684909192636014,
+            "downside_brier": 0.000008410969945481064,
+            "accuracy": 0.48
+          },
+          "selected_current": "ewma",
+          "selected_challenger": "ewma"
+        },
+        {
+          "seed": 71004,
+          "current": {
+            "log_loss": 0.8799318478981071,
+            "brier_multiclass": 0.6485243577354685,
+            "up_brier": 0.32357987029964663,
+            "downside_brier": 0.000010660605148272626,
+            "accuracy": 0.515
+          },
+          "challenger": {
+            "log_loss": 0.8799318478981071,
+            "brier_multiclass": 0.6485243577354685,
+            "up_brier": 0.32357987029964663,
+            "downside_brier": 0.000010660605148272626,
+            "accuracy": 0.515
+          },
+          "selected_current": "ewma",
+          "selected_challenger": "ewma"
+        },
+        {
+          "seed": 71005,
+          "current": {
+            "log_loss": 0.745958122662399,
+            "brier_multiclass": 0.542298253239418,
+            "up_brier": 0.2721451280086231,
+            "downside_brier": 0.0000699742027262397,
+            "accuracy": 0.51
+          },
+          "challenger": {
+            "log_loss": 0.745958122662399,
+            "brier_multiclass": 0.542298253239418,
+            "up_brier": 0.2721451280086231,
+            "downside_brier": 0.0000699742027262397,
+            "accuracy": 0.51
+          },
+          "selected_current": "ewma",
+          "selected_challenger": "ewma"
+        },
+        {
+          "seed": 71006,
+          "current": {
+            "log_loss": 0.696098747007821,
+            "brier_multiclass": 0.50191005742797,
+            "up_brier": 0.25093777142515444,
+            "downside_brier": 0.0000028871271959215595,
+            "accuracy": 0.5
+          },
+          "challenger": {
+            "log_loss": 0.696098747007821,
+            "brier_multiclass": 0.50191005742797,
+            "up_brier": 0.25093777142515444,
+            "downside_brier": 0.0000028871271959215595,
+            "accuracy": 0.5
+          },
+          "selected_current": "ewma",
+          "selected_challenger": "ewma"
+        }
+      ],
+      "loss_difference": 0,
+      "brier_difference": 0
+    }
+  ],
+  "mean_loss_difference": -0.001707370380984967,
+  "mean_brier_difference": -0.0001603786330948308,
+  "passes_gate": true
+}

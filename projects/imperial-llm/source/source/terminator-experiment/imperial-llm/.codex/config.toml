@@ -1,0 +1,5 @@
+# Project roles, adapted from ECC using the current standalone-agent schema.
+# Inherit the user's model, tools, approvals and sandbox. No hooks or MCP installs.
+[agents]
+enabled = true
+max_concurrent_threads_per_session = 3

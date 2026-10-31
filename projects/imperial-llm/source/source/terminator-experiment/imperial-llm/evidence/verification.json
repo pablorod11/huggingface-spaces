@@ -1,0 +1,79 @@
+{
+  "focused_python": {
+    "status": "PASS",
+    "passed": 17,
+    "log": "evidence/focused-tests-final.log"
+  },
+  "new_pipeline_tests": {
+    "status": "PASS",
+    "passed": 6,
+    "included_in_focused_total": true
+  },
+  "javascript_numerical": {
+    "status": "PASS",
+    "max_absolute_logit_error": 9.306707654310742e-06,
+    "tolerance": 0.0001
+  },
+  "worker_generation": {
+    "status": "PASS"
+  },
+  "browser": {
+    "status": "PASS",
+    "passed": 32,
+    "skipped": 4,
+    "projects": [
+      "chromium",
+      "firefox",
+      "webkit",
+      "phone"
+    ],
+    "skips": "Optional reviewed screenshot baselines; functional screenshots inspected at desktop and phone sizes."
+  },
+  "lint_changed_files": {
+    "status": "PASS",
+    "files": [
+      "scripts/finetune_stories.py",
+      "scripts/prepare_story_release.py",
+      "tests/test_finetune_stories.py"
+    ]
+  },
+  "python_syntax": {
+    "status": "PASS"
+  },
+  "full_upstream_suite": {
+    "status": "INCOMPLETE_WITH_FAILURES",
+    "passed_before_interrupt": 119,
+    "failed": 6,
+    "skipped": 1,
+    "detail": "Initial run from outer workspace interrupted after failures/stalling; configuration failure due to working directory. Correct project-root config/checkpoint rerun:40 passed,3 failed (torch.compile on Python3.12 unsupported by torch2.2.2). RMSNorm unavailable and Gloo loopback sandbox failure remain in broad log.",
+    "failed_initial": [
+      "test_unwrap_model_removes_compile_and_data_parallel",
+      "test_compiled_model_checkpoint_round_trip",
+      "test_reward_checkpoint_loads_for_chat_and_as_reward_model",
+      "test_smoke_configs_never_overwrite_real_checkpoints (project-root rerun passed)",
+      "test_ddp_wrap_lets_moe_experts_skip_a_step",
+      "test_rmsnorm_matches_torch"
+    ]
+  },
+  "independent_read_only_review": {
+    "status": "NO_ACTIONABLE_FINDINGS",
+    "scope": "correctness, split leakage, serialization, browser metadata"
+  },
+  "type_check": {
+    "status": "NOT_RUN"
+  },
+  "coverage": {
+    "status": "NOT_MEASURED"
+  },
+  "claims": {
+    "metric_gate_passed": true,
+    "story_coherence_improved": "UNVERIFIED",
+    "live_publication": false
+  },
+  "source": {
+    "space_revision": "d82cd96378ef7088905dcc5de8976a731607709e",
+    "downloaded_source_zip_sha256": "e9ff36285d52707bf50161b90588fd85b4eb27e5d35200362b441f8e510d068c",
+    "executed_script_sha256": "e13bc86620e9f3959650420195c13306481926a2a37eac6fd3155bd467fe29ca",
+    "formatted_script_sha256": "958108f810666ad3f127aba55bd21a0dab3758fd91c6605729b6a2e4cbbdbbbd"
+  }
+}

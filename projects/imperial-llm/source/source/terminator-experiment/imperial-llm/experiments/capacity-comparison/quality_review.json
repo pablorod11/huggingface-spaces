@@ -1,0 +1,22 @@
+{
+  "method": "Unblinded qualitative inspection by one agent of all 48 saved outputs; not a human preference study or validated coherence metric.",
+  "samples_reviewed": 48,
+  "wider_samples_reviewed": 12,
+  "wider_samples_with_broken_grammar_or_malformed_words": 12,
+  "reliable_coherence_established": false,
+  "promotion": false,
+  "decision": "Preserve as experimental checkpoint; keep live model004.",
+  "examples": [
+    {
+      "prompt": "dog at park",
+      "seed": 1729,
+      "text": "a little bird. They rellied to go help. They plaster, the said she this top that day."
+    },
+    {
+      "prompt": "lost ball",
+      "seed": 42,
+      "text": "had a brought. She wanted to do. When she wite chat was so happing"
+    }
+  ],
+  "next_experiment": "Test a longer context at fixed width64 and training corpus; retain width64/context64 as control. Budget both arms explicitly, use a newly sealed test and predeclared entity-recall prompts. This is a hypothesis, not a proven remedy."
+}

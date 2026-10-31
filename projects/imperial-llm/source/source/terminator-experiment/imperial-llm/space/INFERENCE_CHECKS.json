@@ -1,0 +1,25 @@
+{
+  "baseline_hf_revision": "fa0102895965dfd2e5dbb492bdac7d0f732a55b4",
+  "weights_changed": false,
+  "quality_changed": false,
+  "python_js_parity_max_error": 2.5604187596783845e-06,
+  "node_reference_parity": "Strictly equal logits, generated text and progress/done messages.",
+  "browser_checks": "Verified model checksum, full64-character output, stop with preserved partial output and restored controls, unsupported-character error/focus.",
+  "kv_policy": "Float64 K/V; append only on exact prefix extension; rebuild on sliding/replaced/mutated context.",
+  "cached_numeric_payload_max_bytes": 131072,
+  "limitations": [
+    "Payload size excludes typed-array/container overhead.",
+    "Node timings are not browser end-to-end latency guarantees.",
+    "SPIN was not run.",
+    "Graphify did not run; direct source inspection supplied navigation."
+  ],
+  "worker_regression_passed": true,
+  "cache_suite_passed": true,
+  "main_logit_cases": 109,
+  "seeded_worker_cases": 4,
+  "benchmark_exact_outputs": true,
+  "runtime_release": "model005-kv1",
+  "deployment_status": "Validated runtime approved for deployment",
+  "browser_cache_policy": "Versioned app, worker and inference URLs",
+  "benchmark_file": "INFERENCE_BENCHMARK.json"
+}

@@ -1,0 +1,15 @@
+# Model 005 experimental card
+
+Model 005 is an educational character-level story-continuation Transformer:110387 parameters, width 64, two blocks, four heads, context 64, vocabulary 51. Its intended use is inspecting a small model's behavior and training evidence. It has no established assistant, factual-answering, instruction-following or dependable storytelling capability.
+
+**Release quality gate failed:0/12 reviewed cosine continuations passed grammar and sustained coherence.** Five contain clear malformed words. All 12 contain broken grammar. Review was unblinded agent screening over four frozen prompts and three seeds, not a human study. Deployment was requested by the owner despite this failed gate; deployment authorization does not turn the gate into a pass.
+
+The selected candidate warm-starts the unpublished wide model selected at original step 14000. Two 2400-update arms reset AdamW and share seed 1729, batch 16,64-character contexts, clip 1 and default weight_decay 0.01. Validation alone selects the cosine policy and step 2400, including unchanged step 0 as eligible. Cosine 0.0003→0.00003 and constant 0.001 differ in scale as well as shape. Neither final optimizer state nor RNG state is preserved, so exact resume is unsupported.
+
+Matched baseline/candidate validation CE is 1.183765/1.130293. Previously observed regression-test CE is 1.188995/1.137958,4.29% lower. This test contains 128 stories with 32768 sampled target characters; windows may overlap. It is not a fresh independent test. Repeated validation, one training seed and same-domain data limit interpretation. Earlier live004 is a smaller model with different history and cannot isolate this intervention. Semantic near duplicates were not assessed. Lower CE is not proof of better grammar or generalization.
+
+Data comprises 4096 training stories and 128 validation stories from normalized TinyStories V2 GPT4, Ronen Eldan and Yuanzhi Li, revision `f54c09fd23315a6f9c86f9dc80f725de7d8f9c64`. Dataset terms are [CDLA-Sharing-1.0](https://cdla.dev/sharing-1-0/); preserve modification notices and source manifests. Legacy normalization and the fixed 51-character vocabulary remove unsupported punctuation and other characters. No unrelated GitHub prose was added as training data. Code is MIT licensed.
+
+Supported Linux CPU PyTorch 2.14.1+cpu completed training,38 focused Python tests and both browser export suites, including hash and Python/JavaScript parity checks, bounded inputs, seeded worker generation and long-history cropping. These are focused engineering checks, not a safety certification. Checkpoint deserialization requires stable PyTorch ≥2.6 with restricted weights-only loading and current security fixes. Do not bypass this guard on Torch 2.2.2.
+
+The browser model, checkpoint, training record and source artifacts must stay together. See REPRODUCE.md. Previous HF revision `3185cd49f7abccc7ad2b30c4b73b04672415da76` is the rollback target. Retain the failed quality findings whenever sharing this candidate.

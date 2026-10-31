@@ -1,0 +1,29 @@
+{
+  "focused_python_tests": {
+    "passed": 27,
+    "log": "...........................                                              [100%]\n27 passed in 7.14s\n"
+  },
+  "ruff": "All checks passed",
+  "node": {
+    "64": {
+      "inference": "PASS: checksum, three Python/JS logit cases (max error 0.000002216688073986006), roundtrip, input bounds, tensor validation.\n",
+      "generation": "PASS: deterministic seeded generation, 64-character output, batched streaming, final logits, invalid request rejection.\nPASS: long-history deterministic generation and context cropping.\n"
+    },
+    "128": {
+      "inference": "PASS: checksum, three Python/JS logit cases (max error 0.0000021757141001055302), roundtrip, input bounds, tensor validation.\n",
+      "generation": "PASS: deterministic seeded generation, 64-character output, batched streaming, final logits, invalid request rejection.\nPASS: long-history deterministic generation and context cropping.\n"
+    }
+  },
+  "integrity": "Frozen selection hashes, all worker source hashes, initial/selected/model digests, context config and prediction budgets asserted before packaging. Final evaluator replays validation before test access.",
+  "baseline_local_asset_sha256": "986699bbf0668f6d1aa5da67c373fe53770f7ce5e9efb3e337b5c0d7a42fe376",
+  "publication": false,
+  "browser_ui_release": "Not performed; no UI change.",
+  "broad_suite": "Not rerun; prior host incompatibilities remain.",
+  "multi_agent_review": [
+    "Davout engineering + five control tests",
+    "Soult measurement/provenance + predeclared recall scorer",
+    "Ney/Lannes release criteria, read-only prelaunch source review and all60output review"
+  ],
+  "qualitative_review": "Coordinator and separate agent inspected all60continuations; unblinded agent review, not human preference study.",
+  "test_source_manifest": "d52875cc473760ad8f018aee852d9612f569b78d6de92a094f1650c06f4bb607"
+}

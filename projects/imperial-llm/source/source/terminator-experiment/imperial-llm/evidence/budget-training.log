@@ -1,0 +1,39 @@
+ARM extended_7200
+{"schedule": "constant", "step": 200, "validation_ce": 1.4946968602016568, "learning_rate": 0.001}
+{"schedule": "constant", "step": 400, "validation_ce": 1.4878530725836754, "learning_rate": 0.001}
+{"schedule": "constant", "step": 600, "validation_ce": 1.4798275297507644, "learning_rate": 0.001}
+{"schedule": "constant", "step": 800, "validation_ce": 1.4779450669884682, "learning_rate": 0.001}
+{"schedule": "constant", "step": 1000, "validation_ce": 1.4677591379731894, "learning_rate": 0.001}
+{"schedule": "constant", "step": 1200, "validation_ce": 1.4637978067621589, "learning_rate": 0.001}
+{"schedule": "constant", "step": 1400, "validation_ce": 1.45315324049443, "learning_rate": 0.001}
+{"schedule": "constant", "step": 1600, "validation_ce": 1.4550942219793797, "learning_rate": 0.001}
+{"schedule": "constant", "step": 1800, "validation_ce": 1.443729218095541, "learning_rate": 0.001}
+{"schedule": "constant", "step": 2000, "validation_ce": 1.4460882134735584, "learning_rate": 0.001}
+{"schedule": "constant", "step": 2200, "validation_ce": 1.445255464874208, "learning_rate": 0.001}
+{"verified_prefix_step": 2400}
+{"schedule": "constant", "step": 2400, "validation_ce": 1.4389501484110951, "learning_rate": 0.001}
+{"schedule": "constant", "step": 2600, "validation_ce": 1.429701030254364, "learning_rate": 0.001}
+{"schedule": "constant", "step": 2800, "validation_ce": 1.4275819119066, "learning_rate": 0.001}
+{"schedule": "constant", "step": 3000, "validation_ce": 1.4290076475590467, "learning_rate": 0.001}
+{"schedule": "constant", "step": 3200, "validation_ce": 1.4213046235963702, "learning_rate": 0.001}
+{"schedule": "constant", "step": 3400, "validation_ce": 1.4169581336900592, "learning_rate": 0.001}
+{"schedule": "constant", "step": 3600, "validation_ce": 1.4119506711140275, "learning_rate": 0.001}
+{"schedule": "constant", "step": 3800, "validation_ce": 1.4118284042924643, "learning_rate": 0.001}
+{"schedule": "constant", "step": 4000, "validation_ce": 1.4075868409126997, "learning_rate": 0.001}
+{"schedule": "constant", "step": 4200, "validation_ce": 1.4069985756650567, "learning_rate": 0.001}
+{"schedule": "constant", "step": 4400, "validation_ce": 1.401759872213006, "learning_rate": 0.001}
+{"schedule": "constant", "step": 4600, "validation_ce": 1.396720353513956, "learning_rate": 0.001}
+{"schedule": "constant", "step": 4800, "validation_ce": 1.3934850776568055, "learning_rate": 0.001}
+{"schedule": "constant", "step": 5000, "validation_ce": 1.3915471248328686, "learning_rate": 0.001}
+{"schedule": "constant", "step": 5200, "validation_ce": 1.3836314720101655, "learning_rate": 0.001}
+{"schedule": "constant", "step": 5400, "validation_ce": 1.3818348161876202, "learning_rate": 0.001}
+{"schedule": "constant", "step": 5600, "validation_ce": 1.3830107850953937, "learning_rate": 0.001}
+{"schedule": "constant", "step": 5800, "validation_ce": 1.3838458112441003, "learning_rate": 0.001}
+{"schedule": "constant", "step": 6000, "validation_ce": 1.3728655925951898, "learning_rate": 0.001}
+{"schedule": "constant", "step": 6200, "validation_ce": 1.3738985168747604, "learning_rate": 0.001}
+{"schedule": "constant", "step": 6400, "validation_ce": 1.3760801875032485, "learning_rate": 0.001}
+{"schedule": "constant", "step": 6600, "validation_ce": 1.3754942258819938, "learning_rate": 0.001}
+{"schedule": "constant", "step": 6800, "validation_ce": 1.3680795123800635, "learning_rate": 0.001}
+{"schedule": "constant", "step": 7000, "validation_ce": 1.3667430095374584, "learning_rate": 0.001}
+{"schedule": "constant", "step": 7200, "validation_ce": 1.368481621146202, "learning_rate": 0.001}
+{"validation_preferred_arm": "extended_7200", "metrics": {"baseline_004": {"val": 1.5019263420253992, "test": 1.5056028040125966}, "reference_2400": {"val": 1.4389501484110951, "test": 1.4453102508559823}, "extended_7200": {"val": 1.3667430095374584, "test": 1.368748428300023}}, "expanded_loss_gate_passed": true, "relative_test_ce_reduction_candidate_vs_baseline": 0.09089673275570531, "relative_test_ce_reduction_candidate_vs_reference": 0.052972586688993295}

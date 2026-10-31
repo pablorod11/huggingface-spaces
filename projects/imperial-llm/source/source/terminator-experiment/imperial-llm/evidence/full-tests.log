@@ -1,0 +1,501 @@
+.FF.F.....................F.....................F....................... [ 36%]
+...............................F................s.....
+=================================== FAILURES ===================================
+_____________ test_unwrap_model_removes_compile_and_data_parallel ______________
+
+cfg = SFTConfig(arch='classic', vocab_size=256, context_length=64, n_embed=64, n_head=4, n_blocks=2, n_kv_head=None, attenti...r=1e-05, min_lr=1e-06, weight_decay=0.0, grad_clip=1.0, save_every=500, lora_rank=0, lora_alpha=16.0, lora_dropout=0.0)
+
+    def test_unwrap_model_removes_compile_and_data_parallel(cfg: SFTConfig) -> None:
+        model = build_model_from_config(cfg)
+>       wrapped = torch.compile(nn.DataParallel(model))  # compile wraps lazily, no forward needed
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+work/source/imperial-llm/tests/test_checkpoint_io.py:64: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+model = DataParallel(
+  (module): Transformer(
+    (token_embed): Embedding(256, 64)
+    (position_embed): Embedding(64, 64)
+ ...orm((64,), eps=1e-05, elementwise_affine=True)
+    (lm_head): Linear(in_features=64, out_features=256, bias=True)
+  )
+)
+fullgraph = False, dynamic = None, backend = 'inductor', mode = None
+options = None, disable = False
+
+    def compile(model: Optional[Callable] = None, *,
+                fullgraph: builtins.bool = False,
+                dynamic: Optional[builtins.bool] = None,
+                backend: Union[str, Callable] = "inductor",
+                mode: Union[str, None] = None,
+                options: Optional[Dict[str, Union[str, builtins.int, builtins.bool]]] = None,
+                disable: builtins.bool = False) -> Callable:
+        """
+        Optimizes given model/function using TorchDynamo and specified backend.
+    
+        Concretely, for every frame executed within the compiled region, we will attempt
+        to compile it and cache the compiled result on the code object for future
+        use.  A single frame may be compiled multiple times if previous compiled
+        results are not applicable for subsequent calls (this is called a "guard
+        failure), you can use TORCH_LOGS=guards to debug these situations.
+        Multiple compiled results can be associated with a frame up to
+        ``torch._dynamo.config.cache_size_limit``, which defaults to 64; at which
+        point we will fall back to eager.  Note that compile caches are per
+        *code object*, not frame; if you dynamically create multiple copies of a
+        function, they will all share the same code cache.
+    
+        Args:
+           model (Callable): Module/function to optimize
+           fullgraph (bool): If False (default), torch.compile attempts to discover compileable regions
+            in the function that it will optimize. If True, then we require that the entire function be
+            capturable into a single graph. If this is not possible (that is, if there are graph breaks),
+            then this will raise an error.
+           dynamic (bool or None): Use dynamic shape tracing.  When this is True, we will up-front attempt
+            to generate a kernel that is as dynamic as possible to avoid recompilations when
+            sizes change.  This may not always work as some operations/optimizations will
+            force specialization; use TORCH_LOGS=dynamic to debug overspecialization.
+            When this is False, we will NEVER generate dynamic kernels, we will always specialize.
+            By default (None), we automatically detect if dynamism has occurred and compile a more
+            dynamic kernel upon recompile.
+           backend (str or Callable): backend to be used
+    
+            - "inductor" is the default backend, which is a good balance between performance and overhead
+    
+            - Non experimental in-tree backends can be seen with `torch._dynamo.list_backends()`
+    
+            - Experimental or debug in-tree backends can be seen with `torch._dynamo.list_backends(None)`
+    
+            - To register an out-of-tree custom backend: https://pytorch.org/docs/main/compile/custom-backends.html
+           mode (str): Can be either "default", "reduce-overhead", "max-autotune" or "max-autotune-no-cudagraphs"
+    
+            - "default" is the default mode, which is a good balance between performance and overhead
+    
+            - "reduce-overhead" is a mode that reduces the overhead of python with CUDA graphs,
+              useful for small batches.  Reduction of overhead can come at the cost of more memory
+              usage, as we will cache the workspace memory required for the invocation so that we
+              do not have to reallocate it on subsequent runs.  Reduction of overhead is not guaranteed
+              to work; today, we only reduce overhead for CUDA only graphs which do not mutate inputs.
+              There are other circumstances where CUDA graphs are not applicable; use TORCH_LOG=perf_hints
+              to debug.
+    
+            - "max-autotune" is a mode that leverages Triton based matrix multiplications and convolutions
+              It enables CUDA graphs by default.
+    
+            - "max-autotune-no-cudagraphs" is a mode similar to "max-autotune" but without CUDA graphs
+    
+            - To see the exact configs that each mode sets you can call `torch._inductor.list_mode_options()`
+    
+           options (dict): A dictionary of options to pass to the backend. Some notable ones to try out are
+    
+            - `epilogue_fusion` which fuses pointwise ops into templates. Requires `max_autotune` to also be set
+    
+            - `max_autotune` which will profile to pick the best matmul configuration
+    
+            - `fallback_random` which is useful when debugging accuracy issues
+    
+            - `shape_padding` which pads matrix shapes to better align loads on GPUs especially for tensor cores
+    
+            - `triton.cudagraphs` which will reduce the overhead of python with CUDA graphs
+    
+            - `trace.enabled` which is the most useful debugging flag to turn on
+    
+            - `trace.graph_diagram` which will show you a picture of your graph after fusion
+    
+            - For inductor you can see the full list of configs that it supports by calling `torch._inductor.list_options()`
+           disable (bool): Turn torch.compile() into a no-op for testing
+    
+        Example::
+    
+            @torch.compile(options={"triton.cudagraphs": True}, fullgraph=True)
+            def foo(x):
+                return torch.sin(x) + torch.cos(x)
+    
+        """
+        _C._log_api_usage_once("torch.compile")
+        # Temporary until we get proper support for python 3.12
+        if sys.version_info >= (3, 12):
+>           raise RuntimeError("Dynamo is not supported on Python 3.12+")
+E           RuntimeError: Dynamo is not supported on Python 3.12+
+
+work/venv/lib/python3.12/site-packages/torch/__init__.py:1801: RuntimeError
+__________________ test_compiled_model_checkpoint_round_trip ___________________
+
+cfg = SFTConfig(arch='classic', vocab_size=256, context_length=64, n_embed=64, n_head=4, n_blocks=2, n_kv_head=None, attenti...r=1e-05, min_lr=1e-06, weight_decay=0.0, grad_clip=1.0, save_every=500, lora_rank=0, lora_alpha=16.0, lora_dropout=0.0)
+tmp_path = PosixPath('/private/var/folders/dk/kk6yw0813dn3t6q8fqfctd2r0000gn/T/pytest-of-sanjusrikanth/pytest-16/test_compiled_model_checkpoint0')
+
+    def test_compiled_model_checkpoint_round_trip(cfg: SFTConfig, tmp_path: str) -> None:
+        """The exact failure from issue #36: save a compiled model, load it into a bare one."""
+        model = build_model_from_config(cfg)
+        path = os.path.join(tmp_path, "compiled.pt")
+>       save_stage_ckpt(path, torch.compile(model), None, stage="pretrain", cfg=cfg, step=0)
+                              ^^^^^^^^^^^^^^^^^^^^
+
+work/source/imperial-llm/tests/test_checkpoint_io.py:73: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+model = Transformer(
+  (token_embed): Embedding(256, 64)
+  (position_embed): Embedding(64, 64)
+  (attn_blocks): ModuleList(
+  ...LayerNorm((64,), eps=1e-05, elementwise_affine=True)
+  (lm_head): Linear(in_features=64, out_features=256, bias=True)
+)
+fullgraph = False, dynamic = None, backend = 'inductor', mode = None
+options = None, disable = False
+
+    def compile(model: Optional[Callable] = None, *,
+                fullgraph: builtins.bool = False,
+                dynamic: Optional[builtins.bool] = None,
+                backend: Union[str, Callable] = "inductor",
+                mode: Union[str, None] = None,
+                options: Optional[Dict[str, Union[str, builtins.int, builtins.bool]]] = None,
+                disable: builtins.bool = False) -> Callable:
+        """
+        Optimizes given model/function using TorchDynamo and specified backend.
+    
+        Concretely, for every frame executed within the compiled region, we will attempt
+        to compile it and cache the compiled result on the code object for future
+        use.  A single frame may be compiled multiple times if previous compiled
+        results are not applicable for subsequent calls (this is called a "guard
+        failure), you can use TORCH_LOGS=guards to debug these situations.
+        Multiple compiled results can be associated with a frame up to
+        ``torch._dynamo.config.cache_size_limit``, which defaults to 64; at which
+        point we will fall back to eager.  Note that compile caches are per
+        *code object*, not frame; if you dynamically create multiple copies of a
+        function, they will all share the same code cache.
+    
+        Args:
+           model (Callable): Module/function to optimize
+           fullgraph (bool): If False (default), torch.compile attempts to discover compileable regions
+            in the function that it will optimize. If True, then we require that the entire function be
+            capturable into a single graph. If this is not possible (that is, if there are graph breaks),
+            then this will raise an error.
+           dynamic (bool or None): Use dynamic shape tracing.  When this is True, we will up-front attempt
+            to generate a kernel that is as dynamic as possible to avoid recompilations when
+            sizes change.  This may not always work as some operations/optimizations will
+            force specialization; use TORCH_LOGS=dynamic to debug overspecialization.
+            When this is False, we will NEVER generate dynamic kernels, we will always specialize.
+            By default (None), we automatically detect if dynamism has occurred and compile a more
+            dynamic kernel upon recompile.
+           backend (str or Callable): backend to be used
+    
+            - "inductor" is the default backend, which is a good balance between performance and overhead
+    
+            - Non experimental in-tree backends can be seen with `torch._dynamo.list_backends()`
+    
+            - Experimental or debug in-tree backends can be seen with `torch._dynamo.list_backends(None)`
+    
+            - To register an out-of-tree custom backend: https://pytorch.org/docs/main/compile/custom-backends.html
+           mode (str): Can be either "default", "reduce-overhead", "max-autotune" or "max-autotune-no-cudagraphs"
+    
+            - "default" is the default mode, which is a good balance between performance and overhead
+    
+            - "reduce-overhead" is a mode that reduces the overhead of python with CUDA graphs,
+              useful for small batches.  Reduction of overhead can come at the cost of more memory
+              usage, as we will cache the workspace memory required for the invocation so that we
+              do not have to reallocate it on subsequent runs.  Reduction of overhead is not guaranteed
+              to work; today, we only reduce overhead for CUDA only graphs which do not mutate inputs.
+              There are other circumstances where CUDA graphs are not applicable; use TORCH_LOG=perf_hints
+              to debug.
+    
+            - "max-autotune" is a mode that leverages Triton based matrix multiplications and convolutions
+              It enables CUDA graphs by default.
+    
+            - "max-autotune-no-cudagraphs" is a mode similar to "max-autotune" but without CUDA graphs
+    
+            - To see the exact configs that each mode sets you can call `torch._inductor.list_mode_options()`
+    
+           options (dict): A dictionary of options to pass to the backend. Some notable ones to try out are
+    
+            - `epilogue_fusion` which fuses pointwise ops into templates. Requires `max_autotune` to also be set
+    
+            - `max_autotune` which will profile to pick the best matmul configuration
+    
+            - `fallback_random` which is useful when debugging accuracy issues
+    
+            - `shape_padding` which pads matrix shapes to better align loads on GPUs especially for tensor cores
+    
+            - `triton.cudagraphs` which will reduce the overhead of python with CUDA graphs
+    
+            - `trace.enabled` which is the most useful debugging flag to turn on
+    
+            - `trace.graph_diagram` which will show you a picture of your graph after fusion
+    
+            - For inductor you can see the full list of configs that it supports by calling `torch._inductor.list_options()`
+           disable (bool): Turn torch.compile() into a no-op for testing
+    
+        Example::
+    
+            @torch.compile(options={"triton.cudagraphs": True}, fullgraph=True)
+            def foo(x):
+                return torch.sin(x) + torch.cos(x)
+    
+        """
+        _C._log_api_usage_once("torch.compile")
+        # Temporary until we get proper support for python 3.12
+        if sys.version_info >= (3, 12):
+>           raise RuntimeError("Dynamo is not supported on Python 3.12+")
+E           RuntimeError: Dynamo is not supported on Python 3.12+
+
+work/venv/lib/python3.12/site-packages/torch/__init__.py:1801: RuntimeError
+__________ test_reward_checkpoint_loads_for_chat_and_as_reward_model ___________
+
+cfg = SFTConfig(arch='classic', vocab_size=256, context_length=64, n_embed=64, n_head=4, n_blocks=2, n_kv_head=None, attenti...r=1e-05, min_lr=1e-06, weight_decay=0.0, grad_clip=1.0, save_every=500, lora_rank=0, lora_alpha=16.0, lora_dropout=0.0)
+tmp_path = PosixPath('/private/var/folders/dk/kk6yw0813dn3t6q8fqfctd2r0000gn/T/pytest-of-sanjusrikanth/pytest-16/test_reward_checkpoint_loads_f0')
+
+    def test_reward_checkpoint_loads_for_chat_and_as_reward_model(cfg: SFTConfig, tmp_path: str) -> None:
+        rm = RewardModel(build_model_from_config(cfg))
+        with torch.no_grad():
+            rm.reward_head.weight.normal_()
+        path = os.path.join(tmp_path, "reward.pt")
+>       save_stage_ckpt(path, torch.compile(rm), None, stage="reward", cfg=cfg, step=0)
+                              ^^^^^^^^^^^^^^^^^
+
+work/source/imperial-llm/tests/test_checkpoint_io.py:98: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+model = RewardModel(
+  (transformer): Transformer(
+    (token_embed): Embedding(256, 64)
+    (position_embed): Embedding(64, 6...(in_features=64, out_features=256, bias=True)
+  )
+  (reward_head): Linear(in_features=64, out_features=1, bias=False)
+)
+fullgraph = False, dynamic = None, backend = 'inductor', mode = None
+options = None, disable = False
+
+    def compile(model: Optional[Callable] = None, *,
+                fullgraph: builtins.bool = False,
+                dynamic: Optional[builtins.bool] = None,
+                backend: Union[str, Callable] = "inductor",
+                mode: Union[str, None] = None,
+                options: Optional[Dict[str, Union[str, builtins.int, builtins.bool]]] = None,
+                disable: builtins.bool = False) -> Callable:
+        """
+        Optimizes given model/function using TorchDynamo and specified backend.
+    
+        Concretely, for every frame executed within the compiled region, we will attempt
+        to compile it and cache the compiled result on the code object for future
+        use.  A single frame may be compiled multiple times if previous compiled
+        results are not applicable for subsequent calls (this is called a "guard
+        failure), you can use TORCH_LOGS=guards to debug these situations.
+        Multiple compiled results can be associated with a frame up to
+        ``torch._dynamo.config.cache_size_limit``, which defaults to 64; at which
+        point we will fall back to eager.  Note that compile caches are per
+        *code object*, not frame; if you dynamically create multiple copies of a
+        function, they will all share the same code cache.
+    
+        Args:
+           model (Callable): Module/function to optimize
+           fullgraph (bool): If False (default), torch.compile attempts to discover compileable regions
+            in the function that it will optimize. If True, then we require that the entire function be
+            capturable into a single graph. If this is not possible (that is, if there are graph breaks),
+            then this will raise an error.
+           dynamic (bool or None): Use dynamic shape tracing.  When this is True, we will up-front attempt
+            to generate a kernel that is as dynamic as possible to avoid recompilations when
+            sizes change.  This may not always work as some operations/optimizations will
+            force specialization; use TORCH_LOGS=dynamic to debug overspecialization.
+            When this is False, we will NEVER generate dynamic kernels, we will always specialize.
+            By default (None), we automatically detect if dynamism has occurred and compile a more
+            dynamic kernel upon recompile.
+           backend (str or Callable): backend to be used
+    
+            - "inductor" is the default backend, which is a good balance between performance and overhead
+    
+            - Non experimental in-tree backends can be seen with `torch._dynamo.list_backends()`
+    
+            - Experimental or debug in-tree backends can be seen with `torch._dynamo.list_backends(None)`
+    
+            - To register an out-of-tree custom backend: https://pytorch.org/docs/main/compile/custom-backends.html
+           mode (str): Can be either "default", "reduce-overhead", "max-autotune" or "max-autotune-no-cudagraphs"
+    
+            - "default" is the default mode, which is a good balance between performance and overhead
+    
+            - "reduce-overhead" is a mode that reduces the overhead of python with CUDA graphs,
+              useful for small batches.  Reduction of overhead can come at the cost of more memory
+              usage, as we will cache the workspace memory required for the invocation so that we
+              do not have to reallocate it on subsequent runs.  Reduction of overhead is not guaranteed
+              to work; today, we only reduce overhead for CUDA only graphs which do not mutate inputs.
+              There are other circumstances where CUDA graphs are not applicable; use TORCH_LOG=perf_hints
+              to debug.
+    
+            - "max-autotune" is a mode that leverages Triton based matrix multiplications and convolutions
+              It enables CUDA graphs by default.
+    
+            - "max-autotune-no-cudagraphs" is a mode similar to "max-autotune" but without CUDA graphs
+    
+            - To see the exact configs that each mode sets you can call `torch._inductor.list_mode_options()`
+    
+           options (dict): A dictionary of options to pass to the backend. Some notable ones to try out are
+    
+            - `epilogue_fusion` which fuses pointwise ops into templates. Requires `max_autotune` to also be set
+    
+            - `max_autotune` which will profile to pick the best matmul configuration
+    
+            - `fallback_random` which is useful when debugging accuracy issues
+    
+            - `shape_padding` which pads matrix shapes to better align loads on GPUs especially for tensor cores
+    
+            - `triton.cudagraphs` which will reduce the overhead of python with CUDA graphs
+    
+            - `trace.enabled` which is the most useful debugging flag to turn on
+    
+            - `trace.graph_diagram` which will show you a picture of your graph after fusion
+    
+            - For inductor you can see the full list of configs that it supports by calling `torch._inductor.list_options()`
+           disable (bool): Turn torch.compile() into a no-op for testing
+    
+        Example::
+    
+            @torch.compile(options={"triton.cudagraphs": True}, fullgraph=True)
+            def foo(x):
+                return torch.sin(x) + torch.cos(x)
+    
+        """
+        _C._log_api_usage_once("torch.compile")
+        # Temporary until we get proper support for python 3.12
+        if sys.version_info >= (3, 12):
+>           raise RuntimeError("Dynamo is not supported on Python 3.12+")
+E           RuntimeError: Dynamo is not supported on Python 3.12+
+
+work/venv/lib/python3.12/site-packages/torch/__init__.py:1801: RuntimeError
+_____________ test_smoke_configs_never_overwrite_real_checkpoints ______________
+
+    def test_smoke_configs_never_overwrite_real_checkpoints() -> None:
+        for name, cls in STAGES.items():
+>           assert load_config(cls, f"configs/smoke/{name}.json").out_ckpt.startswith("models/smoke/")
+E           AssertionError: assert False
+E            +  where False = <built-in method startswith of str object at 0x1123f7e10>('models/smoke/')
+E            +    where <built-in method startswith of str object at 0x1123f7e10> = 'models/base_pretrained.pt'.startswith
+E            +      where 'models/base_pretrained.pt' = PretrainConfig(arch='classic', vocab_size=50304, context_length=1024, n_embed=1024, n_head=16, n_blocks=24, n_kv_head=...sine', lr=0.0003, min_lr=3e-05, weight_decay=0.1, grad_clip=1.0, out_ckpt='models/base_pretrained.pt', save_every=2000).out_ckpt
+E            +        where PretrainConfig(arch='classic', vocab_size=50304, context_length=1024, n_embed=1024, n_head=16, n_blocks=24, n_kv_head=...sine', lr=0.0003, min_lr=3e-05, weight_decay=0.1, grad_clip=1.0, out_ckpt='models/base_pretrained.pt', save_every=2000) = load_config(<class 'config.post_training_config.PretrainConfig'>, 'configs/smoke/pretrain.json')
+
+work/source/imperial-llm/tests/test_config.py:42: AssertionError
+__________________ test_ddp_wrap_lets_moe_experts_skip_a_step __________________
+
+tmp_path = PosixPath('/private/var/folders/dk/kk6yw0813dn3t6q8fqfctd2r0000gn/T/pytest-of-sanjusrikanth/pytest-16/test_ddp_wrap_lets_moe_experts0')
+
+    @pytest.mark.skipif(not dist.is_available(), reason="torch.distributed is not available")
+    def test_ddp_wrap_lets_moe_experts_skip_a_step(tmp_path: Path) -> None:
+        store = (tmp_path / "store").as_posix()
+>       dist.init_process_group("gloo", init_method=f"file:///{store.lstrip('/')}", rank=0, world_size=1)
+
+work/source/imperial-llm/tests/test_ddp_moe.py:18: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+work/venv/lib/python3.12/site-packages/torch/distributed/c10d_logger.py:86: in wrapper
+    func_return = func(*args, **kwargs)
+                  ^^^^^^^^^^^^^^^^^^^^^
+work/venv/lib/python3.12/site-packages/torch/distributed/distributed_c10d.py:1184: in init_process_group
+    default_pg, _ = _new_process_group_helper(
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+group_size = 1, group_rank = 0, global_ranks_in_group = [], backend = 'gloo'
+store = <torch.distributed.distributed_c10d.PrefixStore object at 0x11aed10b0>
+group_name = '0', pg_options = None, timeout = datetime.timedelta(seconds=1800)
+pg_tag = None
+
+    def _new_process_group_helper(
+        group_size,
+        group_rank,
+        global_ranks_in_group,
+        backend,
+        store,
+        group_name,
+        pg_options=None,
+        timeout=None,
+        pg_tag=None
+    ):
+        """
+        Create a new distributed process group.
+    
+        This function must be called by ALL processes in the global group, even if
+        the calling process is not part of the newly created group. In that case,
+        this function returns GroupMember.NON_GROUP_MEMBER.
+    
+        This function is called with ``global_ranks_in_group == []`` for the default group.
+        """
+        global _world
+    
+        if group_name in _world.pg_names.values():
+            raise ValueError(
+                "The specified group name has already been "
+                "created, please use a different group name"
+            )
+    
+        # Note: _new_process_group_helper is only called from init_process_group, which always provides a timeout value
+        _check_valid_timeout(timeout)
+    
+        if pg_tag not in [None, ""]:
+            # creating with the same tag and rank set results in the same underlying PG
+            existing_group = _find_pg_by_ranks_and_tag(pg_tag, global_ranks_in_group)
+            if existing_group:
+                _, prefix_store = _world.pg_map[existing_group]
+                return existing_group, prefix_store
+    
+        # The list of group ranks is empty if we're creating the default group.
+        is_default_group = len(global_ranks_in_group) == 0
+    
+        # If this is a subgroup (which means group_ranks is specified),
+        # we check if the current process is a member of the new group.
+        if not is_default_group:
+            global_rank = _get_default_group().rank()
+            if global_rank not in global_ranks_in_group:
+                return GroupMember.NON_GROUP_MEMBER, None
+    
+        prefix_store = PrefixStore(f"{group_name}/", store)
+        base_pg_options = ProcessGroup.Options(backend=str(backend))
+        base_pg_options._timeout = timeout
+        pg: ProcessGroup = ProcessGroup(prefix_store, group_rank, group_size, base_pg_options)
+        backend_config = BackendConfig(backend)
+        for device, backend_str in backend_config.get_device_backend_map().items():
+            # Use the group name as prefix in the default store, such that
+            # a single store can be reused by multiple groups.
+            backend_prefix_store = PrefixStore(f"{device}/", prefix_store)
+    
+            if backend_str == Backend.MPI:
+                if not is_mpi_available():
+                    raise RuntimeError(
+                        "Distributed package doesn't have MPI built in."
+                        " MPI is only included if you build PyTorch from"
+                        " source on a host that has MPI installed."
+                    )
+                backend_class = ProcessGroupMPI.create(global_ranks_in_group)
+                backend_type = ProcessGroup.BackendType.MPI
+                if not backend_class:
+                    return GroupMember.NON_GROUP_MEMBER
+                # create new process group with accurate rank and size
+                if pg.rank() == -1 and pg.size() == -1:
+                    pg = ProcessGroup(backend_prefix_store, backend_class.rank(), backend_class.size(), base_pg_options)
+            elif backend_str == Backend.GLOO:
+                # TODO: remove this check after lazy initialization is supported
+                # if pg_options is not None:
+                #     raise RuntimeError("GLOO options not supported")
+>               backend_class = ProcessGroupGloo(backend_prefix_store, group_rank, group_size, timeout=timeout)
+                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E               RuntimeError: Cannot resolve 127.0.0.1 to a (local) address
+
+work/venv/lib/python3.12/site-packages/torch/distributed/distributed_c10d.py:1298: RuntimeError
+----------------------------- Captured stderr call -----------------------------
+[W ProcessGroupGloo.cpp:751] Warning: Unable to resolve hostname to a (local) address. Using the loopback address as fallback. Manually set the network interface to bind to with GLOO_SOCKET_IFNAME. (function operator())
+__________________________ test_rmsnorm_matches_torch __________________________
+
+    def test_rmsnorm_matches_torch() -> None:
+        x = torch.randn(4, 10, 32)
+>       ours, ref = RMSNorm(32, eps=1e-6), torch.nn.RMSNorm(32, eps=1e-6)
+                                           ^^^^^^^^^^^^^^^^
+E       AttributeError: module 'torch.nn' has no attribute 'RMSNorm'
+
+work/source/imperial-llm/tests/test_modern_model.py:136: AttributeError
+=========================== short test summary info ============================
+SKIPPED [1] work/source/imperial-llm/tests/test_optim.py:24: torch.optim.Muon needs PyTorch >= 2.9
+FAILED work/source/imperial-llm/tests/test_checkpoint_io.py::test_unwrap_model_removes_compile_and_data_parallel
+FAILED work/source/imperial-llm/tests/test_checkpoint_io.py::test_compiled_model_checkpoint_round_trip
+FAILED work/source/imperial-llm/tests/test_checkpoint_io.py::test_reward_checkpoint_loads_for_chat_and_as_reward_model
+FAILED work/source/imperial-llm/tests/test_config.py::test_smoke_configs_never_overwrite_real_checkpoints
+FAILED work/source/imperial-llm/tests/test_ddp_moe.py::test_ddp_wrap_lets_moe_experts_skip_a_step
+FAILED work/source/imperial-llm/tests/test_modern_model.py::test_rmsnorm_matches_torch
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! KeyboardInterrupt !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+/Users/sanjusrikanth/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/selectors.py:415: KeyboardInterrupt
+(to show a full traceback on KeyboardInterrupt use --full-trace)
+6 failed, 119 passed, 1 skipped in 191.82s (0:03:11)

@@ -1,0 +1,29 @@
+{
+  "manifest_sha256": "099bb847ddfc80144d4e3bc4f399ec94a9e1cf190505ac048cc6c324ea0ec185",
+  "preparer_sha256": "7a1571137cd9a3f62327ff17ddd3d9b9f782253f2e4c931901072d8cec38509f",
+  "dataset": {
+    "train": {
+      "stories": 4096,
+      "question_marks_preserved": 2171,
+      "exclamation_marks_preserved": 5880,
+      "length_delta": 189,
+      "stories_with_marks": 2877
+    },
+    "val": {
+      "stories": 128,
+      "question_marks_preserved": 69,
+      "exclamation_marks_preserved": 163,
+      "length_delta": 6,
+      "stories_with_marks": 88
+    },
+    "test": {
+      "stories": 128,
+      "question_marks_preserved": 65,
+      "exclamation_marks_preserved": 210,
+      "length_delta": 11,
+      "stories_with_marks": 91
+    }
+  },
+  "metadata_disjointness": "sourceID/rawSHA/legacySHA/repairedSHA pairwise train/val/testdisjoint,prior960excludedbycanonicallegacyidentity",
+  "test_texts_read_for_this_assertion": false
+}

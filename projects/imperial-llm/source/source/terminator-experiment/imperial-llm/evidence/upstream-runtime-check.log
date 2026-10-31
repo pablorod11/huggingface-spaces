@@ -1,0 +1,366 @@
+...................................FF.F....                              [100%]
+=================================== FAILURES ===================================
+_____________ test_unwrap_model_removes_compile_and_data_parallel ______________
+
+cfg = SFTConfig(arch='classic', vocab_size=256, context_length=64, n_embed=64, n_head=4, n_blocks=2, n_kv_head=None, attenti...r=1e-05, min_lr=1e-06, weight_decay=0.0, grad_clip=1.0, save_every=500, lora_rank=0, lora_alpha=16.0, lora_dropout=0.0)
+
+    def test_unwrap_model_removes_compile_and_data_parallel(cfg: SFTConfig) -> None:
+        model = build_model_from_config(cfg)
+>       wrapped = torch.compile(nn.DataParallel(model))  # compile wraps lazily, no forward needed
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_checkpoint_io.py:64: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+model = DataParallel(
+  (module): Transformer(
+    (token_embed): Embedding(256, 64)
+    (position_embed): Embedding(64, 64)
+ ...orm((64,), eps=1e-05, elementwise_affine=True)
+    (lm_head): Linear(in_features=64, out_features=256, bias=True)
+  )
+)
+fullgraph = False, dynamic = None, backend = 'inductor', mode = None
+options = None, disable = False
+
+    def compile(model: Optional[Callable] = None, *,
+                fullgraph: builtins.bool = False,
+                dynamic: Optional[builtins.bool] = None,
+                backend: Union[str, Callable] = "inductor",
+                mode: Union[str, None] = None,
+                options: Optional[Dict[str, Union[str, builtins.int, builtins.bool]]] = None,
+                disable: builtins.bool = False) -> Callable:
+        """
+        Optimizes given model/function using TorchDynamo and specified backend.
+    
+        Concretely, for every frame executed within the compiled region, we will attempt
+        to compile it and cache the compiled result on the code object for future
+        use.  A single frame may be compiled multiple times if previous compiled
+        results are not applicable for subsequent calls (this is called a "guard
+        failure), you can use TORCH_LOGS=guards to debug these situations.
+        Multiple compiled results can be associated with a frame up to
+        ``torch._dynamo.config.cache_size_limit``, which defaults to 64; at which
+        point we will fall back to eager.  Note that compile caches are per
+        *code object*, not frame; if you dynamically create multiple copies of a
+        function, they will all share the same code cache.
+    
+        Args:
+           model (Callable): Module/function to optimize
+           fullgraph (bool): If False (default), torch.compile attempts to discover compileable regions
+            in the function that it will optimize. If True, then we require that the entire function be
+            capturable into a single graph. If this is not possible (that is, if there are graph breaks),
+            then this will raise an error.
+           dynamic (bool or None): Use dynamic shape tracing.  When this is True, we will up-front attempt
+            to generate a kernel that is as dynamic as possible to avoid recompilations when
+            sizes change.  This may not always work as some operations/optimizations will
+            force specialization; use TORCH_LOGS=dynamic to debug overspecialization.
+            When this is False, we will NEVER generate dynamic kernels, we will always specialize.
+            By default (None), we automatically detect if dynamism has occurred and compile a more
+            dynamic kernel upon recompile.
+           backend (str or Callable): backend to be used
+    
+            - "inductor" is the default backend, which is a good balance between performance and overhead
+    
+            - Non experimental in-tree backends can be seen with `torch._dynamo.list_backends()`
+    
+            - Experimental or debug in-tree backends can be seen with `torch._dynamo.list_backends(None)`
+    
+            - To register an out-of-tree custom backend: https://pytorch.org/docs/main/compile/custom-backends.html
+           mode (str): Can be either "default", "reduce-overhead", "max-autotune" or "max-autotune-no-cudagraphs"
+    
+            - "default" is the default mode, which is a good balance between performance and overhead
+    
+            - "reduce-overhead" is a mode that reduces the overhead of python with CUDA graphs,
+              useful for small batches.  Reduction of overhead can come at the cost of more memory
+              usage, as we will cache the workspace memory required for the invocation so that we
+              do not have to reallocate it on subsequent runs.  Reduction of overhead is not guaranteed
+              to work; today, we only reduce overhead for CUDA only graphs which do not mutate inputs.
+              There are other circumstances where CUDA graphs are not applicable; use TORCH_LOG=perf_hints
+              to debug.
+    
+            - "max-autotune" is a mode that leverages Triton based matrix multiplications and convolutions
+              It enables CUDA graphs by default.
+    
+            - "max-autotune-no-cudagraphs" is a mode similar to "max-autotune" but without CUDA graphs
+    
+            - To see the exact configs that each mode sets you can call `torch._inductor.list_mode_options()`
+    
+           options (dict): A dictionary of options to pass to the backend. Some notable ones to try out are
+    
+            - `epilogue_fusion` which fuses pointwise ops into templates. Requires `max_autotune` to also be set
+    
+            - `max_autotune` which will profile to pick the best matmul configuration
+    
+            - `fallback_random` which is useful when debugging accuracy issues
+    
+            - `shape_padding` which pads matrix shapes to better align loads on GPUs especially for tensor cores
+    
+            - `triton.cudagraphs` which will reduce the overhead of python with CUDA graphs
+    
+            - `trace.enabled` which is the most useful debugging flag to turn on
+    
+            - `trace.graph_diagram` which will show you a picture of your graph after fusion
+    
+            - For inductor you can see the full list of configs that it supports by calling `torch._inductor.list_options()`
+           disable (bool): Turn torch.compile() into a no-op for testing
+    
+        Example::
+    
+            @torch.compile(options={"triton.cudagraphs": True}, fullgraph=True)
+            def foo(x):
+                return torch.sin(x) + torch.cos(x)
+    
+        """
+        _C._log_api_usage_once("torch.compile")
+        # Temporary until we get proper support for python 3.12
+        if sys.version_info >= (3, 12):
+>           raise RuntimeError("Dynamo is not supported on Python 3.12+")
+E           RuntimeError: Dynamo is not supported on Python 3.12+
+
+../../venv/lib/python3.12/site-packages/torch/__init__.py:1801: RuntimeError
+__________________ test_compiled_model_checkpoint_round_trip ___________________
+
+cfg = SFTConfig(arch='classic', vocab_size=256, context_length=64, n_embed=64, n_head=4, n_blocks=2, n_kv_head=None, attenti...r=1e-05, min_lr=1e-06, weight_decay=0.0, grad_clip=1.0, save_every=500, lora_rank=0, lora_alpha=16.0, lora_dropout=0.0)
+tmp_path = PosixPath('/private/var/folders/dk/kk6yw0813dn3t6q8fqfctd2r0000gn/T/pytest-of-sanjusrikanth/pytest-17/test_compiled_model_checkpoint0')
+
+    def test_compiled_model_checkpoint_round_trip(cfg: SFTConfig, tmp_path: str) -> None:
+        """The exact failure from issue #36: save a compiled model, load it into a bare one."""
+        model = build_model_from_config(cfg)
+        path = os.path.join(tmp_path, "compiled.pt")
+>       save_stage_ckpt(path, torch.compile(model), None, stage="pretrain", cfg=cfg, step=0)
+                              ^^^^^^^^^^^^^^^^^^^^
+
+tests/test_checkpoint_io.py:73: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+model = Transformer(
+  (token_embed): Embedding(256, 64)
+  (position_embed): Embedding(64, 64)
+  (attn_blocks): ModuleList(
+  ...LayerNorm((64,), eps=1e-05, elementwise_affine=True)
+  (lm_head): Linear(in_features=64, out_features=256, bias=True)
+)
+fullgraph = False, dynamic = None, backend = 'inductor', mode = None
+options = None, disable = False
+
+    def compile(model: Optional[Callable] = None, *,
+                fullgraph: builtins.bool = False,
+                dynamic: Optional[builtins.bool] = None,
+                backend: Union[str, Callable] = "inductor",
+                mode: Union[str, None] = None,
+                options: Optional[Dict[str, Union[str, builtins.int, builtins.bool]]] = None,
+                disable: builtins.bool = False) -> Callable:
+        """
+        Optimizes given model/function using TorchDynamo and specified backend.
+    
+        Concretely, for every frame executed within the compiled region, we will attempt
+        to compile it and cache the compiled result on the code object for future
+        use.  A single frame may be compiled multiple times if previous compiled
+        results are not applicable for subsequent calls (this is called a "guard
+        failure), you can use TORCH_LOGS=guards to debug these situations.
+        Multiple compiled results can be associated with a frame up to
+        ``torch._dynamo.config.cache_size_limit``, which defaults to 64; at which
+        point we will fall back to eager.  Note that compile caches are per
+        *code object*, not frame; if you dynamically create multiple copies of a
+        function, they will all share the same code cache.
+    
+        Args:
+           model (Callable): Module/function to optimize
+           fullgraph (bool): If False (default), torch.compile attempts to discover compileable regions
+            in the function that it will optimize. If True, then we require that the entire function be
+            capturable into a single graph. If this is not possible (that is, if there are graph breaks),
+            then this will raise an error.
+           dynamic (bool or None): Use dynamic shape tracing.  When this is True, we will up-front attempt
+            to generate a kernel that is as dynamic as possible to avoid recompilations when
+            sizes change.  This may not always work as some operations/optimizations will
+            force specialization; use TORCH_LOGS=dynamic to debug overspecialization.
+            When this is False, we will NEVER generate dynamic kernels, we will always specialize.
+            By default (None), we automatically detect if dynamism has occurred and compile a more
+            dynamic kernel upon recompile.
+           backend (str or Callable): backend to be used
+    
+            - "inductor" is the default backend, which is a good balance between performance and overhead
+    
+            - Non experimental in-tree backends can be seen with `torch._dynamo.list_backends()`
+    
+            - Experimental or debug in-tree backends can be seen with `torch._dynamo.list_backends(None)`
+    
+            - To register an out-of-tree custom backend: https://pytorch.org/docs/main/compile/custom-backends.html
+           mode (str): Can be either "default", "reduce-overhead", "max-autotune" or "max-autotune-no-cudagraphs"
+    
+            - "default" is the default mode, which is a good balance between performance and overhead
+    
+            - "reduce-overhead" is a mode that reduces the overhead of python with CUDA graphs,
+              useful for small batches.  Reduction of overhead can come at the cost of more memory
+              usage, as we will cache the workspace memory required for the invocation so that we
+              do not have to reallocate it on subsequent runs.  Reduction of overhead is not guaranteed
+              to work; today, we only reduce overhead for CUDA only graphs which do not mutate inputs.
+              There are other circumstances where CUDA graphs are not applicable; use TORCH_LOG=perf_hints
+              to debug.
+    
+            - "max-autotune" is a mode that leverages Triton based matrix multiplications and convolutions
+              It enables CUDA graphs by default.
+    
+            - "max-autotune-no-cudagraphs" is a mode similar to "max-autotune" but without CUDA graphs
+    
+            - To see the exact configs that each mode sets you can call `torch._inductor.list_mode_options()`
+    
+           options (dict): A dictionary of options to pass to the backend. Some notable ones to try out are
+    
+            - `epilogue_fusion` which fuses pointwise ops into templates. Requires `max_autotune` to also be set
+    
+            - `max_autotune` which will profile to pick the best matmul configuration
+    
+            - `fallback_random` which is useful when debugging accuracy issues
+    
+            - `shape_padding` which pads matrix shapes to better align loads on GPUs especially for tensor cores
+    
+            - `triton.cudagraphs` which will reduce the overhead of python with CUDA graphs
+    
+            - `trace.enabled` which is the most useful debugging flag to turn on
+    
+            - `trace.graph_diagram` which will show you a picture of your graph after fusion
+    
+            - For inductor you can see the full list of configs that it supports by calling `torch._inductor.list_options()`
+           disable (bool): Turn torch.compile() into a no-op for testing
+    
+        Example::
+    
+            @torch.compile(options={"triton.cudagraphs": True}, fullgraph=True)
+            def foo(x):
+                return torch.sin(x) + torch.cos(x)
+    
+        """
+        _C._log_api_usage_once("torch.compile")
+        # Temporary until we get proper support for python 3.12
+        if sys.version_info >= (3, 12):
+>           raise RuntimeError("Dynamo is not supported on Python 3.12+")
+E           RuntimeError: Dynamo is not supported on Python 3.12+
+
+../../venv/lib/python3.12/site-packages/torch/__init__.py:1801: RuntimeError
+__________ test_reward_checkpoint_loads_for_chat_and_as_reward_model ___________
+
+cfg = SFTConfig(arch='classic', vocab_size=256, context_length=64, n_embed=64, n_head=4, n_blocks=2, n_kv_head=None, attenti...r=1e-05, min_lr=1e-06, weight_decay=0.0, grad_clip=1.0, save_every=500, lora_rank=0, lora_alpha=16.0, lora_dropout=0.0)
+tmp_path = PosixPath('/private/var/folders/dk/kk6yw0813dn3t6q8fqfctd2r0000gn/T/pytest-of-sanjusrikanth/pytest-17/test_reward_checkpoint_loads_f0')
+
+    def test_reward_checkpoint_loads_for_chat_and_as_reward_model(cfg: SFTConfig, tmp_path: str) -> None:
+        rm = RewardModel(build_model_from_config(cfg))
+        with torch.no_grad():
+            rm.reward_head.weight.normal_()
+        path = os.path.join(tmp_path, "reward.pt")
+>       save_stage_ckpt(path, torch.compile(rm), None, stage="reward", cfg=cfg, step=0)
+                              ^^^^^^^^^^^^^^^^^
+
+tests/test_checkpoint_io.py:98: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+model = RewardModel(
+  (transformer): Transformer(
+    (token_embed): Embedding(256, 64)
+    (position_embed): Embedding(64, 6...(in_features=64, out_features=256, bias=True)
+  )
+  (reward_head): Linear(in_features=64, out_features=1, bias=False)
+)
+fullgraph = False, dynamic = None, backend = 'inductor', mode = None
+options = None, disable = False
+
+    def compile(model: Optional[Callable] = None, *,
+                fullgraph: builtins.bool = False,
+                dynamic: Optional[builtins.bool] = None,
+                backend: Union[str, Callable] = "inductor",
+                mode: Union[str, None] = None,
+                options: Optional[Dict[str, Union[str, builtins.int, builtins.bool]]] = None,
+                disable: builtins.bool = False) -> Callable:
+        """
+        Optimizes given model/function using TorchDynamo and specified backend.
+    
+        Concretely, for every frame executed within the compiled region, we will attempt
+        to compile it and cache the compiled result on the code object for future
+        use.  A single frame may be compiled multiple times if previous compiled
+        results are not applicable for subsequent calls (this is called a "guard
+        failure), you can use TORCH_LOGS=guards to debug these situations.
+        Multiple compiled results can be associated with a frame up to
+        ``torch._dynamo.config.cache_size_limit``, which defaults to 64; at which
+        point we will fall back to eager.  Note that compile caches are per
+        *code object*, not frame; if you dynamically create multiple copies of a
+        function, they will all share the same code cache.
+    
+        Args:
+           model (Callable): Module/function to optimize
+           fullgraph (bool): If False (default), torch.compile attempts to discover compileable regions
+            in the function that it will optimize. If True, then we require that the entire function be
+            capturable into a single graph. If this is not possible (that is, if there are graph breaks),
+            then this will raise an error.
+           dynamic (bool or None): Use dynamic shape tracing.  When this is True, we will up-front attempt
+            to generate a kernel that is as dynamic as possible to avoid recompilations when
+            sizes change.  This may not always work as some operations/optimizations will
+            force specialization; use TORCH_LOGS=dynamic to debug overspecialization.
+            When this is False, we will NEVER generate dynamic kernels, we will always specialize.
+            By default (None), we automatically detect if dynamism has occurred and compile a more
+            dynamic kernel upon recompile.
+           backend (str or Callable): backend to be used
+    
+            - "inductor" is the default backend, which is a good balance between performance and overhead
+    
+            - Non experimental in-tree backends can be seen with `torch._dynamo.list_backends()`
+    
+            - Experimental or debug in-tree backends can be seen with `torch._dynamo.list_backends(None)`
+    
+            - To register an out-of-tree custom backend: https://pytorch.org/docs/main/compile/custom-backends.html
+           mode (str): Can be either "default", "reduce-overhead", "max-autotune" or "max-autotune-no-cudagraphs"
+    
+            - "default" is the default mode, which is a good balance between performance and overhead
+    
+            - "reduce-overhead" is a mode that reduces the overhead of python with CUDA graphs,
+              useful for small batches.  Reduction of overhead can come at the cost of more memory
+              usage, as we will cache the workspace memory required for the invocation so that we
+              do not have to reallocate it on subsequent runs.  Reduction of overhead is not guaranteed
+              to work; today, we only reduce overhead for CUDA only graphs which do not mutate inputs.
+              There are other circumstances where CUDA graphs are not applicable; use TORCH_LOG=perf_hints
+              to debug.
+    
+            - "max-autotune" is a mode that leverages Triton based matrix multiplications and convolutions
+              It enables CUDA graphs by default.
+    
+            - "max-autotune-no-cudagraphs" is a mode similar to "max-autotune" but without CUDA graphs
+    
+            - To see the exact configs that each mode sets you can call `torch._inductor.list_mode_options()`
+    
+           options (dict): A dictionary of options to pass to the backend. Some notable ones to try out are
+    
+            - `epilogue_fusion` which fuses pointwise ops into templates. Requires `max_autotune` to also be set
+    
+            - `max_autotune` which will profile to pick the best matmul configuration
+    
+            - `fallback_random` which is useful when debugging accuracy issues
+    
+            - `shape_padding` which pads matrix shapes to better align loads on GPUs especially for tensor cores
+    
+            - `triton.cudagraphs` which will reduce the overhead of python with CUDA graphs
+    
+            - `trace.enabled` which is the most useful debugging flag to turn on
+    
+            - `trace.graph_diagram` which will show you a picture of your graph after fusion
+    
+            - For inductor you can see the full list of configs that it supports by calling `torch._inductor.list_options()`
+           disable (bool): Turn torch.compile() into a no-op for testing
+    
+        Example::
+    
+            @torch.compile(options={"triton.cudagraphs": True}, fullgraph=True)
+            def foo(x):
+                return torch.sin(x) + torch.cos(x)
+    
+        """
+        _C._log_api_usage_once("torch.compile")
+        # Temporary until we get proper support for python 3.12
+        if sys.version_info >= (3, 12):
+>           raise RuntimeError("Dynamo is not supported on Python 3.12+")
+E           RuntimeError: Dynamo is not supported on Python 3.12+
+
+../../venv/lib/python3.12/site-packages/torch/__init__.py:1801: RuntimeError
+=========================== short test summary info ============================
+FAILED tests/test_checkpoint_io.py::test_unwrap_model_removes_compile_and_data_parallel
+FAILED tests/test_checkpoint_io.py::test_compiled_model_checkpoint_round_trip
+FAILED tests/test_checkpoint_io.py::test_reward_checkpoint_loads_for_chat_and_as_reward_model
+3 failed, 40 passed in 7.18s

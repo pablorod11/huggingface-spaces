@@ -1,0 +1,4 @@
+npm notice run test:model
+npm notice run node space/test_inference.cjs && node space/test_generation.cjs
+PASS: checksum, three Python/JS logit cases (max error 0.000009306707654310742), roundtrip, input bounds, tensor validation.
+PASS: deterministic seeded generation, 64-character output, batched streaming, final logits, invalid request rejection.

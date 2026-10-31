@@ -1,0 +1,911 @@
+{
+  "snapshot_date": "2026-10-31",
+  "projects": [
+    {
+      "id": "PabloRod11/imperial-ml-laboratory",
+      "title": "Imperial ML Laboratory",
+      "revision": "10edff8e65b216ed8017d19dc93c1487b9f7bb13",
+      "space_url": "https://huggingface.co/spaces/PabloRod11/imperial-ml-laboratory",
+      "files": [
+        {
+          "path": "projects/imperial-ml-laboratory/.gitattributes",
+          "bytes": 1571,
+          "sha256": "1bdc5a9bc7ae0af57da8d993c7b5027845d24c7326127c1dea9676abfdc689da"
+        },
+        {
+          "path": "projects/imperial-ml-laboratory/README.md",
+          "bytes": 786,
+          "sha256": "a440bb400f462969b7ce486bec6dd61c8e58307ca8f097c8ae42216bfdfc33c8"
+        },
+        {
+          "path": "projects/imperial-ml-laboratory/UPGRADE_NOTES.md",
+          "bytes": 399,
+          "sha256": "0f274dac33a0b3c96373f463c683a91aa4843561e57407a46d020fd4b6ffb423"
+        },
+        {
+          "path": "projects/imperial-ml-laboratory/app.js",
+          "bytes": 11795,
+          "sha256": "ed11d54ac2d6f3d1bdb62edd6e8ace56759bea41fb9e126053a271f61910e476"
+        },
+        {
+          "path": "projects/imperial-ml-laboratory/export-manifest.json",
+          "bytes": 651,
+          "sha256": "3406de1b52b61473670bd8b411eb1e6fed391c54f2b3539518a3f1c1ba423409"
+        },
+        {
+          "path": "projects/imperial-ml-laboratory/index.html",
+          "bytes": 6328,
+          "sha256": "39317181e24240b159b72385a1962de2ff12de81934bb159be6b12782949fed0"
+        },
+        {
+          "path": "projects/imperial-ml-laboratory/showcase.json",
+          "bytes": 265191,
+          "sha256": "b248d7961343398d3c0f1078362b3925f7f3842b51b845d3d1b25ab6a2284c16"
+        },
+        {
+          "path": "projects/imperial-ml-laboratory/source.zip",
+          "bytes": 47000,
+          "sha256": "3d8fe16e033080693860452cab9ca5fa87c03a5e3c26c05185381e912ab1d3fa"
+        },
+        {
+          "path": "projects/imperial-ml-laboratory/style.css",
+          "bytes": 388,
+          "sha256": "789bfd541c9f06658ac410d968e9c39fa8c63a48a08643b36071b984c699a9f4"
+        },
+        {
+          "path": "projects/imperial-ml-laboratory/styles.css",
+          "bytes": 4545,
+          "sha256": "21aff1dd7b4855993efafffc803222d689c76a863ab8de6a6500d4baec0393e7"
+        },
+        {
+          "path": "projects/imperial-ml-laboratory/test-inference.cjs",
+          "bytes": 536,
+          "sha256": "d10cd0bdc11d4f21e9bde3db191730b0e907ffe457da688aaa7f968781e2f1fc"
+        },
+        {
+          "path": "projects/imperial-ml-laboratory/walkthrough.mp4",
+          "bytes": 135748,
+          "sha256": "1da1470587339c468baca2eb035476455dda97ecf8af69e554806f63b9d89755"
+        }
+      ]
+    },
+    {
+      "id": "PabloRod11/pocket-phd",
+      "title": "Pocket PhD",
+      "revision": "0c7b9560d0f0bebcbe86fb10364fe6a3ee77c717",
+      "space_url": "https://huggingface.co/spaces/PabloRod11/pocket-phd",
+      "files": [
+        {
+          "path": "projects/pocket-phd/.gitattributes",
+          "bytes": 1519,
+          "sha256": "11ad7efa24975ee4b0c3c3a38ed18737f0658a5f75a0a96787b576a78a023361"
+        },
+        {
+          "path": "projects/pocket-phd/.gitignore",
+          "bytes": 14,
+          "sha256": "4d56952b0fb13bf8f9b6c13a6d4c34a075bac3af447636a1df4335d7576e2f97"
+        },
+        {
+          "path": "projects/pocket-phd/README.md",
+          "bytes": 6974,
+          "sha256": "26f1ba35ca3c20cd2ef77c0f93e002df00d838b891db2c6a2dfd8ba64f7ec376"
+        },
+        {
+          "path": "projects/pocket-phd/UPGRADE_NOTES.md",
+          "bytes": 447,
+          "sha256": "4c4c207d63b974887d9158fc7db0e55802f8b3eaf6bb7315ac4c9fb889ace212"
+        },
+        {
+          "path": "projects/pocket-phd/app.js",
+          "bytes": 25053,
+          "sha256": "97be59e13327fe8365045fc98dcb06a64a3753a174c96f770018b8d2694e2647"
+        },
+        {
+          "path": "projects/pocket-phd/build-webllm.mjs",
+          "bytes": 2128,
+          "sha256": "f4060431cb2ce48ac36620970a380a71208ac0eb643b755f9a1722c11cf9853f"
+        },
+        {
+          "path": "projects/pocket-phd/companion/.gitignore",
+          "bytes": 21,
+          "sha256": "ea308e5fbd73567b151313b6a1ddf42d09536a8f95cc6b6e228a73b162bdf9a9"
+        },
+        {
+          "path": "projects/pocket-phd/companion/README.md",
+          "bytes": 6878,
+          "sha256": "e58bd4017a8cba2a156ffc710ee8131de4797e0fc5cc0a09a36ac5efd63cabd5"
+        },
+        {
+          "path": "projects/pocket-phd/companion/collect.py",
+          "bytes": 5914,
+          "sha256": "bc26bfe87264a34e466de8edf0d0a26ea4b2958670f2f6743bcb91acc0becf3f"
+        },
+        {
+          "path": "projects/pocket-phd/companion/discover.py",
+          "bytes": 6268,
+          "sha256": "731408a982897a9c42f3c26753c3d57f92e172fe570239041d98442e7b80057a"
+        },
+        {
+          "path": "projects/pocket-phd/companion/start_science_search.py",
+          "bytes": 1619,
+          "sha256": "131efb9ba4c1dc182b124326c3f0fe2e62bc4c4b8b76d5e5520325aa9a0c1148"
+        },
+        {
+          "path": "projects/pocket-phd/companion/test_collect.py",
+          "bytes": 3920,
+          "sha256": "2c844662a0cd38b60f06b69e09fa72cabd5069638f4bd9c1cfc92e52a76acc4d"
+        },
+        {
+          "path": "projects/pocket-phd/companion/test_discover.py",
+          "bytes": 2679,
+          "sha256": "3ca143caad3ac38642ff73703397179bab08239b7156a001df1829b2c83e88b0"
+        },
+        {
+          "path": "projects/pocket-phd/demo-template.json",
+          "bytes": 10465,
+          "sha256": "cc24810511b063c685718eabecd81849279a3bcc74eb15dfbe056334a14d8e28"
+        },
+        {
+          "path": "projects/pocket-phd/index.html",
+          "bytes": 7715,
+          "sha256": "6aacbdde22348cdb380468b6a1cbbd82589b734e921423f2b01d09c50c3413a6"
+        },
+        {
+          "path": "projects/pocket-phd/model-worker.js",
+          "bytes": 166,
+          "sha256": "afaec597f69135908992df27471bb640af520909fe57ed6c5df5184202148ca0"
+        },
+        {
+          "path": "projects/pocket-phd/package-lock.json",
+          "bytes": 15456,
+          "sha256": "ef919a125abfdbbe5157ddac69ef179a38415e35797cc103a537a03e34845fcd"
+        },
+        {
+          "path": "projects/pocket-phd/package.json",
+          "bytes": 302,
+          "sha256": "44cc32205b14a6ac534388fa02fafac0abbc2960a2680de56ee879b79e46d8a6"
+        },
+        {
+          "path": "projects/pocket-phd/research-schema.json",
+          "bytes": 1109,
+          "sha256": "4c4e059d4a784b301ecba659f12c288ad1c9ff8c68998554adae663c4f8f3ce6"
+        },
+        {
+          "path": "projects/pocket-phd/research.js",
+          "bytes": 16559,
+          "sha256": "c0795e8f43ce665f6074022f4dd3bda434c52b57a3827956b3901a289f33705a"
+        },
+        {
+          "path": "projects/pocket-phd/style.css",
+          "bytes": 10029,
+          "sha256": "5d4483415a481d4fd779b9aa0ac5d4c5529527abb9dbe2bbef5c01634f35fb45"
+        },
+        {
+          "path": "projects/pocket-phd/test-checkpoints.cjs",
+          "bytes": 5059,
+          "sha256": "66fe26b7aac1b26b4aecfe4b703d3dbbd47b670b5d5feeb385b15541bcc43d42"
+        },
+        {
+          "path": "projects/pocket-phd/test-evidence-edit.cjs",
+          "bytes": 2064,
+          "sha256": "cd46d28b48a1ad9c3844eb163bc6bec53aba5a0a12ba5b9ac9fa290112ad3841"
+        },
+        {
+          "path": "projects/pocket-phd/test-export.cjs",
+          "bytes": 1360,
+          "sha256": "3a0f3d7a8dcf7d63403ac6533c03a805d6e6806acf40af0e1618b75e63697d13"
+        },
+        {
+          "path": "projects/pocket-phd/test-import.cjs",
+          "bytes": 1231,
+          "sha256": "33f2e7f84e59f8b2fd60ff154eb62ed9778052c707c6f4d5aa6c1e7e8dc3a6d2"
+        },
+        {
+          "path": "projects/pocket-phd/test-research.cjs",
+          "bytes": 5885,
+          "sha256": "56416909e0c95652f27eee5967774ab0d94f7b71c57a132dccfdf9b85962374e"
+        },
+        {
+          "path": "projects/pocket-phd/test-runtime.cjs",
+          "bytes": 7512,
+          "sha256": "e876d41216d28dee7e918aa690c769abc5f3ff54a7ad62cef7483b730e2e3cde"
+        },
+        {
+          "path": "projects/pocket-phd/test-storage.cjs",
+          "bytes": 2038,
+          "sha256": "93ede8210ff471cc5d9d6688fc8b5476bb674b0adfad1346765794ee0e7332a3"
+        },
+        {
+          "path": "projects/pocket-phd/test-ui.cjs",
+          "bytes": 3636,
+          "sha256": "1c561c43ae690d0552a9705057682139cb1c52853292aff77677ee1c77acaa51"
+        },
+        {
+          "path": "projects/pocket-phd/vendor/README.md",
+          "bytes": 2541,
+          "sha256": "df12c7f9f6eceea09fd26642f073853eef0037d3e8a0e96ec755c0cdf137f97c"
+        },
+        {
+          "path": "projects/pocket-phd/vendor/build-manifest.json",
+          "bytes": 1128,
+          "sha256": "55ec65f6cac38d8382463e8c8abcd21588fc11a26814d2f7d6b392ba6be490b2"
+        },
+        {
+          "path": "projects/pocket-phd/vendor/licenses/loglevel-MIT.txt",
+          "bytes": 1075,
+          "sha256": "18e8cf5f0dbaf13d9562e93b9bef79aff2acff18fab698c2d589d2159375a1f9"
+        },
+        {
+          "path": "projects/pocket-phd/vendor/licenses/upstream-notices.txt",
+          "bytes": 4996,
+          "sha256": "6b9754e5edbddc5db98f8f580cb3d66e387e1f3d298af9e3d1ab31217f554ffa"
+        },
+        {
+          "path": "projects/pocket-phd/vendor/licenses/web-llm-Apache-2.0.txt",
+          "bytes": 11737,
+          "sha256": "d412ab9d5ac17e6931705aac01e5a0d323da5acd2e89a2c19aa8fc05becc59ad"
+        },
+        {
+          "path": "projects/pocket-phd/vendor/web-llm.js",
+          "bytes": 6041031,
+          "sha256": "5cefe8b25099c865536558d54f5d684cf87077097411ce99ba9f9929f9f16122"
+        }
+      ]
+    },
+    {
+      "id": "PabloRod11/intake-desk",
+      "title": "Intake Desk",
+      "revision": "ad5ee9991098ef58b039994b4c3b717b0e89e8f8",
+      "space_url": "https://huggingface.co/spaces/PabloRod11/intake-desk",
+      "files": [
+        {
+          "path": "projects/intake-desk/.gitattributes",
+          "bytes": 1519,
+          "sha256": "11ad7efa24975ee4b0c3c3a38ed18737f0658a5f75a0a96787b576a78a023361"
+        },
+        {
+          "path": "projects/intake-desk/README.md",
+          "bytes": 792,
+          "sha256": "91738e2716ba60fdb14c70e95d809fa23b3ad2ee4ff36b64a234370fc781e3d0"
+        },
+        {
+          "path": "projects/intake-desk/UPGRADE_NOTES.md",
+          "bytes": 314,
+          "sha256": "58584f185c3206e808324141c20df4ef3575af6f2ffa3a9344a243c379412bd9"
+        },
+        {
+          "path": "projects/intake-desk/app.js",
+          "bytes": 12903,
+          "sha256": "3230f815e4640375f562457b446b8a2d051ffd8587e11519aee21bd5814cb657"
+        },
+        {
+          "path": "projects/intake-desk/index.html",
+          "bytes": 6670,
+          "sha256": "a980a675d9fe5b9389f2830e8a46e3c00dc6fdaed9c82374750aed819fe595f5"
+        },
+        {
+          "path": "projects/intake-desk/style.css",
+          "bytes": 388,
+          "sha256": "789bfd541c9f06658ac410d968e9c39fa8c63a48a08643b36071b984c699a9f4"
+        },
+        {
+          "path": "projects/intake-desk/styles.css",
+          "bytes": 10971,
+          "sha256": "72a8b3493589d80cae2beb9173afc1febe43d1e16676fa14af0b445bc08c032e"
+        },
+        {
+          "path": "projects/intake-desk/test-editor.cjs",
+          "bytes": 998,
+          "sha256": "6b8d1a60f265a9ea019c65180f6e4df3efde788507c2d0eb69eb15a5e03ca6ad"
+        }
+      ]
+    },
+    {
+      "id": "PabloRod11/occupation-review-studio",
+      "title": "Occupation Review Studio",
+      "revision": "cc18e488ecbe923d226b7d8c14a55140d3d8240e",
+      "space_url": "https://huggingface.co/spaces/PabloRod11/occupation-review-studio",
+      "files": [
+        {
+          "path": "projects/occupation-review-studio/.gitattributes",
+          "bytes": 1519,
+          "sha256": "11ad7efa24975ee4b0c3c3a38ed18737f0658a5f75a0a96787b576a78a023361"
+        },
+        {
+          "path": "projects/occupation-review-studio/ATTRIBUTION.txt",
+          "bytes": 497,
+          "sha256": "59b7d5ceec80a5037f36aec7f28b7a1f282264bc3faeab8b3f62e229f5c1a38d"
+        },
+        {
+          "path": "projects/occupation-review-studio/LICENSE",
+          "bytes": 1220,
+          "sha256": "c98eda80f16c7e431872a07383954ce907f46a14d7941678b003d3ce9e285600"
+        },
+        {
+          "path": "projects/occupation-review-studio/README.md",
+          "bytes": 3339,
+          "sha256": "c86b1b450ceeccfe130fb21e1fdd5d70ac164ae8a05274ff5d8908d2e7b407f7"
+        },
+        {
+          "path": "projects/occupation-review-studio/UPGRADE_NOTES.md",
+          "bytes": 312,
+          "sha256": "422cda17d745779a64bfdce67c49a43f5714f0cc433c14430ca11af5d1ae2ef9"
+        },
+        {
+          "path": "projects/occupation-review-studio/app.mjs",
+          "bytes": 8304,
+          "sha256": "c8bd8ff1cb7136784b40af88c9bd72e70c4d7d22ca5529a170c96178d5edd38b"
+        },
+        {
+          "path": "projects/occupation-review-studio/diagrams.svg",
+          "bytes": 9264,
+          "sha256": "d691b484ab2c50443d58c59417edf76427cdd189e7003272b5e69f1d9209fb22"
+        },
+        {
+          "path": "projects/occupation-review-studio/engine.mjs",
+          "bytes": 5688,
+          "sha256": "67f02459f911c4d3b16f4de03498166014f63496931e923777bf321023df2a93"
+        },
+        {
+          "path": "projects/occupation-review-studio/index.html",
+          "bytes": 12095,
+          "sha256": "e0897e157b17e07d9b483918c7005495ca09ab61dbd9dad1f238555ce8afa2bd"
+        },
+        {
+          "path": "projects/occupation-review-studio/metrics.json",
+          "bytes": 11929,
+          "sha256": "eb1687b4550d89e1effebe0bd830219f41a0aecaad9a4ca5eb4b55d8c981b93b"
+        },
+        {
+          "path": "projects/occupation-review-studio/model.json",
+          "bytes": 1474052,
+          "sha256": "128c9d92d87a434a9039a7a8ce8c116603c418ccce17e0ef04e8c01de5c10e11"
+        },
+        {
+          "path": "projects/occupation-review-studio/parity-fixtures.json",
+          "bytes": 158226,
+          "sha256": "882edb764db1f0b89fdd338eda0b79993e055ade0eed61c8ec158c4609c76f09"
+        },
+        {
+          "path": "projects/occupation-review-studio/source-package.zip",
+          "bytes": 712767,
+          "sha256": "3c8c809d662440930275b329296027d6e72d040b43f65c7aa4f6e8c76fc2becf"
+        },
+        {
+          "path": "projects/occupation-review-studio/static-test-results.txt",
+          "bytes": 375,
+          "sha256": "5d25891fa72be8e40e020c876419d59216f4e439eb882057c6bb03820ef608cc"
+        },
+        {
+          "path": "projects/occupation-review-studio/style.css",
+          "bytes": 5884,
+          "sha256": "339668dffa96255173ba47662ced2caf47361a1ddb04780cb15859bc29995999"
+        },
+        {
+          "path": "projects/occupation-review-studio/test-engine.mjs",
+          "bytes": 3130,
+          "sha256": "f8eea199d1446b014f6c6c5bce99e6b63fcaca00f9acd9183c3618a9b67d2a3b"
+        },
+        {
+          "path": "projects/occupation-review-studio/test-startup.mjs",
+          "bytes": 2896,
+          "sha256": "e2de5c50ab220eebd30d902fab5c504c654ac411b918965effd1953665fb1e5d"
+        }
+      ]
+    },
+    {
+      "id": "PabloRod11/service-ledger-sql-reconciliation",
+      "title": "ServiceLedger SQL Reconciliation",
+      "revision": "a350950b953e3c7cefbdd4c2c5425eab3070052a",
+      "space_url": "https://huggingface.co/spaces/PabloRod11/service-ledger-sql-reconciliation",
+      "files": [
+        {
+          "path": "projects/service-ledger-sql-reconciliation/.gitattributes",
+          "bytes": 1519,
+          "sha256": "11ad7efa24975ee4b0c3c3a38ed18737f0658a5f75a0a96787b576a78a023361"
+        },
+        {
+          "path": "projects/service-ledger-sql-reconciliation/02_reconcile.sql",
+          "bytes": 5558,
+          "sha256": "92ca9ad2da061b80b9a670318a10f199123c6cc9da2f76be1b735b5a4bcd843c"
+        },
+        {
+          "path": "projects/service-ledger-sql-reconciliation/CASE_STUDY.md",
+          "bytes": 10326,
+          "sha256": "fff12edb61d6d583a1f93da983950b92045b59ba79b1e2db4b444f1e157b8976"
+        },
+        {
+          "path": "projects/service-ledger-sql-reconciliation/DATA_DICTIONARY.md",
+          "bytes": 8197,
+          "sha256": "ba53e4b2bbf7c1df0bf05e85140c8254c50e6ea9e8c4025b00343743e7f76fd7"
+        },
+        {
+          "path": "projects/service-ledger-sql-reconciliation/PROJECT_README.md",
+          "bytes": 5687,
+          "sha256": "9f05f52b49e0f0453eacbf866cb53a19dc5001ea9e1b6309deb05eb1a2fde409"
+        },
+        {
+          "path": "projects/service-ledger-sql-reconciliation/README.md",
+          "bytes": 1345,
+          "sha256": "eea3288993be82a69dc764c10f434a566fbfc6439fecba43d6184de8797eea96"
+        },
+        {
+          "path": "projects/service-ledger-sql-reconciliation/REFERENCES.md",
+          "bytes": 3217,
+          "sha256": "65c6b64bd49f7308b72992ced283656ff93e1ceb86656269d527cd08f703b684"
+        },
+        {
+          "path": "projects/service-ledger-sql-reconciliation/UPGRADE_NOTES.md",
+          "bytes": 417,
+          "sha256": "636326139af768faec9cbc3f7615d31863508ffe21f87115f566d8f0ec40d08d"
+        },
+        {
+          "path": "projects/service-ledger-sql-reconciliation/acceptance.json",
+          "bytes": 2823,
+          "sha256": "aa3c55295036c331431690afb8bc9660d035500fd88c3e2ff59b8076a980293f"
+        },
+        {
+          "path": "projects/service-ledger-sql-reconciliation/exceptions.csv",
+          "bytes": 3892,
+          "sha256": "f023485b36bb757a5dd513cd9cddd3e8227789e2458cbc46b61bc83dcd9fe5e3"
+        },
+        {
+          "path": "projects/service-ledger-sql-reconciliation/index.html",
+          "bytes": 48820,
+          "sha256": "e58e419ca076c7047e7148a3208e88cfd007a6f3c9f202451780eb08e93b736d"
+        },
+        {
+          "path": "projects/service-ledger-sql-reconciliation/reconciliation.csv",
+          "bytes": 1416,
+          "sha256": "8140b707f686fcf7889a824d9c4200970cc42f474a8a47c0694c6e75f22b3c4c"
+        },
+        {
+          "path": "projects/service-ledger-sql-reconciliation/sql-reconciliation-case-study.zip",
+          "bytes": 54791,
+          "sha256": "167d407aed76dcaf18d603ad99d3d76f9b31e0f8100085564a4b1c3f03a2a028"
+        },
+        {
+          "path": "projects/service-ledger-sql-reconciliation/style.css",
+          "bytes": 388,
+          "sha256": "789bfd541c9f06658ac410d968e9c39fa8c63a48a08643b36071b984c699a9f4"
+        },
+        {
+          "path": "projects/service-ledger-sql-reconciliation/test_acceptance.py",
+          "bytes": 8812,
+          "sha256": "e38ba04992d02662acba0d88bf694b42f1dc134781c350bb8d2a031fcbd8d276"
+        }
+      ]
+    },
+    {
+      "id": "PabloRod11/imperial-llm",
+      "title": "Imperial LLM",
+      "revision": "24b7a3b35c8e008e2a6c125dc84f7c2001e11174",
+      "space_url": "https://huggingface.co/spaces/PabloRod11/imperial-llm",
+      "files": [
+        {
+          "path": "projects/imperial-llm/.gitattributes",
+          "bytes": 1519,
+          "sha256": "11ad7efa24975ee4b0c3c3a38ed18737f0658a5f75a0a96787b576a78a023361"
+        },
+        {
+          "path": "projects/imperial-llm/BROWSER_CHECKS.md",
+          "bytes": 1262,
+          "sha256": "a7f0586af6bd767dc733d3fc276b7d099f53f4eee2577773d4a0127f4b8f4a89"
+        },
+        {
+          "path": "projects/imperial-llm/DESIGN.md",
+          "bytes": 3964,
+          "sha256": "828c1e5602703124e3c7c090a1ea59521da2a6b71b55f698ef77ee18b39dc67f"
+        },
+        {
+          "path": "projects/imperial-llm/INFERENCE_BENCHMARK.json",
+          "bytes": 3473,
+          "sha256": "ab3b6cdaf9b08c6429a28669f2180d14f74b088dfb14710ed6580985ee1f985f"
+        },
+        {
+          "path": "projects/imperial-llm/INFERENCE_CHECKS.json",
+          "bytes": 1238,
+          "sha256": "79d2f4419e3034028b622393e009b16c853410dfb24d62b3d22e8af42e50a4e4"
+        },
+        {
+          "path": "projects/imperial-llm/LICENSE",
+          "bytes": 1068,
+          "sha256": "3af7509fdf483718aa1b8ab030d8ed639b9e43ae273321d9e7b75ddbf0e07f13"
+        },
+        {
+          "path": "projects/imperial-llm/MODEL_CARD.md",
+          "bytes": 3025,
+          "sha256": "080e539829ba112881481490bd524ba9e36861c5eacd0c70504a82dc9f695aa8"
+        },
+        {
+          "path": "projects/imperial-llm/QUALITY_REVIEW.json",
+          "bytes": 19100,
+          "sha256": "57af60fe4984c3d8f5eee2a5abbc7afcb8bb7f52b921adcc4676a996739abfce"
+        },
+        {
+          "path": "projects/imperial-llm/README.md",
+          "bytes": 5147,
+          "sha256": "a47cef1b24dbbc42637f618b441957ff85c7f1c373eccde66db4be7deb04df1d"
+        },
+        {
+          "path": "projects/imperial-llm/RELEASE_CHECKS.json",
+          "bytes": 1270,
+          "sha256": "b0e68a319d7208410b50a99ec1e637d48584c750b0b0f31b842b21c012b9bb02"
+        },
+        {
+          "path": "projects/imperial-llm/REPRODUCE.md",
+          "bytes": 3013,
+          "sha256": "eab8affcbf11bbfff28460e3df03f2d2ae0ec299704ad71fecb94767e41bab01"
+        },
+        {
+          "path": "projects/imperial-llm/SECURITY_UPDATE.json",
+          "bytes": 478,
+          "sha256": "ff95510560b998db4ffff7dee36e208515d1e77bc3ba3c7205c5f346ddfaa3a0"
+        },
+        {
+          "path": "projects/imperial-llm/SHA256SUMS.json",
+          "bytes": 2025,
+          "sha256": "a42767915a14c455692997298a2419118a157f84ba70942e5a75b6771542703a"
+        },
+        {
+          "path": "projects/imperial-llm/app.js",
+          "bytes": 11728,
+          "sha256": "35eea8bab6d34b857793fe2c42a1a8b0670ce03ef82b862467f96df0d4c74fa8"
+        },
+        {
+          "path": "projects/imperial-llm/checkpoint.pt",
+          "bytes": 461941,
+          "sha256": "29fdd846a4fb71cb7080d578524f13a1eba11c20b3a79fa48ba204334aa64b26"
+        },
+        {
+          "path": "projects/imperial-llm/generation-worker.js",
+          "bytes": 2263,
+          "sha256": "2e63d24e3cec79fc4032e8acaf2dffaa75cea19d9cce1ffbbc401af4f59146af"
+        },
+        {
+          "path": "projects/imperial-llm/index.html",
+          "bytes": 8698,
+          "sha256": "95f512b0d2ed5254439bd722cb935d39ea21e54c8524e58c93cbd5b9844ab030"
+        },
+        {
+          "path": "projects/imperial-llm/inference.js",
+          "bytes": 7412,
+          "sha256": "a9cf9733ccdec05597fddc7339716d35a32608efc204deebb0f0a249a99b58bd"
+        },
+        {
+          "path": "projects/imperial-llm/model.json",
+          "bytes": 2263521,
+          "sha256": "e39b99ce8ba9803969c063025dff1d6d3f645b2bc15c9146ac8454bcc943d1b5"
+        },
+        {
+          "path": "projects/imperial-llm/source.zip",
+          "bytes": 32444941,
+          "sha256": "7ae83702f1bdd990629e9faf28af7ed5cec7b991c99d3e6456c3314f958de3f2"
+        },
+        {
+          "path": "projects/imperial-llm/style.css",
+          "bytes": 388,
+          "sha256": "789bfd541c9f06658ac410d968e9c39fa8c63a48a08643b36071b984c699a9f4"
+        },
+        {
+          "path": "projects/imperial-llm/styles.css",
+          "bytes": 9654,
+          "sha256": "10394d70d98f0e81e76ff2b74a3dcb30bf17d85ec6fcddfb20b2cfcbef63debf"
+        },
+        {
+          "path": "projects/imperial-llm/test_generation.cjs",
+          "bytes": 2209,
+          "sha256": "ffb7acbe58f83f84b88c95f36badd6ff5739120cebe7c6ac7fe06cebc658cf08"
+        },
+        {
+          "path": "projects/imperial-llm/test_inference.cjs",
+          "bytes": 1521,
+          "sha256": "8fb0c8dcfc49af8cd837e75c7b3fc4a91078eed91ce2acad056c645d49d93175"
+        },
+        {
+          "path": "projects/imperial-llm/training.json",
+          "bytes": 429522,
+          "sha256": "62589fb373d89e32391aad52710ddc295ef8fbdca7f54f53a9ae5ebeced79627"
+        }
+      ]
+    },
+    {
+      "id": "PabloRod11/quantlab-probability-research",
+      "title": "QuantLab Probability Research",
+      "revision": "95ca80438f9ff0bc76d786249ac797369e1ea52e",
+      "space_url": "https://huggingface.co/spaces/PabloRod11/quantlab-probability-research",
+      "files": [
+        {
+          "path": "projects/quantlab-probability-research/.gitattributes",
+          "bytes": 1519,
+          "sha256": "11ad7efa24975ee4b0c3c3a38ed18737f0658a5f75a0a96787b576a78a023361"
+        },
+        {
+          "path": "projects/quantlab-probability-research/APPLE-REFERENCES.md",
+          "bytes": 2031,
+          "sha256": "ede56ef8237901d7d1804ece8cd5d0991a11b7df193dfdea03873f995979c28d"
+        },
+        {
+          "path": "projects/quantlab-probability-research/CACHING.md",
+          "bytes": 2184,
+          "sha256": "5304ada348165bf31c4c07db8579690c1a031d95eaa6505fe34d6ddfe9325654"
+        },
+        {
+          "path": "projects/quantlab-probability-research/DESIGN.md",
+          "bytes": 5311,
+          "sha256": "659b858f89ed0fd935e5c43dd7415f1820defc6730770b2883b3adae605530f8"
+        },
+        {
+          "path": "projects/quantlab-probability-research/FORECAST-STUDY.md",
+          "bytes": 5280,
+          "sha256": "b2e1f7534596440467f4a8f5528e07a52f34be0af304fc2019f4e66e124e739b"
+        },
+        {
+          "path": "projects/quantlab-probability-research/FORECAST-VERIFICATION.md",
+          "bytes": 3643,
+          "sha256": "cb4eec5c2bab50aec14f8a46cfab0e159fb3ec1b5f48d32808b895e0fd0418a5"
+        },
+        {
+          "path": "projects/quantlab-probability-research/IMPLEMENTATION.md",
+          "bytes": 1574,
+          "sha256": "1d79d851fd6f87004119038232d5603b23cfc4b9e15d409720de419986faaf4d"
+        },
+        {
+          "path": "projects/quantlab-probability-research/INVESTMENT-VERIFICATION.md",
+          "bytes": 3330,
+          "sha256": "f73890afae9047df85cf0fff794b15621caca8b5e65d9aabc78304bf363d3241"
+        },
+        {
+          "path": "projects/quantlab-probability-research/LEAK-AUDIT.md",
+          "bytes": 4107,
+          "sha256": "5ebc09eaa58e4a55d367e8c5c72d1f2fb5abf70715d7f1bd5b31a3b98a49fab1"
+        },
+        {
+          "path": "projects/quantlab-probability-research/LICENSE",
+          "bytes": 1078,
+          "sha256": "e2fe997d532ab2d37c756f3bb52e6f554018d30938db5a9cb623c1ece9b1f9c1"
+        },
+        {
+          "path": "projects/quantlab-probability-research/MARKET-DATA.md",
+          "bytes": 3196,
+          "sha256": "26940b72a7fca8d1b46ba40d7deb3146ccc15315d281c75f91a752c652de2f48"
+        },
+        {
+          "path": "projects/quantlab-probability-research/METHODS.md",
+          "bytes": 22197,
+          "sha256": "4d75b8729b8a7ed8540b4c8fcebeb7d2f032e350a7c936adeb8f1221b8323d00"
+        },
+        {
+          "path": "projects/quantlab-probability-research/MODEL-STUDY.md",
+          "bytes": 6941,
+          "sha256": "f09681ce512de93a4f0d688c459aebafb719154c5816c6a33f36214db2850e3a"
+        },
+        {
+          "path": "projects/quantlab-probability-research/README.md",
+          "bytes": 12884,
+          "sha256": "a317b26f8a9634da7347f41d3aca42118817173cdd0c818ea3c91b2e7f059f54"
+        },
+        {
+          "path": "projects/quantlab-probability-research/SECURITY-REVIEW.md",
+          "bytes": 7660,
+          "sha256": "31550f36799cd591242afc8f03eb5b0547f35b69ec2e44c87c3e52a1bfdc9fc4"
+        },
+        {
+          "path": "projects/quantlab-probability-research/VERIFICATION.md",
+          "bytes": 12995,
+          "sha256": "82680b9401392306d5510c2cfefb7ca74353a187fb90767e1c6c0337cdf6e574"
+        },
+        {
+          "path": "projects/quantlab-probability-research/app.js",
+          "bytes": 43743,
+          "sha256": "347ca21c4ce189cd3b8e35c2e6422feed8d623632382537f7f0e89fea6031c16"
+        },
+        {
+          "path": "projects/quantlab-probability-research/benchmark.json",
+          "bytes": 80339,
+          "sha256": "abc24e01beaef51945191d57383cb3f425e716cd37d2ea38d5c141813c097219"
+        },
+        {
+          "path": "projects/quantlab-probability-research/cache.js",
+          "bytes": 1472,
+          "sha256": "1fa1e7bd6d6ef7625f50bc9c162c1c506d31a2d3e25abdf36b4314e7f6d9cf51"
+        },
+        {
+          "path": "projects/quantlab-probability-research/execution.js",
+          "bytes": 2758,
+          "sha256": "cefe5d5ebc3b90db89a9e276b566d08221beeaa5daef0d693f58157bef485c4d"
+        },
+        {
+          "path": "projects/quantlab-probability-research/forecast-study.zip",
+          "bytes": 1209959,
+          "sha256": "ed0d3bbd59addeb451e06af86af05891d37aa84c3a9aea367ae0e9f6b2983067"
+        },
+        {
+          "path": "projects/quantlab-probability-research/forward.js",
+          "bytes": 4597,
+          "sha256": "382ee90a69571227dc41532d46c6d2c133d269efecb4a5a7d23b6e581f2d736c"
+        },
+        {
+          "path": "projects/quantlab-probability-research/index.html",
+          "bytes": 40132,
+          "sha256": "e28901cbc988724477209795195d2f40355402f38f957b972bf189943ed79a09"
+        },
+        {
+          "path": "projects/quantlab-probability-research/investment-ui.js",
+          "bytes": 18133,
+          "sha256": "b664d265d4723f825374a7e8d386f20c1252efc864080ea2fab01ccc4f65f2b5"
+        },
+        {
+          "path": "projects/quantlab-probability-research/investment.css",
+          "bytes": 6639,
+          "sha256": "b4d3eda7559476530be04d9808268b60daafda073a8f3c98326ec4012abc10ca"
+        },
+        {
+          "path": "projects/quantlab-probability-research/investment.js",
+          "bytes": 9218,
+          "sha256": "b1ed58d2c74a6a09a79c6622fc506efc9299805d5f4268cb53d125589e41d3d8"
+        },
+        {
+          "path": "projects/quantlab-probability-research/labs.js",
+          "bytes": 7507,
+          "sha256": "56e35670dc6372c8cbc2820f84229ef10864c1f04a00233f0046c038acb4dda0"
+        },
+        {
+          "path": "projects/quantlab-probability-research/leakage-audit.zip",
+          "bytes": 31178,
+          "sha256": "7191bb314474392b945b021de4f76ef64966fd62b9b58a9488847fe412780b95"
+        },
+        {
+          "path": "projects/quantlab-probability-research/market-data.json",
+          "bytes": 314744,
+          "sha256": "bf5fcafa7c12ee2ac61b874ce9131e196b6a15fae639cc76ab2a116e63756a98"
+        },
+        {
+          "path": "projects/quantlab-probability-research/market.js",
+          "bytes": 2804,
+          "sha256": "1541104e2212cdfeb67d90853d1721618983d21f716580ed16ea054c9c1e0250"
+        },
+        {
+          "path": "projects/quantlab-probability-research/model-study.zip",
+          "bytes": 71783,
+          "sha256": "2fb301e00eb5539916f2587b924feaa5c0c5edd3cef45ae71aa01f391ddc5ddb"
+        },
+        {
+          "path": "projects/quantlab-probability-research/model.js",
+          "bytes": 14692,
+          "sha256": "b2751c8907a9da4ddc5351715152c1c1f401948aa9f19f83df2f9c4882984c7a"
+        },
+        {
+          "path": "projects/quantlab-probability-research/provenance.js",
+          "bytes": 1676,
+          "sha256": "705f6d0ec448634c46a32922d8cc52cc8e95b4be3c27b03955a4736b6a591fbc"
+        },
+        {
+          "path": "projects/quantlab-probability-research/python-project.zip",
+          "bytes": 68301,
+          "sha256": "494e9f2d184e976690ade7082539bfc2d6b9e6bcf21ce1c19610928b5b664346"
+        },
+        {
+          "path": "projects/quantlab-probability-research/scenarios.js",
+          "bytes": 6765,
+          "sha256": "4606e5e5484a42b8297369c047ad28ef855f1b15036b59bc3fde221b9a7fe3b0"
+        },
+        {
+          "path": "projects/quantlab-probability-research/scripts/check-investment-browser.cjs",
+          "bytes": 11317,
+          "sha256": "cb67b0f47d704fb28332d82830a4799775d8b47ff5bf4780ebc25907680ba634"
+        },
+        {
+          "path": "projects/quantlab-probability-research/scripts/refresh-market-data.py",
+          "bytes": 7759,
+          "sha256": "834174bfde0a3983b9edf5ea1b291535347864a8b8348c9b19b243a3f8a91879"
+        },
+        {
+          "path": "projects/quantlab-probability-research/style.css",
+          "bytes": 15915,
+          "sha256": "00d934f0da749d00c1f7f5879f32065c510c2ebd2c6d1e17ae7c7f80f55660d8"
+        },
+        {
+          "path": "projects/quantlab-probability-research/test_app_state.cjs",
+          "bytes": 12099,
+          "sha256": "916830efd2ed2aadc7a95ce2b49c4f3e614b2d07c9885e11a2ffaf382a406ee1"
+        },
+        {
+          "path": "projects/quantlab-probability-research/test_cache.cjs",
+          "bytes": 1013,
+          "sha256": "1f5461dcba6710a8b70f230b0f0ae95a8e05c02faafbea2d93d2047767bbc0c8"
+        },
+        {
+          "path": "projects/quantlab-probability-research/test_data_quality.cjs",
+          "bytes": 2088,
+          "sha256": "13b3467d82e3fa6a274a4962a7c58cde9e2f1d97ce47c52acd7054117ed72497"
+        },
+        {
+          "path": "projects/quantlab-probability-research/test_execution.cjs",
+          "bytes": 2980,
+          "sha256": "cd26b209b79d7c93bdcebd4a2daa4792b15d9b0e389e81a91b3e0029b1831b4c"
+        },
+        {
+          "path": "projects/quantlab-probability-research/test_forward.cjs",
+          "bytes": 5332,
+          "sha256": "f0a38c63981e2f09febd6ecb1d6d5f86790f1618870f11ebda83bbf316abddb7"
+        },
+        {
+          "path": "projects/quantlab-probability-research/test_investment.cjs",
+          "bytes": 4024,
+          "sha256": "25928b4774373c95b5ee8189578804d9493c49606602de32f0475549f746bb03"
+        },
+        {
+          "path": "projects/quantlab-probability-research/test_labs.cjs",
+          "bytes": 2591,
+          "sha256": "481e5a2a003b02aeefaca02cdaaf7af194e31864807fd279d1bac98df8e54102"
+        },
+        {
+          "path": "projects/quantlab-probability-research/test_market.cjs",
+          "bytes": 2060,
+          "sha256": "8abbcaecab9752d0add237f1c64d784054592f3f3df83a23fe36d222c486304c"
+        },
+        {
+          "path": "projects/quantlab-probability-research/test_model.cjs",
+          "bytes": 2794,
+          "sha256": "057810892ee9c82f9cfcc012766c4bd461da57fcd281008d74ed53c0c75e0227"
+        },
+        {
+          "path": "projects/quantlab-probability-research/test_model_support.cjs",
+          "bytes": 1840,
+          "sha256": "7d8cfbfa2d8033e5479ec47084ad9d41bed2b7bce9157019d93b29845aa566ba"
+        },
+        {
+          "path": "projects/quantlab-probability-research/test_numerical.cjs",
+          "bytes": 1518,
+          "sha256": "e04859fe36b540803fdf199f6aa35cddb959d423de9fb428aa80d60d85a3660a"
+        },
+        {
+          "path": "projects/quantlab-probability-research/test_outcome_reliability.cjs",
+          "bytes": 2619,
+          "sha256": "80c16f4881de1adb2fb34136b3dbc18e8535ba5d868d5ef2873e10fa7bcecd2f"
+        },
+        {
+          "path": "projects/quantlab-probability-research/test_privacy_policy.cjs",
+          "bytes": 987,
+          "sha256": "081e7a386f95844898bc7899b6b078e75a3f3434418ed17d376ab97d3818e67e"
+        },
+        {
+          "path": "projects/quantlab-probability-research/test_provenance.cjs",
+          "bytes": 1515,
+          "sha256": "d7e744a5c4d8a17ca3bda7fff1d5f695fb26e5b05021367541482bdd25176e3a"
+        },
+        {
+          "path": "projects/quantlab-probability-research/test_scenarios.cjs",
+          "bytes": 2924,
+          "sha256": "96a16bde829abecacc4d1110868cc05405b32f353280d0fbb8f8a1593aa78277"
+        },
+        {
+          "path": "projects/quantlab-probability-research/test_validation.cjs",
+          "bytes": 4186,
+          "sha256": "9ec5de8196033419b886dd17253b0fb9993563e6d408d50c0d08200db4715ded"
+        },
+        {
+          "path": "projects/quantlab-probability-research/test_validation_model.cjs",
+          "bytes": 3314,
+          "sha256": "61cdca66bc0b9f60713c71127449a63bcf614e5f288c9c5045a6ffa67ca577ca"
+        },
+        {
+          "path": "projects/quantlab-probability-research/test_worker.cjs",
+          "bytes": 1523,
+          "sha256": "236c2c3e4511d1c1f0c16f9a8d6ab95c715f122e827fb87baa9dec72db421af1"
+        },
+        {
+          "path": "projects/quantlab-probability-research/validation.js",
+          "bytes": 6495,
+          "sha256": "20454a4ede25193d4af95ee7fcf8993eb1ef628556dd18334530178a8d2ef954"
+        },
+        {
+          "path": "projects/quantlab-probability-research/worker.js",
+          "bytes": 443,
+          "sha256": "48fbaf970e474baf24a6637e4fd2b6f1d3e5b0bd3d12704f55394416d05a1e7d"
+        }
+      ]
+    }
+  ]
+}

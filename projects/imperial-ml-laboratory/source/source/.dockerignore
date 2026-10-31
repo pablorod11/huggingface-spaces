@@ -1,0 +1,10 @@
+.git
+.venv
+__pycache__
+*.pyc
+artifacts
+.github
+README.md
+reference
+work
+*.egg-info

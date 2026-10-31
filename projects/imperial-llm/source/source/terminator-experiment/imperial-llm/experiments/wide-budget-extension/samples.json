@@ -1,0 +1,134 @@
+[
+  {
+    "prompt": "tom lost his red ball. he looked under the bed and",
+    "seed": 42,
+    "temperature": 0.7,
+    "top_k": 20,
+    "new_characters": 160,
+    "rng": "PyTorch multinomial",
+    "wide_7200": "tom lost his red ball. he looked under the bed and had a brought. She wanted to do. When she wite chat was so happing that was a bird ball around the made was very smiled and said,  Yet  I came to so hard and a",
+    "wide_14400": "tom lost his red ball. he looked under the bed and said the park. The found a big for herset time and pen and happing that was all but the ball with his was so happy. They were very happy.\nThey park and hopped ",
+    "live_004": "tom lost his red ball. he looked under the bed and some the prot. Then, but the dog house. Tim brock to frass. I ding was a big was back abe friend. Tim was sooring and fan the bily. The camed and so athis hit "
+  },
+  {
+    "prompt": "tom lost his red ball. he looked under the bed and",
+    "seed": 1729,
+    "temperature": 0.7,
+    "top_k": 20,
+    "new_characters": 160,
+    "rng": "PyTorch multinomial",
+    "wide_7200": "tom lost his red ball. he looked under the bed and held a scared. They reme boy with held took the stortor the kivere this to back to help meara about it it was so happy. They said need and Mom meet and they sa",
+    "wide_14400": "tom lost his red ball. he looked under the bed and had made a big tree. The boy wanted to kind the story. Sue was sad the more that she walked and saw the tall tree. They lived happy. The didn't were very happy",
+    "live_004": "tom lost his red ball. he looked under the bed and help so cat. Tim want he boy liked would went the tried the wave was shat ball other. She ara loved to pulle tree. They loved toget. The didn't went the to pay"
+  },
+  {
+    "prompt": "tom lost his red ball. he looked under the bed and",
+    "seed": 2026,
+    "temperature": 0.7,
+    "top_k": 20,
+    "new_characters": 160,
+    "rng": "PyTorch multinomial",
+    "wide_7200": "tom lost his red ball. he looked under the bed and gave and seething and he tree on a little ball in the ground. She was very sas their new friend. The bird was very and wanted to looked and wanted that he sun ",
+    "wide_14400": "tom lost his red ball. he looked under the bed and get to go too. One sud was so happy and the cat and said,  Can I will car. It was too make for a mag welled to play with her sofell of and ride happy and said,",
+    "live_004": "tom lost his red ball. he looked under the bed and get too the to the tree, to the drog floods and bally and them were the bird saw pinborted the buill wented to pay and was cold block and his me sloran. It wit"
+  },
+  {
+    "prompt": "lily and her dog went to the park. the dog saw",
+    "seed": 42,
+    "temperature": 0.7,
+    "top_k": 20,
+    "new_characters": 160,
+    "rng": "PyTorch multinomial",
+    "wide_7200": "lily and her dog went to the park. the dog saw a lark they went to contick to flew and the ball and friends smiled and wanted to seet. They would made was very smiled and said,  Yet  I came to so and said, ",
+    "wide_14400": "lily and her dog went to the park. the dog saw him. She had a good on the bird. They saw his favorite and had in the ball of fun and said,  I can idea. \nBobo  I made surprised to stopped the bear and sad ti",
+    "live_004": "lily and her dog went to the park. the dog saw and so freand. Then, but the dog house. Tim brock to frass. I ding was a big was back abe friend. Tim was sooring and fan the bily. The camed and so athis hit "
+  },
+  {
+    "prompt": "lily and her dog went to the park. the dog saw",
+    "seed": 1729,
+    "temperature": 0.7,
+    "top_k": 20,
+    "new_characters": 160,
+    "rng": "PyTorch multinomial",
+    "wide_7200": "lily and her dog went to the park. the dog saw a little bird. They rellied to go help. They plaster, the said she this top that day.\nOne day, then the big push his room. He had a belond for mom sad.   Can y",
+    "wide_14400": "lily and her dog went to the park. the dog saw her mom cat. The ever happy and played together story. Sue was sad the more that she walked and saw the tall tree. They lived happy. The didn't were very happy",
+    "live_004": "lily and her dog went to the park. the dog saw a little big wanter. They mudlly puzzziked to momy friendss. The wat shat preatetter. She ara loved to pulle tree. They loved toget. The didn't went the to pay"
+  },
+  {
+    "prompt": "lily and her dog went to the park. the dog saw",
+    "seed": 2026,
+    "temperature": 0.7,
+    "top_k": 20,
+    "new_characters": 160,
+    "rng": "PyTorch multinomial",
+    "wide_7200": "lily and her dog went to the park. the dog saw a ball good to the sun and said,  Yes,  Yes,  Spot we girl near that to play sock.   The bird was very sad, and all be saw a small drage. His mom loved to see ",
+    "wide_14400": "lily and her dog went to the park. the dog saw her mom was so much fun. Mamay looked under a wind the cheaves a small suddenly and began to be. The bulled they were very happy. He wanted to make a little bo",
+    "live_004": "lily and her dog went to the park. the dog saw a ball.\nOne dog but friend move had a brots and ball was not puzzy and see. He crite was friend. The wented to pay and was cold block and his me sloran. It wit"
+  },
+  {
+    "prompt": "the rabbit hid a carrot under a tree. later,",
+    "seed": 42,
+    "temperature": 0.7,
+    "top_k": 20,
+    "new_characters": 160,
+    "rng": "PyTorch multinomial",
+    "wide_7200": "the rabbit hid a carrot under a tree. later, he crake you together. But the found asked it  \nThe buste little girl named Max and said wanted to make was very smiled and said,  You  I came to so hard and a",
+    "wide_14400": "the rabbit hid a carrot under a tree. later, he cried to go to do not and dad if she was a far to finding unive.\nLily decided to some wanted to make with his friends in a big tree. It small eat ather danc",
+    "live_004": "the rabbit hid a carrot under a tree. later, had said,  Noved and but and dog house. The balked to paying pling the to pot. Tim but beren with a so need of   You boy it with herst to on the ear at is litt"
+  },
+  {
+    "prompt": "the rabbit hid a carrot under a tree. later,",
+    "seed": 1729,
+    "temperature": 0.7,
+    "top_k": 20,
+    "new_characters": 160,
+    "rng": "PyTorch multinomial",
+    "wide_7200": "the rabbit hid a carrot under a tree. later, and Sam a pretty ran the boy with held took the stort. Sue was sad the more that day.\nOne day, then the big push his room. He had a belond for mom sad.   Can y",
+    "wide_14400": "the rabbit hid a carrot under a tree. later, he felt cat. The enormoney saw a puzzle and wanted to see who warm the more that she walked and saw the tall tree. They lived happy. The didn't were very happy",
+    "live_004": "the rabbit hid a carrot under a tree. later, help so cathels and himby mudll and of time. They went to said friends mom and stry would a ball, but the goodse happpy. I was ther to spreen. They bett to pay"
+  },
+  {
+    "prompt": "the rabbit hid a carrot under a tree. later,",
+    "seed": 2026,
+    "temperature": 0.7,
+    "top_k": 20,
+    "new_characters": 160,
+    "rng": "PyTorch multinomial",
+    "wide_7200": "the rabbit hid a carrot under a tree. later,  Max and seet and said the movery dad in the park. He did not doer and said.\nWhen it was friend. The bulled to play with her safe open in the mess. They was so",
+    "wide_14400": "the rabbit hid a carrot under a tree. later,  Mom, I want out to play with her mom cared and cared a hugged while to play so high arm felt to play with her ball were because in a girl ride hall. The bug o",
+    "live_004": "the rabbit hid a carrot under a tree. later,  Mia and see ont tail. They to day ad snow a boppare was not pict they surprise things and foun. The wented to pay and was cold block and his me sloran. It wit"
+  },
+  {
+    "prompt": "sam gave mia a blue box. inside the box was",
+    "seed": 42,
+    "temperature": 0.7,
+    "top_k": 20,
+    "new_characters": 160,
+    "rng": "PyTorch multinomial",
+    "wide_7200": "sam gave mia a blue box. inside the box was very thout the good to the bird. They said in the tooddes the bird was a big was not named Lily was so hard. Tim said,  Disy, and Ben someone was so athis litt",
+    "wide_14400": "sam gave mia a blue box. inside the box was very careful out the bag. Suddenly, she was a far too   \nThe built was a little bug some window to make with his friends in a big tree. It small eat ather danc",
+    "live_004": "sam gave mia a blue box. inside the box was havard they good and but and dog horses, buig faster frabopped in the of the water. They want together berst the smalked it of her. The came and and at is litt"
+  },
+  {
+    "prompt": "sam gave mia a blue box. inside the box was",
+    "seed": 1729,
+    "temperature": 0.7,
+    "top_k": 20,
+    "new_characters": 160,
+    "rng": "PyTorch multinomial",
+    "wide_7200": "sam gave mia a blue box. inside the box was a little bird. They rellied to go help. They plasser, they found water a bird toys on that day bad was so me to his brough was allonger in the mom sad.   Can y",
+    "wide_14400": "sam gave mia a blue box. inside the box was a lime scared. They had a made a pudles and walked it. Sue was scared him pretty running outside. He was playing a screetured. They became for mom smiled and s",
+    "live_004": "sam gave mia a blue box. inside the box was help thought is and himby mudll and of time. They went to said friends mom and stry would a ball, but the goodse happpy. I was ther to spreen. They bett to pay"
+  },
+  {
+    "prompt": "sam gave mia a blue box. inside the box was",
+    "seed": 2026,
+    "temperature": 0.7,
+    "top_k": 20,
+    "new_characters": 160,
+    "rng": "PyTorch multinomial",
+    "wide_7200": "sam gave mia a blue box. inside the box was good and see ont the bird water and down and said. He said,  Now, but they said,  I big me    Tim was play, ark and show became blocks and runny slongs. It was",
+    "wide_14400": "sam gave mia a blue box. inside the box was a big cat the ball is happy.\nTom and his friend a big green liked to costor.\nWhen it was friend. The walked to play with her sofell of and ride happy and said,",
+    "live_004": "sam gave mia a blue box. inside the box was get toogether. One ins the move had doone. Lily and said,  Wem's said care. He crit bard friend. The wented to pay and was cold block and his me sloran. It wit"
+  }
+]

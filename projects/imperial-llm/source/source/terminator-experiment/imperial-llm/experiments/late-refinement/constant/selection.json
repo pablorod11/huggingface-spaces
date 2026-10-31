@@ -1,0 +1,93 @@
+{
+  "schedule": "constant",
+  "max_steps": 2400,
+  "executed_steps": 2400,
+  "selected_step": 2200,
+  "validation_ce": 1.174068813212216,
+  "history": [
+    {
+      "step": 0,
+      "validation_ce": 1.1837651515379548
+    },
+    {
+      "step": 200,
+      "validation_ce": 1.1836534882895648,
+      "learning_rate": 0.001
+    },
+    {
+      "step": 400,
+      "validation_ce": 1.185058412142098,
+      "learning_rate": 0.001
+    },
+    {
+      "step": 600,
+      "validation_ce": 1.1834061089903116,
+      "learning_rate": 0.001
+    },
+    {
+      "step": 800,
+      "validation_ce": 1.1798055553808808,
+      "learning_rate": 0.001
+    },
+    {
+      "step": 1000,
+      "validation_ce": 1.1834939285181463,
+      "learning_rate": 0.001
+    },
+    {
+      "step": 1200,
+      "validation_ce": 1.1794054992496967,
+      "learning_rate": 0.001
+    },
+    {
+      "step": 1400,
+      "validation_ce": 1.176157733425498,
+      "learning_rate": 0.001
+    },
+    {
+      "step": 1600,
+      "validation_ce": 1.1785400249063969,
+      "learning_rate": 0.001
+    },
+    {
+      "step": 1800,
+      "validation_ce": 1.1745723513886333,
+      "learning_rate": 0.001
+    },
+    {
+      "step": 2000,
+      "validation_ce": 1.1767029161565006,
+      "learning_rate": 0.001
+    },
+    {
+      "step": 2200,
+      "validation_ce": 1.174068813212216,
+      "learning_rate": 0.001
+    },
+    {
+      "step": 2400,
+      "validation_ce": 1.1765001062303782,
+      "learning_rate": 0.001
+    }
+  ],
+  "runtime_seconds": 40.594456613000006,
+  "optimizer": "AdamW, default betas and weight_decay0.01; clip1.0",
+  "batch_size": 16,
+  "verified_prefix_step": null,
+  "patience_validation_checks": 13,
+  "validation_every_steps": 200,
+  "config": {
+    "n_head": 4,
+    "n_embed": 64,
+    "context_length": 64,
+    "vocab_size": 51,
+    "N_BLOCKS": 2
+  },
+  "parameter_count": 110387,
+  "initialization": "warm_start_step14000_weights_fresh_AdamW_not_exact_resume",
+  "initial_checkpoint_sha256": "1824789127877372dc2f472c566f74685bb65745e0bf77fcb91e5a8163eb01c0",
+  "checkpoint_sha256": "300cf4ed21d8c1e05a44167e1b5c52905a6eda9f3902ad3fc9a3f6138deef09b",
+  "optimizer_predictions": 2457600,
+  "optimizer_state_saved": false,
+  "exact_resume_supported": false
+}

@@ -1,0 +1,100 @@
+{
+  "scope": "Proposal arithmetic and existing helper/archived-record review only. No new training or final story reads; prospective launch conditions are not execution evidence.",
+  "definitions": {
+    "batch_size": 16,
+    "context_characters": 64,
+    "width": 64,
+    "reference_steps": 7200,
+    "candidate_steps": 14400,
+    "training_story_count": 4096,
+    "story_characters": 3332584,
+    "validation_window_seed": 3702,
+    "new_final_story_count": 128,
+    "new_final_window_seed": 3706,
+    "train_diagnostic_story_seed": 4700,
+    "train_diagnostic_window_seed": 4701
+  },
+  "axioms": [
+    "Predictions = batch_size*context*executed_steps.",
+    "Corpus-pass equivalents = predictions/story_characters; overlapping random windows are not unique epochs.",
+    "Exact deterministic replay prefix requires same initial tensors, RNG draws, optimizer and numerical execution; constant LR is independent of total-step horizon.",
+    "Teacher-forced validation loss and generation syntax/coherence are different outcomes."
+  ],
+  "claims": [
+    {
+      "id": "budget",
+      "status": "VALID within supplied proposal",
+      "reference_predictions": 7372800,
+      "candidate_predictions": 14745600,
+      "ratio": 2,
+      "reference_pass_equivalents": 2.2123373334325556,
+      "candidate_pass_equivalents": 4.424674666865111
+    },
+    {
+      "id": "prefix_reference",
+      "status": "VALID existing record/hash check",
+      "selected_step": 7200,
+      "executed_step": 7200,
+      "checkpoint_sha256": "56ba2fec53d6fe31070d29a23978c6271f616ef9a5890f2fbcda039b7064caaf",
+      "checkpoint_hash_matches": true
+    },
+    {
+      "id": "prefix_replay",
+      "status": "UNVERIFIED until runtime tensor comparison at7200",
+      "requirement": "Use capacity initializer context64, not canonical-context128 initializer; compare every state tensor against archived raw checkpoint before any selected-best restoration."
+    },
+    {
+      "id": "full_budget",
+      "status": "UNVERIFIED until run",
+      "requirement": "Disable early stopping or patience>=73 for72 validation checks; assert executed_steps14400 and selected_step separately."
+    },
+    {
+      "id": "test_independence",
+      "status": "VALID for metadata set counts/disjointness only; story content and freeze order remain prospective",
+      "requirement": "New128 normalized unique stories exclude all832 previously evaluated story hashes and all4096 training hashes, plus disjoint validation membership. Freeze selected states/config/checkpoints before first final story read."
+    },
+    {
+      "id": "capacity_vs_undertraining",
+      "status": "UNVERIFIED",
+      "requirement": "One controlled extra-budget comparison measures this seed/model training trajectory, not asymptotic convergence or sole cause of syntax errors."
+    }
+  ],
+  "plateau_preregistration": {
+    "reference_step": 12000,
+    "endpoint_step": 14400,
+    "formula": "100*(val_ce_at12000-val_ce_at14400)/val_ce_at12000",
+    "threshold_percent": 0.5,
+    "label_if_nonnegative_below_threshold": "small terminal validation improvement heuristic",
+    "label_if_negative": "terminal validation regression",
+    "label_if_at_least_threshold": "continued terminal validation improvement",
+    "limitations": "Endpoint descriptive heuristic, not significance or convergence proof; report actual curve and best selected checkpoint. Threshold has no tuning authority; always finish preset budget."
+  },
+  "launch_checks": [
+    "Confirm archive initial/checkpoint hashes and same context64 config/vocabulary/corpus hashes; assert reference selected=executed7200.",
+    "Verify deterministic seed1729, same AdamW defaults/clip1.0/constantLR0.001/thread1/runtime, and exact all-state-tensor prefix at7200.",
+    "Diagnostic training windows: choose128 training documents using local generator4700 and four fixed within-story windows via local4701; record document hashes/window offsets before training. No global RNG advancement or training sampler consumption; no_grad/eval with training-state restoration.",
+    "Keep validation windows3702 fixed and unaffected; record training CE and validation CE at matching intervals and initialization for descriptive gap. Training sample is an in-sample diagnostic, not independent validation.",
+    "Set patience73+ or no stopping; preserve raw terminal14400 separately from best-validation selected state, record executed/selected steps.",
+    "Freeze both states and hashes before final access. Evaluate identical65-character segments with64 shifted labels at seed3706, four fixed windows/story; paired story-level aggregation/uncertainty.",
+    "Primary generation setting fixed attemperature0.7/top_k20, same four prompts and three seeds (12 matched generations per arm), fixed length; preserve all outputs. Additional settings secondary, no cherry-picking.",
+    "Write explicit quality-gate thresholds/rubric and whether human judgment is blinded before outputs; quality improvement cannot be inferred from CE alone.",
+    "Verify export/checkpoint/training record identity and Python/JavaScript logits before release; deployment remains separate from experiment result."
+  ],
+  "source_sha256": {
+    "work/wide-budget-experiment/imperial-llm/AGENTS.md": "d618c73e2309c9506be776f5b34b48fc9fb2dc12b747ad2ad466d668e9c9b723",
+    "work/wide-budget-experiment/imperial-llm/scripts/compare_model_capacity.py": "b408032e0bbab4216fa4f052fb5fb524b1c51c68f9f0e023f54244dad48a29aa",
+    "work/wide-budget-experiment/imperial-llm/scripts/finetune_stories.py": "051c34731fdfd88998f6180dfe2f7fb9ea2daddeb07b4a0865d7599ed06b3bfa",
+    "work/wide-budget-experiment/imperial-llm/scripts/prepare_expanded_stories.py": "527370b01a2c0f7170e1b45a39abdcdd8a80aa85a94fab9df490d4ab5ab53cc1",
+    "work/wide-budget-experiment/imperial-llm/src/models/transformer.py": "ec63ac30e4443c73f7dae268cc5198868701afb90c612d62a22e69b6e4f71165",
+    "outputs/story-capacity-comparison/width_64/selection.json": "394ae00c31507fdbe9087266c6ec5baddf834ebf1d02dc7fb4ba422cb6ecc3b3"
+  },
+  "manifest_metadata_validation": {
+    "source": "work/wide-budget-experiment/imperial-llm/data/wide_budget_story_test/manifest.json",
+    "sha256": "0ccf5f43a87af402623f086ba94551c8e1c6ccdc30500c451457907286a5e895",
+    "new_unique_story_hashes": 128,
+    "prior_evaluation_unique_hashes": 832,
+    "training_unique_hashes": 4096,
+    "new_disjoint_from_prior_training_validation": true,
+    "scope": "Manifest membership only; story content/hash correspondence not rechecked and no story texts read."
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "package": "@mlc-ai/web-llm",
+  "version": "0.2.80",
+  "esbuild": "0.25.12",
+  "bytes": 6041031,
+  "sha256": "5cefe8b25099c865536558d54f5d684cf87077097411ce99ba9f9929f9f16122",
+  "imports": [],
+  "exports": [
+    "Chat",
+    "ChatCompletionRequestUnsupportedFields",
+    "Completions",
+    "CreateExtensionServiceWorkerMLCEngine",
+    "CreateMLCEngine",
+    "CreateServiceWorkerMLCEngine",
+    "CreateWebWorkerMLCEngine",
+    "Embeddings",
+    "ExtensionServiceWorkerMLCEngine",
+    "ExtensionServiceWorkerMLCEngineHandler",
+    "MLCEngine",
+    "ModelType",
+    "ServiceWorkerMLCEngine",
+    "ServiceWorkerMLCEngineHandler",
+    "WebWorkerMLCEngine",
+    "WebWorkerMLCEngineHandler",
+    "deleteChatConfigInCache",
+    "deleteModelAllInfoInCache",
+    "deleteModelInCache",
+    "deleteModelWasmInCache",
+    "functionCallingModelIds",
+    "hasModelInCache",
+    "modelLibURLPrefix",
+    "modelVersion",
+    "postInitAndCheckFieldsChatCompletion",
+    "postInitAndCheckFieldsCompletion",
+    "postInitAndCheckFieldsEmbedding",
+    "prebuiltAppConfig"
+  ],
+  "inputs": [
+    "node_modules/@mlc-ai/web-llm/lib/index.js"
+  ]
+}

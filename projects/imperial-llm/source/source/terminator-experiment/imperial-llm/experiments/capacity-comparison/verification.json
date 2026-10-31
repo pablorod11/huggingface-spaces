@@ -1,0 +1,20 @@
+{
+  "focused_python_tests": {
+    "passed": 22,
+    "log": "......................                                                   [100%]\n22 passed in 7.36s\n"
+  },
+  "ruff": "All checks passed",
+  "node": {
+    "width32_generation": "PASS: deterministic seeded generation, 64-character output, batched streaming, final logits, invalid request rejection.\n",
+    "width64_generation": "PASS: deterministic seeded generation, 64-character output, batched streaming, final logits, invalid request rejection.\n",
+    "maximum_logit_error_width32": 5.437675056008118e-06,
+    "maximum_logit_error_width64": 3.634297331078784e-06,
+    "tolerance": 0.0001
+  },
+  "hashes_and_budget_assertions": "passed for both widths; frozen selection, corpus, script, model, initial and selected checkpoints verified",
+  "live004_local_asset_sha256": "986699bbf0668f6d1aa5da67c373fe53770f7ce5e9efb3e337b5c0d7a42fe376",
+  "publication": false,
+  "browser_release": "not performed; no UI or deployment change",
+  "broad_suite": "Not rerun; prior documented host incompatibilities remain.",
+  "review": "One read-only final review, no blockers. Added corpus/source provenance assertions before test access."
+}

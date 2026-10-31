@@ -1,0 +1,36 @@
+{
+  "model_version": "onet31-tfidf-8cc1b32a235b",
+  "trained_at_utc": "2026-10-16T07:16:09.864107+00:00",
+  "seed": 42,
+  "python": "3.12.14",
+  "dependencies": {
+    "numpy": "2.5.4",
+    "scipy": "1.18.1",
+    "scikit-learn": "1.9.1"
+  },
+  "dataset_sha256": {
+    "train": "efebcb4d3fe95194fe7de4f9bd4bebf776fcc7d51646a3a677388edf65a58691",
+    "validation": "16a080a05ebee845b9a17e7e2bb19ba045d16b8cf7adbbd2beedf83f2e12fe2b",
+    "test": "d3aa7631bf16ecd7f963ee815d4d99439c47d26d6fb7f9a31cc05bcaf6da2554"
+  },
+  "split_counts": {
+    "train": 689,
+    "validation": 143,
+    "test": 173
+  },
+  "split_group_counts": {
+    "train": 35,
+    "validation": 10,
+    "test": 10
+  },
+  "parameters": {
+    "C": 4.0,
+    "max_iter": 2000,
+    "max_features": 20000,
+    "ngram_range": [
+      1,
+      2
+    ]
+  },
+  "model_sha256": "128c9d92d87a434a9039a7a8ce8c116603c418ccce17e0ef04e8c01de5c10e11"
+}

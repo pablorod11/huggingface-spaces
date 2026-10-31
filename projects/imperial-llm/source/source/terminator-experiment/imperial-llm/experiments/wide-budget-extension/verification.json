@@ -1,0 +1,23 @@
+{
+  "focused_python_tests": {
+    "passed": 30,
+    "log": "..............................                                           [100%]\n30 passed in 5.94s\n"
+  },
+  "prefix_replay": {
+    "step": 7200,
+    "all_state_tensors_exact": true,
+    "reference_checkpoint_sha256": "56ba2fec53d6fe31070d29a23978c6271f616ef9a5890f2fbcda039b7064caaf"
+  },
+  "node_inference": "PASS: checksum, three Python/JS logit cases (max error 0.000003225224940450744), roundtrip, input bounds, tensor validation.\n",
+  "node_generation": "PASS: deterministic seeded generation, 64-character output, batched streaming, final logits, invalid request rejection.\nPASS: long-history deterministic generation and context cropping.\n",
+  "max_logit_error": 3.225224940450744e-06,
+  "parity_tolerance": 0.0001,
+  "integrity": "Frozen selection, source/data and model/checkpoint/initial hashes verified; executed/selected budgets asserted.",
+  "baseline_local_asset_sha256": "986699bbf0668f6d1aa5da67c373fe53770f7ce5e9efb3e337b5c0d7a42fe376",
+  "publication": false,
+  "browser_ui": "No UI change or browser release.",
+  "broad_suite": "Not rerun; priorTorch2.2.2/Python3.12compatibilitylimits remain.",
+  "team": "Davoutimplementation;Soultmeasurement/probes;Ney-Lannescodeandtextreview;commanderintegration.",
+  "Graphify": "Not available ininstalledskills/connectors; directsourceinspectionandrg used.",
+  "prose": "Humanizerupstreaminstructions consulted for embeddedfinaledit."
+}

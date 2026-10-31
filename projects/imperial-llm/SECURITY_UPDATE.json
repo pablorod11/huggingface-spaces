@@ -1,0 +1,9 @@
+{
+  "kind": "checkpoint-security-policy-preserved",
+  "release": "model005-experimental",
+  "runtime": "2.14.1+cpu",
+  "minimum_checkpoint_loader": "stable PyTorch>=2.6.0; weights_only=True; no unsafe fallback",
+  "model_sha256": "e39b99ce8ba9803969c063025dff1d6d3f645b2bc15c9146ac8454bcc943d1b5",
+  "checkpoint_sha256": "29fdd846a4fb71cb7080d578524f13a1eba11c20b3a79fa48ba204334aa64b26",
+  "linux_run": "https://github.com/pablorod11/ML-AI-Projects/actions/runs/41122597620"
+}

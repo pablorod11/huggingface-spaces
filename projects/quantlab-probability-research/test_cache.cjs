@@ -1,0 +1,13 @@
+const assert=require('node:assert/strict');
+const {createRunCache}=require('./cache.js');
+let now=0;const cache=createRunCache({now:()=>now,maxEntries:3,ttlMs:600000});
+assert.equal(cache.get('missing'),null);
+const report={probabilities:[.1,.2,.7]};cache.set('a',report);report.probabilities[0]=9;
+assert.equal(cache.get('a').probabilities[0],.1);
+const hit=cache.get('a');hit.probabilities[0]=8;assert.equal(cache.get('a').probabilities[0],.1);
+cache.set('b',{});cache.set('c',{});cache.get('a');cache.set('d',{});assert.equal(cache.get('b'),null);assert.ok(cache.get('a'));
+now=600000;assert.equal(cache.get('a'),null,'Expiration is based on creation, not extended by cache hits');
+assert.equal(cache.size(),0);cache.set('new',{});cache.clear();assert.equal(cache.size(),0);
+assert.equal(createRunCache().get('a'),null,'A new tab instance cannot see old cache entries');
+assert.throws(()=>createRunCache({maxEntries:0}));
+console.log('Cache tests passed: TTL, LRU cap, independent instances, cloning, clear');

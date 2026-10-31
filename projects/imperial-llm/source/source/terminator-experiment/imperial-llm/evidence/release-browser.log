@@ -1,0 +1,56 @@
+npm notice run test:browser
+npm notice run playwright test
+
+Running 40 tests using 1 worker
+
+(node:92371) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   1 [chromium] › tests/browser/record.spec.cjs:6:1 › validation curve renders recorded points without inventing training history (1.1s)
+  ✓   2 [chromium] › tests/browser/release.spec.cjs:10:1 › verified model loads once without browser errors (522ms)
+  ✓   3 [chromium] › tests/browser/release.spec.cjs:17:1 › same prompt and seed reproduce browser generation (4.8s)
+  ✓   4 [chromium] › tests/browser/release.spec.cjs:26:1 › stop preserves partial text and a fresh run completes (4.9s)
+  ✓   5 [chromium] › tests/browser/release.spec.cjs:34:1 › input errors focus the field and reveal collapsed settings (1.1s)
+  ✓   6 [chromium] › tests/browser/release.spec.cjs:41:44 › missing model cannot enable generation (407ms)
+  ✓   7 [chromium] › tests/browser/release.spec.cjs:41:44 › corrupt model cannot enable generation (418ms)
+  ✓   8 [chromium] › tests/browser/release.spec.cjs:46:1 › worker load failure gives recovery and retry works (3.2s)
+  ✓   9 [chromium] › tests/browser/release.spec.cjs:52:1 › keyboard navigation, deep links and responsive layout (1.6s)
+  -  10 [chromium] › tests/browser/release.spec.cjs:63:1 › visual baseline of the ready laboratory
+(node:92412) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  11 [firefox] › tests/browser/record.spec.cjs:6:1 › validation curve renders recorded points without inventing training history (6.3s)
+  ✓  12 [firefox] › tests/browser/release.spec.cjs:10:1 › verified model loads once without browser errors (1.7s)
+  ✓  13 [firefox] › tests/browser/release.spec.cjs:17:1 › same prompt and seed reproduce browser generation (7.6s)
+  ✓  14 [firefox] › tests/browser/release.spec.cjs:26:1 › stop preserves partial text and a fresh run completes (4.6s)
+  ✓  15 [firefox] › tests/browser/release.spec.cjs:34:1 › input errors focus the field and reveal collapsed settings (1.8s)
+  ✓  16 [firefox] › tests/browser/release.spec.cjs:41:44 › missing model cannot enable generation (1.3s)
+  ✓  17 [firefox] › tests/browser/release.spec.cjs:41:44 › corrupt model cannot enable generation (923ms)
+  ✓  18 [firefox] › tests/browser/release.spec.cjs:46:1 › worker load failure gives recovery and retry works (4.6s)
+  ✓  19 [firefox] › tests/browser/release.spec.cjs:52:1 › keyboard navigation, deep links and responsive layout (3.1s)
+  -  20 [firefox] › tests/browser/release.spec.cjs:63:1 › visual baseline of the ready laboratory
+(node:92476) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  21 [webkit] › tests/browser/record.spec.cjs:6:1 › validation curve renders recorded points without inventing training history (3.2s)
+  ✓  22 [webkit] › tests/browser/release.spec.cjs:10:1 › verified model loads once without browser errors (1.2s)
+  ✓  23 [webkit] › tests/browser/release.spec.cjs:17:1 › same prompt and seed reproduce browser generation (4.0s)
+  ✓  24 [webkit] › tests/browser/release.spec.cjs:26:1 › stop preserves partial text and a fresh run completes (3.5s)
+  ✓  25 [webkit] › tests/browser/release.spec.cjs:34:1 › input errors focus the field and reveal collapsed settings (2.1s)
+  ✓  26 [webkit] › tests/browser/release.spec.cjs:41:44 › missing model cannot enable generation (866ms)
+  ✓  27 [webkit] › tests/browser/release.spec.cjs:41:44 › corrupt model cannot enable generation (913ms)
+  ✓  28 [webkit] › tests/browser/release.spec.cjs:46:1 › worker load failure gives recovery and retry works (2.9s)
+  ✓  29 [webkit] › tests/browser/release.spec.cjs:52:1 › keyboard navigation, deep links and responsive layout (2.2s)
+  -  30 [webkit] › tests/browser/release.spec.cjs:63:1 › visual baseline of the ready laboratory
+(node:92540) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  31 [phone] › tests/browser/record.spec.cjs:6:1 › validation curve renders recorded points without inventing training history (946ms)
+  ✓  32 [phone] › tests/browser/release.spec.cjs:10:1 › verified model loads once without browser errors (485ms)
+  ✓  33 [phone] › tests/browser/release.spec.cjs:17:1 › same prompt and seed reproduce browser generation (5.5s)
+  ✓  34 [phone] › tests/browser/release.spec.cjs:26:1 › stop preserves partial text and a fresh run completes (3.3s)
+  ✓  35 [phone] › tests/browser/release.spec.cjs:34:1 › input errors focus the field and reveal collapsed settings (940ms)
+  ✓  36 [phone] › tests/browser/release.spec.cjs:41:44 › missing model cannot enable generation (374ms)
+  ✓  37 [phone] › tests/browser/release.spec.cjs:41:44 › corrupt model cannot enable generation (386ms)
+  ✓  38 [phone] › tests/browser/release.spec.cjs:46:1 › worker load failure gives recovery and retry works (3.3s)
+  ✓  39 [phone] › tests/browser/release.spec.cjs:52:1 › keyboard navigation, deep links and responsive layout (1.4s)
+  -  40 [phone] › tests/browser/release.spec.cjs:63:1 › visual baseline of the ready laboratory
+
+  4 skipped
+  36 passed (1.7m)

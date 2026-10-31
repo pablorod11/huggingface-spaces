@@ -1,0 +1,1 @@
+PASS: deterministic seeded generation, 64-character output, batched streaming, final logits, invalid request rejection.

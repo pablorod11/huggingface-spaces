@@ -1,0 +1,8 @@
+{
+  "method": "Single unblinded agent inspected all36 stored outputs,12 per model; not a human evaluation or preference study.",
+  "fixed_protocol": "Four predeclared prompts; seeds42,1729,2026;temperature0.7;160 new characters.",
+  "finding": "All12 expanded-corpus continuations still contain malformed words or broken local grammar. Story setup drift remains common. No reliable coherence advantage established.",
+  "example_positive": "For the dog prompt at seed1729, expansion begins: a little bird.",
+  "example_limitation": "The same continuation then says: They himbird the pot out a littlest.",
+  "decision": "Retain live model004. Save expanded candidate for further experiments; do not promote on the small loss gain alone."
+}

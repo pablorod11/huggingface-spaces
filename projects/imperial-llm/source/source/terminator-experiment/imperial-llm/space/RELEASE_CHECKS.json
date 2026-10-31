@@ -1,0 +1,25 @@
+{
+  "release": "model005-experimental",
+  "model_sha256": "e39b99ce8ba9803969c063025dff1d6d3f645b2bc15c9146ac8454bcc943d1b5",
+  "checkpoint_sha256": "29fdd846a4fb71cb7080d578524f13a1eba11c20b3a79fa48ba204334aa64b26",
+  "linux_run": "https://github.com/pablorod11/ML-AI-Projects/actions/runs/41122597620",
+  "python_checks_passed": 38,
+  "browser_exports_passed": true,
+  "max_js_logit_error": 2.5604187596783845e-06,
+  "quality_gate_passed": false,
+  "quality_samples_passed": 0,
+  "quality_samples": 12,
+  "user_requested_deployment": true,
+  "test_status": "Previously observed regression set; not an untouched final test.",
+  "browser_ui_checks": "Local CUA: verified model load, generation/stop, Unicode and seed errors/focus, training metrics, 390px layout without horizontal overflow.",
+  "inference_runtime": {
+    "release": "model005-kv1",
+    "weights_unchanged": true,
+    "main_exact_logit_cases": 109,
+    "seeded_worker_cases": 4,
+    "cache_bounds_and_invalidation_passed": true,
+    "python_js_max_error": 2.5604187596783845e-06,
+    "benchmark": "INFERENCE_BENCHMARK.json",
+    "local_browser_checks": "Verified model checksum, full64-character output, stop with preserved partial output and restored controls, unsupported-character error/focus."
+  }
+}

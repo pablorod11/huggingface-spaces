@@ -1,0 +1,14 @@
+Source SHA256: 170fd6db004b28af4469764a331f57dfe6d8b197753acbee320eebca54abe40d
+T01 0.95 AUTO_ACCEPT PASS
+T01 0.8 AUTO_ACCEPT PASS
+T01 0.7999 HUMAN_REVIEW PASS
+T01 0.5 HUMAN_REVIEW PASS
+T01 0.4999 ESCALATE PASS
+T04 baseline: expected ValueError; actual ESCALATE FAIL
+T04 corrected nan PASS
+T04 corrected inf PASS
+T04 corrected -0.1 PASS
+T04 corrected 1.1 PASS
+T04 corrected None PASS
+T04 corrected True PASS
+T01 regression after correction: 5/5 PASS

@@ -1,0 +1,817 @@
+{
+  "plan_sha256": "f826fa6b692d4f6f1186378df870382056f91f1e69fe24f237f7ed6e2044f56d",
+  "pairs": [
+    {
+      "id": "agreement_01",
+      "category": "subject_verb_agreement",
+      "grammatical": "I am at home.",
+      "ungrammatical": "I is at home.",
+      "rationale": "First-person singular I takes am, not is.",
+      "equal_length": true,
+      "scored_characters": 12,
+      "models": {
+        "legacy": {
+          "grammatical_logp": -18.75790328017085,
+          "ungrammatical_logp": -20.378500857938217,
+          "joint_margin": 1.6205975777673665,
+          "mean_character_margin": 0.13504979814728055,
+          "preference": "grammatical",
+          "credit": 1.0
+        },
+        "repaired": {
+          "grammatical_logp": -20.859706806514893,
+          "ungrammatical_logp": -20.63183856124199,
+          "joint_margin": -0.2278682452729015,
+          "mean_character_margin": -0.01898902043940846,
+          "preference": "ungrammatical",
+          "credit": 0.0
+        }
+      },
+      "legacy_to_repaired_credit_change": -1.0,
+      "legacy_to_repaired_margin_change": -1.848465823040268
+    },
+    {
+      "id": "agreement_02",
+      "category": "subject_verb_agreement",
+      "grammatical": "I am very happy.",
+      "ungrammatical": "I is very happy.",
+      "rationale": "First-person singular agreement in a predicate-adjective frame.",
+      "equal_length": true,
+      "scored_characters": 15,
+      "models": {
+        "legacy": {
+          "grammatical_logp": -14.898242539396069,
+          "ungrammatical_logp": -13.46969616260744,
+          "joint_margin": -1.4285463767886295,
+          "mean_character_margin": -0.09523642511924196,
+          "preference": "ungrammatical",
+          "credit": 0.0
+        },
+        "repaired": {
+          "grammatical_logp": -13.950158091576961,
+          "ungrammatical_logp": -13.232559676639923,
+          "joint_margin": -0.7175984149370382,
+          "mean_character_margin": -0.047839894329135886,
+          "preference": "ungrammatical",
+          "credit": 0.0
+        }
+      },
+      "legacy_to_repaired_credit_change": 0.0,
+      "legacy_to_repaired_margin_change": 0.7109479618515913
+    },
+    {
+      "id": "agreement_03",
+      "category": "subject_verb_agreement",
+      "grammatical": "He is in the park.",
+      "ungrammatical": "He am in the park.",
+      "rationale": "Third-person singular He takes is, not am.",
+      "equal_length": true,
+      "scored_characters": 17,
+      "models": {
+        "legacy": {
+          "grammatical_logp": -17.212233839940737,
+          "ungrammatical_logp": -23.06725004547475,
+          "joint_margin": 5.855016205534014,
+          "mean_character_margin": 0.34441271797258904,
+          "preference": "grammatical",
+          "credit": 1.0
+        },
+        "repaired": {
+          "grammatical_logp": -16.93947744638523,
+          "ungrammatical_logp": -21.489948298067244,
+          "joint_margin": 4.5504708516820145,
+          "mean_character_margin": 0.267674755981295,
+          "preference": "grammatical",
+          "credit": 1.0
+        }
+      },
+      "legacy_to_repaired_credit_change": 0.0,
+      "legacy_to_repaired_margin_change": -1.3045453538519993
+    },
+    {
+      "id": "agreement_04",
+      "category": "subject_verb_agreement",
+      "grammatical": "He is very tired.",
+      "ungrammatical": "He am very tired.",
+      "rationale": "Third-person singular agreement in a predicate-adjective frame.",
+      "equal_length": true,
+      "scored_characters": 16,
+      "models": {
+        "legacy": {
+          "grammatical_logp": -22.91671612665479,
+          "ungrammatical_logp": -31.049251738513313,
+          "joint_margin": 8.132535611858522,
+          "mean_character_margin": 0.5082834757411576,
+          "preference": "grammatical",
+          "credit": 1.0
+        },
+        "repaired": {
+          "grammatical_logp": -20.24289058564389,
+          "ungrammatical_logp": -26.984727531092073,
+          "joint_margin": 6.741836945448181,
+          "mean_character_margin": 0.4213648090905113,
+          "preference": "grammatical",
+          "credit": 1.0
+        }
+      },
+      "legacy_to_repaired_credit_change": 0.0,
+      "legacy_to_repaired_margin_change": -1.3906986664103407
+    },
+    {
+      "id": "agreement_05",
+      "category": "subject_verb_agreement",
+      "grammatical": "She is at home.",
+      "ungrammatical": "She am at home.",
+      "rationale": "Third-person singular She takes is, not am.",
+      "equal_length": true,
+      "scored_characters": 14,
+      "models": {
+        "legacy": {
+          "grammatical_logp": -20.738743228467037,
+          "ungrammatical_logp": -24.121299452651193,
+          "joint_margin": 3.3825562241841567,
+          "mean_character_margin": 0.2416111588702969,
+          "preference": "grammatical",
+          "credit": 1.0
+        },
+        "repaired": {
+          "grammatical_logp": -21.589404890969625,
+          "ungrammatical_logp": -24.389155110768787,
+          "joint_margin": 2.7997502197991615,
+          "mean_character_margin": 0.19998215855708296,
+          "preference": "grammatical",
+          "credit": 1.0
+        }
+      },
+      "legacy_to_repaired_credit_change": 0.0,
+      "legacy_to_repaired_margin_change": -0.5828060043849952
+    },
+    {
+      "id": "agreement_06",
+      "category": "subject_verb_agreement",
+      "grammatical": "She is very happy.",
+      "ungrammatical": "She am very happy.",
+      "rationale": "Third-person singular agreement reuses the happy lexical frame with a different subject.",
+      "equal_length": true,
+      "scored_characters": 17,
+      "models": {
+        "legacy": {
+          "grammatical_logp": -12.957978537706978,
+          "ungrammatical_logp": -18.64892504967768,
+          "joint_margin": 5.690946511970701,
+          "mean_character_margin": 0.33476155952768827,
+          "preference": "grammatical",
+          "credit": 1.0
+        },
+        "repaired": {
+          "grammatical_logp": -14.30804276342433,
+          "ungrammatical_logp": -19.630334540364224,
+          "joint_margin": 5.322291776939894,
+          "mean_character_margin": 0.31307598687881727,
+          "preference": "grammatical",
+          "credit": 1.0
+        }
+      },
+      "legacy_to_repaired_credit_change": 0.0,
+      "legacy_to_repaired_margin_change": -0.36865473503080715
+    },
+    {
+      "id": "agreement_07",
+      "category": "subject_verb_agreement",
+      "grammatical": "We are in the park.",
+      "ungrammatical": "We was in the park.",
+      "rationale": "Plural We permits are; was does not agree in standard written English.",
+      "equal_length": true,
+      "scored_characters": 18,
+      "models": {
+        "legacy": {
+          "grammatical_logp": -18.379263776378206,
+          "ungrammatical_logp": -16.804286022855244,
+          "joint_margin": -1.5749777535229619,
+          "mean_character_margin": -0.087498764084609,
+          "preference": "ungrammatical",
+          "credit": 0.0
+        },
+        "repaired": {
+          "grammatical_logp": -18.605746153803892,
+          "ungrammatical_logp": -17.308411336833977,
+          "joint_margin": -1.297334816969915,
+          "mean_character_margin": -0.07207415649832861,
+          "preference": "ungrammatical",
+          "credit": 0.0
+        }
+      },
+      "legacy_to_repaired_credit_change": 0.0,
+      "legacy_to_repaired_margin_change": 0.27764293655304684
+    },
+    {
+      "id": "agreement_08",
+      "category": "subject_verb_agreement",
+      "grammatical": "We are very tired.",
+      "ungrammatical": "We was very tired.",
+      "rationale": "Plural agreement in the tired lexical frame.",
+      "equal_length": true,
+      "scored_characters": 17,
+      "models": {
+        "legacy": {
+          "grammatical_logp": -26.225626712119166,
+          "ungrammatical_logp": -20.639209924434766,
+          "joint_margin": -5.586416787684399,
+          "mean_character_margin": -0.32861275221672936,
+          "preference": "ungrammatical",
+          "credit": 0.0
+        },
+        "repaired": {
+          "grammatical_logp": -23.052294984749004,
+          "ungrammatical_logp": -19.367836638168185,
+          "joint_margin": -3.6844583465808185,
+          "mean_character_margin": -0.21673284391651873,
+          "preference": "ungrammatical",
+          "credit": 0.0
+        }
+      },
+      "legacy_to_repaired_credit_change": 0.0,
+      "legacy_to_repaired_margin_change": 1.9019584411035808
+    },
+    {
+      "id": "agreement_09",
+      "category": "subject_verb_agreement",
+      "grammatical": "They are at home.",
+      "ungrammatical": "They was at home.",
+      "rationale": "Plural They permits are; was does not agree in standard written English.",
+      "equal_length": true,
+      "scored_characters": 16,
+      "models": {
+        "legacy": {
+          "grammatical_logp": -22.819677131879605,
+          "ungrammatical_logp": -22.23435719169225,
+          "joint_margin": -0.5853199401873539,
+          "mean_character_margin": -0.03658249626170962,
+          "preference": "ungrammatical",
+          "credit": 0.0
+        },
+        "repaired": {
+          "grammatical_logp": -22.778313679887912,
+          "ungrammatical_logp": -21.42474463056694,
+          "joint_margin": -1.3535690493209707,
+          "mean_character_margin": -0.08459806558256067,
+          "preference": "ungrammatical",
+          "credit": 0.0
+        }
+      },
+      "legacy_to_repaired_credit_change": 0.0,
+      "legacy_to_repaired_margin_change": -0.7682491091336168
+    },
+    {
+      "id": "agreement_10",
+      "category": "subject_verb_agreement",
+      "grammatical": "They are very happy.",
+      "ungrammatical": "They was very happy.",
+      "rationale": "Plural agreement reuses the happy lexical frame.",
+      "equal_length": true,
+      "scored_characters": 19,
+      "models": {
+        "legacy": {
+          "grammatical_logp": -16.312952066303172,
+          "ungrammatical_logp": -11.212913995027558,
+          "joint_margin": -5.100038071275614,
+          "mean_character_margin": -0.26842305638292707,
+          "preference": "ungrammatical",
+          "credit": 0.0
+        },
+        "repaired": {
+          "grammatical_logp": -15.17023935830164,
+          "ungrammatical_logp": -10.699284008478127,
+          "joint_margin": -4.470955349823512,
+          "mean_character_margin": -0.2353134394643954,
+          "preference": "ungrammatical",
+          "credit": 0.0
+        }
+      },
+      "legacy_to_repaired_credit_change": 0.0,
+      "legacy_to_repaired_margin_change": 0.629082721452102
+    },
+    {
+      "id": "agreement_11",
+      "category": "subject_verb_agreement",
+      "grammatical": "The dog was in the park.",
+      "ungrammatical": "The dog are in the park.",
+      "rationale": "Singular dog permits was; are does not agree.",
+      "equal_length": true,
+      "scored_characters": 23,
+      "models": {
+        "legacy": {
+          "grammatical_logp": -17.486320488849948,
+          "ungrammatical_logp": -23.374486311790783,
+          "joint_margin": 5.8881658229408345,
+          "mean_character_margin": 0.2560072096930798,
+          "preference": "grammatical",
+          "credit": 1.0
+        },
+        "repaired": {
+          "grammatical_logp": -17.590497049252726,
+          "ungrammatical_logp": -19.980058604386443,
+          "joint_margin": 2.3895615551337173,
+          "mean_character_margin": 0.1038939806579877,
+          "preference": "grammatical",
+          "credit": 1.0
+        }
+      },
+      "legacy_to_repaired_credit_change": 0.0,
+      "legacy_to_repaired_margin_change": -3.498604267807117
+    },
+    {
+      "id": "agreement_12",
+      "category": "subject_verb_agreement",
+      "grammatical": "The cat was at home.",
+      "ungrammatical": "The cat are at home.",
+      "rationale": "Singular cat permits was; are does not agree.",
+      "equal_length": true,
+      "scored_characters": 19,
+      "models": {
+        "legacy": {
+          "grammatical_logp": -20.033421835157014,
+          "ungrammatical_logp": -25.442802671523374,
+          "joint_margin": 5.40938083636636,
+          "mean_character_margin": 0.2847042545455979,
+          "preference": "grammatical",
+          "credit": 1.0
+        },
+        "repaired": {
+          "grammatical_logp": -21.622182900950456,
+          "ungrammatical_logp": -27.228383423180027,
+          "joint_margin": 5.606200522229571,
+          "mean_character_margin": 0.29506318538050375,
+          "preference": "grammatical",
+          "credit": 1.0
+        }
+      },
+      "legacy_to_repaired_credit_change": 0.0,
+      "legacy_to_repaired_margin_change": 0.1968196858632112
+    },
+    {
+      "id": "agreement_13",
+      "category": "subject_verb_agreement",
+      "grammatical": "The bird was very tired.",
+      "ungrammatical": "The bird are very tired.",
+      "rationale": "Singular bird permits was; are does not agree.",
+      "equal_length": true,
+      "scored_characters": 23,
+      "models": {
+        "legacy": {
+          "grammatical_logp": -18.66071266246472,
+          "ungrammatical_logp": -27.966237963176795,
+          "joint_margin": 9.305525300712073,
+          "mean_character_margin": 0.40458805655269886,
+          "preference": "grammatical",
+          "credit": 1.0
+        },
+        "repaired": {
+          "grammatical_logp": -16.44731640409656,
+          "ungrammatical_logp": -25.639872260030334,
+          "joint_margin": 9.192555855933772,
+          "mean_character_margin": 0.39967634156233794,
+          "preference": "grammatical",
+          "credit": 1.0
+        }
+      },
+      "legacy_to_repaired_credit_change": 0.0,
+      "legacy_to_repaired_margin_change": -0.11296944477830095
+    },
+    {
+      "id": "agreement_14",
+      "category": "subject_verb_agreement",
+      "grammatical": "The boy was very happy.",
+      "ungrammatical": "The boy are very happy.",
+      "rationale": "Singular boy permits was; are does not agree.",
+      "equal_length": true,
+      "scored_characters": 22,
+      "models": {
+        "legacy": {
+          "grammatical_logp": -13.377433159487456,
+          "ungrammatical_logp": -21.333461204704744,
+          "joint_margin": 7.956028045217288,
+          "mean_character_margin": 0.3616376384189676,
+          "preference": "grammatical",
+          "credit": 1.0
+        },
+        "repaired": {
+          "grammatical_logp": -12.889558239986467,
+          "ungrammatical_logp": -18.658419731427436,
+          "joint_margin": 5.768861491440969,
+          "mean_character_margin": 0.2622209768836804,
+          "preference": "grammatical",
+          "credit": 1.0
+        }
+      },
+      "legacy_to_repaired_credit_change": 0.0,
+      "legacy_to_repaired_margin_change": -2.1871665537763185
+    },
+    {
+      "id": "agreement_15",
+      "category": "subject_verb_agreement",
+      "grammatical": "The dogs are at home.",
+      "ungrammatical": "The dogs was at home.",
+      "rationale": "Plural dogs permits are; was does not agree; counters the singular animal frames.",
+      "equal_length": true,
+      "scored_characters": 20,
+      "models": {
+        "legacy": {
+          "grammatical_logp": -30.09566471926862,
+          "ungrammatical_logp": -25.459004142939868,
+          "joint_margin": -4.636660576328751,
+          "mean_character_margin": -0.23183302881643755,
+          "preference": "ungrammatical",
+          "credit": 0.0
+        },
+        "repaired": {
+          "grammatical_logp": -29.75599341959549,
+          "ungrammatical_logp": -26.03505680792776,
+          "joint_margin": -3.7209366116677316,
+          "mean_character_margin": -0.18604683058338659,
+          "preference": "ungrammatical",
+          "credit": 0.0
+        }
+      },
+      "legacy_to_repaired_credit_change": 0.0,
+      "legacy_to_repaired_margin_change": 0.9157239646610194
+    },
+    {
+      "id": "agreement_16",
+      "category": "subject_verb_agreement",
+      "grammatical": "The cats are in the park.",
+      "ungrammatical": "The cats was in the park.",
+      "rationale": "Plural cats permits are; was does not agree; counters the singular animal frames.",
+      "equal_length": true,
+      "scored_characters": 24,
+      "models": {
+        "legacy": {
+          "grammatical_logp": -24.153890569162925,
+          "ungrammatical_logp": -21.31337086919549,
+          "joint_margin": -2.840519699967434,
+          "mean_character_margin": -0.11835498749864308,
+          "preference": "ungrammatical",
+          "credit": 0.0
+        },
+        "repaired": {
+          "grammatical_logp": -27.889944551199637,
+          "ungrammatical_logp": -24.403502673618945,
+          "joint_margin": -3.486441877580692,
+          "mean_character_margin": -0.14526841156586215,
+          "preference": "ungrammatical",
+          "credit": 0.0
+        }
+      },
+      "legacy_to_repaired_credit_change": 0.0,
+      "legacy_to_repaired_margin_change": -0.645922177613258
+    },
+    {
+      "id": "word_order_01",
+      "category": "word_order",
+      "grammatical": "The dog saw a cat.",
+      "ungrammatical": "The saw dog a cat.",
+      "rationale": "Swapping the subject noun and finite verb breaks the subject noun phrase.",
+      "equal_length": true,
+      "scored_characters": 17,
+      "models": {
+        "legacy": {
+          "grammatical_logp": -19.899838483429875,
+          "ungrammatical_logp": -26.908666625709838,
+          "joint_margin": 7.008828142279963,
+          "mean_character_margin": 0.4122840083694096,
+          "preference": "grammatical",
+          "credit": 1.0
+        },
+        "repaired": {
+          "grammatical_logp": -20.373374620985505,
+          "ungrammatical_logp": -27.761707679390277,
+          "joint_margin": 7.388333058404772,
+          "mean_character_margin": 0.43460782696498657,
+          "preference": "grammatical",
+          "credit": 1.0
+        }
+      },
+      "legacy_to_repaired_credit_change": 0.0,
+      "legacy_to_repaired_margin_change": 0.37950491612480874
+    },
+    {
+      "id": "word_order_02",
+      "category": "word_order",
+      "grammatical": "The cat saw a dog.",
+      "ungrammatical": "The saw cat a dog.",
+      "rationale": "Reverses dog/cat lexical roles while preserving the same word-order error.",
+      "equal_length": true,
+      "scored_characters": 17,
+      "models": {
+        "legacy": {
+          "grammatical_logp": -18.809008131815975,
+          "ungrammatical_logp": -26.034749842567447,
+          "joint_margin": 7.225741710751471,
+          "mean_character_margin": 0.4250436300442042,
+          "preference": "grammatical",
+          "credit": 1.0
+        },
+        "repaired": {
+          "grammatical_logp": -16.568387776368994,
+          "ungrammatical_logp": -24.887395774079756,
+          "joint_margin": 8.319007997710763,
+          "mean_character_margin": 0.48935341163004487,
+          "preference": "grammatical",
+          "credit": 1.0
+        }
+      },
+      "legacy_to_repaired_credit_change": 0.0,
+      "legacy_to_repaired_margin_change": 1.0932662869592917
+    },
+    {
+      "id": "word_order_03",
+      "category": "word_order",
+      "grammatical": "A girl has a red ball.",
+      "ungrammatical": "A girl a has red ball.",
+      "rationale": "Moving the object determiner before the finite verb breaks both verb and object phrase order.",
+      "equal_length": true,
+      "scored_characters": 21,
+      "models": {
+        "legacy": {
+          "grammatical_logp": -32.14257557284316,
+          "ungrammatical_logp": -37.52481574667207,
+          "joint_margin": 5.382240173828912,
+          "mean_character_margin": 0.2562971511347101,
+          "preference": "grammatical",
+          "credit": 1.0
+        },
+        "repaired": {
+          "grammatical_logp": -30.476605344509405,
+          "ungrammatical_logp": -34.52678766414996,
+          "joint_margin": 4.050182319640552,
+          "mean_character_margin": 0.19286582474478817,
+          "preference": "grammatical",
+          "credit": 1.0
+        }
+      },
+      "legacy_to_repaired_credit_change": 0.0,
+      "legacy_to_repaired_margin_change": -1.3320578541883599
+    },
+    {
+      "id": "word_order_04",
+      "category": "word_order",
+      "grammatical": "A boy has a blue box.",
+      "ungrammatical": "A boy a has blue box.",
+      "rationale": "Same determiner/verb inversion with different nouns and color.",
+      "equal_length": true,
+      "scored_characters": 20,
+      "models": {
+        "legacy": {
+          "grammatical_logp": -38.32577855859748,
+          "ungrammatical_logp": -39.98919315548257,
+          "joint_margin": 1.6634145968850902,
+          "mean_character_margin": 0.08317072984425451,
+          "preference": "grammatical",
+          "credit": 1.0
+        },
+        "repaired": {
+          "grammatical_logp": -33.65356666872837,
+          "ungrammatical_logp": -35.732808553702675,
+          "joint_margin": 2.0792418849743086,
+          "mean_character_margin": 0.10396209424871543,
+          "preference": "grammatical",
+          "credit": 1.0
+        }
+      },
+      "legacy_to_repaired_credit_change": 0.0,
+      "legacy_to_repaired_margin_change": 0.4158272880892184
+    },
+    {
+      "id": "word_order_05",
+      "category": "word_order",
+      "grammatical": "The bird sat on a tree.",
+      "ungrammatical": "The bird on sat a tree.",
+      "rationale": "Moving the preposition before the verb leaves an ill-formed prepositional phrase.",
+      "equal_length": true,
+      "scored_characters": 22,
+      "models": {
+        "legacy": {
+          "grammatical_logp": -21.837834692337495,
+          "ungrammatical_logp": -29.011321110480395,
+          "joint_margin": 7.1734864181429,
+          "mean_character_margin": 0.3260675644610409,
+          "preference": "grammatical",
+          "credit": 1.0
+        },
+        "repaired": {
+          "grammatical_logp": -21.252004075609896,
+          "ungrammatical_logp": -28.607324579075513,
+          "joint_margin": 7.355320503465617,
+          "mean_character_margin": 0.334332750157528,
+          "preference": "grammatical",
+          "credit": 1.0
+        }
+      },
+      "legacy_to_repaired_credit_change": 0.0,
+      "legacy_to_repaired_margin_change": 0.18183408532271628
+    },
+    {
+      "id": "word_order_06",
+      "category": "word_order",
+      "grammatical": "The cat sat on a bed.",
+      "ungrammatical": "The cat on sat a bed.",
+      "rationale": "Same preposition/verb inversion in a familiar animal frame.",
+      "equal_length": true,
+      "scored_characters": 20,
+      "models": {
+        "legacy": {
+          "grammatical_logp": -27.863953096220328,
+          "ungrammatical_logp": -33.029687395899984,
+          "joint_margin": 5.165734299679656,
+          "mean_character_margin": 0.2582867149839828,
+          "preference": "grammatical",
+          "credit": 1.0
+        },
+        "repaired": {
+          "grammatical_logp": -28.23603364963364,
+          "ungrammatical_logp": -32.103028477455986,
+          "joint_margin": 3.866994827822346,
+          "mean_character_margin": 0.1933497413911173,
+          "preference": "grammatical",
+          "credit": 1.0
+        }
+      },
+      "legacy_to_repaired_credit_change": 0.0,
+      "legacy_to_repaired_margin_change": -1.29873947185731
+    },
+    {
+      "id": "word_order_07",
+      "category": "word_order",
+      "grammatical": "She found a little toy.",
+      "ungrammatical": "She a found little toy.",
+      "rationale": "Object determiner cannot precede found in this ordinary declarative sentence.",
+      "equal_length": true,
+      "scored_characters": 22,
+      "models": {
+        "legacy": {
+          "grammatical_logp": -19.28935247260982,
+          "ungrammatical_logp": -30.330285465935972,
+          "joint_margin": 11.040932993326152,
+          "mean_character_margin": 0.5018605906057342,
+          "preference": "grammatical",
+          "credit": 1.0
+        },
+        "repaired": {
+          "grammatical_logp": -17.33336236790523,
+          "ungrammatical_logp": -29.415859063957743,
+          "joint_margin": 12.082496696052512,
+          "mean_character_margin": 0.5492043952751142,
+          "preference": "grammatical",
+          "credit": 1.0
+        }
+      },
+      "legacy_to_repaired_credit_change": 0.0,
+      "legacy_to_repaired_margin_change": 1.0415637027263607
+    },
+    {
+      "id": "word_order_08",
+      "category": "word_order",
+      "grammatical": "He found a little ball.",
+      "ungrammatical": "He a found little ball.",
+      "rationale": "Counters the pronoun and object of the same determiner/verb error.",
+      "equal_length": true,
+      "scored_characters": 22,
+      "models": {
+        "legacy": {
+          "grammatical_logp": -13.42860387440704,
+          "ungrammatical_logp": -24.247297746402396,
+          "joint_margin": 10.818693871995356,
+          "mean_character_margin": 0.4917588123634253,
+          "preference": "grammatical",
+          "credit": 1.0
+        },
+        "repaired": {
+          "grammatical_logp": -14.018658384705299,
+          "ungrammatical_logp": -27.306333959639982,
+          "joint_margin": 13.287675574934683,
+          "mean_character_margin": 0.603985253406122,
+          "preference": "grammatical",
+          "credit": 1.0
+        }
+      },
+      "legacy_to_repaired_credit_change": 0.0,
+      "legacy_to_repaired_margin_change": 2.4689817029393275
+    },
+    {
+      "id": "word_order_09",
+      "category": "word_order",
+      "grammatical": "The girl went to the park.",
+      "ungrammatical": "The girl to went the park.",
+      "rationale": "The preposition to cannot precede went while its object remains after went.",
+      "equal_length": true,
+      "scored_characters": 25,
+      "models": {
+        "legacy": {
+          "grammatical_logp": -19.697859660907216,
+          "ungrammatical_logp": -26.322648406111064,
+          "joint_margin": 6.624788745203848,
+          "mean_character_margin": 0.2649915498081539,
+          "preference": "grammatical",
+          "credit": 1.0
+        },
+        "repaired": {
+          "grammatical_logp": -18.431860781253278,
+          "ungrammatical_logp": -28.38898539348905,
+          "joint_margin": 9.957124612235773,
+          "mean_character_margin": 0.39828498448943095,
+          "preference": "grammatical",
+          "credit": 1.0
+        }
+      },
+      "legacy_to_repaired_credit_change": 0.0,
+      "legacy_to_repaired_margin_change": 3.332335867031926
+    },
+    {
+      "id": "word_order_10",
+      "category": "word_order",
+      "grammatical": "The boy went to the shop.",
+      "ungrammatical": "The boy to went the shop.",
+      "rationale": "Same preposition/verb inversion with another subject and destination.",
+      "equal_length": true,
+      "scored_characters": 24,
+      "models": {
+        "legacy": {
+          "grammatical_logp": -22.61325109845295,
+          "ungrammatical_logp": -30.88200183425444,
+          "joint_margin": 8.26875073580149,
+          "mean_character_margin": 0.3445312806583954,
+          "preference": "grammatical",
+          "credit": 1.0
+        },
+        "repaired": {
+          "grammatical_logp": -24.546475609536095,
+          "ungrammatical_logp": -34.025170611631914,
+          "joint_margin": 9.478695002095819,
+          "mean_character_margin": 0.3949456250873258,
+          "preference": "grammatical",
+          "credit": 1.0
+        }
+      },
+      "legacy_to_repaired_credit_change": 0.0,
+      "legacy_to_repaired_margin_change": 1.209944266294329
+    },
+    {
+      "id": "word_order_11",
+      "category": "word_order",
+      "grammatical": "They played with a ball.",
+      "ungrammatical": "They with played a ball.",
+      "rationale": "Swapping with and played breaks the verb/prepositional phrase order.",
+      "equal_length": true,
+      "scored_characters": 23,
+      "models": {
+        "legacy": {
+          "grammatical_logp": -14.38543670554137,
+          "ungrammatical_logp": -24.16530443759566,
+          "joint_margin": 9.779867732054289,
+          "mean_character_margin": 0.4252116405240995,
+          "preference": "grammatical",
+          "credit": 1.0
+        },
+        "repaired": {
+          "grammatical_logp": -13.404684336310257,
+          "ungrammatical_logp": -22.85712026292095,
+          "joint_margin": 9.452435926610693,
+          "mean_character_margin": 0.4109754750700301,
+          "preference": "grammatical",
+          "credit": 1.0
+        }
+      },
+      "legacy_to_repaired_credit_change": 0.0,
+      "legacy_to_repaired_margin_change": -0.3274318054435952
+    },
+    {
+      "id": "word_order_12",
+      "category": "word_order",
+      "grammatical": "We played with a toy.",
+      "ungrammatical": "We with played a toy.",
+      "rationale": "Same verb/preposition inversion with a different pronoun and object.",
+      "equal_length": true,
+      "scored_characters": 20,
+      "models": {
+        "legacy": {
+          "grammatical_logp": -18.756317624052784,
+          "ungrammatical_logp": -28.540706421872677,
+          "joint_margin": 9.784388797819894,
+          "mean_character_margin": 0.4892194398909947,
+          "preference": "grammatical",
+          "credit": 1.0
+        },
+        "repaired": {
+          "grammatical_logp": -18.57064416747637,
+          "ungrammatical_logp": -28.33274672454742,
+          "joint_margin": 9.76210255707105,
+          "mean_character_margin": 0.4881051278535525,
+          "preference": "grammatical",
+          "credit": 1.0
+        }
+      },
+      "legacy_to_repaired_credit_change": 0.0,
+      "legacy_to_repaired_margin_change": -0.02228624074884422
+    }
+  ]
+}

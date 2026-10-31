@@ -1,0 +1,63 @@
+{
+  "scope": "Euclidean verification of bounded experiment claims; arithmetic and artifact identity assertions executed. Not the unrelated ecc.py load-balancing checker.",
+  "definitions": {
+    "batch": 16,
+    "width": 64,
+    "short_context": 64,
+    "long_context": 128,
+    "short_steps": 7200,
+    "long_steps": 3600,
+    "test_stories": 128,
+    "windows_per_story": 4,
+    "scored_targets_per_window": 64
+  },
+  "claims": [
+    {
+      "claim": "Equal predicted training characters",
+      "status": "VALID within recorded configuration",
+      "short": 7372800,
+      "long": 7372800,
+      "sources": [
+        "context_64/selection.json",
+        "context_128/selection.json"
+      ]
+    },
+    {
+      "claim": "Identical heldout target positions;32768predictions/model",
+      "status": "VALID within paired window tests and manifests",
+      "value": 32768,
+      "sources": [
+        "tests/test_context_experiment.py",
+        "evaluation.json"
+      ]
+    },
+    {
+      "claim": "Longer-context test loss increases",
+      "status": "VALID for this selected pair and final test",
+      "fraction": 0.06544763647355722,
+      "sources": [
+        "evaluation.json"
+      ]
+    },
+    {
+      "claim": "Longer context improves general coherence",
+      "status": "UNVERIFIED; screening evidence fails release gate",
+      "sources": [
+        "quality_review.json",
+        "entity_recall.json"
+      ]
+    },
+    {
+      "claim": "This isolates pure causal effect of context length",
+      "status": "INVALID: optimizerupdates,positions,parameters and compute differ",
+      "sources": [
+        "docs/superpowers/plans/context-method-review.md"
+      ]
+    }
+  ],
+  "limitations": [
+    "One seed; no seed-robustness or statistical significance claim.",
+    "Exact normalized exclusions do not rule out nearduplicates.",
+    "Synthetic8probe forcedchoice scores are not general-memory accuracy."
+  ]
+}

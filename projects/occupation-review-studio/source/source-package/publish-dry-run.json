@@ -1,0 +1,26 @@
+{
+  "targets": [
+    {
+      "type": "model",
+      "repo": "PabloRod11/occupation-hitl-classifier"
+    },
+    {
+      "type": "space",
+      "repo": "PabloRod11/occupation-review-studio"
+    }
+  ],
+  "model_sha256": "128c9d92d87a434a9039a7a8ce8c116603c418ccce17e0ef04e8c01de5c10e11",
+  "ignore_patterns": [
+    "__pycache__/**",
+    "**/__pycache__/**",
+    "*.pyc",
+    "**/*.pyc",
+    ".venv/**",
+    "data/raw/**",
+    "*.sqlite*",
+    "**/*.sqlite*",
+    "*.feedback.csv",
+    ".env",
+    ".git/**"
+  ]
+}

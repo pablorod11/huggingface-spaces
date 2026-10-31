@@ -1,0 +1,86 @@
+[
+  {
+    "prompt": "anna found a small bird in the rain. she decided to",
+    "seed": 42,
+    "baseline": "anna found a small bird in the rain. she decided to make and had fun. They felt sad off, and they stome, there was very happy. They played with the ball wind a big books dog the dog was all then all day on, Momm",
+    "constant": "anna found a small bird in the rain. she decided to make a big, but he was fun together, and the ran made the and play and the ball, but she costal and wanted to play with his mom.\nThe bird and Sam and said,  He",
+    "cosine": "anna found a small bird in the rain. she decided to make a big, but he was fun together. The found tombed, but he was a big careful, but she costal and wanted to play with his mom until and then and said,  What'"
+  },
+  {
+    "prompt": "anna found a small bird in the rain. she decided to",
+    "seed": 1729,
+    "baseline": "anna found a small bird in the rain. she decided to play with her have cat to play with, they all and the park. The bug was all looked for her friend, a soft that and said,  Mommy. Ion a little girl named From t",
+    "constant": "anna found a small bird in the rain. she decided to play with the party for a big big him. She said,  Thank you have could not the learned to be town the pond asked him. Spot looked on the became to the storm an",
+    "cosine": "anna found a small bird in the rain. she decided to play with her favorite the box.\n She opened it a big dog with a big bull bite flew down.\nOne day, she was that he was a tiny magiconow. The friend, and the tre"
+  },
+  {
+    "prompt": "anna found a small bird in the rain. she decided to",
+    "seed": 2026,
+    "baseline": "anna found a small bird in the rain. she decided to her heart and kind up the mewalked and said,  I am love the should the scat always. The bird said,  I want to wish colors window. Amy was in the sun sorry, and",
+    "constant": "anna found a small bird in the rain. she decided to help the tree.\nShe said,   Yes, you should many and the big away. It fly   \nSo, Tom saw a new pland ran away dog lander and said,  Yes, you help      Mommy and",
+    "cosine": "anna found a small bird in the rain. she decided to help Sara was not sure the ball was so happy. The bunny day and Spot for high and told home, the garden small and said,  Thank you, I we one do you a big feel."
+  },
+  {
+    "prompt": "ben put his toy boat in the pond. the boat began to",
+    "seed": 42,
+    "baseline": "ben put his toy boat in the pond. the boat began to make and had fun. They felt sad off, but they stome, there was very happy. They played with the ball wind a big books dog the dog was all then all day on, Momm",
+    "constant": "ben put his toy boat in the pond. the boat began to the ran in the special. Tim said,  That's hat she bear. It was very happy and share a day. Tim looks were having a big pigz, she found of then they different t",
+    "cosine": "ben put his toy boat in the pond. the boat began to make and had a big bird. They saw a little girl with a big new blocked. They had a laughed started. They went to play with her sun. The bear near their from an"
+  },
+  {
+    "prompt": "ben put his toy boat in the pond. the boat began to",
+    "seed": 1729,
+    "baseline": "ben put his toy boat in the pond. the boat began to be because every decided to job was a green looked bad. They went in his mouth, they carefull owers. He was so happy. The found a one dog who colors like a tel",
+    "constant": "ben put his toy boat in the pond. the boat began together and ressected to make a big hidde box and had a planned and said,  Spot said,  You're did not home found a fun. The floor stone down. She took the ran to",
+    "cosine": "ben put his toy boat in the pond. the boat began to be behind. He was scared that she hard and said,  Thank you want to show it. The cat was the towers. It is asked happy that she stones. The friend, and the tre"
+  },
+  {
+    "prompt": "ben put his toy boat in the pond. the boat began to",
+    "seed": 2026,
+    "baseline": "ben put his toy boat in the pond. the boat began to her heard and kept to help her scared. The bark and the big away with her ball of to the dog near a red small wish a looked and what do your deep on a time and",
+    "constant": "ben put his toy boat in the pond. the boat began to help the tree.\nShe said,   Yes, you can around. \nThe far was happy to come all the other dog noise   They all like the picture washed that the reach to her mum",
+    "cosine": "ben put his toy boat in the pond. the boat began to help her toy and the man toy card outside more.\nThe bird was happy to come all the other dog never was always and said,  Thank you, I we one do you a big feel."
+  },
+  {
+    "prompt": "mia wanted to share her apple with her friend. she",
+    "seed": 42,
+    "baseline": "mia wanted to share her apple with her friend. she was rane ball and said,  Of The bug was very happy to play with his tree. It home,  Tom wanted to play with the book with the door. The bear near their frog aw",
+    "constant": "mia wanted to share her apple with her friend. she wanted the rock of the fish mustures. It flowers moving and said,  Spot careful began together and a small dog can. She said,  He had a bear not like so happy ",
+    "cosine": "mia wanted to share her apple with her friend. she was ran he friends when Tim.\nThe bird said,  Thank you, I am says. She take was so happy. It was all day with the tree and having her pool window to is around "
+  },
+  {
+    "prompt": "mia wanted to share her apple with her friend. she",
+    "seed": 1729,
+    "baseline": "mia wanted to share her apple with her friend. she wanted to red the bird the box.\n Shere was very happy and said,  Tim was very smiled and the towed the firest. It was a time magiconother toys. The blues and h",
+    "constant": "mia wanted to share her apple with her friend. she said,  I did not her mom jam. He loved to play a big dog with a big bird into the race. She stown the pond asked him. Spot looked on the became to the storm an",
+    "cosine": "mia wanted to share her apple with her friend. she wanted to red the birds. She said,  Tom would not wanted to talk together. It was the picture with the fish swing. She put the boton a ball named Tom. The bird"
+  },
+  {
+    "prompt": "mia wanted to share her apple with her friend. she",
+    "seed": 2026,
+    "baseline": "mia wanted to share her apple with her friend. she had her mom was so happy.  The sun was so much.\nThey played a big, that cat always out to help. She ran small and said,  Yes, you for gear and see. The dog was",
+    "constant": "mia wanted to share her apple with her friend. she had her toys and played to be scared fun and rever happy. Sam was so hung that he toy went home, and Tim saw happy and said. They felt sad but the say ring and",
+    "cosine": "mia wanted to share her apple with her friend. she had her friend, so happy to was full different.\nThe bird was happy to come all the other dog. They were so had to the bowl ball was very high stick and said,  "
+  },
+  {
+    "prompt": "a little fox could not find his way home. then he",
+    "seed": 42,
+    "baseline": "a little fox could not find his way home. then he was ready still of fun. Tim said,  Thank you want to train away. He was all who happy towed to the bowly was inside.\nBut then, something eat not like for a one",
+    "constant": "a little fox could not find his way home. then he wanted to share and the park, so he little girl with the pands. Tim was happy started to costal and wanted to play with his mom.\nThe bird and Sam and said,  He",
+    "cosine": "a little fox could not find his way home. then he was ready stick and the park, but he was a big new friends were so happy. She said,  Let's started. They went to play with her sun. The bear not like so happy "
+  },
+  {
+    "prompt": "a little fox could not find his way home. then he",
+    "seed": 1729,
+    "baseline": "a little fox could not find his way home. then he was she idea. He went happy and wanted to play with her dangerous  Amy was all learn and the towed the firest. It was a time magiconother toys. The blues and h",
+    "constant": "a little fox could not find his way home. then he sung he ideren the cat. The jumped wood because he ball.\nThe tried to make the learned to help were happy. The little bird took tuon. The bird was very too the",
+    "cosine": "a little fox could not find his way home. then he wanted to red the birds. She said,  Tom would not wanted to talk together. It was the picture with the fish swing. She put the boton a ball named Tom. The bird"
+  },
+  {
+    "prompt": "a little fox could not find his way home. then he",
+    "seed": 2026,
+    "baseline": "a little fox could not find his way home. then her mom was very happy. The took should find more.\nThe bird was happy to cock all headow who happy and ready and went out of wake will be came. They would not kno",
+    "constant": "a little fox could not find his way home. then her mom wanted to her family    They put is took him.\nThen the bear the flowers. The toy went to play with her flowel and play. They felt sad but the say ring and",
+    "cosine": "a little fox could not find his way home. then he had to reach town. Mambe the card outside more the ball the bear too. The bird had a big dog named Tim and said.\nThen, something for the minute to say. The bug"
+  }
+]

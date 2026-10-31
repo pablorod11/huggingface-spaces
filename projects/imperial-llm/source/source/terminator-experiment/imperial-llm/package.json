@@ -1,0 +1,13 @@
+{
+  "devDependencies": {
+    "@playwright/test": "1.61.1"
+  },
+  "name": "imperial-llm-release-checks",
+  "private": true,
+  "scripts": {
+    "test:model": "node space/test_inference.cjs && node space/test_generation.cjs",
+    "test:browser": "playwright test",
+    "test:visual": "VISUAL=1 playwright test --grep \"visual baseline\" --project chromium",
+    "test:visual:update": "VISUAL=1 playwright test --grep \"visual baseline\" --project chromium --update-snapshots"
+  }
+}

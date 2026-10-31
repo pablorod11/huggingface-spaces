@@ -1,0 +1,1030 @@
+{
+  "method": "Unblinded qualitative inspection by one agent of every saved output; not a human preference study, validated coherence metric, or proof of general capability. Text inspection completed before evaluation metrics were read; metrics were not needed for this release decision.",
+  "criteria_source": "work/context-release-criteria.md",
+  "samples_reviewed": 60,
+  "ordinary_samples_reviewed": 36,
+  "long_context_samples_reviewed": 24,
+  "candidate_samples_reviewed": 40,
+  "per_model": {
+    "context_64": {
+      "samples_reviewed": 20,
+      "samples_with_broken_grammar_and_malformed_words": 20,
+      "sampled_long_immediate_exact_name_recall": 0,
+      "long_probe_samples": 8,
+      "counterbalanced_pairs_with_identical_continuations": 4,
+      "counterbalanced_pairs": 4
+    },
+    "context_128": {
+      "samples_reviewed": 20,
+      "samples_with_broken_grammar_and_malformed_words": 20,
+      "sampled_long_immediate_exact_name_recall": 0,
+      "long_probe_samples": 8,
+      "counterbalanced_pairs_with_identical_continuations": 4,
+      "counterbalanced_pairs": 4
+    },
+    "live_004": {
+      "samples_reviewed": 20,
+      "samples_with_broken_grammar_and_malformed_words": 20,
+      "sampled_long_immediate_exact_name_recall": 0,
+      "long_probe_samples": 8,
+      "counterbalanced_pairs_with_identical_continuations": 4,
+      "counterbalanced_pairs": 4
+    }
+  },
+  "narrative_improvement": "No consistent qualitative narrative improvement established for context128 over context64 or live004. Brief readable openings in a few context64 outputs do not persist. Context128 also produces severe grammar failures and topic drift.",
+  "recall_improvement": "No sampled exact name-recall improvement:0/8 for each model. All4 paired name swaps produce identical sampled continuations within each model. This does not imply identical logits or no latent cue sensitivity; report forced-choice scores separately.",
+  "repetition_observation": "Repeated stock fragments recur across different ordinary prompts/seeds, e.g. context64 seed1729 repeatedly ends with The cat of the door. The bus saw a sm. This is cross-sample convergence; no quantitative repetition metric or indefinite looping claim.",
+  "reliable_coherence_established": false,
+  "promotion": false,
+  "recommendation": "Retain live model004. Preserve both candidates as experimental checkpoints; do not deploy either on this evidence.",
+  "source_sha256": {
+    "samples.json": "6235fff532ffc7eb4e443feb5aefc7916c3b23b7b50bacbaf4f9f9a2b4a385c6",
+    "long_context_samples.json": "5e5d603cb8cde9a872b577182e8a28943f1df029a521f744b29681f7c5dea669"
+  },
+  "reviews": [
+    {
+      "set": "ordinary",
+      "row": 1,
+      "prompt": "tom lost his red ball. he looked under the bed and",
+      "seed": 42,
+      "model": "context_64",
+      "flags": [
+        "broken_grammar",
+        "malformed_words",
+        "topic_or_entity_drift",
+        "sustained_narrative_coherence_not_established"
+      ],
+      "evidence": "his mady went to help mettive",
+      "readable_local_opening": false,
+      "note": "Some familiar words and isolated clauses occur; no coherent development of the prompt is sustained. Fixed-length terminal truncation alone is not counted as a grammar failure."
+    },
+    {
+      "set": "ordinary",
+      "row": 1,
+      "prompt": "tom lost his red ball. he looked under the bed and",
+      "seed": 42,
+      "model": "context_128",
+      "flags": [
+        "broken_grammar",
+        "malformed_words",
+        "topic_or_entity_drift",
+        "sustained_narrative_coherence_not_established"
+      ],
+      "evidence": "the prooling dog",
+      "readable_local_opening": false,
+      "note": "Some familiar words and isolated clauses occur; no coherent development of the prompt is sustained. Fixed-length terminal truncation alone is not counted as a grammar failure."
+    },
+    {
+      "set": "ordinary",
+      "row": 1,
+      "prompt": "tom lost his red ball. he looked under the bed and",
+      "seed": 42,
+      "model": "live_004",
+      "flags": [
+        "broken_grammar",
+        "malformed_words",
+        "topic_or_entity_drift",
+        "sustained_narrative_coherence_not_established"
+      ],
+      "evidence": "Tim brock to frass",
+      "readable_local_opening": false,
+      "note": "Some familiar words and isolated clauses occur; no coherent development of the prompt is sustained. Fixed-length terminal truncation alone is not counted as a grammar failure."
+    },
+    {
+      "set": "ordinary",
+      "row": 2,
+      "prompt": "tom lost his red ball. he looked under the bed and",
+      "seed": 1729,
+      "model": "context_64",
+      "flags": [
+        "broken_grammar",
+        "malformed_words",
+        "topic_or_entity_drift",
+        "sustained_narrative_coherence_not_established"
+      ],
+      "evidence": "The was strink that to resson",
+      "readable_local_opening": false,
+      "note": "Some familiar words and isolated clauses occur; no coherent development of the prompt is sustained. Fixed-length terminal truncation alone is not counted as a grammar failure."
+    },
+    {
+      "set": "ordinary",
+      "row": 2,
+      "prompt": "tom lost his red ball. he looked under the bed and",
+      "seed": 1729,
+      "model": "context_128",
+      "flags": [
+        "broken_grammar",
+        "malformed_words",
+        "topic_or_entity_drift",
+        "sustained_narrative_coherence_not_established"
+      ],
+      "evidence": "Tom thoughter",
+      "readable_local_opening": false,
+      "note": "Some familiar words and isolated clauses occur; no coherent development of the prompt is sustained. Fixed-length terminal truncation alone is not counted as a grammar failure."
+    },
+    {
+      "set": "ordinary",
+      "row": 2,
+      "prompt": "tom lost his red ball. he looked under the bed and",
+      "seed": 1729,
+      "model": "live_004",
+      "flags": [
+        "broken_grammar",
+        "malformed_words",
+        "topic_or_entity_drift",
+        "sustained_narrative_coherence_not_established"
+      ],
+      "evidence": "She ara loved to pulle tree",
+      "readable_local_opening": false,
+      "note": "Some familiar words and isolated clauses occur; no coherent development of the prompt is sustained. Fixed-length terminal truncation alone is not counted as a grammar failure."
+    },
+    {
+      "set": "ordinary",
+      "row": 3,
+      "prompt": "tom lost his red ball. he looked under the bed and",
+      "seed": 2026,
+      "model": "context_64",
+      "flags": [
+        "broken_grammar",
+        "malformed_words",
+        "topic_or_entity_drift",
+        "sustained_narrative_coherence_not_established"
+      ],
+      "evidence": "get the tree onto a play tomether",
+      "readable_local_opening": false,
+      "note": "Some familiar words and isolated clauses occur; no coherent development of the prompt is sustained. Fixed-length terminal truncation alone is not counted as a grammar failure."
+    },
+    {
+      "set": "ordinary",
+      "row": 3,
+      "prompt": "tom lost his red ball. he looked under the bed and",
+      "seed": 2026,
+      "model": "context_128",
+      "flags": [
+        "broken_grammar",
+        "malformed_words",
+        "topic_or_entity_drift",
+        "sustained_narrative_coherence_not_established"
+      ],
+      "evidence": "to partarted",
+      "readable_local_opening": false,
+      "note": "Some familiar words and isolated clauses occur; no coherent development of the prompt is sustained. Fixed-length terminal truncation alone is not counted as a grammar failure."
+    },
+    {
+      "set": "ordinary",
+      "row": 3,
+      "prompt": "tom lost his red ball. he looked under the bed and",
+      "seed": 2026,
+      "model": "live_004",
+      "flags": [
+        "broken_grammar",
+        "malformed_words",
+        "topic_or_entity_drift",
+        "sustained_narrative_coherence_not_established"
+      ],
+      "evidence": "the buill wented",
+      "readable_local_opening": false,
+      "note": "Some familiar words and isolated clauses occur; no coherent development of the prompt is sustained. Fixed-length terminal truncation alone is not counted as a grammar failure."
+    },
+    {
+      "set": "ordinary",
+      "row": 4,
+      "prompt": "lily and her dog went to the park. the dog saw",
+      "seed": 42,
+      "model": "context_64",
+      "flags": [
+        "broken_grammar",
+        "malformed_words",
+        "topic_or_entity_drift",
+        "sustained_narrative_coherence_not_established"
+      ],
+      "evidence": "He was was so happy to find the was a time",
+      "readable_local_opening": false,
+      "note": "Some familiar words and isolated clauses occur; no coherent development of the prompt is sustained. Fixed-length terminal truncation alone is not counted as a grammar failure."
+    },
+    {
+      "set": "ordinary",
+      "row": 4,
+      "prompt": "lily and her dog went to the park. the dog saw",
+      "seed": 42,
+      "model": "context_128",
+      "flags": [
+        "broken_grammar",
+        "malformed_words",
+        "topic_or_entity_drift",
+        "sustained_narrative_coherence_not_established"
+      ],
+      "evidence": "the spectare to sistang",
+      "readable_local_opening": false,
+      "note": "Some familiar words and isolated clauses occur; no coherent development of the prompt is sustained. Fixed-length terminal truncation alone is not counted as a grammar failure."
+    },
+    {
+      "set": "ordinary",
+      "row": 4,
+      "prompt": "lily and her dog went to the park. the dog saw",
+      "seed": 42,
+      "model": "live_004",
+      "flags": [
+        "broken_grammar",
+        "malformed_words",
+        "topic_or_entity_drift",
+        "sustained_narrative_coherence_not_established"
+      ],
+      "evidence": "Tim brock to frass",
+      "readable_local_opening": false,
+      "note": "Some familiar words and isolated clauses occur; no coherent development of the prompt is sustained. Fixed-length terminal truncation alone is not counted as a grammar failure."
+    },
+    {
+      "set": "ordinary",
+      "row": 5,
+      "prompt": "lily and her dog went to the park. the dog saw",
+      "seed": 1729,
+      "model": "context_64",
+      "flags": [
+        "broken_grammar",
+        "malformed_words",
+        "topic_or_entity_drift",
+        "sustained_narrative_coherence_not_established"
+      ],
+      "evidence": "They had a many became had a big stretter",
+      "readable_local_opening": false,
+      "note": "Some familiar words and isolated clauses occur; no coherent development of the prompt is sustained. Fixed-length terminal truncation alone is not counted as a grammar failure."
+    },
+    {
+      "set": "ordinary",
+      "row": 5,
+      "prompt": "lily and her dog went to the park. the dog saw",
+      "seed": 1729,
+      "model": "context_128",
+      "flags": [
+        "broken_grammar",
+        "malformed_words",
+        "topic_or_entity_drift",
+        "sustained_narrative_coherence_not_established"
+      ],
+      "evidence": "his creat to ressool",
+      "readable_local_opening": false,
+      "note": "Some familiar words and isolated clauses occur; no coherent development of the prompt is sustained. Fixed-length terminal truncation alone is not counted as a grammar failure."
+    },
+    {
+      "set": "ordinary",
+      "row": 5,
+      "prompt": "lily and her dog went to the park. the dog saw",
+      "seed": 1729,
+      "model": "live_004",
+      "flags": [
+        "broken_grammar",
+        "malformed_words",
+        "topic_or_entity_drift",
+        "sustained_narrative_coherence_not_established"
+      ],
+      "evidence": "They mudlly puzzziked",
+      "readable_local_opening": false,
+      "note": "Some familiar words and isolated clauses occur; no coherent development of the prompt is sustained. Fixed-length terminal truncation alone is not counted as a grammar failure."
+    },
+    {
+      "set": "ordinary",
+      "row": 6,
+      "prompt": "lily and her dog went to the park. the dog saw",
+      "seed": 2026,
+      "model": "context_64",
+      "flags": [
+        "broken_grammar",
+        "malformed_words",
+        "topic_or_entity_drift",
+        "sustained_narrative_coherence_not_established"
+      ],
+      "evidence": "What you prants a hurt pretty",
+      "readable_local_opening": false,
+      "note": "Some familiar words and isolated clauses occur; no coherent development of the prompt is sustained. Fixed-length terminal truncation alone is not counted as a grammar failure."
+    },
+    {
+      "set": "ordinary",
+      "row": 6,
+      "prompt": "lily and her dog went to the park. the dog saw",
+      "seed": 2026,
+      "model": "context_128",
+      "flags": [
+        "broken_grammar",
+        "malformed_words",
+        "topic_or_entity_drift",
+        "sustained_narrative_coherence_not_established"
+      ],
+      "evidence": "she fun t wented",
+      "readable_local_opening": false,
+      "note": "Some familiar words and isolated clauses occur; no coherent development of the prompt is sustained. Fixed-length terminal truncation alone is not counted as a grammar failure."
+    },
+    {
+      "set": "ordinary",
+      "row": 6,
+      "prompt": "lily and her dog went to the park. the dog saw",
+      "seed": 2026,
+      "model": "live_004",
+      "flags": [
+        "broken_grammar",
+        "malformed_words",
+        "topic_or_entity_drift",
+        "sustained_narrative_coherence_not_established"
+      ],
+      "evidence": "He crit bard friend",
+      "readable_local_opening": true,
+      "note": "Some familiar words and isolated clauses occur; no coherent development of the prompt is sustained. Fixed-length terminal truncation alone is not counted as a grammar failure."
+    },
+    {
+      "set": "ordinary",
+      "row": 7,
+      "prompt": "the rabbit hid a carrot under a tree. later,",
+      "seed": 42,
+      "model": "context_64",
+      "flags": [
+        "broken_grammar",
+        "malformed_words",
+        "topic_or_entity_drift",
+        "sustained_narrative_coherence_not_established"
+      ],
+      "evidence": "he croket you",
+      "readable_local_opening": false,
+      "note": "Some familiar words and isolated clauses occur; no coherent development of the prompt is sustained. Fixed-length terminal truncation alone is not counted as a grammar failure."
+    },
+    {
+      "set": "ordinary",
+      "row": 7,
+      "prompt": "the rabbit hid a carrot under a tree. later,",
+      "seed": 42,
+      "model": "context_128",
+      "flags": [
+        "broken_grammar",
+        "malformed_words",
+        "topic_or_entity_drift",
+        "sustained_narrative_coherence_not_established"
+      ],
+      "evidence": "he could happy to do be was happy",
+      "readable_local_opening": false,
+      "note": "Some familiar words and isolated clauses occur; no coherent development of the prompt is sustained. Fixed-length terminal truncation alone is not counted as a grammar failure."
+    },
+    {
+      "set": "ordinary",
+      "row": 7,
+      "prompt": "the rabbit hid a carrot under a tree. later,",
+      "seed": 42,
+      "model": "live_004",
+      "flags": [
+        "broken_grammar",
+        "malformed_words",
+        "topic_or_entity_drift",
+        "sustained_narrative_coherence_not_established"
+      ],
+      "evidence": "Noved",
+      "readable_local_opening": false,
+      "note": "Some familiar words and isolated clauses occur; no coherent development of the prompt is sustained. Fixed-length terminal truncation alone is not counted as a grammar failure."
+    },
+    {
+      "set": "ordinary",
+      "row": 8,
+      "prompt": "the rabbit hid a carrot under a tree. later,",
+      "seed": 1729,
+      "model": "context_64",
+      "flags": [
+        "broken_grammar",
+        "malformed_words",
+        "topic_or_entity_drift",
+        "sustained_narrative_coherence_not_established"
+      ],
+      "evidence": "he fest cat",
+      "readable_local_opening": false,
+      "note": "Some familiar words and isolated clauses occur; no coherent development of the prompt is sustained. Fixed-length terminal truncation alone is not counted as a grammar failure."
+    },
+    {
+      "set": "ordinary",
+      "row": 8,
+      "prompt": "the rabbit hid a carrot under a tree. later,",
+      "seed": 1729,
+      "model": "context_128",
+      "flags": [
+        "broken_grammar",
+        "malformed_words",
+        "topic_or_entity_drift",
+        "sustained_narrative_coherence_not_established"
+      ],
+      "evidence": "shat betterty",
+      "readable_local_opening": false,
+      "note": "Some familiar words and isolated clauses occur; no coherent development of the prompt is sustained. Fixed-length terminal truncation alone is not counted as a grammar failure."
+    },
+    {
+      "set": "ordinary",
+      "row": 8,
+      "prompt": "the rabbit hid a carrot under a tree. later,",
+      "seed": 1729,
+      "model": "live_004",
+      "flags": [
+        "broken_grammar",
+        "malformed_words",
+        "topic_or_entity_drift",
+        "sustained_narrative_coherence_not_established"
+      ],
+      "evidence": "himby mudll",
+      "readable_local_opening": false,
+      "note": "Some familiar words and isolated clauses occur; no coherent development of the prompt is sustained. Fixed-length terminal truncation alone is not counted as a grammar failure."
+    },
+    {
+      "set": "ordinary",
+      "row": 9,
+      "prompt": "the rabbit hid a carrot under a tree. later,",
+      "seed": 2026,
+      "model": "context_64",
+      "flags": [
+        "broken_grammar",
+        "malformed_words",
+        "topic_or_entity_drift",
+        "sustained_narrative_coherence_not_established"
+      ],
+      "evidence": "became ber addent",
+      "readable_local_opening": false,
+      "note": "Some familiar words and isolated clauses occur; no coherent development of the prompt is sustained. Fixed-length terminal truncation alone is not counted as a grammar failure."
+    },
+    {
+      "set": "ordinary",
+      "row": 9,
+      "prompt": "the rabbit hid a carrot under a tree. later,",
+      "seed": 2026,
+      "model": "context_128",
+      "flags": [
+        "broken_grammar",
+        "malformed_words",
+        "topic_or_entity_drift",
+        "sustained_narrative_coherence_not_established"
+      ],
+      "evidence": "a swael draginning",
+      "readable_local_opening": false,
+      "note": "Some familiar words and isolated clauses occur; no coherent development of the prompt is sustained. Fixed-length terminal truncation alone is not counted as a grammar failure."
+    },
+    {
+      "set": "ordinary",
+      "row": 9,
+      "prompt": "the rabbit hid a carrot under a tree. later,",
+      "seed": 2026,
+      "model": "live_004",
+      "flags": [
+        "broken_grammar",
+        "malformed_words",
+        "topic_or_entity_drift",
+        "sustained_narrative_coherence_not_established"
+      ],
+      "evidence": "a boppare",
+      "readable_local_opening": false,
+      "note": "Some familiar words and isolated clauses occur; no coherent development of the prompt is sustained. Fixed-length terminal truncation alone is not counted as a grammar failure."
+    },
+    {
+      "set": "ordinary",
+      "row": 10,
+      "prompt": "sam gave mia a blue box. inside the box was",
+      "seed": 42,
+      "model": "context_64",
+      "flags": [
+        "broken_grammar",
+        "malformed_words",
+        "topic_or_entity_drift",
+        "sustained_narrative_coherence_not_established"
+      ],
+      "evidence": "a larmer",
+      "readable_local_opening": false,
+      "note": "Some familiar words and isolated clauses occur; no coherent development of the prompt is sustained. Fixed-length terminal truncation alone is not counted as a grammar failure."
+    },
+    {
+      "set": "ordinary",
+      "row": 10,
+      "prompt": "sam gave mia a blue box. inside the box was",
+      "seed": 42,
+      "model": "context_128",
+      "flags": [
+        "broken_grammar",
+        "malformed_words",
+        "topic_or_entity_drift",
+        "sustained_narrative_coherence_not_established"
+      ],
+      "evidence": "of a big hy house didn't can dog",
+      "readable_local_opening": false,
+      "note": "Some familiar words and isolated clauses occur; no coherent development of the prompt is sustained. Fixed-length terminal truncation alone is not counted as a grammar failure."
+    },
+    {
+      "set": "ordinary",
+      "row": 10,
+      "prompt": "sam gave mia a blue box. inside the box was",
+      "seed": 42,
+      "model": "live_004",
+      "flags": [
+        "broken_grammar",
+        "malformed_words",
+        "topic_or_entity_drift",
+        "sustained_narrative_coherence_not_established"
+      ],
+      "evidence": "buig faster frabopped",
+      "readable_local_opening": false,
+      "note": "Some familiar words and isolated clauses occur; no coherent development of the prompt is sustained. Fixed-length terminal truncation alone is not counted as a grammar failure."
+    },
+    {
+      "set": "ordinary",
+      "row": 11,
+      "prompt": "sam gave mia a blue box. inside the box was",
+      "seed": 1729,
+      "model": "context_64",
+      "flags": [
+        "broken_grammar",
+        "malformed_words",
+        "topic_or_entity_drift",
+        "sustained_narrative_coherence_not_established"
+      ],
+      "evidence": "The was strink that to resson",
+      "readable_local_opening": true,
+      "note": "Some familiar words and isolated clauses occur; no coherent development of the prompt is sustained. Fixed-length terminal truncation alone is not counted as a grammar failure."
+    },
+    {
+      "set": "ordinary",
+      "row": 11,
+      "prompt": "sam gave mia a blue box. inside the box was",
+      "seed": 1729,
+      "model": "context_128",
+      "flags": [
+        "broken_grammar",
+        "malformed_words",
+        "topic_or_entity_drift",
+        "sustained_narrative_coherence_not_established"
+      ],
+      "evidence": "and manym to eat ever have because",
+      "readable_local_opening": false,
+      "note": "Some familiar words and isolated clauses occur; no coherent development of the prompt is sustained. Fixed-length terminal truncation alone is not counted as a grammar failure."
+    },
+    {
+      "set": "ordinary",
+      "row": 11,
+      "prompt": "sam gave mia a blue box. inside the box was",
+      "seed": 1729,
+      "model": "live_004",
+      "flags": [
+        "broken_grammar",
+        "malformed_words",
+        "topic_or_entity_drift",
+        "sustained_narrative_coherence_not_established"
+      ],
+      "evidence": "himby mudll",
+      "readable_local_opening": false,
+      "note": "Some familiar words and isolated clauses occur; no coherent development of the prompt is sustained. Fixed-length terminal truncation alone is not counted as a grammar failure."
+    },
+    {
+      "set": "ordinary",
+      "row": 12,
+      "prompt": "sam gave mia a blue box. inside the box was",
+      "seed": 2026,
+      "model": "context_64",
+      "flags": [
+        "broken_grammar",
+        "malformed_words",
+        "topic_or_entity_drift",
+        "sustained_narrative_coherence_not_established"
+      ],
+      "evidence": "the bird was a new doing was a ball garden",
+      "readable_local_opening": true,
+      "note": "Some familiar words and isolated clauses occur; no coherent development of the prompt is sustained. Fixed-length terminal truncation alone is not counted as a grammar failure."
+    },
+    {
+      "set": "ordinary",
+      "row": 12,
+      "prompt": "sam gave mia a blue box. inside the box was",
+      "seed": 2026,
+      "model": "context_128",
+      "flags": [
+        "broken_grammar",
+        "malformed_words",
+        "topic_or_entity_drift",
+        "sustained_narrative_coherence_not_established"
+      ],
+      "evidence": "cold becars and repleasuch",
+      "readable_local_opening": false,
+      "note": "Some familiar words and isolated clauses occur; no coherent development of the prompt is sustained. Fixed-length terminal truncation alone is not counted as a grammar failure."
+    },
+    {
+      "set": "ordinary",
+      "row": 12,
+      "prompt": "sam gave mia a blue box. inside the box was",
+      "seed": 2026,
+      "model": "live_004",
+      "flags": [
+        "broken_grammar",
+        "malformed_words",
+        "topic_or_entity_drift",
+        "sustained_narrative_coherence_not_established"
+      ],
+      "evidence": "He crit bard friend",
+      "readable_local_opening": false,
+      "note": "Some familiar words and isolated clauses occur; no coherent development of the prompt is sustained. Fixed-length terminal truncation alone is not counted as a grammar failure."
+    },
+    {
+      "set": "long_context",
+      "id": "entity_1_1",
+      "seed": 42,
+      "model": "context_64",
+      "flags": [
+        "broken_grammar",
+        "malformed_words",
+        "topic_or_entity_drift",
+        "requested_entity_not_recalled"
+      ],
+      "evidence": "The was so happy to find the was a time",
+      "expected_name": "Ben",
+      "generated_prefix": "a lack to help. She found a big flew saw a big far to friends were mad",
+      "immediate_exact_name_recall": false,
+      "note": "Judge only generated continuation, not the repeated full prompt displayed in the saved sample."
+    },
+    {
+      "set": "long_context",
+      "id": "entity_1_1",
+      "seed": 42,
+      "model": "context_128",
+      "flags": [
+        "broken_grammar",
+        "malformed_words",
+        "topic_or_entity_drift",
+        "requested_entity_not_recalled"
+      ],
+      "evidence": "They was magices",
+      "expected_name": "Ben",
+      "generated_prefix": "and a big had funny found a big friends. The boy happy day little girl",
+      "immediate_exact_name_recall": false,
+      "note": "Judge only generated continuation, not the repeated full prompt displayed in the saved sample."
+    },
+    {
+      "set": "long_context",
+      "id": "entity_1_1",
+      "seed": 42,
+      "model": "live_004",
+      "flags": [
+        "broken_grammar",
+        "malformed_words",
+        "topic_or_entity_drift",
+        "requested_entity_not_recalled"
+      ],
+      "evidence": "buig faster frabopped",
+      "expected_name": "Ben",
+      "generated_prefix": "and a big happy the found. She fave hers, buig faster frabopped in the",
+      "immediate_exact_name_recall": false,
+      "note": "Judge only generated continuation, not the repeated full prompt displayed in the saved sample."
+    },
+    {
+      "set": "long_context",
+      "id": "entity_1_2",
+      "seed": 42,
+      "model": "context_64",
+      "flags": [
+        "broken_grammar",
+        "malformed_words",
+        "topic_or_entity_drift",
+        "requested_entity_not_recalled"
+      ],
+      "evidence": "The was so happy to find the was a time",
+      "expected_name": "Dan",
+      "generated_prefix": "a lack to help. She found a big flew saw a big far to friends were mad",
+      "immediate_exact_name_recall": false,
+      "note": "Judge only generated continuation, not the repeated full prompt displayed in the saved sample."
+    },
+    {
+      "set": "long_context",
+      "id": "entity_1_2",
+      "seed": 42,
+      "model": "context_128",
+      "flags": [
+        "broken_grammar",
+        "malformed_words",
+        "topic_or_entity_drift",
+        "requested_entity_not_recalled"
+      ],
+      "evidence": "They was magices",
+      "expected_name": "Dan",
+      "generated_prefix": "and a big had funny found a big friends. The boy happy day little girl",
+      "immediate_exact_name_recall": false,
+      "note": "Judge only generated continuation, not the repeated full prompt displayed in the saved sample."
+    },
+    {
+      "set": "long_context",
+      "id": "entity_1_2",
+      "seed": 42,
+      "model": "live_004",
+      "flags": [
+        "broken_grammar",
+        "malformed_words",
+        "topic_or_entity_drift",
+        "requested_entity_not_recalled"
+      ],
+      "evidence": "buig faster frabopped",
+      "expected_name": "Dan",
+      "generated_prefix": "and a big happy the found. She fave hers, buig faster frabopped in the",
+      "immediate_exact_name_recall": false,
+      "note": "Judge only generated continuation, not the repeated full prompt displayed in the saved sample."
+    },
+    {
+      "set": "long_context",
+      "id": "entity_2_1",
+      "seed": 42,
+      "model": "context_64",
+      "flags": [
+        "broken_grammar",
+        "malformed_words",
+        "topic_or_entity_drift",
+        "requested_entity_not_recalled"
+      ],
+      "evidence": "The was so happy to find the was a time",
+      "expected_name": "Tom",
+      "generated_prefix": "a lack to help. She found a big flew saw a big far to friends were mad",
+      "immediate_exact_name_recall": false,
+      "note": "Judge only generated continuation, not the repeated full prompt displayed in the saved sample."
+    },
+    {
+      "set": "long_context",
+      "id": "entity_2_1",
+      "seed": 42,
+      "model": "context_128",
+      "flags": [
+        "broken_grammar",
+        "malformed_words",
+        "topic_or_entity_drift",
+        "requested_entity_not_recalled"
+      ],
+      "evidence": "They was magices",
+      "expected_name": "Tom",
+      "generated_prefix": "and a big had funny found a big friends. The boy happy day little girl",
+      "immediate_exact_name_recall": false,
+      "note": "Judge only generated continuation, not the repeated full prompt displayed in the saved sample."
+    },
+    {
+      "set": "long_context",
+      "id": "entity_2_1",
+      "seed": 42,
+      "model": "live_004",
+      "flags": [
+        "broken_grammar",
+        "malformed_words",
+        "topic_or_entity_drift",
+        "requested_entity_not_recalled"
+      ],
+      "evidence": "buig faster frabopped",
+      "expected_name": "Tom",
+      "generated_prefix": "and a big happy the found. She fave hers, buig faster frabopped in the",
+      "immediate_exact_name_recall": false,
+      "note": "Judge only generated continuation, not the repeated full prompt displayed in the saved sample."
+    },
+    {
+      "set": "long_context",
+      "id": "entity_2_2",
+      "seed": 42,
+      "model": "context_64",
+      "flags": [
+        "broken_grammar",
+        "malformed_words",
+        "topic_or_entity_drift",
+        "requested_entity_not_recalled"
+      ],
+      "evidence": "The was so happy to find the was a time",
+      "expected_name": "Sam",
+      "generated_prefix": "a lack to help. She found a big flew saw a big far to friends were mad",
+      "immediate_exact_name_recall": false,
+      "note": "Judge only generated continuation, not the repeated full prompt displayed in the saved sample."
+    },
+    {
+      "set": "long_context",
+      "id": "entity_2_2",
+      "seed": 42,
+      "model": "context_128",
+      "flags": [
+        "broken_grammar",
+        "malformed_words",
+        "topic_or_entity_drift",
+        "requested_entity_not_recalled"
+      ],
+      "evidence": "They was magices",
+      "expected_name": "Sam",
+      "generated_prefix": "and a big had funny found a big friends. The boy happy day little girl",
+      "immediate_exact_name_recall": false,
+      "note": "Judge only generated continuation, not the repeated full prompt displayed in the saved sample."
+    },
+    {
+      "set": "long_context",
+      "id": "entity_2_2",
+      "seed": 42,
+      "model": "live_004",
+      "flags": [
+        "broken_grammar",
+        "malformed_words",
+        "topic_or_entity_drift",
+        "requested_entity_not_recalled"
+      ],
+      "evidence": "buig faster frabopped",
+      "expected_name": "Sam",
+      "generated_prefix": "and a big happy the found. She fave hers, buig faster frabopped in the",
+      "immediate_exact_name_recall": false,
+      "note": "Judge only generated continuation, not the repeated full prompt displayed in the saved sample."
+    },
+    {
+      "set": "long_context",
+      "id": "entity_3_1",
+      "seed": 42,
+      "model": "context_64",
+      "flags": [
+        "broken_grammar",
+        "malformed_words",
+        "topic_or_entity_drift",
+        "requested_entity_not_recalled"
+      ],
+      "evidence": "The was so happy to find the was a time",
+      "expected_name": "Ada",
+      "generated_prefix": "a lack to help. She found a big flew saw a big far to friends were mad",
+      "immediate_exact_name_recall": false,
+      "note": "Judge only generated continuation, not the repeated full prompt displayed in the saved sample."
+    },
+    {
+      "set": "long_context",
+      "id": "entity_3_1",
+      "seed": 42,
+      "model": "context_128",
+      "flags": [
+        "broken_grammar",
+        "malformed_words",
+        "topic_or_entity_drift",
+        "requested_entity_not_recalled"
+      ],
+      "evidence": "Sue familled",
+      "expected_name": "Ada",
+      "generated_prefix": "and crear her fun and day. Sue familled and said,  You day, I will met",
+      "immediate_exact_name_recall": false,
+      "note": "Judge only generated continuation, not the repeated full prompt displayed in the saved sample."
+    },
+    {
+      "set": "long_context",
+      "id": "entity_3_1",
+      "seed": 42,
+      "model": "live_004",
+      "flags": [
+        "broken_grammar",
+        "malformed_words",
+        "topic_or_entity_drift",
+        "requested_entity_not_recalled"
+      ],
+      "evidence": "buig faster frabopped",
+      "expected_name": "Ada",
+      "generated_prefix": "and a big happy the found. She fave hers, buig faster frabopped in the",
+      "immediate_exact_name_recall": false,
+      "note": "Judge only generated continuation, not the repeated full prompt displayed in the saved sample."
+    },
+    {
+      "set": "long_context",
+      "id": "entity_3_2",
+      "seed": 42,
+      "model": "context_64",
+      "flags": [
+        "broken_grammar",
+        "malformed_words",
+        "topic_or_entity_drift",
+        "requested_entity_not_recalled"
+      ],
+      "evidence": "The was so happy to find the was a time",
+      "expected_name": "Eva",
+      "generated_prefix": "a lack to help. She found a big flew saw a big far to friends were mad",
+      "immediate_exact_name_recall": false,
+      "note": "Judge only generated continuation, not the repeated full prompt displayed in the saved sample."
+    },
+    {
+      "set": "long_context",
+      "id": "entity_3_2",
+      "seed": 42,
+      "model": "context_128",
+      "flags": [
+        "broken_grammar",
+        "malformed_words",
+        "topic_or_entity_drift",
+        "requested_entity_not_recalled"
+      ],
+      "evidence": "Sue familled",
+      "expected_name": "Eva",
+      "generated_prefix": "and crear her fun and day. Sue familled and said,  You day, I will met",
+      "immediate_exact_name_recall": false,
+      "note": "Judge only generated continuation, not the repeated full prompt displayed in the saved sample."
+    },
+    {
+      "set": "long_context",
+      "id": "entity_3_2",
+      "seed": 42,
+      "model": "live_004",
+      "flags": [
+        "broken_grammar",
+        "malformed_words",
+        "topic_or_entity_drift",
+        "requested_entity_not_recalled"
+      ],
+      "evidence": "buig faster frabopped",
+      "expected_name": "Eva",
+      "generated_prefix": "and a big happy the found. She fave hers, buig faster frabopped in the",
+      "immediate_exact_name_recall": false,
+      "note": "Judge only generated continuation, not the repeated full prompt displayed in the saved sample."
+    },
+    {
+      "set": "long_context",
+      "id": "entity_4_1",
+      "seed": 42,
+      "model": "context_64",
+      "flags": [
+        "broken_grammar",
+        "malformed_words",
+        "topic_or_entity_drift",
+        "requested_entity_not_recalled"
+      ],
+      "evidence": "The was so happy to find the was a time",
+      "expected_name": "Max",
+      "generated_prefix": "a lack to help. She found a big flew saw a big far to friends were mad",
+      "immediate_exact_name_recall": false,
+      "note": "Judge only generated continuation, not the repeated full prompt displayed in the saved sample."
+    },
+    {
+      "set": "long_context",
+      "id": "entity_4_1",
+      "seed": 42,
+      "model": "context_128",
+      "flags": [
+        "broken_grammar",
+        "malformed_words",
+        "topic_or_entity_drift",
+        "requested_entity_not_recalled"
+      ],
+      "evidence": "They was magices",
+      "expected_name": "Max",
+      "generated_prefix": "and a big had funny found a big friends. The boy happy day little girl",
+      "immediate_exact_name_recall": false,
+      "note": "Judge only generated continuation, not the repeated full prompt displayed in the saved sample."
+    },
+    {
+      "set": "long_context",
+      "id": "entity_4_1",
+      "seed": 42,
+      "model": "live_004",
+      "flags": [
+        "broken_grammar",
+        "malformed_words",
+        "topic_or_entity_drift",
+        "requested_entity_not_recalled"
+      ],
+      "evidence": "buig faster frabopped",
+      "expected_name": "Max",
+      "generated_prefix": "and a big happy the found. She fave hers, buig faster frabopped in the",
+      "immediate_exact_name_recall": false,
+      "note": "Judge only generated continuation, not the repeated full prompt displayed in the saved sample."
+    },
+    {
+      "set": "long_context",
+      "id": "entity_4_2",
+      "seed": 42,
+      "model": "context_64",
+      "flags": [
+        "broken_grammar",
+        "malformed_words",
+        "topic_or_entity_drift",
+        "requested_entity_not_recalled"
+      ],
+      "evidence": "The was so happy to find the was a time",
+      "expected_name": "Rex",
+      "generated_prefix": "a lack to help. She found a big flew saw a big far to friends were mad",
+      "immediate_exact_name_recall": false,
+      "note": "Judge only generated continuation, not the repeated full prompt displayed in the saved sample."
+    },
+    {
+      "set": "long_context",
+      "id": "entity_4_2",
+      "seed": 42,
+      "model": "context_128",
+      "flags": [
+        "broken_grammar",
+        "malformed_words",
+        "topic_or_entity_drift",
+        "requested_entity_not_recalled"
+      ],
+      "evidence": "They was magices",
+      "expected_name": "Rex",
+      "generated_prefix": "and a big had funny found a big friends. The boy happy day little girl",
+      "immediate_exact_name_recall": false,
+      "note": "Judge only generated continuation, not the repeated full prompt displayed in the saved sample."
+    },
+    {
+      "set": "long_context",
+      "id": "entity_4_2",
+      "seed": 42,
+      "model": "live_004",
+      "flags": [
+        "broken_grammar",
+        "malformed_words",
+        "topic_or_entity_drift",
+        "requested_entity_not_recalled"
+      ],
+      "evidence": "buig faster frabopped",
+      "expected_name": "Rex",
+      "generated_prefix": "and a big happy the found. She fave hers, buig faster frabopped in the",
+      "immediate_exact_name_recall": false,
+      "note": "Judge only generated continuation, not the repeated full prompt displayed in the saved sample."
+    }
+  ]
+}

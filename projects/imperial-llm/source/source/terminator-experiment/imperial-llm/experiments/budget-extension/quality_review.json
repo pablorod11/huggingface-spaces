@@ -1,0 +1,6 @@
+{
+  "method": "Single unblinded agent inspected all36 fixed-prompt outputs,12 per model; not a human preference study.",
+  "finding": "All12 longer-budget continuations still contain malformed words or broken grammar; prompt-related entities/events often drift. Reliable narrative coherence improvement remains unestablished.",
+  "example": "Dog prompt,seed1729 begins a little bird. It then continues They he was she because the toys sturprised to her friend.",
+  "decision": "Keep live model004; preserve the lower-loss candidate for further controlled experiments. Do not publish on loss alone."
+}

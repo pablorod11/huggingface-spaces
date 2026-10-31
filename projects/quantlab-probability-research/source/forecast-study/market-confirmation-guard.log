@@ -1,0 +1,16 @@
+/Users/sanjusrikanth/Documents/Codex/2026-10-29/https-huggingface-co-spaces-pablorod11-quantlab/work/forecast-research/study.cjs:15
+if(stage==='market-confirmation'){if(!read('development.json').passes||!read('synthetic-confirmation.json').passes)throw Error('Prerequisite gate failed; market confirmation forbidden');const runs=read('market-study-data.json').securities.map(s=>pair(s.closes.slice(-1254),B,C,{ticker:s.ticker,dates:s.dates.slice(-1254)})),summary=summarize(runs,'ticker'),intervals=Object.fromEntries(m.bootstrap.block_lengths.map(b=>[b,bootstrap(runs,b,m)])),passes=summary.passes&&summary.difference.downside_brier<=0&&Object.values(intervals).every(x=>Object.values(x).every(v=>v.passes));write('market-confirmation.json',{runs,summary,intervals,passes,decision:passes?'Eligible for promotion':'Retain baseline'});return;}
+                                                                                                                   ^
+
+Error: Prerequisite gate failed; market confirmation forbidden
+    at main (/Users/sanjusrikanth/Documents/Codex/2026-10-29/https-huggingface-co-spaces-pablorod11-quantlab/work/forecast-research/study.cjs:15:122)
+    at Object.<anonymous> (/Users/sanjusrikanth/Documents/Codex/2026-10-29/https-huggingface-co-spaces-pablorod11-quantlab/work/forecast-research/study.cjs:17:26)
+    at Module._compile (node:internal/modules/cjs/loader:1929:14)
+    at Object..js (node:internal/modules/cjs/loader:2060:10)
+    at Module.load (node:internal/modules/cjs/loader:1651:32)
+    at Module._load (node:internal/modules/cjs/loader:1443:12)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:261:19)
+    at Module.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:154:5)
+    at node:internal/main/run_main_module:33:47
+
+Node.js v24.21.0

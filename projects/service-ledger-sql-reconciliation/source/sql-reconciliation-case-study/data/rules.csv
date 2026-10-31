@@ -1,0 +1,12 @@
+rule,severity,owner,business_meaning,next_action
+DUPLICATE_ORDER,Medium,Data engineering,Repeated order payload may inflate order counts.,Confirm extract replay and fix ingestion idempotency.
+DUPLICATE_ACTIVATION,Medium,Data engineering,Repeated activation payload may inflate completion reporting.,Fix replay handling; preserve the original source evidence.
+DUPLICATE_CHARGE,Medium,Data engineering,A repeated line ID can inflate reporting; it does not prove duplicate customer billing.,Check source line identity before requesting any refund.
+ORDER_CONFLICT,High,Order operations,Conflicting CRM snapshots prevent a reliable service obligation or expected charge.,Resolve the source snapshot before pricing or closing the case.
+ACTIVATION_CONFLICT,High,Provisioning operations,Conflicting provisioning snapshots make delivered service uncertain.,Verify network evidence and correct the authoritative snapshot.
+CHARGE_CONFLICT,High,Billing operations,A single invoice line has different payloads; its billed amount is unknown.,Inspect the invoice ledger; do not choose the largest or latest value.
+ORPHAN_SERVICE,High,Order operations,Billing or activation exists without an eligible order; authorization is unverified.,Trace order identity and entitlement; do not infer a valid customer obligation.
+MISSING_ACTIVATION,High,Provisioning operations,An active CRM order lacks activation evidence by cutoff; service delivery is unverified.,Investigate provisioning and late evidence; review any billing before adjustment.
+STATUS_MISMATCH,High,Service operations,CRM and provisioning disagree about whether service should be active.,Confirm entitlement and actual service state before correcting either source.
+MISSING_CHARGE,High,Billing operations,Verified active service has no eligible monthly base charge; billing may be incomplete.,Confirm invoice timing and approved waivers before posting a charge.
+CHARGE_MISMATCH,High,Billing operations,The billed total differs from the agreed full-month expectation; a billing adjustment may be needed.,Validate plan and invoice lines; approve an adjustment only after review.

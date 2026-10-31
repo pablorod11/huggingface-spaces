@@ -1,0 +1,1 @@
+PASS: checksum, three Python/JS logit cases (max error 0.000009306707654310742), roundtrip, input bounds, tensor validation.

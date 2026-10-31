@@ -1,0 +1,27 @@
+ARM control_512
+{"schedule": "constant", "step": 200, "validation_ce": 1.4905703756958246, "learning_rate": 0.001}
+{"schedule": "constant", "step": 400, "validation_ce": 1.5000632535666227, "learning_rate": 0.001}
+{"schedule": "constant", "step": 600, "validation_ce": 1.4863145928829908, "learning_rate": 0.001}
+{"schedule": "constant", "step": 800, "validation_ce": 1.4791370565071702, "learning_rate": 0.001}
+{"schedule": "constant", "step": 1000, "validation_ce": 1.4768047900870442, "learning_rate": 0.001}
+{"schedule": "constant", "step": 1200, "validation_ce": 1.4734716461971402, "learning_rate": 0.001}
+{"schedule": "constant", "step": 1400, "validation_ce": 1.4715118203312159, "learning_rate": 0.001}
+{"schedule": "constant", "step": 1600, "validation_ce": 1.4713411247357726, "learning_rate": 0.001}
+{"schedule": "constant", "step": 1800, "validation_ce": 1.4620472183451056, "learning_rate": 0.001}
+{"schedule": "constant", "step": 2000, "validation_ce": 1.4521993780508637, "learning_rate": 0.001}
+{"schedule": "constant", "step": 2200, "validation_ce": 1.4540620520710945, "learning_rate": 0.001}
+{"schedule": "constant", "step": 2400, "validation_ce": 1.4522595284506679, "learning_rate": 0.001}
+ARM expanded_4096
+{"schedule": "constant", "step": 200, "validation_ce": 1.4946968602016568, "learning_rate": 0.001}
+{"schedule": "constant", "step": 400, "validation_ce": 1.4878530725836754, "learning_rate": 0.001}
+{"schedule": "constant", "step": 600, "validation_ce": 1.4798275297507644, "learning_rate": 0.001}
+{"schedule": "constant", "step": 800, "validation_ce": 1.4779450669884682, "learning_rate": 0.001}
+{"schedule": "constant", "step": 1000, "validation_ce": 1.4677591379731894, "learning_rate": 0.001}
+{"schedule": "constant", "step": 1200, "validation_ce": 1.4637978067621589, "learning_rate": 0.001}
+{"schedule": "constant", "step": 1400, "validation_ce": 1.45315324049443, "learning_rate": 0.001}
+{"schedule": "constant", "step": 1600, "validation_ce": 1.4550942219793797, "learning_rate": 0.001}
+{"schedule": "constant", "step": 1800, "validation_ce": 1.443729218095541, "learning_rate": 0.001}
+{"schedule": "constant", "step": 2000, "validation_ce": 1.4460882134735584, "learning_rate": 0.001}
+{"schedule": "constant", "step": 2200, "validation_ce": 1.445255464874208, "learning_rate": 0.001}
+{"schedule": "constant", "step": 2400, "validation_ce": 1.4389501484110951, "learning_rate": 0.001}
+{"validation_preferred_arm": "expanded_4096", "metrics": {"baseline_004": {"val": 1.5019263420253992, "test": 1.5029472606256604}, "control_512": {"val": 1.4521993780508637, "test": 1.4543496314436197}, "expanded_4096": {"val": 1.4389501484110951, "test": 1.4471424762159586}}, "expanded_loss_gate_passed": true, "relative_test_ce_reduction_expanded_vs_baseline": 0.03713023462078835, "relative_test_ce_reduction_expanded_vs_control": 0.004955586381595989}

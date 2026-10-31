@@ -1,0 +1,429 @@
+{
+  "method": "Unblinded qualitative agent screening of all12 complete stored rows and all36 continuations, without reading aggregate metrics. Not a human study or standardized accuracy measure.",
+  "criteria": "All12 cosine continuations must use valid words, grammatical sentences and sustained prompt-related coherent continuation. Fixed-length trailing fragments alone are not failures.",
+  "malformed_word_policy": "Conservative clear misspellings/fused forms only; valid but misplaced words counted under grammar/coherence, not spelling. Absence of a flagged malformed word is not a complete dictionary certification.",
+  "samples_sha256": "20628a057e5202c8e5e9ef5e7f00368c1960fb30123acfd769980a83b190eb16",
+  "rows": [
+    {
+      "prompt": "anna found a small bird in the rain. she decided to",
+      "seed": 42,
+      "judgments": {
+        "baseline": {
+          "clear_malformed_words": true,
+          "malformed_examples": "stome",
+          "broken_grammar": true,
+          "sustained_prompt_related_coherence": false,
+          "quality_pass": false,
+          "failure_excerpt": "They felt sad off, and they stome",
+          "continuity_note": "Continuation does not sustain the prompt situation; clauses, references or events cease to form a coherent narrative."
+        },
+        "constant": {
+          "clear_malformed_words": false,
+          "malformed_examples": "",
+          "broken_grammar": true,
+          "sustained_prompt_related_coherence": false,
+          "quality_pass": false,
+          "failure_excerpt": "make a big, but he was fun together",
+          "continuity_note": "Continuation does not sustain the prompt situation; clauses, references or events cease to form a coherent narrative."
+        },
+        "cosine": {
+          "clear_malformed_words": true,
+          "malformed_examples": "tombed",
+          "broken_grammar": true,
+          "sustained_prompt_related_coherence": false,
+          "quality_pass": false,
+          "failure_excerpt": "The found tombed, but he was a big careful",
+          "continuity_note": "Continuation does not sustain the prompt situation; clauses, references or events cease to form a coherent narrative."
+        }
+      }
+    },
+    {
+      "prompt": "anna found a small bird in the rain. she decided to",
+      "seed": 1729,
+      "judgments": {
+        "baseline": {
+          "clear_malformed_words": false,
+          "malformed_examples": "",
+          "broken_grammar": true,
+          "sustained_prompt_related_coherence": false,
+          "quality_pass": false,
+          "failure_excerpt": "play with her have cat to play with",
+          "continuity_note": "Continuation does not sustain the prompt situation; clauses, references or events cease to form a coherent narrative."
+        },
+        "constant": {
+          "clear_malformed_words": false,
+          "malformed_examples": "",
+          "broken_grammar": true,
+          "sustained_prompt_related_coherence": false,
+          "quality_pass": false,
+          "failure_excerpt": "Thank you have could not the learned to be town",
+          "continuity_note": "Continuation does not sustain the prompt situation; clauses, references or events cease to form a coherent narrative."
+        },
+        "cosine": {
+          "clear_malformed_words": true,
+          "malformed_examples": "magiconow",
+          "broken_grammar": true,
+          "sustained_prompt_related_coherence": false,
+          "quality_pass": false,
+          "failure_excerpt": "she was that he was a tiny magiconow",
+          "continuity_note": "Continuation does not sustain the prompt situation; clauses, references or events cease to form a coherent narrative."
+        }
+      }
+    },
+    {
+      "prompt": "anna found a small bird in the rain. she decided to",
+      "seed": 2026,
+      "judgments": {
+        "baseline": {
+          "clear_malformed_words": true,
+          "malformed_examples": "mewalked",
+          "broken_grammar": true,
+          "sustained_prompt_related_coherence": false,
+          "quality_pass": false,
+          "failure_excerpt": "her heart and kind up the mewalked",
+          "continuity_note": "Continuation does not sustain the prompt situation; clauses, references or events cease to form a coherent narrative."
+        },
+        "constant": {
+          "clear_malformed_words": true,
+          "malformed_examples": "pland",
+          "broken_grammar": true,
+          "sustained_prompt_related_coherence": false,
+          "quality_pass": false,
+          "failure_excerpt": "you should many and the big away. It fly",
+          "continuity_note": "Continuation does not sustain the prompt situation; clauses, references or events cease to form a coherent narrative."
+        },
+        "cosine": {
+          "clear_malformed_words": false,
+          "malformed_examples": "",
+          "broken_grammar": true,
+          "sustained_prompt_related_coherence": false,
+          "quality_pass": false,
+          "failure_excerpt": "help Sara was not sure the ball was so happy",
+          "continuity_note": "Continuation does not sustain the prompt situation; clauses, references or events cease to form a coherent narrative."
+        }
+      }
+    },
+    {
+      "prompt": "ben put his toy boat in the pond. the boat began to",
+      "seed": 42,
+      "judgments": {
+        "baseline": {
+          "clear_malformed_words": true,
+          "malformed_examples": "stome",
+          "broken_grammar": true,
+          "sustained_prompt_related_coherence": false,
+          "quality_pass": false,
+          "failure_excerpt": "They felt sad off, but they stome",
+          "continuity_note": "Continuation does not sustain the prompt situation; clauses, references or events cease to form a coherent narrative."
+        },
+        "constant": {
+          "clear_malformed_words": true,
+          "malformed_examples": "pigz",
+          "broken_grammar": true,
+          "sustained_prompt_related_coherence": false,
+          "quality_pass": false,
+          "failure_excerpt": "Tim looks were having a big pigz",
+          "continuity_note": "Continuation does not sustain the prompt situation; clauses, references or events cease to form a coherent narrative."
+        },
+        "cosine": {
+          "clear_malformed_words": false,
+          "malformed_examples": "",
+          "broken_grammar": true,
+          "sustained_prompt_related_coherence": false,
+          "quality_pass": false,
+          "failure_excerpt": "They had a laughed started",
+          "continuity_note": "Continuation does not sustain the prompt situation; clauses, references or events cease to form a coherent narrative."
+        }
+      }
+    },
+    {
+      "prompt": "ben put his toy boat in the pond. the boat began to",
+      "seed": 1729,
+      "judgments": {
+        "baseline": {
+          "clear_malformed_words": true,
+          "malformed_examples": "carefull / owers",
+          "broken_grammar": true,
+          "sustained_prompt_related_coherence": false,
+          "quality_pass": false,
+          "failure_excerpt": "they carefull owers",
+          "continuity_note": "Continuation does not sustain the prompt situation; clauses, references or events cease to form a coherent narrative."
+        },
+        "constant": {
+          "clear_malformed_words": true,
+          "malformed_examples": "ressected / hidde",
+          "broken_grammar": true,
+          "sustained_prompt_related_coherence": false,
+          "quality_pass": false,
+          "failure_excerpt": "together and ressected to make a big hidde box",
+          "continuity_note": "Continuation does not sustain the prompt situation; clauses, references or events cease to form a coherent narrative."
+        },
+        "cosine": {
+          "clear_malformed_words": false,
+          "malformed_examples": "",
+          "broken_grammar": true,
+          "sustained_prompt_related_coherence": false,
+          "quality_pass": false,
+          "failure_excerpt": "He was scared that she hard",
+          "continuity_note": "Continuation does not sustain the prompt situation; clauses, references or events cease to form a coherent narrative."
+        }
+      }
+    },
+    {
+      "prompt": "ben put his toy boat in the pond. the boat began to",
+      "seed": 2026,
+      "judgments": {
+        "baseline": {
+          "clear_malformed_words": false,
+          "malformed_examples": "",
+          "broken_grammar": true,
+          "sustained_prompt_related_coherence": false,
+          "quality_pass": false,
+          "failure_excerpt": "her heard and kept to help her scared",
+          "continuity_note": "Continuation does not sustain the prompt situation; clauses, references or events cease to form a coherent narrative."
+        },
+        "constant": {
+          "clear_malformed_words": false,
+          "malformed_examples": "",
+          "broken_grammar": true,
+          "sustained_prompt_related_coherence": false,
+          "quality_pass": false,
+          "failure_excerpt": "Yes, you can around",
+          "continuity_note": "Continuation does not sustain the prompt situation; clauses, references or events cease to form a coherent narrative."
+        },
+        "cosine": {
+          "clear_malformed_words": false,
+          "malformed_examples": "",
+          "broken_grammar": true,
+          "sustained_prompt_related_coherence": false,
+          "quality_pass": false,
+          "failure_excerpt": "the other dog never was always",
+          "continuity_note": "Continuation does not sustain the prompt situation; clauses, references or events cease to form a coherent narrative."
+        }
+      }
+    },
+    {
+      "prompt": "mia wanted to share her apple with her friend. she",
+      "seed": 42,
+      "judgments": {
+        "baseline": {
+          "clear_malformed_words": true,
+          "malformed_examples": "rane",
+          "broken_grammar": true,
+          "sustained_prompt_related_coherence": false,
+          "quality_pass": false,
+          "failure_excerpt": "she was rane ball",
+          "continuity_note": "Continuation does not sustain the prompt situation; clauses, references or events cease to form a coherent narrative."
+        },
+        "constant": {
+          "clear_malformed_words": true,
+          "malformed_examples": "mustures",
+          "broken_grammar": true,
+          "sustained_prompt_related_coherence": false,
+          "quality_pass": false,
+          "failure_excerpt": "the rock of the fish mustures",
+          "continuity_note": "Continuation does not sustain the prompt situation; clauses, references or events cease to form a coherent narrative."
+        },
+        "cosine": {
+          "clear_malformed_words": false,
+          "malformed_examples": "",
+          "broken_grammar": true,
+          "sustained_prompt_related_coherence": false,
+          "quality_pass": false,
+          "failure_excerpt": "she was ran he friends when Tim",
+          "continuity_note": "Continuation does not sustain the prompt situation; clauses, references or events cease to form a coherent narrative."
+        }
+      }
+    },
+    {
+      "prompt": "mia wanted to share her apple with her friend. she",
+      "seed": 1729,
+      "judgments": {
+        "baseline": {
+          "clear_malformed_words": true,
+          "malformed_examples": "Shere / firest / magiconother",
+          "broken_grammar": true,
+          "sustained_prompt_related_coherence": false,
+          "quality_pass": false,
+          "failure_excerpt": "Shere was very happy",
+          "continuity_note": "Continuation does not sustain the prompt situation; clauses, references or events cease to form a coherent narrative."
+        },
+        "constant": {
+          "clear_malformed_words": true,
+          "malformed_examples": "stown",
+          "broken_grammar": true,
+          "sustained_prompt_related_coherence": false,
+          "quality_pass": false,
+          "failure_excerpt": "She stown the pond asked him",
+          "continuity_note": "Continuation does not sustain the prompt situation; clauses, references or events cease to form a coherent narrative."
+        },
+        "cosine": {
+          "clear_malformed_words": true,
+          "malformed_examples": "boton",
+          "broken_grammar": true,
+          "sustained_prompt_related_coherence": false,
+          "quality_pass": false,
+          "failure_excerpt": "Tom would not wanted to talk together",
+          "continuity_note": "Continuation does not sustain the prompt situation; clauses, references or events cease to form a coherent narrative."
+        }
+      }
+    },
+    {
+      "prompt": "mia wanted to share her apple with her friend. she",
+      "seed": 2026,
+      "judgments": {
+        "baseline": {
+          "clear_malformed_words": false,
+          "malformed_examples": "",
+          "broken_grammar": true,
+          "sustained_prompt_related_coherence": false,
+          "quality_pass": false,
+          "failure_excerpt": "she had her mom was so happy",
+          "continuity_note": "Continuation does not sustain the prompt situation; clauses, references or events cease to form a coherent narrative."
+        },
+        "constant": {
+          "clear_malformed_words": true,
+          "malformed_examples": "rever",
+          "broken_grammar": true,
+          "sustained_prompt_related_coherence": false,
+          "quality_pass": false,
+          "failure_excerpt": "played to be scared fun and rever happy",
+          "continuity_note": "Continuation does not sustain the prompt situation; clauses, references or events cease to form a coherent narrative."
+        },
+        "cosine": {
+          "clear_malformed_words": false,
+          "malformed_examples": "",
+          "broken_grammar": true,
+          "sustained_prompt_related_coherence": false,
+          "quality_pass": false,
+          "failure_excerpt": "so happy to was full different",
+          "continuity_note": "Continuation does not sustain the prompt situation; clauses, references or events cease to form a coherent narrative."
+        }
+      }
+    },
+    {
+      "prompt": "a little fox could not find his way home. then he",
+      "seed": 42,
+      "judgments": {
+        "baseline": {
+          "clear_malformed_words": true,
+          "malformed_examples": "bowly",
+          "broken_grammar": true,
+          "sustained_prompt_related_coherence": false,
+          "quality_pass": false,
+          "failure_excerpt": "He was all who happy towed to the bowly",
+          "continuity_note": "Continuation does not sustain the prompt situation; clauses, references or events cease to form a coherent narrative."
+        },
+        "constant": {
+          "clear_malformed_words": true,
+          "malformed_examples": "pands",
+          "broken_grammar": true,
+          "sustained_prompt_related_coherence": false,
+          "quality_pass": false,
+          "failure_excerpt": "so he little girl with the pands",
+          "continuity_note": "Continuation does not sustain the prompt situation; clauses, references or events cease to form a coherent narrative."
+        },
+        "cosine": {
+          "clear_malformed_words": false,
+          "malformed_examples": "",
+          "broken_grammar": true,
+          "sustained_prompt_related_coherence": false,
+          "quality_pass": false,
+          "failure_excerpt": "Let's started",
+          "continuity_note": "Continuation does not sustain the prompt situation; clauses, references or events cease to form a coherent narrative."
+        }
+      }
+    },
+    {
+      "prompt": "a little fox could not find his way home. then he",
+      "seed": 1729,
+      "judgments": {
+        "baseline": {
+          "clear_malformed_words": true,
+          "malformed_examples": "firest / magiconother",
+          "broken_grammar": true,
+          "sustained_prompt_related_coherence": false,
+          "quality_pass": false,
+          "failure_excerpt": "he was she idea",
+          "continuity_note": "Continuation does not sustain the prompt situation; clauses, references or events cease to form a coherent narrative."
+        },
+        "constant": {
+          "clear_malformed_words": true,
+          "malformed_examples": "ideren / tuon",
+          "broken_grammar": true,
+          "sustained_prompt_related_coherence": false,
+          "quality_pass": false,
+          "failure_excerpt": "he sung he ideren the cat",
+          "continuity_note": "Continuation does not sustain the prompt situation; clauses, references or events cease to form a coherent narrative."
+        },
+        "cosine": {
+          "clear_malformed_words": true,
+          "malformed_examples": "boton",
+          "broken_grammar": true,
+          "sustained_prompt_related_coherence": false,
+          "quality_pass": false,
+          "failure_excerpt": "She put the boton a ball named Tom",
+          "continuity_note": "Continuation does not sustain the prompt situation; clauses, references or events cease to form a coherent narrative."
+        }
+      }
+    },
+    {
+      "prompt": "a little fox could not find his way home. then he",
+      "seed": 2026,
+      "judgments": {
+        "baseline": {
+          "clear_malformed_words": true,
+          "malformed_examples": "headow",
+          "broken_grammar": true,
+          "sustained_prompt_related_coherence": false,
+          "quality_pass": false,
+          "failure_excerpt": "The took should find more",
+          "continuity_note": "Continuation does not sustain the prompt situation; clauses, references or events cease to form a coherent narrative."
+        },
+        "constant": {
+          "clear_malformed_words": true,
+          "malformed_examples": "flowel",
+          "broken_grammar": true,
+          "sustained_prompt_related_coherence": false,
+          "quality_pass": false,
+          "failure_excerpt": "They put is took him",
+          "continuity_note": "Continuation does not sustain the prompt situation; clauses, references or events cease to form a coherent narrative."
+        },
+        "cosine": {
+          "clear_malformed_words": true,
+          "malformed_examples": "Mambe",
+          "broken_grammar": true,
+          "sustained_prompt_related_coherence": false,
+          "quality_pass": false,
+          "failure_excerpt": "Mambe the card outside more the ball the bear too",
+          "continuity_note": "Continuation does not sustain the prompt situation; clauses, references or events cease to form a coherent narrative."
+        }
+      }
+    }
+  ],
+  "counts": {
+    "baseline": {
+      "reviewed": 12,
+      "clear_malformed_words": 9,
+      "broken_grammar": 12,
+      "coherence_failures": 12,
+      "quality_passes": 0
+    },
+    "constant": {
+      "reviewed": 12,
+      "clear_malformed_words": 9,
+      "broken_grammar": 12,
+      "coherence_failures": 12,
+      "quality_passes": 0
+    },
+    "cosine": {
+      "reviewed": 12,
+      "clear_malformed_words": 5,
+      "broken_grammar": 12,
+      "coherence_failures": 12,
+      "quality_passes": 0
+    }
+  },
+  "cosine_release_quality_gate_passed": false,
+  "promotion": false
+}

@@ -1,0 +1,57 @@
+{
+  "scope": "Euclideanclaims withinone-seedcontrollednormalizationpolicytest;notECCcapacitychecker.",
+  "definitions": {
+    "treatment": "Raw?and!\u2192. beforeunchangednormalization;source membership/vocab/initialization/budgetfixed.",
+    "primary": "Comparemodels onidenticalrepairedtestinputs/targets.",
+    "secondary": "Comparemodels onidenticallegacytestinputs/targets;noCEcomparisonbetweentextversions.",
+    "budget_per_arm": 7372800
+  },
+  "claims": [
+    {
+      "claim": "Trainingretains8051terminalpunctuationcharactersasperiods",
+      "status": "VALID withinpreparedsourcepolicy",
+      "sources": [
+        "dataset-verification.json",
+        "source-ambiguity.json",
+        "evaluation.json:dataset"
+      ]
+    },
+    {
+      "claim": "Newstorynovelty provenbynewrepairedhashesalone",
+      "status": "INVALID; exclusionusesoriginalcanonicallegacyhashesandrawsourceidentities",
+      "sources": [
+        "evaluation.json:dataset"
+      ]
+    },
+    {
+      "claim": "Repairedprimarysampledlossislower",
+      "status": "VALID forthisselectedpair;nosignificanceclaim",
+      "relative_reduction": 0.0028263446813042714,
+      "sources": [
+        "evaluation.json",
+        "per_story.csv"
+      ]
+    },
+    {
+      "claim": "Punctuationrepair improvesgeneralgrammar",
+      "status": "UNVERIFIED;reusedpairpreferencesregress21\u219220andall12candidatecontinuationsfailgrammarscreen",
+      "sources": [
+        "syntax_diagnostic/summary.json",
+        "quality_review.json"
+      ]
+    },
+    {
+      "claim": "Candidatematchespredefinedreleasegate",
+      "status": "INVALID underboundedqualityscreen",
+      "sources": [
+        "quality_review.json"
+      ]
+    }
+  ],
+  "limitations": [
+    "Singleseed;only7200updatebudgettested.",
+    "Terminatorpolicyalsochangestrimming,lengthsandrandomwindowoffsets.",
+    "Same-domainprefix test;nearduplicatesunassessed;validationreused.",
+    "Reusedauthoredgrammarpairsarenotindependentgeneralgrammarbenchmark."
+  ]
+}

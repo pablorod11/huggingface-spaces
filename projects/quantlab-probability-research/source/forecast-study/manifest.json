@@ -1,0 +1,158 @@
+{
+  "version": 1,
+  "source_revision": "6fcb807cedde4dc6bfa7253316a5aba31ffd3632",
+  "candidate": "strict Student-t4 ridge mean, sigma=causal EWMA20 standard deviation / sqrt(2); unchanged temperatures [.5,.75,1,1.5,2,3], purges and selection; classic unchanged",
+  "mechanisms": [
+    "built_in_regimes",
+    "iid_gaussian",
+    "heavy_tail",
+    "autocorrelated",
+    "volatility_up",
+    "volatility_down"
+  ],
+  "synthetic": {
+    "n": 1200,
+    "development_seeds": [
+      63001,
+      63002,
+      63003,
+      63004,
+      63005,
+      63006,
+      63007,
+      63008,
+      63009,
+      63010,
+      63011,
+      63012
+    ],
+    "confirmation_seeds": [
+      73001,
+      73002,
+      73003,
+      73004,
+      73005,
+      73006,
+      73007,
+      73008,
+      73009,
+      73010,
+      73011,
+      73012
+    ]
+  },
+  "market": {
+    "trailing_prices": 1254,
+    "development_cutoffs": [
+      -400,
+      -200
+    ],
+    "confirmation_cutoff": 0,
+    "tickers": [
+      "AAPL",
+      "MSFT",
+      "NVDA",
+      "AMZN",
+      "GOOGL",
+      "TSLA",
+      "SPY",
+      "QQQ"
+    ],
+    "rows": [
+      {
+        "ticker": "AAPL",
+        "n": 2010,
+        "cutoffs": [
+          "2025-03-26",
+          "2026-01-12",
+          "2026-10-28"
+        ]
+      },
+      {
+        "ticker": "MSFT",
+        "n": 2010,
+        "cutoffs": [
+          "2025-03-26",
+          "2026-01-12",
+          "2026-10-28"
+        ]
+      },
+      {
+        "ticker": "NVDA",
+        "n": 2010,
+        "cutoffs": [
+          "2025-03-26",
+          "2026-01-12",
+          "2026-10-28"
+        ]
+      },
+      {
+        "ticker": "AMZN",
+        "n": 2010,
+        "cutoffs": [
+          "2025-03-26",
+          "2026-01-12",
+          "2026-10-28"
+        ]
+      },
+      {
+        "ticker": "GOOGL",
+        "n": 2010,
+        "cutoffs": [
+          "2025-03-26",
+          "2026-01-12",
+          "2026-10-28"
+        ]
+      },
+      {
+        "ticker": "TSLA",
+        "n": 2010,
+        "cutoffs": [
+          "2025-03-26",
+          "2026-01-12",
+          "2026-10-28"
+        ]
+      },
+      {
+        "ticker": "SPY",
+        "n": 2010,
+        "cutoffs": [
+          "2025-03-26",
+          "2026-01-12",
+          "2026-10-28"
+        ]
+      },
+      {
+        "ticker": "QQQ",
+        "n": 2010,
+        "cutoffs": [
+          "2025-03-26",
+          "2026-01-12",
+          "2026-10-28"
+        ]
+      }
+    ]
+  },
+  "gates": {
+    "development": "Equal-weight mean log loss strictly improves in synthetic development and each market development window; multiclass Brier does not worsen; no mechanism or ticker mean log loss difference >0.02. Synthetic confirmation same aggregate/mechanism rules.",
+    "confirmation": "Improve against current, raw frequency, calibrated frequency, all three one-sided 98.3333% upper bounds negative, blocks20 primary and5/60 sensitivity; multiclass and downside Brier not worse; no ticker difference >0.02. Any gate failure stops confirmations and prohibits promotion."
+  },
+  "bootstrap": {
+    "seed": 83001,
+    "resamples": 2000,
+    "block_lengths": [
+      20,
+      5,
+      60
+    ],
+    "upper_quantile": 0.983333
+  },
+  "hashes": {
+    "baseline.js": "b2751c8907a9da4ddc5351715152c1c1f401948aa9f19f83df2f9c4882984c7a",
+    "candidate.js": "9748fc4b45c7cfac8224c9610305f826aedb7bd2f72b95e368a66dd2405d2eec",
+    "original-study.cjs": "74f1d3c4bd4ca217895a4ecf16fbe332d9cd9ed6b25b7bcc6b6dee568d8b23c7",
+    "study.cjs": "0997df6a0e80bcb4f18f0ea52e37b5ea8159b70adaf1a652d2f458a2a95ebe56",
+    "test-candidate.cjs": "3c7c46a9ce1c2d7cfff52c843d2e2837ae3877efaa5ecdd86ed76b4263bdddb0",
+    "market-study-data.json": "65274ad093af61057fe71e70f9aea647d68e756aecb67a2c4ab4507abb2ebbbe"
+  }
+}

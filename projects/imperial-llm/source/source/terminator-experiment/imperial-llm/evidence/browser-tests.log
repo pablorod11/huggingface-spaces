@@ -1,0 +1,52 @@
+npm notice run test:browser
+npm notice run playwright test
+
+Running 36 tests using 1 worker
+
+(node:91489) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   1 [chromium] › tests/browser/release.spec.cjs:10:1 › verified model loads once without browser errors (761ms)
+  ✓   2 [chromium] › tests/browser/release.spec.cjs:17:1 › same prompt and seed reproduce browser generation (4.7s)
+  ✓   3 [chromium] › tests/browser/release.spec.cjs:26:1 › stop preserves partial text and a fresh run completes (3.9s)
+  ✓   4 [chromium] › tests/browser/release.spec.cjs:34:1 › input errors focus the field and reveal collapsed settings (1.0s)
+  ✓   5 [chromium] › tests/browser/release.spec.cjs:41:44 › missing model cannot enable generation (346ms)
+  ✓   6 [chromium] › tests/browser/release.spec.cjs:41:44 › corrupt model cannot enable generation (354ms)
+  ✓   7 [chromium] › tests/browser/release.spec.cjs:46:1 › worker load failure gives recovery and retry works (2.7s)
+  ✓   8 [chromium] › tests/browser/release.spec.cjs:52:1 › keyboard navigation, deep links and responsive layout (998ms)
+  -   9 [chromium] › tests/browser/release.spec.cjs:63:1 › visual baseline of the ready laboratory
+(node:91510) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  10 [firefox] › tests/browser/release.spec.cjs:10:1 › verified model loads once without browser errors (3.7s)
+  ✓  11 [firefox] › tests/browser/release.spec.cjs:17:1 › same prompt and seed reproduce browser generation (5.2s)
+  ✓  12 [firefox] › tests/browser/release.spec.cjs:26:1 › stop preserves partial text and a fresh run completes (4.3s)
+  ✓  13 [firefox] › tests/browser/release.spec.cjs:34:1 › input errors focus the field and reveal collapsed settings (1.8s)
+  ✓  14 [firefox] › tests/browser/release.spec.cjs:41:44 › missing model cannot enable generation (808ms)
+  ✓  15 [firefox] › tests/browser/release.spec.cjs:41:44 › corrupt model cannot enable generation (814ms)
+  ✓  16 [firefox] › tests/browser/release.spec.cjs:46:1 › worker load failure gives recovery and retry works (3.9s)
+  ✓  17 [firefox] › tests/browser/release.spec.cjs:52:1 › keyboard navigation, deep links and responsive layout (2.8s)
+  -  18 [firefox] › tests/browser/release.spec.cjs:63:1 › visual baseline of the ready laboratory
+(node:91547) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  19 [webkit] › tests/browser/release.spec.cjs:10:1 › verified model loads once without browser errors (2.6s)
+  ✓  20 [webkit] › tests/browser/release.spec.cjs:17:1 › same prompt and seed reproduce browser generation (4.2s)
+  ✓  21 [webkit] › tests/browser/release.spec.cjs:26:1 › stop preserves partial text and a fresh run completes (3.0s)
+  ✓  22 [webkit] › tests/browser/release.spec.cjs:34:1 › input errors focus the field and reveal collapsed settings (2.6s)
+  ✓  23 [webkit] › tests/browser/release.spec.cjs:41:44 › missing model cannot enable generation (869ms)
+  ✓  24 [webkit] › tests/browser/release.spec.cjs:41:44 › corrupt model cannot enable generation (856ms)
+  ✓  25 [webkit] › tests/browser/release.spec.cjs:46:1 › worker load failure gives recovery and retry works (2.8s)
+  ✓  26 [webkit] › tests/browser/release.spec.cjs:52:1 › keyboard navigation, deep links and responsive layout (1.9s)
+  -  27 [webkit] › tests/browser/release.spec.cjs:63:1 › visual baseline of the ready laboratory
+(node:91576) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  28 [phone] › tests/browser/release.spec.cjs:10:1 › verified model loads once without browser errors (510ms)
+  ✓  29 [phone] › tests/browser/release.spec.cjs:17:1 › same prompt and seed reproduce browser generation (9.9s)
+  ✓  30 [phone] › tests/browser/release.spec.cjs:26:1 › stop preserves partial text and a fresh run completes (5.1s)
+  ✓  31 [phone] › tests/browser/release.spec.cjs:34:1 › input errors focus the field and reveal collapsed settings (1.6s)
+  ✓  32 [phone] › tests/browser/release.spec.cjs:41:44 › missing model cannot enable generation (402ms)
+  ✓  33 [phone] › tests/browser/release.spec.cjs:41:44 › corrupt model cannot enable generation (456ms)
+  ✓  34 [phone] › tests/browser/release.spec.cjs:46:1 › worker load failure gives recovery and retry works (3.1s)
+  ✓  35 [phone] › tests/browser/release.spec.cjs:52:1 › keyboard navigation, deep links and responsive layout (1.7s)
+  -  36 [phone] › tests/browser/release.spec.cjs:63:1 › visual baseline of the ready laboratory
+
+  4 skipped
+  32 passed (1.5m)

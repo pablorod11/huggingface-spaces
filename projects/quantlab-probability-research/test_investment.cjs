@@ -1,0 +1,34 @@
+'use strict';
+const assert = require('node:assert/strict');
+const Q = require('./investment.js');
+const near = (a,b,t=1e-10) => assert.ok(Math.abs(a-b)<=t*Math.max(1,Math.abs(b)), `${a} != ${b}`);
+const series = {dates:['2020-01-01','2020-01-03','2020-07-01','2021-01-01'],closes:[100,120,90,150]};
+const h=Q.historical(series,{amount:1000,start:'2020-01-02',end:'2021-01-01'});
+assert.equal(h.start,'2020-01-03'); assert.equal(h.end,'2021-01-01');
+near(h.finalValue,1250); near(h.gain,250); near(h.roi,.25); near(h.maxDrawdown,.25);
+near(h.annualizedReturn,Math.pow(1.25,365.25/364)-1);
+assert.equal(h.points.length,3); near(h.points[1].value,750); near(h.points[1].drawdown,-.25);
+for(const bad of [{dates:['2020-02-30','2021-01-01'],closes:[1,2]}, {dates:['2020-01-01','2020-01-01'],closes:[1,2]}, {dates:['2020-01-01','2021-01-01'],closes:[1,Infinity]}, {dates:['2020-01-01'],closes:[1]}]) assert.throws(()=>Q.validateSeries(bad));
+assert.throws(()=>Q.historical(series,{amount:100,start:'2019-12-31',end:'2020-07-01'}));
+assert.throws(()=>Q.historical(series,{amount:100,start:'2020-01-02',end:'2020-01-02'}));
+assert.throws(()=>Q.historical(series,{amount:'100',start:'2020-01-01',end:'2021-01-01'}));
+const p=Q.project({amount:1000,years:2,annualReturn:.1,volatility:.2});
+near(p.mean,1210); near(p.roi,.21); near(p.median,1000*Math.exp((Math.log(1.1)-.02)*2));
+near(p.p10,1000*Math.exp((Math.log(1.1)-.02)*2-1.2815515655446004*.2*Math.sqrt(2)));
+near(p.p90,1000*Math.exp((Math.log(1.1)-.02)*2+1.2815515655446004*.2*Math.sqrt(2)));
+near(Q.project({amount:100,years:1,annualReturn:Math.exp(.02)-1,volatility:.2}).lossProbability,.5,1e-7);
+for(const r of [-.1,0,.1]) {const d=Q.project({amount:100,years:1/12,annualReturn:r,volatility:0}); near(d.mean,d.median); near(d.p10,d.p90); assert.equal(d.lossProbability,r<0?1:0);}
+assert.ok(p.points.length<=241); near(p.points[0].mean,1000); near(p.points.at(-1).mean,p.mean);
+for(const patch of [{amount:NaN},{amount:0},{amount:1e10},{years:0},{years:11},{annualReturn:-1},{annualReturn:3},{volatility:-1},{volatility:3}]) assert.throws(()=>Q.project({amount:1000,years:1,annualReturn:.1,volatility:.2,...patch}));
+const daily={dates:[],closes:[]}; for(let i=0;i<800;i++){daily.dates.push(new Date(Date.UTC(2021,0,1+i)).toISOString().slice(0,10));daily.closes.push(100*Math.exp(i*.001));}
+const e=Q.estimate(daily,{windowYears:1}); near(e.annualReturn,Math.expm1(.252)); near(e.volatility,0,1e-12); assert.equal(e.end,daily.dates.at(-1)); assert.ok(e.observations>=365&&e.observations<=367);
+assert.throws(()=>Q.estimate(series,{windowYears:1})); assert.throws(()=>Q.estimate(daily,{windowYears:2}));
+assert.deepEqual(Q.parseCSV('\ufeffdate,adj_close\r\n"2020-01-01","10"\r\n2020-01-02,11\r\n'),{dates:['2020-01-01','2020-01-02'],closes:[10,11]});
+assert.deepEqual(Q.parseCSV('Date,Close,Volume\n2020-01-01,10,"1,000"\n2020-01-02,11,2000'),{dates:['2020-01-01','2020-01-02'],closes:[10,11]});
+for(const csv of ['date,close\n2020-01-01,\n2020-01-02,2','date,close\n2020-01-01,1foo\n2020-01-02,2','date,close\n2020-02-30,1\n2020-03-01,2','date,close\n"2020-01-01,1\n2020-01-02,2','date,close,close\n2020-01-01,1,2\n2020-01-02,2,3']) assert.throws(()=>Q.parseCSV(csv));
+assert.throws(()=>Q.parseCSV(' '.repeat(2*1024*1024+1)));
+assert.throws(()=>Q.validateSeries({dates:new Array(2),closes:new Array(2)}));
+assert.throws(()=>Q.parseCSV('date,close\n'+Array.from({length:2501},(_,i)=>new Date(Date.UTC(2010,0,i+1)).toISOString().slice(0,10)+',1').join('\n')));
+const mixed={dates:daily.dates.slice(0,100),closes:Array.from({length:100},(_,i)=>100*Math.exp(.001*i+(i%2)*.01))};
+const logs=mixed.closes.slice(1).map((v,i)=>Math.log(v/mixed.closes[i])); const avg=logs.reduce((a,b)=>a+b,0)/logs.length; const variance=logs.reduce((a,b)=>a+(b-avg)**2,0)/(logs.length-1); const est=Q.estimate(mixed,{windowYears:1}); near(est.volatility,Math.sqrt(variance*252)); near(est.annualReturn,Math.expm1(avg*252+variance*126));
+console.log('Investment calculations: all assertions passed');

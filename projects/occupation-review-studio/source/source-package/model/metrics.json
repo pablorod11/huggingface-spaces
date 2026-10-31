@@ -1,0 +1,514 @@
+{
+  "validation": {
+    "count": 143,
+    "accuracy": 0.7412587412587412,
+    "macro_f1": 0.7247123725991762,
+    "classification_report": {
+      "EDUCATION": {
+        "precision": 1.0,
+        "recall": 0.42424242424242425,
+        "f1-score": 0.5957446808510638,
+        "support": 33.0
+      },
+      "FINANCE": {
+        "precision": 0.75,
+        "recall": 0.8333333333333334,
+        "f1-score": 0.7894736842105263,
+        "support": 36.0
+      },
+      "HEALTHCARE": {
+        "precision": 0.5609756097560976,
+        "recall": 0.8518518518518519,
+        "f1-score": 0.6764705882352942,
+        "support": 27.0
+      },
+      "SOFTWARE": {
+        "precision": 0.75,
+        "recall": 0.6428571428571429,
+        "f1-score": 0.6923076923076923,
+        "support": 14.0
+      },
+      "TRADES": {
+        "precision": 0.8333333333333334,
+        "recall": 0.9090909090909091,
+        "f1-score": 0.8695652173913043,
+        "support": 33.0
+      },
+      "accuracy": 0.7412587412587412,
+      "macro avg": {
+        "precision": 0.7788617886178862,
+        "recall": 0.7322751322751323,
+        "f1-score": 0.7247123725991762,
+        "support": 143.0
+      },
+      "weighted avg": {
+        "precision": 0.7912331570868157,
+        "recall": 0.7412587412587412,
+        "f1-score": 0.7324006492883758,
+        "support": 143.0
+      }
+    },
+    "confusion_matrix": [
+      [
+        14,
+        5,
+        11,
+        0,
+        3
+      ],
+      [
+        0,
+        30,
+        4,
+        1,
+        1
+      ],
+      [
+        0,
+        1,
+        23,
+        1,
+        2
+      ],
+      [
+        0,
+        3,
+        2,
+        9,
+        0
+      ],
+      [
+        0,
+        1,
+        1,
+        1,
+        30
+      ]
+    ],
+    "log_loss": 0.8953816887395478,
+    "routing": {
+      "auto_accept_count": 66,
+      "auto_accept_coverage": 0.46153846153846156,
+      "auto_accept_accuracy": 0.9545454545454546,
+      "escalate_count": 71
+    }
+  },
+  "test": {
+    "count": 173,
+    "accuracy": 0.8034682080924855,
+    "macro_f1": 0.7854200542005421,
+    "classification_report": {
+      "EDUCATION": {
+        "precision": 0.9523809523809523,
+        "recall": 0.7407407407407407,
+        "f1-score": 0.8333333333333334,
+        "support": 27.0
+      },
+      "FINANCE": {
+        "precision": 0.8222222222222222,
+        "recall": 0.8222222222222222,
+        "f1-score": 0.8222222222222222,
+        "support": 45.0
+      },
+      "HEALTHCARE": {
+        "precision": 0.7636363636363637,
+        "recall": 0.84,
+        "f1-score": 0.8,
+        "support": 50.0
+      },
+      "SOFTWARE": {
+        "precision": 0.875,
+        "recall": 0.5384615384615384,
+        "f1-score": 0.6666666666666666,
+        "support": 13.0
+      },
+      "TRADES": {
+        "precision": 0.75,
+        "recall": 0.868421052631579,
+        "f1-score": 0.8048780487804879,
+        "support": 38.0
+      },
+      "accuracy": 0.8034682080924855,
+      "macro avg": {
+        "precision": 0.8326479076479076,
+        "recall": 0.7619691108112161,
+        "f1-score": 0.7854200542005421,
+        "support": 173.0
+      },
+      "weighted avg": {
+        "precision": 0.8137058028676527,
+        "recall": 0.8034682080924855,
+        "f1-score": 0.8020348700596832,
+        "support": 173.0
+      }
+    },
+    "confusion_matrix": [
+      [
+        20,
+        1,
+        3,
+        0,
+        3
+      ],
+      [
+        0,
+        37,
+        4,
+        1,
+        3
+      ],
+      [
+        1,
+        4,
+        42,
+        0,
+        3
+      ],
+      [
+        0,
+        2,
+        2,
+        7,
+        2
+      ],
+      [
+        0,
+        1,
+        4,
+        0,
+        33
+      ]
+    ],
+    "log_loss": 0.789789166612511,
+    "routing": {
+      "auto_accept_count": 77,
+      "auto_accept_coverage": 0.44508670520231214,
+      "auto_accept_accuracy": 0.987012987012987,
+      "escalate_count": 89
+    }
+  },
+  "export_parity": {
+    "samples": 319,
+    "maximum_probability_error": 2.7755575615628914e-16,
+    "tolerance": 1e-10
+  },
+  "classes": [
+    "EDUCATION",
+    "FINANCE",
+    "HEALTHCARE",
+    "SOFTWARE",
+    "TRADES"
+  ],
+  "threshold_selection": {
+    "split": "validation",
+    "minimum_accepted_count": 20,
+    "target_empirical_accuracy": 0.95,
+    "selected": {
+      "auto_accept": 0.52,
+      "escalate": 0.5
+    },
+    "sweep": [
+      {
+        "threshold": 0.5,
+        "accepted_count": 72,
+        "coverage": 0.5034965034965035,
+        "accepted_accuracy": 0.9444444444444444
+      },
+      {
+        "threshold": 0.51,
+        "accepted_count": 67,
+        "coverage": 0.46853146853146854,
+        "accepted_accuracy": 0.9402985074626866
+      },
+      {
+        "threshold": 0.52,
+        "accepted_count": 66,
+        "coverage": 0.46153846153846156,
+        "accepted_accuracy": 0.9545454545454546
+      },
+      {
+        "threshold": 0.53,
+        "accepted_count": 62,
+        "coverage": 0.43356643356643354,
+        "accepted_accuracy": 0.967741935483871
+      },
+      {
+        "threshold": 0.54,
+        "accepted_count": 60,
+        "coverage": 0.4195804195804196,
+        "accepted_accuracy": 0.9666666666666667
+      },
+      {
+        "threshold": 0.55,
+        "accepted_count": 60,
+        "coverage": 0.4195804195804196,
+        "accepted_accuracy": 0.9666666666666667
+      },
+      {
+        "threshold": 0.56,
+        "accepted_count": 53,
+        "coverage": 0.3706293706293706,
+        "accepted_accuracy": 0.9622641509433962
+      },
+      {
+        "threshold": 0.57,
+        "accepted_count": 51,
+        "coverage": 0.35664335664335667,
+        "accepted_accuracy": 0.9607843137254902
+      },
+      {
+        "threshold": 0.58,
+        "accepted_count": 49,
+        "coverage": 0.34265734265734266,
+        "accepted_accuracy": 0.9795918367346939
+      },
+      {
+        "threshold": 0.59,
+        "accepted_count": 47,
+        "coverage": 0.32867132867132864,
+        "accepted_accuracy": 0.9787234042553191
+      },
+      {
+        "threshold": 0.6,
+        "accepted_count": 44,
+        "coverage": 0.3076923076923077,
+        "accepted_accuracy": 1.0
+      },
+      {
+        "threshold": 0.61,
+        "accepted_count": 43,
+        "coverage": 0.3006993006993007,
+        "accepted_accuracy": 1.0
+      },
+      {
+        "threshold": 0.62,
+        "accepted_count": 40,
+        "coverage": 0.27972027972027974,
+        "accepted_accuracy": 1.0
+      },
+      {
+        "threshold": 0.63,
+        "accepted_count": 39,
+        "coverage": 0.2727272727272727,
+        "accepted_accuracy": 1.0
+      },
+      {
+        "threshold": 0.64,
+        "accepted_count": 39,
+        "coverage": 0.2727272727272727,
+        "accepted_accuracy": 1.0
+      },
+      {
+        "threshold": 0.65,
+        "accepted_count": 37,
+        "coverage": 0.25874125874125875,
+        "accepted_accuracy": 1.0
+      },
+      {
+        "threshold": 0.66,
+        "accepted_count": 36,
+        "coverage": 0.2517482517482518,
+        "accepted_accuracy": 1.0
+      },
+      {
+        "threshold": 0.67,
+        "accepted_count": 34,
+        "coverage": 0.23776223776223776,
+        "accepted_accuracy": 1.0
+      },
+      {
+        "threshold": 0.68,
+        "accepted_count": 33,
+        "coverage": 0.23076923076923078,
+        "accepted_accuracy": 1.0
+      },
+      {
+        "threshold": 0.69,
+        "accepted_count": 31,
+        "coverage": 0.21678321678321677,
+        "accepted_accuracy": 1.0
+      },
+      {
+        "threshold": 0.7,
+        "accepted_count": 29,
+        "coverage": 0.20279720279720279,
+        "accepted_accuracy": 1.0
+      },
+      {
+        "threshold": 0.71,
+        "accepted_count": 28,
+        "coverage": 0.1958041958041958,
+        "accepted_accuracy": 1.0
+      },
+      {
+        "threshold": 0.72,
+        "accepted_count": 25,
+        "coverage": 0.17482517482517482,
+        "accepted_accuracy": 1.0
+      },
+      {
+        "threshold": 0.73,
+        "accepted_count": 23,
+        "coverage": 0.16083916083916083,
+        "accepted_accuracy": 1.0
+      },
+      {
+        "threshold": 0.74,
+        "accepted_count": 22,
+        "coverage": 0.15384615384615385,
+        "accepted_accuracy": 1.0
+      },
+      {
+        "threshold": 0.75,
+        "accepted_count": 19,
+        "coverage": 0.13286713286713286,
+        "accepted_accuracy": 1.0
+      },
+      {
+        "threshold": 0.76,
+        "accepted_count": 18,
+        "coverage": 0.1258741258741259,
+        "accepted_accuracy": 1.0
+      },
+      {
+        "threshold": 0.77,
+        "accepted_count": 12,
+        "coverage": 0.08391608391608392,
+        "accepted_accuracy": 1.0
+      },
+      {
+        "threshold": 0.78,
+        "accepted_count": 11,
+        "coverage": 0.07692307692307693,
+        "accepted_accuracy": 1.0
+      },
+      {
+        "threshold": 0.79,
+        "accepted_count": 11,
+        "coverage": 0.07692307692307693,
+        "accepted_accuracy": 1.0
+      },
+      {
+        "threshold": 0.8,
+        "accepted_count": 10,
+        "coverage": 0.06993006993006994,
+        "accepted_accuracy": 1.0
+      },
+      {
+        "threshold": 0.81,
+        "accepted_count": 9,
+        "coverage": 0.06293706293706294,
+        "accepted_accuracy": 1.0
+      },
+      {
+        "threshold": 0.82,
+        "accepted_count": 9,
+        "coverage": 0.06293706293706294,
+        "accepted_accuracy": 1.0
+      },
+      {
+        "threshold": 0.83,
+        "accepted_count": 9,
+        "coverage": 0.06293706293706294,
+        "accepted_accuracy": 1.0
+      },
+      {
+        "threshold": 0.84,
+        "accepted_count": 7,
+        "coverage": 0.04895104895104895,
+        "accepted_accuracy": 1.0
+      },
+      {
+        "threshold": 0.85,
+        "accepted_count": 7,
+        "coverage": 0.04895104895104895,
+        "accepted_accuracy": 1.0
+      },
+      {
+        "threshold": 0.86,
+        "accepted_count": 6,
+        "coverage": 0.04195804195804196,
+        "accepted_accuracy": 1.0
+      },
+      {
+        "threshold": 0.87,
+        "accepted_count": 3,
+        "coverage": 0.02097902097902098,
+        "accepted_accuracy": 1.0
+      },
+      {
+        "threshold": 0.88,
+        "accepted_count": 3,
+        "coverage": 0.02097902097902098,
+        "accepted_accuracy": 1.0
+      },
+      {
+        "threshold": 0.89,
+        "accepted_count": 2,
+        "coverage": 0.013986013986013986,
+        "accepted_accuracy": 1.0
+      },
+      {
+        "threshold": 0.9,
+        "accepted_count": 1,
+        "coverage": 0.006993006993006993,
+        "accepted_accuracy": 1.0
+      },
+      {
+        "threshold": 0.91,
+        "accepted_count": 1,
+        "coverage": 0.006993006993006993,
+        "accepted_accuracy": 1.0
+      },
+      {
+        "threshold": 0.92,
+        "accepted_count": 1,
+        "coverage": 0.006993006993006993,
+        "accepted_accuracy": 1.0
+      },
+      {
+        "threshold": 0.93,
+        "accepted_count": 1,
+        "coverage": 0.006993006993006993,
+        "accepted_accuracy": 1.0
+      },
+      {
+        "threshold": 0.94,
+        "accepted_count": 1,
+        "coverage": 0.006993006993006993,
+        "accepted_accuracy": 1.0
+      },
+      {
+        "threshold": 0.95,
+        "accepted_count": 0,
+        "coverage": 0.0,
+        "accepted_accuracy": null
+      },
+      {
+        "threshold": 0.96,
+        "accepted_count": 0,
+        "coverage": 0.0,
+        "accepted_accuracy": null
+      },
+      {
+        "threshold": 0.97,
+        "accepted_count": 0,
+        "coverage": 0.0,
+        "accepted_accuracy": null
+      },
+      {
+        "threshold": 0.98,
+        "accepted_count": 0,
+        "coverage": 0.0,
+        "accepted_accuracy": null
+      },
+      {
+        "threshold": 0.99,
+        "accepted_count": 0,
+        "coverage": 0.0,
+        "accepted_accuracy": null
+      }
+    ],
+    "limitation": "Empirical validation accuracy is not a future accuracy guarantee; probabilities are not calibrated."
+  }
+}

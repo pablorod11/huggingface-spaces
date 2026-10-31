@@ -1,0 +1,6 @@
+PASS: Python/JavaScript parity over 324 inputs; maximum error 3.3306690738754696e-16
+PASS: input validation and unknown vocabulary
+PASS: role denial, ownership, reasons, stale revisions, human override, immutable decisions, feedback
+PASS: failed persistence leaves memory unchanged
+PASS: out-of-scope closure has no category or training feedback
+PASS: corrupt model rejected

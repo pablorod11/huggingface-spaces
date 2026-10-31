@@ -1,0 +1,32 @@
+const assert=require('node:assert/strict');
+const Q=require('./model.js');
+const prices=Q.synthetic(900,42);
+const f=Q.features(prices);
+assert(Math.abs(f.y[0]-Math.log(prices[61]/prices[60]))<1e-12);
+const changed=prices.slice();for(let i=820;i<changed.length;i++)changed[i]*=1.2;
+const a=Q.run(prices),b=Q.run(changed);
+assert.equal(a.latest_forecast.feature_index,899);
+assert.equal(a.latest_forecast.target_index,900);
+for(const r of [...a.predictions,a.latest_forecast])assert(Math.abs(r.probabilities.reduce((s,x)=>s+x,0)-1)<1e-12);
+for(let i=0;i<a.predictions.length;i++)if(a.predictions[i].feature_index<820)assert.deepEqual(a.predictions[i].probabilities,b.predictions[i].probabilities);
+for(const fold of a.folds){assert(fold.train_label_end<fold.calibration_feature_start);assert(fold.calibration_label_end<fold.test_feature_start);}
+assert(a.latest_forecast.calibration_label_end<a.latest_forecast.feature_index);
+for(const x of [[1,2],Array(900).fill(NaN),Array(900).fill(0),Array(2501).fill(1)])assert.throws(()=>Q.run(x));
+for(const metrics of [...Object.values(a.candidate_metrics),a.selected_metrics]){assert(Number.isFinite(metrics.up_brier));assert(Number.isFinite(metrics.downside_brier));assert(metrics.up_brier>=0&&metrics.up_brier<=1);assert(metrics.downside_brier>=0&&metrics.downside_brier<=1);}
+console.log('All model tests passed');
+assert(a.candidate_metrics.ewma,'EWMA challenger must be scored');
+assert(Number.isFinite(a.latest_forecast.candidate_volatility_annualized.ewma));
+const shock=prices.slice();for(let i=801;i<shock.length;i++)shock[i]*=Math.exp(.4);
+const stressed=Q.run(shock);
+const at=(r,t)=>r.predictions.find(p=>p.feature_index===t);
+assert.equal(at(a,800).ewma_sigma,at(stressed,800).ewma_sigma,'own target label cannot alter forecast variance');
+assert.deepEqual(at(a,800).probabilities,at(stressed,800).probabilities,'own target cannot change its probability forecast');
+for(const q of Object.values(a.latest_forecast.candidate_probabilities))assert(Math.abs(q.reduce((sum,p)=>sum+p,0)-1)<1e-12);
+assert.deepEqual(Object.keys(a.candidate_metrics).sort(),['empirical','ewma','ridge','softmax']);
+assert(at(stressed,801).ewma_sigma>at(a,801).ewma_sigma,'variance must react after observed shock');
+const alpha=1-Math.exp(-Math.log(2)/20),before=at(stressed,800),after=at(stressed,801);
+const expected=(1-alpha)*before.ewma_sigma**2+alpha*(before.actual_log_return-before.ridge_mean)**2;
+assert(Math.abs(after.ewma_sigma**2-expected)<1e-14,'EWMA must implement exact causal recursion');
+for(let i=0;i<a.predictions.length;i++)if(a.predictions[i].feature_index<820)assert.equal(a.predictions[i].ewma_sigma,b.predictions[i].ewma_sigma);
+assert.equal(a.model_details.ewma.half_life_observations,20);
+console.log('EWMA causal variance tests passed');

@@ -1,0 +1,10 @@
+const assert=require('node:assert/strict'),fs=require('node:fs'),vm=require('node:vm');
+const source=fs.readFileSync(__dirname+'/app.js','utf8');
+const fn=source.slice(source.indexOf('function dismissEditor'),source.indexOf("$('dismiss').onclick"));
+let closed=0,allowed=false,prevented=0;
+const context=vm.createContext({form:{},FormData:class{*[Symbol.iterator](){yield ['customer','Edited'];}},editorSnapshot:'[["customer","Original"]]',confirm:()=>allowed,$:()=>({close:()=>closed++})});
+vm.runInContext(fn,context);
+context.event={preventDefault:()=>prevented++};vm.runInContext('dismissEditor(event)',context);assert.equal(closed,0);assert.equal(prevented,1);
+allowed=true;vm.runInContext('dismissEditor(event)',context);assert.equal(closed,1);
+allowed=false;context.editorSnapshot='[["customer","Edited"]]';vm.runInContext('dismissEditor(event)',context);assert.equal(closed,2);
+console.log('PASS: changed editor retains edits on cancel, discards on confirmation, unchanged editor closes');

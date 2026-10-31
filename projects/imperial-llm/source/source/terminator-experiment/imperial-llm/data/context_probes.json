@@ -1,0 +1,145 @@
+{
+  "schema_version": 1,
+  "predeclared": true,
+  "purpose": "Tiny counterbalanced entity-recall diagnostic, not evidence of general coherence.",
+  "scoring": "At the final prompt position compare raw next-character logits for the first character of the two choices; predict the larger, count exact ties as 0.5. No sampling or generated rationale. Both candidate first characters must exist in vocabulary; otherwise mark probe unscorable. Long receives full prompt, short last64 characters. Candidate names all have distinct first characters.",
+  "aggregation": "Report all8 decisions, mean accuracy, and all4 within-pair both-correct counts. No significance claim from8 probes.",
+  "probes": [
+    {
+      "id": "entity_1_1",
+      "pair_id": "entity_1",
+      "prompt": "The dog was named Ben. They went down the road. The sun was warm and the day was calm. The dog was named ",
+      "choices": [
+        "Ben",
+        "Dan"
+      ],
+      "answer": "Ben",
+      "answer_first_character": "B",
+      "prompt_characters": 105,
+      "cue_start": 18,
+      "cue_end_exclusive": 21,
+      "short_input": " road. The sun was warm and the day was calm. The dog was named "
+    },
+    {
+      "id": "entity_1_2",
+      "pair_id": "entity_1",
+      "prompt": "The dog was named Dan. They went down the road. The sun was warm and the day was calm. The dog was named ",
+      "choices": [
+        "Ben",
+        "Dan"
+      ],
+      "answer": "Dan",
+      "answer_first_character": "D",
+      "prompt_characters": 105,
+      "cue_start": 18,
+      "cue_end_exclusive": 21,
+      "short_input": " road. The sun was warm and the day was calm. The dog was named "
+    },
+    {
+      "id": "entity_2_1",
+      "pair_id": "entity_2",
+      "prompt": "The cat was named Tom. They went down the road. The sun was warm and the day was calm. The cat was named ",
+      "choices": [
+        "Tom",
+        "Sam"
+      ],
+      "answer": "Tom",
+      "answer_first_character": "T",
+      "prompt_characters": 105,
+      "cue_start": 18,
+      "cue_end_exclusive": 21,
+      "short_input": " road. The sun was warm and the day was calm. The cat was named "
+    },
+    {
+      "id": "entity_2_2",
+      "pair_id": "entity_2",
+      "prompt": "The cat was named Sam. They went down the road. The sun was warm and the day was calm. The cat was named ",
+      "choices": [
+        "Tom",
+        "Sam"
+      ],
+      "answer": "Sam",
+      "answer_first_character": "S",
+      "prompt_characters": 105,
+      "cue_start": 18,
+      "cue_end_exclusive": 21,
+      "short_input": " road. The sun was warm and the day was calm. The cat was named "
+    },
+    {
+      "id": "entity_3_1",
+      "pair_id": "entity_3",
+      "prompt": "The girl was named Ada. They went down the road. The sun was warm and the day was calm. The girl was named ",
+      "choices": [
+        "Ada",
+        "Eva"
+      ],
+      "answer": "Ada",
+      "answer_first_character": "A",
+      "prompt_characters": 107,
+      "cue_start": 19,
+      "cue_end_exclusive": 22,
+      "short_input": "road. The sun was warm and the day was calm. The girl was named "
+    },
+    {
+      "id": "entity_3_2",
+      "pair_id": "entity_3",
+      "prompt": "The girl was named Eva. They went down the road. The sun was warm and the day was calm. The girl was named ",
+      "choices": [
+        "Ada",
+        "Eva"
+      ],
+      "answer": "Eva",
+      "answer_first_character": "E",
+      "prompt_characters": 107,
+      "cue_start": 19,
+      "cue_end_exclusive": 22,
+      "short_input": "road. The sun was warm and the day was calm. The girl was named "
+    },
+    {
+      "id": "entity_4_1",
+      "pair_id": "entity_4",
+      "prompt": "The boy was named Max. They went down the road. The sun was warm and the day was calm. The boy was named ",
+      "choices": [
+        "Max",
+        "Rex"
+      ],
+      "answer": "Max",
+      "answer_first_character": "M",
+      "prompt_characters": 105,
+      "cue_start": 18,
+      "cue_end_exclusive": 21,
+      "short_input": " road. The sun was warm and the day was calm. The boy was named "
+    },
+    {
+      "id": "entity_4_2",
+      "pair_id": "entity_4",
+      "prompt": "The boy was named Rex. They went down the road. The sun was warm and the day was calm. The boy was named ",
+      "choices": [
+        "Max",
+        "Rex"
+      ],
+      "answer": "Rex",
+      "answer_first_character": "R",
+      "prompt_characters": 105,
+      "cue_start": 18,
+      "cue_end_exclusive": 21,
+      "short_input": " road. The sun was warm and the day was calm. The boy was named "
+    }
+  ],
+  "vocabulary_validation": {
+    "source": "work/context-experiment/imperial-llm/space/model.json",
+    "vocabulary_size": 51,
+    "vocabulary_sha256": "06137d1b622720496d272f0c77bef1b11e822567dfa7a18e31595da2e071c954",
+    "unsupported_characters": [],
+    "validated_fields": [
+      "prompt",
+      "choices",
+      "answer",
+      "answer_first_character",
+      "short_input"
+    ],
+    "validated_probe_count": 8,
+    "counterbalanced_identical_suffix_pairs": 4,
+    "correction": "Replaced unsupported uppercase Pip/Kit with supported Ben/Dan before model outputs were inspected."
+  }
+}

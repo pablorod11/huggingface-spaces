@@ -1,0 +1,122 @@
+[
+  {
+    "prompt": "tom lost his red ball. he looked under the bed and",
+    "seed": 42,
+    "temperature": 0.7,
+    "top_k": 20,
+    "new_characters": 160,
+    "rng": "PyTorch multinomial; browser RNG differs",
+    "legacy": "tom lost his red ball. he looked under the bed and had a brought. She wanted to do. When she wite chat was so happing that was a bird ball around the made was very smiled and said,  Yet  I came to so hard and a",
+    "repaired": "tom lost his red ball. he looked under the bed and had rest around the can was happy. They the ball walked to help memt. One day, Tim found a little girl named Mia smiled and smiled. The calleamered and is not "
+  },
+  {
+    "prompt": "tom lost his red ball. he looked under the bed and",
+    "seed": 1729,
+    "temperature": 0.7,
+    "top_k": 20,
+    "new_characters": 160,
+    "rng": "PyTorch multinomial; browser RNG differs",
+    "legacy": "tom lost his red ball. he looked under the bed and held a scared. They reme boy with held took the stortor the kivere this to back to help meara about it it was so happy. They said need and Mom meet and they sa",
+    "repaired": "tom lost his red ball. he looked under the bed and held should and see he wise. They well time. The stree was so hard the more to play with happy. He cat it was so happy.\nOne day thought it worked. One day, Tim"
+  },
+  {
+    "prompt": "tom lost his red ball. he looked under the bed and",
+    "seed": 2026,
+    "temperature": 0.7,
+    "top_k": 20,
+    "new_characters": 160,
+    "rng": "PyTorch multinomial; browser RNG differs",
+    "legacy": "tom lost his red ball. he looked under the bed and gave and seething and he tree on a little ball in the ground. She was very sas their new friend. The bird was very and wanted to looked and wanted that he sun ",
+    "repaired": "tom lost his red ball. he looked under the bed and get the tree onther. The toy box knew the sack in her grandmess. They cared the big bag and was. The delied to play with the swark. They bird went of the strin"
+  },
+  {
+    "prompt": "lily and her dog went to the park. the dog saw",
+    "seed": 42,
+    "temperature": 0.7,
+    "top_k": 20,
+    "new_characters": 160,
+    "rng": "PyTorch multinomial; browser RNG differs",
+    "legacy": "lily and her dog went to the park. the dog saw a lark they went to contick to flew and the ball and friends smiled and wanted to seet. They would made was very smiled and said,  Yet  I came to so and said, ",
+    "repaired": "lily and her dog went to the park. the dog saw a lard they played with the dog. They said,  Don't went to held near and that fun a small friends. It was so happy. \nThe became learned thought and the couldn'"
+  },
+  {
+    "prompt": "lily and her dog went to the park. the dog saw",
+    "seed": 1729,
+    "temperature": 0.7,
+    "top_k": 20,
+    "new_characters": 160,
+    "rng": "PyTorch multinomial; browser RNG differs",
+    "legacy": "lily and her dog went to the park. the dog saw a little bird. They rellied to go help. They plaster, the said she this top that day.\nOne day, then the big push his room. He had a belond for mom sad.   Can y",
+    "repaired": "lily and her dog went to the park. the dog saw a little bird. They had a made good friends. The strees toys she was shat ball other. She around, the did noise happy to jumperry.  The park wither.  We upon a"
+  },
+  {
+    "prompt": "lily and her dog went to the park. the dog saw",
+    "seed": 2026,
+    "temperature": 0.7,
+    "top_k": 20,
+    "new_characters": 160,
+    "rng": "PyTorch multinomial; browser RNG differs",
+    "legacy": "lily and her dog went to the park. the dog saw a ball good to the sun and said,  Yes,  Yes,  Spot we girl near that to play sock.   The bird was very sad, and all be saw a small drage. His mom loved to see ",
+    "repaired": "lily and her dog went to the park. the dog saw a ball.\nOne day, the bird cat want to help and prants. And the was at the big delping the big was very safe. He see was a brong beachegger in the borday. They "
+  },
+  {
+    "prompt": "the rabbit hid a carrot under a tree. later,",
+    "seed": 42,
+    "temperature": 0.7,
+    "top_k": 20,
+    "new_characters": 160,
+    "rng": "PyTorch multinomial; browser RNG differs",
+    "legacy": "the rabbit hid a carrot under a tree. later, he crake you together. But the found asked it  \nThe buste little girl named Max and said wanted to make was very smiled and said,  You  I came to so hard and a",
+    "repaired": "the rabbit hid a carrot under a tree. later, and Lucy had fun they new and fall. They coind a store and had in the ball of fun a small. Amy the made was very smiled and smiled. The called to so happy thei"
+  },
+  {
+    "prompt": "the rabbit hid a carrot under a tree. later,",
+    "seed": 1729,
+    "temperature": 0.7,
+    "top_k": 20,
+    "new_characters": 160,
+    "rng": "PyTorch multinomial; browser RNG differs",
+    "legacy": "the rabbit hid a carrot under a tree. later, and Sam a pretty ran the boy with held took the stort. Sue was sad the more that day.\nOne day, then the big push his room. He had a belond for mom sad.   Can y",
+    "repaired": "the rabbit hid a carrot under a tree. later, and Sam cat and see he wise very puppy. They played the bird was was shat ball other.\nOne day, Tim can it was so happy. They said,  Wellie forem and saw a shar"
+  },
+  {
+    "prompt": "the rabbit hid a carrot under a tree. later,",
+    "seed": 2026,
+    "temperature": 0.7,
+    "top_k": 20,
+    "new_characters": 160,
+    "rng": "PyTorch multinomial; browser RNG differs",
+    "legacy": "the rabbit hid a carrot under a tree. later,  Max and seet and said the movery dad in the park. He did not doer and said.\nWhen it was friend. The bulled to play with her safe open in the mess. They was so",
+    "repaired": "the rabbit hid a carrot under a tree. later, a big cat because and help me of a lander. Lily and said,  Can I you can it.\nWhere that met was.  Do you each. \nThe catered, and lots good the boall.  The smil"
+  },
+  {
+    "prompt": "sam gave mia a blue box. inside the box was",
+    "seed": 42,
+    "temperature": 0.7,
+    "top_k": 20,
+    "new_characters": 160,
+    "rng": "PyTorch multinomial; browser RNG differs",
+    "legacy": "sam gave mia a blue box. inside the box was very thout the good to the bird. They said in the tooddes the bird was a big was not named Lily was so hard. Tim said,  Disy, and Ben someone was so athis litt",
+    "repaired": "sam gave mia a blue box. inside the box was very the pretty to find was happy. They the ball walked to help memt. One day, Tim found a little girl named Mia smiled and smiled. The calleamered and is not "
+  },
+  {
+    "prompt": "sam gave mia a blue box. inside the box was",
+    "seed": 1729,
+    "temperature": 0.7,
+    "top_k": 20,
+    "new_characters": 160,
+    "rng": "PyTorch multinomial; browser RNG differs",
+    "legacy": "sam gave mia a blue box. inside the box was a little bird. They rellied to go help. They plasser, they found water a bird toys on that day bad was so me to his brough was allonger in the mom sad.   Can y",
+    "repaired": "sam gave mia a blue box. inside the box was a little bird. They had a made good friends. The strees toys and watch mom all down to gave a loud could play so happy.\nOne day her mels.  Mom made a lot fast "
+  },
+  {
+    "prompt": "sam gave mia a blue box. inside the box was",
+    "seed": 2026,
+    "temperature": 0.7,
+    "top_k": 20,
+    "new_characters": 160,
+    "rng": "PyTorch multinomial; browser RNG differs",
+    "legacy": "sam gave mia a blue box. inside the box was good and see ont the bird water and down and said. He said,  Now, but they said,  I big me    Tim was play, ark and show became blocks and runny slongs. It was",
+    "repaired": "sam gave mia a blue box. inside the box was happy. \nThe could and had a timen to help. Lily candered it was cry. He played to the games was. The bird sat was van seare, and lots good the boall. The ball "
+  }
+]

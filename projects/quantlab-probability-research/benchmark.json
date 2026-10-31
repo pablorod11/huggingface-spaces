@@ -1,0 +1,3144 @@
+{
+  "schema_version": 1,
+  "target": "next observed-close log return",
+  "threshold": -0.02,
+  "classes": [
+    "r < -0.02",
+    "-0.02 <= r <= 0",
+    "r > 0"
+  ],
+  "feature_names": [
+    "return_1",
+    "momentum_5",
+    "momentum_20",
+    "volatility_5",
+    "volatility_20",
+    "drawdown_60"
+  ],
+  "test_observations": 187,
+  "folds": [
+    {
+      "train_feature_start": 60,
+      "train_feature_end": 559,
+      "train_label_end": 560,
+      "calibration_feature_start": 561,
+      "calibration_label_end": 711,
+      "test_feature_start": 712,
+      "test_feature_end": 898,
+      "selected": "sklearn",
+      "calibration_log_loss": {
+        "empirical": 0.7983561760621128,
+        "ridge": 0.8026401887828732,
+        "sklearn": 0.7888006273987486,
+        "xgboost": 0.8533005250802127,
+        "lightgbm": 0.848183351897016
+      },
+      "temperatures": {
+        "empirical": 0.75,
+        "ridge": 0.75,
+        "sklearn": 1.0,
+        "xgboost": 1.0,
+        "lightgbm": 1.5
+      }
+    }
+  ],
+  "predictions": [
+    {
+      "feature_index": 712,
+      "target_index": 713,
+      "model": "sklearn",
+      "probabilities": [
+        0.03578472563102056,
+        0.4148229237197586,
+        0.5493923506492209
+      ],
+      "actual_log_return": 0.016571070598124127,
+      "feature_date": "2012-09-26",
+      "target_date": "2012-09-27"
+    },
+    {
+      "feature_index": 713,
+      "target_index": 714,
+      "model": "sklearn",
+      "probabilities": [
+        0.02412824518247462,
+        0.33444830740985904,
+        0.6414234474076663
+      ],
+      "actual_log_return": -0.015087453819850882,
+      "feature_date": "2012-09-27",
+      "target_date": "2012-09-28"
+    },
+    {
+      "feature_index": 714,
+      "target_index": 715,
+      "model": "sklearn",
+      "probabilities": [
+        0.029273097256044472,
+        0.504640986040927,
+        0.46608591670302857
+      ],
+      "actual_log_return": -0.0080451752754227,
+      "feature_date": "2012-09-28",
+      "target_date": "2012-10-01"
+    },
+    {
+      "feature_index": 715,
+      "target_index": 716,
+      "model": "sklearn",
+      "probabilities": [
+        0.026113650244067695,
+        0.4692811267437354,
+        0.5046052230121969
+      ],
+      "actual_log_return": 0.015405515774091771,
+      "feature_date": "2012-10-01",
+      "target_date": "2012-10-02"
+    },
+    {
+      "feature_index": 716,
+      "target_index": 717,
+      "model": "sklearn",
+      "probabilities": [
+        0.02596816935422722,
+        0.3343280531287578,
+        0.639703777517015
+      ],
+      "actual_log_return": 0.023258774175906716,
+      "feature_date": "2012-10-02",
+      "target_date": "2012-10-03"
+    },
+    {
+      "feature_index": 717,
+      "target_index": 718,
+      "model": "sklearn",
+      "probabilities": [
+        0.02569080933675308,
+        0.2898966165341806,
+        0.6844125741290663
+      ],
+      "actual_log_return": -0.0025028526332278034,
+      "feature_date": "2012-10-03",
+      "target_date": "2012-10-04"
+    },
+    {
+      "feature_index": 718,
+      "target_index": 719,
+      "model": "sklearn",
+      "probabilities": [
+        0.025536083578205797,
+        0.43957360104592896,
+        0.5348903153758652
+      ],
+      "actual_log_return": 0.006253806359072911,
+      "feature_date": "2012-10-04",
+      "target_date": "2012-10-05"
+    },
+    {
+      "feature_index": 719,
+      "target_index": 720,
+      "model": "sklearn",
+      "probabilities": [
+        0.02978564589529962,
+        0.4066381285742579,
+        0.5635762255304425
+      ],
+      "actual_log_return": 0.005592008972291396,
+      "feature_date": "2012-10-05",
+      "target_date": "2012-10-08"
+    },
+    {
+      "feature_index": 720,
+      "target_index": 721,
+      "model": "sklearn",
+      "probabilities": [
+        0.026438672192518112,
+        0.41870799833520533,
+        0.5548533294722766
+      ],
+      "actual_log_return": 0.0003669120386895486,
+      "feature_date": "2012-10-08",
+      "target_date": "2012-10-09"
+    },
+    {
+      "feature_index": 721,
+      "target_index": 722,
+      "model": "sklearn",
+      "probabilities": [
+        0.026132639700473352,
+        0.4612388956438138,
+        0.5126284646557128
+      ],
+      "actual_log_return": 0.00656160948808715,
+      "feature_date": "2012-10-09",
+      "target_date": "2012-10-10"
+    },
+    {
+      "feature_index": 722,
+      "target_index": 723,
+      "model": "sklearn",
+      "probabilities": [
+        0.020727560926579534,
+        0.43889760803682076,
+        0.5403748310365997
+      ],
+      "actual_log_return": 0.00043515208819133733,
+      "feature_date": "2012-10-10",
+      "target_date": "2012-10-11"
+    },
+    {
+      "feature_index": 723,
+      "target_index": 724,
+      "model": "sklearn",
+      "probabilities": [
+        0.021226803707855076,
+        0.4777019343589759,
+        0.501071261933169
+      ],
+      "actual_log_return": -0.006282071054151572,
+      "feature_date": "2012-10-11",
+      "target_date": "2012-10-12"
+    },
+    {
+      "feature_index": 724,
+      "target_index": 725,
+      "model": "sklearn",
+      "probabilities": [
+        0.02248221106909225,
+        0.5146392291401181,
+        0.46287855979078973
+      ],
+      "actual_log_return": 0.003298043068915568,
+      "feature_date": "2012-10-12",
+      "target_date": "2012-10-15"
+    },
+    {
+      "feature_index": 725,
+      "target_index": 726,
+      "model": "sklearn",
+      "probabilities": [
+        0.023023569513404927,
+        0.4590562058451392,
+        0.5179202246414559
+      ],
+      "actual_log_return": -0.007878490301264307,
+      "feature_date": "2012-10-15",
+      "target_date": "2012-10-16"
+    },
+    {
+      "feature_index": 726,
+      "target_index": 727,
+      "model": "sklearn",
+      "probabilities": [
+        0.027624288626183807,
+        0.521298532427621,
+        0.45107717894619515
+      ],
+      "actual_log_return": 0.009559096501824627,
+      "feature_date": "2012-10-16",
+      "target_date": "2012-10-17"
+    },
+    {
+      "feature_index": 727,
+      "target_index": 728,
+      "model": "sklearn",
+      "probabilities": [
+        0.027275710457735625,
+        0.417276320767184,
+        0.5554479687750804
+      ],
+      "actual_log_return": 0.0065794457742773815,
+      "feature_date": "2012-10-17",
+      "target_date": "2012-10-18"
+    },
+    {
+      "feature_index": 728,
+      "target_index": 729,
+      "model": "sklearn",
+      "probabilities": [
+        0.0276336773192037,
+        0.44479240911288054,
+        0.5275739135679157
+      ],
+      "actual_log_return": -0.005721939221365879,
+      "feature_date": "2012-10-18",
+      "target_date": "2012-10-19"
+    },
+    {
+      "feature_index": 729,
+      "target_index": 730,
+      "model": "sklearn",
+      "probabilities": [
+        0.028441574851790583,
+        0.5162033189915675,
+        0.455355106156642
+      ],
+      "actual_log_return": 0.002464991881389267,
+      "feature_date": "2012-10-19",
+      "target_date": "2012-10-22"
+    },
+    {
+      "feature_index": 730,
+      "target_index": 731,
+      "model": "sklearn",
+      "probabilities": [
+        0.03047343750764365,
+        0.4691268346278828,
+        0.5003997278644736
+      ],
+      "actual_log_return": 0.00793109248410051,
+      "feature_date": "2012-10-22",
+      "target_date": "2012-10-23"
+    },
+    {
+      "feature_index": 731,
+      "target_index": 732,
+      "model": "sklearn",
+      "probabilities": [
+        0.027648725149474487,
+        0.44439392705247965,
+        0.5279573477980458
+      ],
+      "actual_log_return": 0.008022768737117936,
+      "feature_date": "2012-10-23",
+      "target_date": "2012-10-24"
+    },
+    {
+      "feature_index": 732,
+      "target_index": 733,
+      "model": "sklearn",
+      "probabilities": [
+        0.02605612032564821,
+        0.4455526565063611,
+        0.5283912231679906
+      ],
+      "actual_log_return": 1.1791962014839896e-05,
+      "feature_date": "2012-10-24",
+      "target_date": "2012-10-25"
+    },
+    {
+      "feature_index": 733,
+      "target_index": 734,
+      "model": "sklearn",
+      "probabilities": [
+        0.027664898876520197,
+        0.49290389125236134,
+        0.47943120987111854
+      ],
+      "actual_log_return": 0.0029633152082730874,
+      "feature_date": "2012-10-25",
+      "target_date": "2012-10-26"
+    },
+    {
+      "feature_index": 734,
+      "target_index": 735,
+      "model": "sklearn",
+      "probabilities": [
+        0.025220129978250412,
+        0.48560018801883903,
+        0.4891796820029106
+      ],
+      "actual_log_return": -0.004352753012184962,
+      "feature_date": "2012-10-26",
+      "target_date": "2012-10-29"
+    },
+    {
+      "feature_index": 735,
+      "target_index": 736,
+      "model": "sklearn",
+      "probabilities": [
+        0.026777631794712726,
+        0.5245348708786852,
+        0.4486874973266021
+      ],
+      "actual_log_return": 0.00927754006688808,
+      "feature_date": "2012-10-29",
+      "target_date": "2012-10-30"
+    },
+    {
+      "feature_index": 736,
+      "target_index": 737,
+      "model": "sklearn",
+      "probabilities": [
+        0.027932872288349404,
+        0.44435330129249934,
+        0.5277138264191513
+      ],
+      "actual_log_return": 0.00520502307388071,
+      "feature_date": "2012-10-30",
+      "target_date": "2012-10-31"
+    },
+    {
+      "feature_index": 737,
+      "target_index": 738,
+      "model": "sklearn",
+      "probabilities": [
+        0.030633280828029127,
+        0.47292273526034484,
+        0.4964439839116261
+      ],
+      "actual_log_return": -0.005558763513671572,
+      "feature_date": "2012-10-31",
+      "target_date": "2012-11-01"
+    },
+    {
+      "feature_index": 738,
+      "target_index": 739,
+      "model": "sklearn",
+      "probabilities": [
+        0.03196591963957342,
+        0.5317105459054445,
+        0.43632353445498206
+      ],
+      "actual_log_return": 0.00215371750886284,
+      "feature_date": "2012-11-01",
+      "target_date": "2012-11-02"
+    },
+    {
+      "feature_index": 739,
+      "target_index": 740,
+      "model": "sklearn",
+      "probabilities": [
+        0.032499465142452034,
+        0.4865773139761811,
+        0.48092322088136674
+      ],
+      "actual_log_return": -0.011057328296235625,
+      "feature_date": "2012-11-02",
+      "target_date": "2012-11-05"
+    },
+    {
+      "feature_index": 740,
+      "target_index": 741,
+      "model": "sklearn",
+      "probabilities": [
+        0.03569184125499974,
+        0.5546206363251909,
+        0.4096875224198094
+      ],
+      "actual_log_return": -0.022401268659322682,
+      "feature_date": "2012-11-05",
+      "target_date": "2012-11-06"
+    },
+    {
+      "feature_index": 741,
+      "target_index": 742,
+      "model": "sklearn",
+      "probabilities": [
+        0.03897379993199845,
+        0.6018196568275637,
+        0.3592065432404378
+      ],
+      "actual_log_return": -0.006137560867282232,
+      "feature_date": "2012-11-06",
+      "target_date": "2012-11-07"
+    },
+    {
+      "feature_index": 742,
+      "target_index": 743,
+      "model": "sklearn",
+      "probabilities": [
+        0.038956311381409696,
+        0.5128413547261453,
+        0.4482023338924449
+      ],
+      "actual_log_return": -0.0046511461861338255,
+      "feature_date": "2012-11-07",
+      "target_date": "2012-11-08"
+    },
+    {
+      "feature_index": 743,
+      "target_index": 744,
+      "model": "sklearn",
+      "probabilities": [
+        0.03994147705220188,
+        0.5032616010799363,
+        0.45679692186786186
+      ],
+      "actual_log_return": 0.012558467662556527,
+      "feature_date": "2012-11-08",
+      "target_date": "2012-11-09"
+    },
+    {
+      "feature_index": 744,
+      "target_index": 745,
+      "model": "sklearn",
+      "probabilities": [
+        0.04177284491138792,
+        0.3958403246243741,
+        0.562386830464238
+      ],
+      "actual_log_return": -0.005158336176785738,
+      "feature_date": "2012-11-09",
+      "target_date": "2012-11-12"
+    },
+    {
+      "feature_index": 745,
+      "target_index": 746,
+      "model": "sklearn",
+      "probabilities": [
+        0.04311811688684725,
+        0.4978020948338183,
+        0.4590797882793346
+      ],
+      "actual_log_return": -0.011450526810074635,
+      "feature_date": "2012-11-12",
+      "target_date": "2012-11-13"
+    },
+    {
+      "feature_index": 746,
+      "target_index": 747,
+      "model": "sklearn",
+      "probabilities": [
+        0.03888365715655411,
+        0.5429912642583274,
+        0.41812507858511844
+      ],
+      "actual_log_return": -0.0052652221822788725,
+      "feature_date": "2012-11-13",
+      "target_date": "2012-11-14"
+    },
+    {
+      "feature_index": 747,
+      "target_index": 748,
+      "model": "sklearn",
+      "probabilities": [
+        0.04151650121576084,
+        0.506584009681764,
+        0.4518994891024752
+      ],
+      "actual_log_return": -0.0011955119743376486,
+      "feature_date": "2012-11-14",
+      "target_date": "2012-11-15"
+    },
+    {
+      "feature_index": 748,
+      "target_index": 749,
+      "model": "sklearn",
+      "probabilities": [
+        0.04295787319457116,
+        0.48303484189764956,
+        0.4740072849077794
+      ],
+      "actual_log_return": 0.0009292200535271355,
+      "feature_date": "2012-11-15",
+      "target_date": "2012-11-16"
+    },
+    {
+      "feature_index": 749,
+      "target_index": 750,
+      "model": "sklearn",
+      "probabilities": [
+        0.03573101244055433,
+        0.48259095745353897,
+        0.48167803010590665
+      ],
+      "actual_log_return": 0.0032756965976425967,
+      "feature_date": "2012-11-16",
+      "target_date": "2012-11-19"
+    },
+    {
+      "feature_index": 750,
+      "target_index": 751,
+      "model": "sklearn",
+      "probabilities": [
+        0.03712205255681033,
+        0.4665688260438917,
+        0.49630912139929806
+      ],
+      "actual_log_return": 0.007075165171027908,
+      "feature_date": "2012-11-19",
+      "target_date": "2012-11-20"
+    },
+    {
+      "feature_index": 751,
+      "target_index": 752,
+      "model": "sklearn",
+      "probabilities": [
+        0.03580034942931741,
+        0.44896641836719176,
+        0.5152332322034908
+      ],
+      "actual_log_return": 0.0026813640458955845,
+      "feature_date": "2012-11-20",
+      "target_date": "2012-11-21"
+    },
+    {
+      "feature_index": 752,
+      "target_index": 753,
+      "model": "sklearn",
+      "probabilities": [
+        0.03464045565581982,
+        0.4796873434346689,
+        0.4856722009095113
+      ],
+      "actual_log_return": -0.0020267077105060594,
+      "feature_date": "2012-11-21",
+      "target_date": "2012-11-22"
+    },
+    {
+      "feature_index": 753,
+      "target_index": 754,
+      "model": "sklearn",
+      "probabilities": [
+        0.03518230437536971,
+        0.5062825532276006,
+        0.45853514239702964
+      ],
+      "actual_log_return": -0.005293643898390155,
+      "feature_date": "2012-11-22",
+      "target_date": "2012-11-23"
+    },
+    {
+      "feature_index": 754,
+      "target_index": 755,
+      "model": "sklearn",
+      "probabilities": [
+        0.038141429202144174,
+        0.520047374478989,
+        0.44181119631886695
+      ],
+      "actual_log_return": 0.002098476374477798,
+      "feature_date": "2012-11-23",
+      "target_date": "2012-11-26"
+    },
+    {
+      "feature_index": 755,
+      "target_index": 756,
+      "model": "sklearn",
+      "probabilities": [
+        0.0373343775994574,
+        0.47760446477055907,
+        0.4850611576299835
+      ],
+      "actual_log_return": -0.003070929606544759,
+      "feature_date": "2012-11-26",
+      "target_date": "2012-11-27"
+    },
+    {
+      "feature_index": 756,
+      "target_index": 757,
+      "model": "sklearn",
+      "probabilities": [
+        0.0371200878594704,
+        0.510988460274463,
+        0.4518914518660666
+      ],
+      "actual_log_return": 0.005692358396053976,
+      "feature_date": "2012-11-27",
+      "target_date": "2012-11-28"
+    },
+    {
+      "feature_index": 757,
+      "target_index": 758,
+      "model": "sklearn",
+      "probabilities": [
+        0.03829948988429257,
+        0.4575433916126916,
+        0.5041571185030158
+      ],
+      "actual_log_return": -0.0014069355103130121,
+      "feature_date": "2012-11-28",
+      "target_date": "2012-11-29"
+    },
+    {
+      "feature_index": 758,
+      "target_index": 759,
+      "model": "sklearn",
+      "probabilities": [
+        0.037853446922373676,
+        0.4994348882918399,
+        0.46271166478578646
+      ],
+      "actual_log_return": 0.004995641399697437,
+      "feature_date": "2012-11-29",
+      "target_date": "2012-11-30"
+    },
+    {
+      "feature_index": 759,
+      "target_index": 760,
+      "model": "sklearn",
+      "probabilities": [
+        0.03682210563685256,
+        0.46410671683529203,
+        0.4990711775278555
+      ],
+      "actual_log_return": 0.006321035672404385,
+      "feature_date": "2012-11-30",
+      "target_date": "2012-12-03"
+    },
+    {
+      "feature_index": 760,
+      "target_index": 761,
+      "model": "sklearn",
+      "probabilities": [
+        0.035657081402223054,
+        0.4568058030049239,
+        0.5075371155928531
+      ],
+      "actual_log_return": -0.0074235401114046695,
+      "feature_date": "2012-12-03",
+      "target_date": "2012-12-04"
+    },
+    {
+      "feature_index": 761,
+      "target_index": 762,
+      "model": "sklearn",
+      "probabilities": [
+        0.03819927742209363,
+        0.537280463056992,
+        0.4245202595209143
+      ],
+      "actual_log_return": -0.005783004285740301,
+      "feature_date": "2012-12-04",
+      "target_date": "2012-12-05"
+    },
+    {
+      "feature_index": 762,
+      "target_index": 763,
+      "model": "sklearn",
+      "probabilities": [
+        0.038658948913480276,
+        0.5262443570834562,
+        0.4350966940030635
+      ],
+      "actual_log_return": -0.017864131272927963,
+      "feature_date": "2012-12-05",
+      "target_date": "2012-12-06"
+    },
+    {
+      "feature_index": 763,
+      "target_index": 764,
+      "model": "sklearn",
+      "probabilities": [
+        0.044010787835348064,
+        0.5789977700304514,
+        0.3769914421342005
+      ],
+      "actual_log_return": -0.003381760378910137,
+      "feature_date": "2012-12-06",
+      "target_date": "2012-12-07"
+    },
+    {
+      "feature_index": 764,
+      "target_index": 765,
+      "model": "sklearn",
+      "probabilities": [
+        0.04618201438466853,
+        0.4995212390419728,
+        0.4542967465733587
+      ],
+      "actual_log_return": 0.03781209358327109,
+      "feature_date": "2012-12-07",
+      "target_date": "2012-12-10"
+    },
+    {
+      "feature_index": 765,
+      "target_index": 766,
+      "model": "sklearn",
+      "probabilities": [
+        0.048819965612778474,
+        0.2448604033057262,
+        0.7063196310814954
+      ],
+      "actual_log_return": 0.02829290151208763,
+      "feature_date": "2012-12-10",
+      "target_date": "2012-12-11"
+    },
+    {
+      "feature_index": 766,
+      "target_index": 767,
+      "model": "sklearn",
+      "probabilities": [
+        0.04686494779107087,
+        0.285096502134538,
+        0.6680385500743912
+      ],
+      "actual_log_return": -0.006297011414531539,
+      "feature_date": "2012-12-11",
+      "target_date": "2012-12-12"
+    },
+    {
+      "feature_index": 767,
+      "target_index": 768,
+      "model": "sklearn",
+      "probabilities": [
+        0.05103964969864389,
+        0.47104356947812365,
+        0.4779167808232324
+      ],
+      "actual_log_return": -0.07533774537853022,
+      "feature_date": "2012-12-12",
+      "target_date": "2012-12-13"
+    },
+    {
+      "feature_index": 768,
+      "target_index": 769,
+      "model": "sklearn",
+      "probabilities": [
+        0.08330498865533224,
+        0.7261112400956565,
+        0.19058377124901113
+      ],
+      "actual_log_return": 0.0006514419559717766,
+      "feature_date": "2012-12-13",
+      "target_date": "2012-12-14"
+    },
+    {
+      "feature_index": 769,
+      "target_index": 770,
+      "model": "sklearn",
+      "probabilities": [
+        0.10074785896607365,
+        0.3385626652163802,
+        0.5606894758175462
+      ],
+      "actual_log_return": -0.011345850662761059,
+      "feature_date": "2012-12-14",
+      "target_date": "2012-12-17"
+    },
+    {
+      "feature_index": 770,
+      "target_index": 771,
+      "model": "sklearn",
+      "probabilities": [
+        0.08398857535535605,
+        0.4178599104759379,
+        0.498151514168706
+      ],
+      "actual_log_return": -0.005580411782296402,
+      "feature_date": "2012-12-17",
+      "target_date": "2012-12-18"
+    },
+    {
+      "feature_index": 771,
+      "target_index": 772,
+      "model": "sklearn",
+      "probabilities": [
+        0.06733498717523966,
+        0.40444523789043213,
+        0.5282197749343283
+      ],
+      "actual_log_return": -0.007867473808574221,
+      "feature_date": "2012-12-18",
+      "target_date": "2012-12-19"
+    },
+    {
+      "feature_index": 772,
+      "target_index": 773,
+      "model": "sklearn",
+      "probabilities": [
+        0.06975357455064085,
+        0.41606249443805177,
+        0.5141839310113073
+      ],
+      "actual_log_return": -0.03421632625647941,
+      "feature_date": "2012-12-19",
+      "target_date": "2012-12-20"
+    },
+    {
+      "feature_index": 773,
+      "target_index": 774,
+      "model": "sklearn",
+      "probabilities": [
+        0.0393572538892702,
+        0.6148054729316702,
+        0.3458372731790597
+      ],
+      "actual_log_return": 0.02605352145697548,
+      "feature_date": "2012-12-20",
+      "target_date": "2012-12-21"
+    },
+    {
+      "feature_index": 774,
+      "target_index": 775,
+      "model": "sklearn",
+      "probabilities": [
+        0.04422782095506968,
+        0.2646623569318557,
+        0.6911098221130747
+      ],
+      "actual_log_return": -0.0036538420880041222,
+      "feature_date": "2012-12-21",
+      "target_date": "2012-12-24"
+    },
+    {
+      "feature_index": 775,
+      "target_index": 776,
+      "model": "sklearn",
+      "probabilities": [
+        0.04943151869865321,
+        0.41942690280772865,
+        0.5311415784936181
+      ],
+      "actual_log_return": 0.001580559273436144,
+      "feature_date": "2012-12-24",
+      "target_date": "2012-12-25"
+    },
+    {
+      "feature_index": 776,
+      "target_index": 777,
+      "model": "sklearn",
+      "probabilities": [
+        0.0488929086172131,
+        0.390243588684347,
+        0.5608635026984399
+      ],
+      "actual_log_return": -0.004309119228398384,
+      "feature_date": "2012-12-25",
+      "target_date": "2012-12-26"
+    },
+    {
+      "feature_index": 777,
+      "target_index": 778,
+      "model": "sklearn",
+      "probabilities": [
+        0.05105259573022181,
+        0.42305744744276647,
+        0.5258899568270118
+      ],
+      "actual_log_return": 0.0012609748602119275,
+      "feature_date": "2012-12-26",
+      "target_date": "2012-12-27"
+    },
+    {
+      "feature_index": 778,
+      "target_index": 779,
+      "model": "sklearn",
+      "probabilities": [
+        0.03723055874491577,
+        0.41788200787832613,
+        0.5448874333767582
+      ],
+      "actual_log_return": 0.00459493317201165,
+      "feature_date": "2012-12-27",
+      "target_date": "2012-12-28"
+    },
+    {
+      "feature_index": 779,
+      "target_index": 780,
+      "model": "sklearn",
+      "probabilities": [
+        0.026293919759406092,
+        0.42006018811396006,
+        0.5536458921266338
+      ],
+      "actual_log_return": -0.016688787426474505,
+      "feature_date": "2012-12-28",
+      "target_date": "2012-12-31"
+    },
+    {
+      "feature_index": 780,
+      "target_index": 781,
+      "model": "sklearn",
+      "probabilities": [
+        0.03376228301027736,
+        0.5294990710044931,
+        0.4367386459852296
+      ],
+      "actual_log_return": 0.002843645276765727,
+      "feature_date": "2012-12-31",
+      "target_date": "2013-01-01"
+    },
+    {
+      "feature_index": 781,
+      "target_index": 782,
+      "model": "sklearn",
+      "probabilities": [
+        0.03290549559440998,
+        0.41579540433652046,
+        0.5512991000690696
+      ],
+      "actual_log_return": -0.007343832056590394,
+      "feature_date": "2013-01-01",
+      "target_date": "2013-01-02"
+    },
+    {
+      "feature_index": 782,
+      "target_index": 783,
+      "model": "sklearn",
+      "probabilities": [
+        0.03382637200620049,
+        0.4736964173153478,
+        0.4924772106784518
+      ],
+      "actual_log_return": 0.0021164721949156196,
+      "feature_date": "2013-01-02",
+      "target_date": "2013-01-03"
+    },
+    {
+      "feature_index": 783,
+      "target_index": 784,
+      "model": "sklearn",
+      "probabilities": [
+        0.03204986786953782,
+        0.4201758546845924,
+        0.5477742774458698
+      ],
+      "actual_log_return": -0.004677232425124078,
+      "feature_date": "2013-01-03",
+      "target_date": "2013-01-04"
+    },
+    {
+      "feature_index": 784,
+      "target_index": 785,
+      "model": "sklearn",
+      "probabilities": [
+        0.031085627763054274,
+        0.46158000671381016,
+        0.5073343655231356
+      ],
+      "actual_log_return": -0.007787545179576583,
+      "feature_date": "2013-01-04",
+      "target_date": "2013-01-07"
+    },
+    {
+      "feature_index": 785,
+      "target_index": 786,
+      "model": "sklearn",
+      "probabilities": [
+        0.034817053042053916,
+        0.4904060681432355,
+        0.4747768788147105
+      ],
+      "actual_log_return": 0.003629566838682763,
+      "feature_date": "2013-01-07",
+      "target_date": "2013-01-08"
+    },
+    {
+      "feature_index": 786,
+      "target_index": 787,
+      "model": "sklearn",
+      "probabilities": [
+        0.0392943422171756,
+        0.42559896675885206,
+        0.5351066910239723
+      ],
+      "actual_log_return": -0.002330712095858889,
+      "feature_date": "2013-01-08",
+      "target_date": "2013-01-09"
+    },
+    {
+      "feature_index": 787,
+      "target_index": 788,
+      "model": "sklearn",
+      "probabilities": [
+        0.0383104827625948,
+        0.46214230874704915,
+        0.49954720849035616
+      ],
+      "actual_log_return": -0.012343090299414161,
+      "feature_date": "2013-01-09",
+      "target_date": "2013-01-10"
+    },
+    {
+      "feature_index": 788,
+      "target_index": 789,
+      "model": "sklearn",
+      "probabilities": [
+        0.04421751373636663,
+        0.5400773751400889,
+        0.41570511112354447
+      ],
+      "actual_log_return": -0.023525911147685097,
+      "feature_date": "2013-01-10",
+      "target_date": "2013-01-11"
+    },
+    {
+      "feature_index": 789,
+      "target_index": 790,
+      "model": "sklearn",
+      "probabilities": [
+        0.05377272215463244,
+        0.5837960664896508,
+        0.36243121135571676
+      ],
+      "actual_log_return": -0.0002168189601641224,
+      "feature_date": "2013-01-11",
+      "target_date": "2013-01-14"
+    },
+    {
+      "feature_index": 790,
+      "target_index": 791,
+      "model": "sklearn",
+      "probabilities": [
+        0.055641391520247226,
+        0.45078365593923175,
+        0.4935749525405211
+      ],
+      "actual_log_return": 0.004878062769310798,
+      "feature_date": "2013-01-14",
+      "target_date": "2013-01-15"
+    },
+    {
+      "feature_index": 791,
+      "target_index": 792,
+      "model": "sklearn",
+      "probabilities": [
+        0.05391054411303385,
+        0.42173774160194766,
+        0.5243517142850185
+      ],
+      "actual_log_return": -0.012084554847891837,
+      "feature_date": "2013-01-15",
+      "target_date": "2013-01-16"
+    },
+    {
+      "feature_index": 792,
+      "target_index": 793,
+      "model": "sklearn",
+      "probabilities": [
+        0.05434655403758137,
+        0.5174343958974476,
+        0.42821905006497113
+      ],
+      "actual_log_return": 0.006109543531622297,
+      "feature_date": "2013-01-16",
+      "target_date": "2013-01-17"
+    },
+    {
+      "feature_index": 793,
+      "target_index": 794,
+      "model": "sklearn",
+      "probabilities": [
+        0.055376056532006966,
+        0.4184583748241965,
+        0.5261655686437966
+      ],
+      "actual_log_return": 0.0011062748176136061,
+      "feature_date": "2013-01-17",
+      "target_date": "2013-01-18"
+    },
+    {
+      "feature_index": 794,
+      "target_index": 795,
+      "model": "sklearn",
+      "probabilities": [
+        0.05379195367816659,
+        0.46719936339713314,
+        0.4790086829247004
+      ],
+      "actual_log_return": 0.0015088184697611418,
+      "feature_date": "2013-01-18",
+      "target_date": "2013-01-21"
+    },
+    {
+      "feature_index": 795,
+      "target_index": 796,
+      "model": "sklearn",
+      "probabilities": [
+        0.0529229911372468,
+        0.46525357428133635,
+        0.4818234345814168
+      ],
+      "actual_log_return": -0.013463023332287438,
+      "feature_date": "2013-01-21",
+      "target_date": "2013-01-22"
+    },
+    {
+      "feature_index": 796,
+      "target_index": 797,
+      "model": "sklearn",
+      "probabilities": [
+        0.05728084942042825,
+        0.5425045743063045,
+        0.40021457627326734
+      ],
+      "actual_log_return": -0.001299483821510794,
+      "feature_date": "2013-01-22",
+      "target_date": "2013-01-23"
+    },
+    {
+      "feature_index": 797,
+      "target_index": 798,
+      "model": "sklearn",
+      "probabilities": [
+        0.05489412828604497,
+        0.478473074935524,
+        0.4666327967784311
+      ],
+      "actual_log_return": -0.0038052975309712522,
+      "feature_date": "2013-01-23",
+      "target_date": "2013-01-24"
+    },
+    {
+      "feature_index": 798,
+      "target_index": 799,
+      "model": "sklearn",
+      "probabilities": [
+        0.05314053215306268,
+        0.49570985148026153,
+        0.45114961636667567
+      ],
+      "actual_log_return": 0.007983831235204075,
+      "feature_date": "2013-01-24",
+      "target_date": "2013-01-25"
+    },
+    {
+      "feature_index": 799,
+      "target_index": 800,
+      "model": "sklearn",
+      "probabilities": [
+        0.05527977944132639,
+        0.4236976163146214,
+        0.5210226042440522
+      ],
+      "actual_log_return": -0.00893636773795814,
+      "feature_date": "2013-01-25",
+      "target_date": "2013-01-28"
+    },
+    {
+      "feature_index": 800,
+      "target_index": 801,
+      "model": "sklearn",
+      "probabilities": [
+        0.05539260886053831,
+        0.5203685123674049,
+        0.42423887877205685
+      ],
+      "actual_log_return": 0.0010021598583072056,
+      "feature_date": "2013-01-28",
+      "target_date": "2013-01-29"
+    },
+    {
+      "feature_index": 801,
+      "target_index": 802,
+      "model": "sklearn",
+      "probabilities": [
+        0.052967828250477994,
+        0.46984557164197865,
+        0.4771866001075434
+      ],
+      "actual_log_return": 0.0027267017575858254,
+      "feature_date": "2013-01-29",
+      "target_date": "2013-01-30"
+    },
+    {
+      "feature_index": 802,
+      "target_index": 803,
+      "model": "sklearn",
+      "probabilities": [
+        0.05177827454478361,
+        0.4603843384256631,
+        0.4878373870295532
+      ],
+      "actual_log_return": -0.0014662018241997643,
+      "feature_date": "2013-01-30",
+      "target_date": "2013-01-31"
+    },
+    {
+      "feature_index": 803,
+      "target_index": 804,
+      "model": "sklearn",
+      "probabilities": [
+        0.05208311020210878,
+        0.4851556551520156,
+        0.46276123464587565
+      ],
+      "actual_log_return": -0.006662026591295778,
+      "feature_date": "2013-01-31",
+      "target_date": "2013-02-01"
+    },
+    {
+      "feature_index": 804,
+      "target_index": 805,
+      "model": "sklearn",
+      "probabilities": [
+        0.049645426549408726,
+        0.5175285757179404,
+        0.4328259977326509
+      ],
+      "actual_log_return": -0.008122501589295616,
+      "feature_date": "2013-02-01",
+      "target_date": "2013-02-04"
+    },
+    {
+      "feature_index": 805,
+      "target_index": 806,
+      "model": "sklearn",
+      "probabilities": [
+        0.04963367934037918,
+        0.5262690817079169,
+        0.424097238951704
+      ],
+      "actual_log_return": 0.007221631549112928,
+      "feature_date": "2013-02-04",
+      "target_date": "2013-02-05"
+    },
+    {
+      "feature_index": 806,
+      "target_index": 807,
+      "model": "sklearn",
+      "probabilities": [
+        0.052047826377143246,
+        0.43355896875113087,
+        0.5143932048717259
+      ],
+      "actual_log_return": 0.006594917525906574,
+      "feature_date": "2013-02-05",
+      "target_date": "2013-02-06"
+    },
+    {
+      "feature_index": 807,
+      "target_index": 808,
+      "model": "sklearn",
+      "probabilities": [
+        0.0514843501437967,
+        0.4354186145881532,
+        0.5130970352680501
+      ],
+      "actual_log_return": -0.001093032658405324,
+      "feature_date": "2013-02-06",
+      "target_date": "2013-02-07"
+    },
+    {
+      "feature_index": 808,
+      "target_index": 809,
+      "model": "sklearn",
+      "probabilities": [
+        0.05050674873832692,
+        0.48123271841896675,
+        0.4682605328427064
+      ],
+      "actual_log_return": 0.0016718864857532267,
+      "feature_date": "2013-02-07",
+      "target_date": "2013-02-08"
+    },
+    {
+      "feature_index": 809,
+      "target_index": 810,
+      "model": "sklearn",
+      "probabilities": [
+        0.048527912683269725,
+        0.47459478757090295,
+        0.47687729974582743
+      ],
+      "actual_log_return": 0.008410311282899041,
+      "feature_date": "2013-02-08",
+      "target_date": "2013-02-11"
+    },
+    {
+      "feature_index": 810,
+      "target_index": 811,
+      "model": "sklearn",
+      "probabilities": [
+        0.04322680840881779,
+        0.44314193624095916,
+        0.513631255350223
+      ],
+      "actual_log_return": 0.005049635140377706,
+      "feature_date": "2013-02-11",
+      "target_date": "2013-02-12"
+    },
+    {
+      "feature_index": 811,
+      "target_index": 812,
+      "model": "sklearn",
+      "probabilities": [
+        0.04250431711628159,
+        0.46335146835208013,
+        0.4941442145316383
+      ],
+      "actual_log_return": -0.0030115865226152394,
+      "feature_date": "2013-02-12",
+      "target_date": "2013-02-13"
+    },
+    {
+      "feature_index": 812,
+      "target_index": 813,
+      "model": "sklearn",
+      "probabilities": [
+        0.04313605812051587,
+        0.5093400694479852,
+        0.447523872431499
+      ],
+      "actual_log_return": -0.0026397392796040364,
+      "feature_date": "2013-02-13",
+      "target_date": "2013-02-14"
+    },
+    {
+      "feature_index": 813,
+      "target_index": 814,
+      "model": "sklearn",
+      "probabilities": [
+        0.04507044289798484,
+        0.5056647816368964,
+        0.44926477546511867
+      ],
+      "actual_log_return": 0.015405340636689857,
+      "feature_date": "2013-02-14",
+      "target_date": "2013-02-15"
+    },
+    {
+      "feature_index": 814,
+      "target_index": 815,
+      "model": "sklearn",
+      "probabilities": [
+        0.045802914608478996,
+        0.39427009247619277,
+        0.5599269929153282
+      ],
+      "actual_log_return": 0.0004749662240213226,
+      "feature_date": "2013-02-15",
+      "target_date": "2013-02-18"
+    },
+    {
+      "feature_index": 815,
+      "target_index": 816,
+      "model": "sklearn",
+      "probabilities": [
+        0.045828815677595246,
+        0.4795762773232385,
+        0.47459490699916634
+      ],
+      "actual_log_return": -0.001038629598505647,
+      "feature_date": "2013-02-18",
+      "target_date": "2013-02-19"
+    },
+    {
+      "feature_index": 816,
+      "target_index": 817,
+      "model": "sklearn",
+      "probabilities": [
+        0.0454182994408499,
+        0.49060787921450827,
+        0.4639738213446417
+      ],
+      "actual_log_return": -0.00039426313849100225,
+      "feature_date": "2013-02-19",
+      "target_date": "2013-02-20"
+    },
+    {
+      "feature_index": 817,
+      "target_index": 818,
+      "model": "sklearn",
+      "probabilities": [
+        0.04489897962275761,
+        0.4880549100026536,
+        0.4670461103745888
+      ],
+      "actual_log_return": 0.005160359275083515,
+      "feature_date": "2013-02-20",
+      "target_date": "2013-02-21"
+    },
+    {
+      "feature_index": 818,
+      "target_index": 819,
+      "model": "sklearn",
+      "probabilities": [
+        0.0430280058125379,
+        0.4587456918878348,
+        0.49822630229962717
+      ],
+      "actual_log_return": 0.029240177093992514,
+      "feature_date": "2013-02-21",
+      "target_date": "2013-02-22"
+    },
+    {
+      "feature_index": 819,
+      "target_index": 820,
+      "model": "sklearn",
+      "probabilities": [
+        0.04267128573193629,
+        0.308363112546961,
+        0.6489656017211027
+      ],
+      "actual_log_return": -0.015619583212841182,
+      "feature_date": "2013-02-22",
+      "target_date": "2013-02-25"
+    },
+    {
+      "feature_index": 820,
+      "target_index": 821,
+      "model": "sklearn",
+      "probabilities": [
+        0.05084855962277482,
+        0.5452331784508815,
+        0.4039182619263437
+      ],
+      "actual_log_return": -0.004529871897656523,
+      "feature_date": "2013-02-25",
+      "target_date": "2013-02-26"
+    },
+    {
+      "feature_index": 821,
+      "target_index": 822,
+      "model": "sklearn",
+      "probabilities": [
+        0.052954601504227025,
+        0.47947002696586094,
+        0.467575371529912
+      ],
+      "actual_log_return": -0.06609933390297007,
+      "feature_date": "2013-02-26",
+      "target_date": "2013-02-27"
+    },
+    {
+      "feature_index": 822,
+      "target_index": 823,
+      "model": "sklearn",
+      "probabilities": [
+        0.08156407939622498,
+        0.7087725226132484,
+        0.20966339799052663
+      ],
+      "actual_log_return": 0.013209448767736554,
+      "feature_date": "2013-02-27",
+      "target_date": "2013-02-28"
+    },
+    {
+      "feature_index": 823,
+      "target_index": 824,
+      "model": "sklearn",
+      "probabilities": [
+        0.09077855578649399,
+        0.2988167534494993,
+        0.6104046907640067
+      ],
+      "actual_log_return": -0.03247510287938926,
+      "feature_date": "2013-02-28",
+      "target_date": "2013-03-01"
+    },
+    {
+      "feature_index": 824,
+      "target_index": 825,
+      "model": "sklearn",
+      "probabilities": [
+        0.07628594131629969,
+        0.5549785440666147,
+        0.36873551461708565
+      ],
+      "actual_log_return": -0.0005769868314806637,
+      "feature_date": "2013-03-01",
+      "target_date": "2013-03-04"
+    },
+    {
+      "feature_index": 825,
+      "target_index": 826,
+      "model": "sklearn",
+      "probabilities": [
+        0.08069294842626622,
+        0.3752405613534016,
+        0.5440664902203322
+      ],
+      "actual_log_return": 0.0032786438600700407,
+      "feature_date": "2013-03-04",
+      "target_date": "2013-03-05"
+    },
+    {
+      "feature_index": 826,
+      "target_index": 827,
+      "model": "sklearn",
+      "probabilities": [
+        0.08360994556437663,
+        0.35239048671946827,
+        0.5639995677161551
+      ],
+      "actual_log_return": 0.0020973944701001557,
+      "feature_date": "2013-03-05",
+      "target_date": "2013-03-06"
+    },
+    {
+      "feature_index": 827,
+      "target_index": 828,
+      "model": "sklearn",
+      "probabilities": [
+        0.04746187440692486,
+        0.40884713683756546,
+        0.5436909887555098
+      ],
+      "actual_log_return": -0.011371963279588115,
+      "feature_date": "2013-03-06",
+      "target_date": "2013-03-07"
+    },
+    {
+      "feature_index": 828,
+      "target_index": 829,
+      "model": "sklearn",
+      "probabilities": [
+        0.04464310917318751,
+        0.49021510634219717,
+        0.4651417844846153
+      ],
+      "actual_log_return": 0.004168633199146843,
+      "feature_date": "2013-03-07",
+      "target_date": "2013-03-08"
+    },
+    {
+      "feature_index": 829,
+      "target_index": 830,
+      "model": "sklearn",
+      "probabilities": [
+        0.032308614084912396,
+        0.42633623067653326,
+        0.5413551552385544
+      ],
+      "actual_log_return": 0.006580797986464049,
+      "feature_date": "2013-03-08",
+      "target_date": "2013-03-11"
+    },
+    {
+      "feature_index": 830,
+      "target_index": 831,
+      "model": "sklearn",
+      "probabilities": [
+        0.03297789773683792,
+        0.4114347535530307,
+        0.5555873487101314
+      ],
+      "actual_log_return": 0.007975384069169422,
+      "feature_date": "2013-03-11",
+      "target_date": "2013-03-12"
+    },
+    {
+      "feature_index": 831,
+      "target_index": 832,
+      "model": "sklearn",
+      "probabilities": [
+        0.03277591186992907,
+        0.40258125112720317,
+        0.5646428370028678
+      ],
+      "actual_log_return": 0.008642565540442515,
+      "feature_date": "2013-03-12",
+      "target_date": "2013-03-13"
+    },
+    {
+      "feature_index": 832,
+      "target_index": 833,
+      "model": "sklearn",
+      "probabilities": [
+        0.031597064923588186,
+        0.3985157657658488,
+        0.5698871693105629
+      ],
+      "actual_log_return": -0.0037973076630040126,
+      "feature_date": "2013-03-13",
+      "target_date": "2013-03-14"
+    },
+    {
+      "feature_index": 833,
+      "target_index": 834,
+      "model": "sklearn",
+      "probabilities": [
+        0.028658480285434863,
+        0.4793573638156962,
+        0.49198415589886885
+      ],
+      "actual_log_return": 0.00901451125364261,
+      "feature_date": "2013-03-14",
+      "target_date": "2013-03-15"
+    },
+    {
+      "feature_index": 834,
+      "target_index": 835,
+      "model": "sklearn",
+      "probabilities": [
+        0.029246726312195118,
+        0.4049033396988214,
+        0.5658499339889835
+      ],
+      "actual_log_return": 0.023004656154537173,
+      "feature_date": "2013-03-15",
+      "target_date": "2013-03-18"
+    },
+    {
+      "feature_index": 835,
+      "target_index": 836,
+      "model": "sklearn",
+      "probabilities": [
+        0.029257377956424708,
+        0.3194422190375226,
+        0.6513004030060527
+      ],
+      "actual_log_return": 0.0025318732332153537,
+      "feature_date": "2013-03-18",
+      "target_date": "2013-03-19"
+    },
+    {
+      "feature_index": 836,
+      "target_index": 837,
+      "model": "sklearn",
+      "probabilities": [
+        0.03061938650300271,
+        0.43133693753954516,
+        0.5380436759574522
+      ],
+      "actual_log_return": 0.00952155023332013,
+      "feature_date": "2013-03-19",
+      "target_date": "2013-03-20"
+    },
+    {
+      "feature_index": 837,
+      "target_index": 838,
+      "model": "sklearn",
+      "probabilities": [
+        0.02897654845096632,
+        0.3918043723177997,
+        0.5792190792312341
+      ],
+      "actual_log_return": 0.002803700505679796,
+      "feature_date": "2013-03-20",
+      "target_date": "2013-03-21"
+    },
+    {
+      "feature_index": 838,
+      "target_index": 839,
+      "model": "sklearn",
+      "probabilities": [
+        0.027746825346068416,
+        0.43494702096098864,
+        0.5373061536929429
+      ],
+      "actual_log_return": -0.007355004197028947,
+      "feature_date": "2013-03-21",
+      "target_date": "2013-03-22"
+    },
+    {
+      "feature_index": 839,
+      "target_index": 840,
+      "model": "sklearn",
+      "probabilities": [
+        0.035108224099578915,
+        0.4870827358085411,
+        0.47780904009188
+      ],
+      "actual_log_return": -0.01149325772301868,
+      "feature_date": "2013-03-22",
+      "target_date": "2013-03-25"
+    },
+    {
+      "feature_index": 840,
+      "target_index": 841,
+      "model": "sklearn",
+      "probabilities": [
+        0.031096196624209118,
+        0.5170063509421172,
+        0.4518974524336737
+      ],
+      "actual_log_return": 0.0034932291958926776,
+      "feature_date": "2013-03-25",
+      "target_date": "2013-03-26"
+    },
+    {
+      "feature_index": 841,
+      "target_index": 842,
+      "model": "sklearn",
+      "probabilities": [
+        0.03015020674156114,
+        0.4297116279492902,
+        0.5401381653091487
+      ],
+      "actual_log_return": -0.0081727102714102,
+      "feature_date": "2013-03-26",
+      "target_date": "2013-03-27"
+    },
+    {
+      "feature_index": 842,
+      "target_index": 843,
+      "model": "sklearn",
+      "probabilities": [
+        0.03072445951939976,
+        0.5243055716102705,
+        0.4449699688703298
+      ],
+      "actual_log_return": -0.004268134466643758,
+      "feature_date": "2013-03-27",
+      "target_date": "2013-03-28"
+    },
+    {
+      "feature_index": 843,
+      "target_index": 844,
+      "model": "sklearn",
+      "probabilities": [
+        0.031185694411674986,
+        0.5038493899077517,
+        0.4649649156805733
+      ],
+      "actual_log_return": -0.00022048825812825967,
+      "feature_date": "2013-03-28",
+      "target_date": "2013-03-29"
+    },
+    {
+      "feature_index": 844,
+      "target_index": 845,
+      "model": "sklearn",
+      "probabilities": [
+        0.03207875588718571,
+        0.4895893125639343,
+        0.47833193154888004
+      ],
+      "actual_log_return": 0.011398107587334838,
+      "feature_date": "2013-03-29",
+      "target_date": "2013-04-01"
+    },
+    {
+      "feature_index": 845,
+      "target_index": 846,
+      "model": "sklearn",
+      "probabilities": [
+        0.03240386473457784,
+        0.4196326898221924,
+        0.5479634454432297
+      ],
+      "actual_log_return": 0.012961579090318143,
+      "feature_date": "2013-04-01",
+      "target_date": "2013-04-02"
+    },
+    {
+      "feature_index": 846,
+      "target_index": 847,
+      "model": "sklearn",
+      "probabilities": [
+        0.032977046569467136,
+        0.4065232654300032,
+        0.5604996880005296
+      ],
+      "actual_log_return": 0.004227857831053061,
+      "feature_date": "2013-04-02",
+      "target_date": "2013-04-03"
+    },
+    {
+      "feature_index": 847,
+      "target_index": 848,
+      "model": "sklearn",
+      "probabilities": [
+        0.03069897709950982,
+        0.46340167280237415,
+        0.505899350098116
+      ],
+      "actual_log_return": 0.011076923954870477,
+      "feature_date": "2013-04-03",
+      "target_date": "2013-04-04"
+    },
+    {
+      "feature_index": 848,
+      "target_index": 849,
+      "model": "sklearn",
+      "probabilities": [
+        0.027226810103776426,
+        0.4318038788875279,
+        0.5409693110086956
+      ],
+      "actual_log_return": -0.0011692398240605861,
+      "feature_date": "2013-04-04",
+      "target_date": "2013-04-05"
+    },
+    {
+      "feature_index": 849,
+      "target_index": 850,
+      "model": "sklearn",
+      "probabilities": [
+        0.0279952078042239,
+        0.5022227035777667,
+        0.46978208861800935
+      ],
+      "actual_log_return": -0.00036693233333551234,
+      "feature_date": "2013-04-05",
+      "target_date": "2013-04-08"
+    },
+    {
+      "feature_index": 850,
+      "target_index": 851,
+      "model": "sklearn",
+      "probabilities": [
+        0.02883190268922032,
+        0.4950669484926946,
+        0.4761011488180851
+      ],
+      "actual_log_return": -0.0014723695224527766,
+      "feature_date": "2013-04-08",
+      "target_date": "2013-04-09"
+    },
+    {
+      "feature_index": 851,
+      "target_index": 852,
+      "model": "sklearn",
+      "probabilities": [
+        0.02813290868206137,
+        0.5031263259789133,
+        0.46874076533902537
+      ],
+      "actual_log_return": -0.004040785058860852,
+      "feature_date": "2013-04-09",
+      "target_date": "2013-04-10"
+    },
+    {
+      "feature_index": 852,
+      "target_index": 853,
+      "model": "sklearn",
+      "probabilities": [
+        0.029699970884867255,
+        0.515247625096107,
+        0.4550524040190258
+      ],
+      "actual_log_return": 0.004532116478146442,
+      "feature_date": "2013-04-10",
+      "target_date": "2013-04-11"
+    },
+    {
+      "feature_index": 853,
+      "target_index": 854,
+      "model": "sklearn",
+      "probabilities": [
+        0.02604826143152846,
+        0.4726030288004229,
+        0.5013487097680486
+      ],
+      "actual_log_return": 0.007825187688450086,
+      "feature_date": "2013-04-11",
+      "target_date": "2013-04-12"
+    },
+    {
+      "feature_index": 854,
+      "target_index": 855,
+      "model": "sklearn",
+      "probabilities": [
+        0.027691437817850415,
+        0.4498290898531782,
+        0.5224794723289713
+      ],
+      "actual_log_return": 0.014668207023670998,
+      "feature_date": "2013-04-12",
+      "target_date": "2013-04-15"
+    },
+    {
+      "feature_index": 855,
+      "target_index": 856,
+      "model": "sklearn",
+      "probabilities": [
+        0.03174563945767405,
+        0.4068290158922664,
+        0.5614253446500596
+      ],
+      "actual_log_return": -0.027676863608109947,
+      "feature_date": "2013-04-15",
+      "target_date": "2013-04-16"
+    },
+    {
+      "feature_index": 856,
+      "target_index": 857,
+      "model": "sklearn",
+      "probabilities": [
+        0.04327467811282038,
+        0.6137666033213575,
+        0.3429587185658222
+      ],
+      "actual_log_return": 0.011402960810921847,
+      "feature_date": "2013-04-16",
+      "target_date": "2013-04-17"
+    },
+    {
+      "feature_index": 857,
+      "target_index": 858,
+      "model": "sklearn",
+      "probabilities": [
+        0.04546396781473786,
+        0.390476943982323,
+        0.5640590882029392
+      ],
+      "actual_log_return": 0.009154644971172132,
+      "feature_date": "2013-04-17",
+      "target_date": "2013-04-18"
+    },
+    {
+      "feature_index": 858,
+      "target_index": 859,
+      "model": "sklearn",
+      "probabilities": [
+        0.044579533017955,
+        0.4029976951532779,
+        0.5524227718287671
+      ],
+      "actual_log_return": -0.006301622320841194,
+      "feature_date": "2013-04-18",
+      "target_date": "2013-04-19"
+    },
+    {
+      "feature_index": 859,
+      "target_index": 860,
+      "model": "sklearn",
+      "probabilities": [
+        0.045054375219774144,
+        0.4903820318854526,
+        0.46456359289477334
+      ],
+      "actual_log_return": 0.023230607317249685,
+      "feature_date": "2013-04-19",
+      "target_date": "2013-04-22"
+    },
+    {
+      "feature_index": 860,
+      "target_index": 861,
+      "model": "sklearn",
+      "probabilities": [
+        0.040101104893375206,
+        0.322416789596649,
+        0.6374821055099759
+      ],
+      "actual_log_return": 0.028711957344361938,
+      "feature_date": "2013-04-22",
+      "target_date": "2013-04-23"
+    },
+    {
+      "feature_index": 861,
+      "target_index": 862,
+      "model": "sklearn",
+      "probabilities": [
+        0.029236295310413545,
+        0.30855082652697124,
+        0.6622128781626152
+      ],
+      "actual_log_return": 0.03815197728431041,
+      "feature_date": "2013-04-23",
+      "target_date": "2013-04-24"
+    },
+    {
+      "feature_index": 862,
+      "target_index": 863,
+      "model": "sklearn",
+      "probabilities": [
+        0.026906375432454072,
+        0.25448409800450855,
+        0.7186095265630373
+      ],
+      "actual_log_return": -0.00028086403069593757,
+      "feature_date": "2013-04-24",
+      "target_date": "2013-04-25"
+    },
+    {
+      "feature_index": 863,
+      "target_index": 864,
+      "model": "sklearn",
+      "probabilities": [
+        0.031601299494094244,
+        0.4548443311490181,
+        0.5135543693568876
+      ],
+      "actual_log_return": -0.00338588522266825,
+      "feature_date": "2013-04-25",
+      "target_date": "2013-04-26"
+    },
+    {
+      "feature_index": 864,
+      "target_index": 865,
+      "model": "sklearn",
+      "probabilities": [
+        0.03102223796834058,
+        0.4748637031406306,
+        0.4941140588910289
+      ],
+      "actual_log_return": -0.0007707952432767229,
+      "feature_date": "2013-04-26",
+      "target_date": "2013-04-29"
+    },
+    {
+      "feature_index": 865,
+      "target_index": 866,
+      "model": "sklearn",
+      "probabilities": [
+        0.03292566497975671,
+        0.45420220390232474,
+        0.5128721311179186
+      ],
+      "actual_log_return": 0.008916235586733823,
+      "feature_date": "2013-04-29",
+      "target_date": "2013-04-30"
+    },
+    {
+      "feature_index": 866,
+      "target_index": 867,
+      "model": "sklearn",
+      "probabilities": [
+        0.029787407413116057,
+        0.4030783490490566,
+        0.5671342435378274
+      ],
+      "actual_log_return": 0.013339216723054825,
+      "feature_date": "2013-04-30",
+      "target_date": "2013-05-01"
+    },
+    {
+      "feature_index": 867,
+      "target_index": 868,
+      "model": "sklearn",
+      "probabilities": [
+        0.01943526336811312,
+        0.4007337233395423,
+        0.5798310132923447
+      ],
+      "actual_log_return": -0.002740360992005808,
+      "feature_date": "2013-05-01",
+      "target_date": "2013-05-02"
+    },
+    {
+      "feature_index": 868,
+      "target_index": 869,
+      "model": "sklearn",
+      "probabilities": [
+        0.020747091626940824,
+        0.4930410977646801,
+        0.48621181060837915
+      ],
+      "actual_log_return": 0.00639178383506156,
+      "feature_date": "2013-05-02",
+      "target_date": "2013-05-03"
+    },
+    {
+      "feature_index": 869,
+      "target_index": 870,
+      "model": "sklearn",
+      "probabilities": [
+        0.0197317758924186,
+        0.442420792927982,
+        0.5378474311795994
+      ],
+      "actual_log_return": 0.003196552999926716,
+      "feature_date": "2013-05-03",
+      "target_date": "2013-05-06"
+    },
+    {
+      "feature_index": 870,
+      "target_index": 871,
+      "model": "sklearn",
+      "probabilities": [
+        0.019187723217164245,
+        0.46346581336491305,
+        0.5173464634179227
+      ],
+      "actual_log_return": -0.004629101871496566,
+      "feature_date": "2013-05-06",
+      "target_date": "2013-05-07"
+    },
+    {
+      "feature_index": 871,
+      "target_index": 872,
+      "model": "sklearn",
+      "probabilities": [
+        0.020083851002092663,
+        0.5055736547029126,
+        0.47434249429499475
+      ],
+      "actual_log_return": -0.010073723121199585,
+      "feature_date": "2013-05-07",
+      "target_date": "2013-05-08"
+    },
+    {
+      "feature_index": 872,
+      "target_index": 873,
+      "model": "sklearn",
+      "probabilities": [
+        0.019527768084225534,
+        0.5368235458619074,
+        0.44364868605386704
+      ],
+      "actual_log_return": 0.002267804722869471,
+      "feature_date": "2013-05-08",
+      "target_date": "2013-05-09"
+    },
+    {
+      "feature_index": 873,
+      "target_index": 874,
+      "model": "sklearn",
+      "probabilities": [
+        0.019911846783440455,
+        0.46339688351813496,
+        0.5166912696984246
+      ],
+      "actual_log_return": 0.008452586173142596,
+      "feature_date": "2013-05-09",
+      "target_date": "2013-05-10"
+    },
+    {
+      "feature_index": 874,
+      "target_index": 875,
+      "model": "sklearn",
+      "probabilities": [
+        0.019982268211920822,
+        0.42602752703143426,
+        0.553990204756645
+      ],
+      "actual_log_return": -0.0022576360080832636,
+      "feature_date": "2013-05-10",
+      "target_date": "2013-05-13"
+    },
+    {
+      "feature_index": 875,
+      "target_index": 876,
+      "model": "sklearn",
+      "probabilities": [
+        0.020935287475149354,
+        0.4887868570500013,
+        0.49027785547484937
+      ],
+      "actual_log_return": -0.0005376077543410851,
+      "feature_date": "2013-05-13",
+      "target_date": "2013-05-14"
+    },
+    {
+      "feature_index": 876,
+      "target_index": 877,
+      "model": "sklearn",
+      "probabilities": [
+        0.020707085941789133,
+        0.4866991698514381,
+        0.49259374420677265
+      ],
+      "actual_log_return": -0.04305868910015054,
+      "feature_date": "2013-05-14",
+      "target_date": "2013-05-15"
+    },
+    {
+      "feature_index": 877,
+      "target_index": 878,
+      "model": "sklearn",
+      "probabilities": [
+        0.03339816472812501,
+        0.6729753264235266,
+        0.29362650884834846
+      ],
+      "actual_log_return": 0.00013564723040149218,
+      "feature_date": "2013-05-15",
+      "target_date": "2013-05-16"
+    },
+    {
+      "feature_index": 878,
+      "target_index": 879,
+      "model": "sklearn",
+      "probabilities": [
+        0.03717386648028043,
+        0.42940997212054116,
+        0.5334161613991785
+      ],
+      "actual_log_return": -0.008754132313285368,
+      "feature_date": "2013-05-16",
+      "target_date": "2013-05-17"
+    },
+    {
+      "feature_index": 879,
+      "target_index": 880,
+      "model": "sklearn",
+      "probabilities": [
+        0.034729711422850904,
+        0.4848968594203218,
+        0.48037342915682735
+      ],
+      "actual_log_return": -0.010125154684096138,
+      "feature_date": "2013-05-17",
+      "target_date": "2013-05-20"
+    },
+    {
+      "feature_index": 880,
+      "target_index": 881,
+      "model": "sklearn",
+      "probabilities": [
+        0.03827532990230732,
+        0.4926325344965943,
+        0.46909213560109847
+      ],
+      "actual_log_return": -0.0045579553568053655,
+      "feature_date": "2013-05-20",
+      "target_date": "2013-05-21"
+    },
+    {
+      "feature_index": 881,
+      "target_index": 882,
+      "model": "sklearn",
+      "probabilities": [
+        0.04327813677397453,
+        0.462326597208297,
+        0.49439526601772854
+      ],
+      "actual_log_return": -0.015548762072359779,
+      "feature_date": "2013-05-21",
+      "target_date": "2013-05-22"
+    },
+    {
+      "feature_index": 882,
+      "target_index": 883,
+      "model": "sklearn",
+      "probabilities": [
+        0.03748388993625611,
+        0.5614241328567214,
+        0.4010919772070225
+      ],
+      "actual_log_return": -0.004280026136748827,
+      "feature_date": "2013-05-22",
+      "target_date": "2013-05-23"
+    },
+    {
+      "feature_index": 883,
+      "target_index": 884,
+      "model": "sklearn",
+      "probabilities": [
+        0.03687529724356461,
+        0.49902289143386597,
+        0.4641018113225694
+      ],
+      "actual_log_return": 0.012875780997356756,
+      "feature_date": "2013-05-23",
+      "target_date": "2013-05-24"
+    },
+    {
+      "feature_index": 884,
+      "target_index": 885,
+      "model": "sklearn",
+      "probabilities": [
+        0.042652298216062604,
+        0.38536482953363094,
+        0.5719828722503064
+      ],
+      "actual_log_return": 0.025587987408087542,
+      "feature_date": "2013-05-24",
+      "target_date": "2013-05-27"
+    },
+    {
+      "feature_index": 885,
+      "target_index": 886,
+      "model": "sklearn",
+      "probabilities": [
+        0.04383971822429789,
+        0.30508039682784494,
+        0.6510798849478571
+      ],
+      "actual_log_return": -0.02949991753805925,
+      "feature_date": "2013-05-27",
+      "target_date": "2013-05-28"
+    },
+    {
+      "feature_index": 886,
+      "target_index": 887,
+      "model": "sklearn",
+      "probabilities": [
+        0.0602872607956579,
+        0.5854131527049682,
+        0.3542995864993739
+      ],
+      "actual_log_return": -0.016298382055648375,
+      "feature_date": "2013-05-28",
+      "target_date": "2013-05-29"
+    },
+    {
+      "feature_index": 887,
+      "target_index": 888,
+      "model": "sklearn",
+      "probabilities": [
+        0.06974098804004383,
+        0.5070831140341642,
+        0.423175897925792
+      ],
+      "actual_log_return": -0.010838588026794937,
+      "feature_date": "2013-05-29",
+      "target_date": "2013-05-30"
+    },
+    {
+      "feature_index": 888,
+      "target_index": 889,
+      "model": "sklearn",
+      "probabilities": [
+        0.0731449204003275,
+        0.4730756527214817,
+        0.45377942687819084
+      ],
+      "actual_log_return": 0.004823784533585673,
+      "feature_date": "2013-05-30",
+      "target_date": "2013-05-31"
+    },
+    {
+      "feature_index": 889,
+      "target_index": 890,
+      "model": "sklearn",
+      "probabilities": [
+        0.06909415030237914,
+        0.3896146188735188,
+        0.541291230824102
+      ],
+      "actual_log_return": 0.021435897212962907,
+      "feature_date": "2013-05-31",
+      "target_date": "2013-06-03"
+    },
+    {
+      "feature_index": 890,
+      "target_index": 891,
+      "model": "sklearn",
+      "probabilities": [
+        0.055737613344300885,
+        0.30681924048180204,
+        0.637443146173897
+      ],
+      "actual_log_return": 0.008064592829082784,
+      "feature_date": "2013-06-03",
+      "target_date": "2013-06-04"
+    },
+    {
+      "feature_index": 891,
+      "target_index": 892,
+      "model": "sklearn",
+      "probabilities": [
+        0.04790705216483734,
+        0.39153657291006,
+        0.5605563749251027
+      ],
+      "actual_log_return": -0.03778592533960712,
+      "feature_date": "2013-06-04",
+      "target_date": "2013-06-05"
+    },
+    {
+      "feature_index": 892,
+      "target_index": 893,
+      "model": "sklearn",
+      "probabilities": [
+        0.06336147207569512,
+        0.6165145213655872,
+        0.3201240065587177
+      ],
+      "actual_log_return": -0.03465589805099034,
+      "feature_date": "2013-06-05",
+      "target_date": "2013-06-06"
+    },
+    {
+      "feature_index": 893,
+      "target_index": 894,
+      "model": "sklearn",
+      "probabilities": [
+        0.08245331600089224,
+        0.5747878108201715,
+        0.3427588731789362
+      ],
+      "actual_log_return": 0.007769170429259287,
+      "feature_date": "2013-06-06",
+      "target_date": "2013-06-07"
+    },
+    {
+      "feature_index": 894,
+      "target_index": 895,
+      "model": "sklearn",
+      "probabilities": [
+        0.08433532589946163,
+        0.3428158237162023,
+        0.5728488503843361
+      ],
+      "actual_log_return": 0.010301962126210817,
+      "feature_date": "2013-06-07",
+      "target_date": "2013-06-10"
+    },
+    {
+      "feature_index": 895,
+      "target_index": 896,
+      "model": "sklearn",
+      "probabilities": [
+        0.07160324723558423,
+        0.3377561715890583,
+        0.5906405811753574
+      ],
+      "actual_log_return": 0.0007587036398315483,
+      "feature_date": "2013-06-10",
+      "target_date": "2013-06-11"
+    },
+    {
+      "feature_index": 896,
+      "target_index": 897,
+      "model": "sklearn",
+      "probabilities": [
+        0.06956580025575697,
+        0.39136751836089073,
+        0.5390666813833522
+      ],
+      "actual_log_return": 0.000452531640800391,
+      "feature_date": "2013-06-11",
+      "target_date": "2013-06-12"
+    },
+    {
+      "feature_index": 897,
+      "target_index": 898,
+      "model": "sklearn",
+      "probabilities": [
+        0.05609685266039952,
+        0.4189779754816514,
+        0.5249251718579491
+      ],
+      "actual_log_return": -0.007928215616012313,
+      "feature_date": "2013-06-12",
+      "target_date": "2013-06-13"
+    },
+    {
+      "feature_index": 898,
+      "target_index": 899,
+      "model": "sklearn",
+      "probabilities": [
+        0.03947762238282968,
+        0.4993996829659786,
+        0.46112269465119177
+      ],
+      "actual_log_return": -0.0025723066734886224,
+      "feature_date": "2013-06-13",
+      "target_date": "2013-06-14"
+    }
+  ],
+  "candidate_metrics": {
+    "empirical": {
+      "log_loss": 0.8976549845951967,
+      "brier_multiclass": 0.5546397017834356,
+      "downside_brier": 0.05675962280703449,
+      "up_brier": 0.250047919795584,
+      "accuracy": 0.5080213903743316,
+      "reliability": [
+        {
+          "event": "downside",
+          "low": 0.0,
+          "n": 187,
+          "predicted": 0.02145641810079329,
+          "observed": 0.058823529411764705
+        },
+        {
+          "event": "up",
+          "low": 0.4,
+          "n": 187,
+          "predicted": 0.4974259904705341,
+          "observed": 0.5080213903743316
+        }
+      ],
+      "observations": 187
+    },
+    "ridge": {
+      "log_loss": 0.8850477821404265,
+      "brier_multiclass": 0.5578947326464755,
+      "downside_brier": 0.05578013440081525,
+      "up_brier": 0.2517493228544951,
+      "accuracy": 0.48663101604278075,
+      "reliability": [
+        {
+          "event": "downside",
+          "low": 0.0,
+          "n": 187,
+          "predicted": 0.034151555540328796,
+          "observed": 0.058823529411764705
+        },
+        {
+          "event": "up",
+          "low": 0.30000000000000004,
+          "n": 4,
+          "predicted": 0.36986647600404987,
+          "observed": 0.75
+        },
+        {
+          "event": "up",
+          "low": 0.4,
+          "n": 155,
+          "predicted": 0.4686886798788017,
+          "observed": 0.5096774193548387
+        },
+        {
+          "event": "up",
+          "low": 0.5,
+          "n": 28,
+          "predicted": 0.5126323993529015,
+          "observed": 0.4642857142857143
+        }
+      ],
+      "observations": 187
+    },
+    "sklearn": {
+      "log_loss": 0.8819989945476127,
+      "brier_multiclass": 0.5615010843597219,
+      "downside_brier": 0.05484892449095197,
+      "up_brier": 0.2556621104132483,
+      "accuracy": 0.4919786096256685,
+      "reliability": [
+        {
+          "event": "downside",
+          "low": 0.0,
+          "n": 186,
+          "predicted": 0.04069954682089957,
+          "observed": 0.05913978494623656
+        },
+        {
+          "event": "downside",
+          "low": 0.1,
+          "n": 1,
+          "predicted": 0.10074785896607365,
+          "observed": 0.0
+        },
+        {
+          "event": "up",
+          "low": 0.1,
+          "n": 1,
+          "predicted": 0.19058377124901116,
+          "observed": 1.0
+        },
+        {
+          "event": "up",
+          "low": 0.2,
+          "n": 2,
+          "predicted": 0.2516449534194375,
+          "observed": 1.0
+        },
+        {
+          "event": "up",
+          "low": 0.30000000000000004,
+          "n": 9,
+          "predicted": 0.352593685481039,
+          "observed": 0.3333333333333333
+        },
+        {
+          "event": "up",
+          "low": 0.4,
+          "n": 86,
+          "predicted": 0.4629626622729123,
+          "observed": 0.46511627906976744
+        },
+        {
+          "event": "up",
+          "low": 0.5,
+          "n": 75,
+          "predicted": 0.5387277824347941,
+          "observed": 0.5733333333333334
+        },
+        {
+          "event": "up",
+          "low": 0.6000000000000001,
+          "n": 12,
+          "predicted": 0.6519647401272267,
+          "observed": 0.4166666666666667
+        },
+        {
+          "event": "up",
+          "low": 0.7000000000000001,
+          "n": 2,
+          "predicted": 0.7124645788222663,
+          "observed": 0.5
+        }
+      ],
+      "observations": 187
+    },
+    "xgboost": {
+      "log_loss": 0.904153850360098,
+      "brier_multiclass": 0.5722693771689493,
+      "downside_brier": 0.05804244951955556,
+      "up_brier": 0.2584999242525161,
+      "accuracy": 0.49732620320855614,
+      "reliability": [
+        {
+          "event": "downside",
+          "low": 0.0,
+          "n": 128,
+          "predicted": 0.07052214032043262,
+          "observed": 0.0390625
+        },
+        {
+          "event": "downside",
+          "low": 0.1,
+          "n": 54,
+          "predicted": 0.1424034803564325,
+          "observed": 0.1111111111111111
+        },
+        {
+          "event": "downside",
+          "low": 0.2,
+          "n": 5,
+          "predicted": 0.22744779170308266,
+          "observed": 0.0
+        },
+        {
+          "event": "up",
+          "low": 0.1,
+          "n": 1,
+          "predicted": 0.19354041834055125,
+          "observed": 0.0
+        },
+        {
+          "event": "up",
+          "low": 0.2,
+          "n": 31,
+          "predicted": 0.26867286494268977,
+          "observed": 0.5161290322580645
+        },
+        {
+          "event": "up",
+          "low": 0.30000000000000004,
+          "n": 26,
+          "predicted": 0.34700832692934597,
+          "observed": 0.46153846153846156
+        },
+        {
+          "event": "up",
+          "low": 0.4,
+          "n": 47,
+          "predicted": 0.459637152081496,
+          "observed": 0.48936170212765956
+        },
+        {
+          "event": "up",
+          "low": 0.5,
+          "n": 66,
+          "predicted": 0.5433399470351749,
+          "observed": 0.5303030303030303
+        },
+        {
+          "event": "up",
+          "low": 0.6000000000000001,
+          "n": 15,
+          "predicted": 0.6408319881438167,
+          "observed": 0.5333333333333333
+        },
+        {
+          "event": "up",
+          "low": 0.7000000000000001,
+          "n": 1,
+          "predicted": 0.7096106251416215,
+          "observed": 1.0
+        }
+      ],
+      "observations": 187
+    },
+    "lightgbm": {
+      "log_loss": 0.9188541133765288,
+      "brier_multiclass": 0.5761430351086378,
+      "downside_brier": 0.06094536984036942,
+      "up_brier": 0.2575944221797919,
+      "accuracy": 0.48663101604278075,
+      "reliability": [
+        {
+          "event": "downside",
+          "low": 0.0,
+          "n": 131,
+          "predicted": 0.07413068148600695,
+          "observed": 0.07633587786259542
+        },
+        {
+          "event": "downside",
+          "low": 0.1,
+          "n": 48,
+          "predicted": 0.1291853649567808,
+          "observed": 0.020833333333333332
+        },
+        {
+          "event": "downside",
+          "low": 0.2,
+          "n": 7,
+          "predicted": 0.2207312575028301,
+          "observed": 0.0
+        },
+        {
+          "event": "downside",
+          "low": 0.30000000000000004,
+          "n": 1,
+          "predicted": 0.3927628536458307,
+          "observed": 0.0
+        },
+        {
+          "event": "up",
+          "low": 0.1,
+          "n": 1,
+          "predicted": 0.1917225613598784,
+          "observed": 0.0
+        },
+        {
+          "event": "up",
+          "low": 0.2,
+          "n": 16,
+          "predicted": 0.2695651560336283,
+          "observed": 0.625
+        },
+        {
+          "event": "up",
+          "low": 0.30000000000000004,
+          "n": 25,
+          "predicted": 0.35923879553000404,
+          "observed": 0.36
+        },
+        {
+          "event": "up",
+          "low": 0.4,
+          "n": 72,
+          "predicted": 0.44930961464041075,
+          "observed": 0.5138888888888888
+        },
+        {
+          "event": "up",
+          "low": 0.5,
+          "n": 68,
+          "predicted": 0.5432818289113869,
+          "observed": 0.5294117647058824
+        },
+        {
+          "event": "up",
+          "low": 0.6000000000000001,
+          "n": 5,
+          "predicted": 0.6395101908336948,
+          "observed": 0.6
+        }
+      ],
+      "observations": 187
+    }
+  },
+  "selected_metrics": {
+    "log_loss": 0.8819989945476127,
+    "brier_multiclass": 0.5615010843597219,
+    "downside_brier": 0.05484892449095197,
+    "up_brier": 0.2556621104132483,
+    "accuracy": 0.4919786096256685,
+    "reliability": [
+      {
+        "event": "downside",
+        "low": 0.0,
+        "n": 186,
+        "predicted": 0.04069954682089957,
+        "observed": 0.05913978494623656
+      },
+      {
+        "event": "downside",
+        "low": 0.1,
+        "n": 1,
+        "predicted": 0.10074785896607365,
+        "observed": 0.0
+      },
+      {
+        "event": "up",
+        "low": 0.1,
+        "n": 1,
+        "predicted": 0.19058377124901116,
+        "observed": 1.0
+      },
+      {
+        "event": "up",
+        "low": 0.2,
+        "n": 2,
+        "predicted": 0.2516449534194375,
+        "observed": 1.0
+      },
+      {
+        "event": "up",
+        "low": 0.30000000000000004,
+        "n": 9,
+        "predicted": 0.352593685481039,
+        "observed": 0.3333333333333333
+      },
+      {
+        "event": "up",
+        "low": 0.4,
+        "n": 86,
+        "predicted": 0.4629626622729123,
+        "observed": 0.46511627906976744
+      },
+      {
+        "event": "up",
+        "low": 0.5,
+        "n": 75,
+        "predicted": 0.5387277824347941,
+        "observed": 0.5733333333333334
+      },
+      {
+        "event": "up",
+        "low": 0.6000000000000001,
+        "n": 12,
+        "predicted": 0.6519647401272267,
+        "observed": 0.4166666666666667
+      },
+      {
+        "event": "up",
+        "low": 0.7000000000000001,
+        "n": 2,
+        "predicted": 0.7124645788222663,
+        "observed": 0.5
+      }
+    ]
+  },
+  "latest_forecast": {
+    "feature_index": 899,
+    "target_index": 900,
+    "model": "sklearn",
+    "probabilities": [
+      0.07710358574839352,
+      0.45911361327374317,
+      0.4637828009778633
+    ],
+    "candidate_probabilities": {
+      "empirical": [
+        0.08788636483802593,
+        0.45054522154486915,
+        0.461568413617105
+      ],
+      "ridge": [
+        0.056964525592340304,
+        0.4717304928265192,
+        0.4713049815811406
+      ],
+      "sklearn": [
+        0.07710358574839352,
+        0.45911361327374317,
+        0.4637828009778633
+      ],
+      "xgboost": [
+        0.06650447149950614,
+        0.413444939355887,
+        0.5200505891446068
+      ],
+      "lightgbm": [
+        0.058733723716268865,
+        0.4571361807201125,
+        0.4841300955636185
+      ]
+    },
+    "target_date": null,
+    "target": "next observed close; future date not assumed",
+    "calibration_log_loss": {
+      "empirical": 0.894171828938718,
+      "ridge": 0.8944883594892606,
+      "sklearn": 0.8926055725601459,
+      "xgboost": 0.9306702922991008,
+      "lightgbm": 0.9378541571963137
+    },
+    "temperatures": {
+      "empirical": 1.5,
+      "ridge": 1.0,
+      "sklearn": 1.5,
+      "xgboost": 1.0,
+      "lightgbm": 1.5
+    },
+    "train_label_end": 747,
+    "calibration_feature_start": 748,
+    "calibration_label_end": 898,
+    "feature_date": "2013-06-14"
+  },
+  "model_status": {
+    "empirical": {
+      "status": "available"
+    },
+    "ridge": {
+      "status": "available"
+    },
+    "sklearn": {
+      "status": "available",
+      "version": "1.9.1",
+      "last_fit_status": "fitted"
+    },
+    "xgboost": {
+      "status": "available",
+      "version": "2.1.4",
+      "last_fit_status": "fitted"
+    },
+    "lightgbm": {
+      "status": "available",
+      "version": "4.7.0",
+      "last_fit_status": "fitted"
+    }
+  },
+  "tuning_trials": [
+    {
+      "trial": 0,
+      "params": {
+        "reg_lambda": 0.5611516415334505,
+        "subsample": 0.9852142919229748
+      },
+      "training_validation_log_loss": 0.8139191365916344,
+      "fit_rows": [
+        0,
+        349
+      ],
+      "validation_rows": [
+        351,
+        499
+      ]
+    },
+    {
+      "trial": 1,
+      "params": {
+        "reg_lambda": 2.9106359131330697,
+        "subsample": 0.8795975452591109
+      },
+      "training_validation_log_loss": 0.8007507433857203,
+      "fit_rows": [
+        0,
+        349
+      ],
+      "validation_rows": [
+        351,
+        499
+      ]
+    },
+    {
+      "trial": 2,
+      "params": {
+        "reg_lambda": 0.20513382630874505,
+        "subsample": 0.7467983561008608
+      },
+      "training_validation_log_loss": 0.7988179582963656,
+      "fit_rows": [
+        0,
+        349
+      ],
+      "validation_rows": [
+        351,
+        499
+      ]
+    }
+  ],
+  "shap_explanation": {
+    "status": "computed",
+    "model": "xgboost",
+    "space": "raw class margins; not probabilities or causal effects",
+    "feature_names": [
+      "return_1",
+      "momentum_5",
+      "momentum_20",
+      "volatility_5",
+      "volatility_20",
+      "drawdown_60"
+    ],
+    "values": [
+      [
+        [
+          0.0037983967922627926,
+          -0.07085804641246796,
+          0.06568044424057007
+        ],
+        [
+          -0.08853624016046524,
+          0.055732082575559616,
+          -0.0017867246642708778
+        ],
+        [
+          -0.015308678150177002,
+          -0.03827173262834549,
+          0.016187049448490143
+        ],
+        [
+          -0.09384919703006744,
+          0.022410960868000984,
+          -0.004481995478272438
+        ],
+        [
+          0.010052535682916641,
+          -0.10409951955080032,
+          0.05012021213769913
+        ],
+        [
+          -0.037612851709127426,
+          0.023464186117053032,
+          -0.050508223474025726
+        ]
+      ]
+    ],
+    "base_values": [
+      [
+        -0.8218691349029541,
+        0.8955520391464233,
+        0.9381208419799805
+      ]
+    ],
+    "shape": [
+      1,
+      6,
+      3
+    ],
+    "calibration_note": "SHAP explains the uncalibrated tree; displayed probabilities apply temperature separately."
+  },
+  "limitations": [
+    "Backtest probabilities are research estimates, not validated economic edge.",
+    "Calendar gaps change forecast horizon; target is the next observed close.",
+    "Candidate metrics may cover different rows when a backend fails or lacks classes; inspect observations.",
+    "Calibration selects temperature and model on the same block; outer test remains untouched.",
+    "Latest classifier predicts categories; it does not estimate a full return distribution.",
+    "No costs, execution, position sizing, TFT, DeepSurv, or PPO model is represented."
+  ],
+  "mlflow": {
+    "status": "FINISHED",
+    "run_id": "03d7037ba34044bc89cb72e07e72496c",
+    "metrics": {
+      "up_brier": 0.2556621104132483,
+      "accuracy": 0.4919786096256685,
+      "log_loss": 0.8819989945476127,
+      "brier_multiclass": 0.5615010843597219,
+      "downside_brier": 0.05484892449095197
+    },
+    "params": {
+      "latest_model": "sklearn",
+      "target": "next_observed_close",
+      "rows": "900",
+      "threshold_log_return": "-0.02"
+    },
+    "tracking": "request-local filesystem; no remote server or persistent history"
+  },
+  "source": {
+    "synthetic": true,
+    "name": "Synthetic regime-switching returns",
+    "seed": 42,
+    "calendar_gaps": {
+      "max_gap_days": 3,
+      "gaps_over_three_days": 0,
+      "missing_weekdays": 0,
+      "missing_weekday_examples": [],
+      "interpretation": "Weekdays include market holidays; gaps do not by themselves prove missing observations."
+    },
+    "rows": 900,
+    "return_definition": "Next-observed-close log return; uploaded prices are assumed consistently adjusted."
+  },
+  "diagnostics": {
+    "return_count": 899,
+    "mean_log_return": -0.0008402600815684142,
+    "std_log_return": 0.012624885594658426,
+    "normality": {
+      "skew": -1.1844874781966723,
+      "excess_kurtosis": 12.135797219309909,
+      "jarque_bera_statistic": 5659.16309054447,
+      "p_value": 0.0,
+      "interpretation": "Jarque\u2013Bera tests normality, not independence. Its asymptotic p-value assumes IID observations; serial dependence can invalidate it."
+    },
+    "ols_hac": {
+      "target": "r[t] = intercept + beta * r[t-1]",
+      "scope": "Full-history in-sample exploratory inference; no out-of-sample forecasting validity claim.",
+      "covariance": "HAC/Newey\u2013West, 5 lags, asymptotic normal inference",
+      "observations": 898,
+      "coefficients": [
+        -0.0007943860881134062,
+        0.061542152678801844
+      ],
+      "standard_errors": [
+        0.00041491548828058493,
+        0.045293436330417276
+      ],
+      "p_values": [
+        0.05554695134876272,
+        0.17422794929611607
+      ],
+      "confidence_intervals": [
+        [
+          -0.0016076055017712036,
+          1.883332554439114e-05
+        ],
+        [
+          -0.027231351264874047,
+          0.15031565662247773
+        ]
+      ],
+      "r_squared": 0.0037880558289116184
+    },
+    "arima": {
+      "order": [
+        1,
+        0,
+        0
+      ],
+      "target": "Next close-to-close log return",
+      "scope": "Full-history fitted demonstration. Forecast is unvalidated; excluded from out-of-sample model rankings.",
+      "forecast_log_return": -0.0009487068757379988,
+      "interval_95": [
+        -0.02562380599807545,
+        0.02372639224659945
+      ],
+      "interval_assumptions": "Conditional Gaussian ARIMA innovation assumptions; parameter uncertainty omitted.",
+      "converged": true,
+      "warnings": [],
+      "aic": -5308.166445431854,
+      "parameters": {
+        "const": -0.0008422346479162286,
+        "ar.L1": 0.061542078160904276,
+        "sigma2": 0.0001584972129382768
+      }
+    }
+  },
+  "precomputed": true,
+  "execution_note": "Precomputed by Python on synthetic data; this static site does not run XGBoost, LightGBM, Optuna, SHAP or MLflow.",
+  "benchmark_date": "2026-10-25"
+}

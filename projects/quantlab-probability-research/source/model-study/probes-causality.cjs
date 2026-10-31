@@ -1,0 +1,2 @@
+const assert=require('node:assert/strict');const m=require('./model-under-test.js');
+const x=m.synthetic(1400,313);let checks=0;for(const protocol of ['strict','classic']){const a=m.run(x,{protocol});for(const boundary of [1200,1250,1350]){const y=x.map((p,i)=>i>=boundary?p*Math.exp(.05*Math.sin(i)):p);const b=m.run(y,{protocol});for(let i=0;i<a.predictions.length;i++){if(a.predictions[i].target_index>=boundary)break;assert.deepEqual(a.predictions[i],b.predictions[i]);checks++}}}console.log(JSON.stringify({causal_predictions_unchanged:checks,boundaries:3,protocols:2}));

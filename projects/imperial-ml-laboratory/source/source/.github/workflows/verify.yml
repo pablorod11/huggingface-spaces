@@ -1,0 +1,19 @@
+name: Verify training and serving
+
+on: [push, pull_request, workflow_dispatch]
+
+permissions:
+  contents: read
+
+jobs:
+  integration:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate Compose configuration
+        run: docker compose config --quiet
+      - name: Build supported Python 3.12 CPU environment
+        run: docker build --tag distributed-ml-foundation:ci .
+      - name: Run two-rank training and serving integration tests
+        run: docker run --rm distributed-ml-foundation:ci python -m unittest -v

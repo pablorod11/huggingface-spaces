@@ -1,0 +1,48 @@
+{
+  "purpose": "Predeclared author-crafted diagnostic of standard written English subject-verb agreement and word order. Freeze before scoring; no model outputs informed these pairs.",
+  "limitations": [
+    "Synthetic teacher-forced sentence likelihood diagnostic, not a standardized grammar benchmark or independent evidence of general grammar competence.",
+    "Labels concern standard written English; they do not evaluate dialects or speakers.",
+    "Preference may reflect lexical frequency or memorized patterns rather than grammatical abstraction. Equal character length removes a simple length difference, not every confound.",
+    "Agreement pairs intentionally change a same-length verb; word-order pairs preserve the exact character and word multisets.",
+    "All pairs fit the64-character model context. No claim about long-distance syntax, generation coherence, or release readiness.",
+    "Do not use these pairs to train, tune, select checkpoints, or claim a fresh independent test after repeated inspection."
+  ],
+  "scoring_definition": {
+    "unit": "Character token using the existing fixed51-character vocabulary.",
+    "sentence_log_probability": "Sum log P(sentence[t] | sentence[:t]) for t=1..len(sentence)-1, using causal teacher forcing and natural logarithms. The first character is conditioning context and is not scored. No BOS, EOS, padding, or extra newline is added.",
+    "pair_margin": "grammatical_sentence_log_probability minus ungrammatical_sentence_log_probability; positive favors the grammatical sentence.",
+    "accuracy": "1 for positive margin,0 for negative margin,0.5 for exact tie. Report every margin and aggregate by category and overall; no significance claim.",
+    "controls": "Both members have identical total character length and identical initial character. Score each complete sentence without truncation, padding, or length normalization. Use eval mode and no_grad."
+  },
+  "pairs": [
+    {"id":"agreement_01","category":"subject_verb_agreement","grammatical":"I am at home.","ungrammatical":"I is at home.","rationale":"First-person singular I takes am, not is.","equal_length":true},
+    {"id":"agreement_02","category":"subject_verb_agreement","grammatical":"I am very happy.","ungrammatical":"I is very happy.","rationale":"First-person singular agreement in a predicate-adjective frame.","equal_length":true},
+    {"id":"agreement_03","category":"subject_verb_agreement","grammatical":"He is in the park.","ungrammatical":"He am in the park.","rationale":"Third-person singular He takes is, not am.","equal_length":true},
+    {"id":"agreement_04","category":"subject_verb_agreement","grammatical":"He is very tired.","ungrammatical":"He am very tired.","rationale":"Third-person singular agreement in a predicate-adjective frame.","equal_length":true},
+    {"id":"agreement_05","category":"subject_verb_agreement","grammatical":"She is at home.","ungrammatical":"She am at home.","rationale":"Third-person singular She takes is, not am.","equal_length":true},
+    {"id":"agreement_06","category":"subject_verb_agreement","grammatical":"She is very happy.","ungrammatical":"She am very happy.","rationale":"Third-person singular agreement reuses the happy lexical frame with a different subject.","equal_length":true},
+    {"id":"agreement_07","category":"subject_verb_agreement","grammatical":"We are in the park.","ungrammatical":"We was in the park.","rationale":"Plural We permits are; was does not agree in standard written English.","equal_length":true},
+    {"id":"agreement_08","category":"subject_verb_agreement","grammatical":"We are very tired.","ungrammatical":"We was very tired.","rationale":"Plural agreement in the tired lexical frame.","equal_length":true},
+    {"id":"agreement_09","category":"subject_verb_agreement","grammatical":"They are at home.","ungrammatical":"They was at home.","rationale":"Plural They permits are; was does not agree in standard written English.","equal_length":true},
+    {"id":"agreement_10","category":"subject_verb_agreement","grammatical":"They are very happy.","ungrammatical":"They was very happy.","rationale":"Plural agreement reuses the happy lexical frame.","equal_length":true},
+    {"id":"agreement_11","category":"subject_verb_agreement","grammatical":"The dog was in the park.","ungrammatical":"The dog are in the park.","rationale":"Singular dog permits was; are does not agree.","equal_length":true},
+    {"id":"agreement_12","category":"subject_verb_agreement","grammatical":"The cat was at home.","ungrammatical":"The cat are at home.","rationale":"Singular cat permits was; are does not agree.","equal_length":true},
+    {"id":"agreement_13","category":"subject_verb_agreement","grammatical":"The bird was very tired.","ungrammatical":"The bird are very tired.","rationale":"Singular bird permits was; are does not agree.","equal_length":true},
+    {"id":"agreement_14","category":"subject_verb_agreement","grammatical":"The boy was very happy.","ungrammatical":"The boy are very happy.","rationale":"Singular boy permits was; are does not agree.","equal_length":true},
+    {"id":"agreement_15","category":"subject_verb_agreement","grammatical":"The dogs are at home.","ungrammatical":"The dogs was at home.","rationale":"Plural dogs permits are; was does not agree; counters the singular animal frames.","equal_length":true},
+    {"id":"agreement_16","category":"subject_verb_agreement","grammatical":"The cats are in the park.","ungrammatical":"The cats was in the park.","rationale":"Plural cats permits are; was does not agree; counters the singular animal frames.","equal_length":true},
+    {"id":"word_order_01","category":"word_order","grammatical":"The dog saw a cat.","ungrammatical":"The saw dog a cat.","rationale":"Swapping the subject noun and finite verb breaks the subject noun phrase.","equal_length":true},
+    {"id":"word_order_02","category":"word_order","grammatical":"The cat saw a dog.","ungrammatical":"The saw cat a dog.","rationale":"Reverses dog/cat lexical roles while preserving the same word-order error.","equal_length":true},
+    {"id":"word_order_03","category":"word_order","grammatical":"A girl has a red ball.","ungrammatical":"A girl a has red ball.","rationale":"Moving the object determiner before the finite verb breaks both verb and object phrase order.","equal_length":true},
+    {"id":"word_order_04","category":"word_order","grammatical":"A boy has a blue box.","ungrammatical":"A boy a has blue box.","rationale":"Same determiner/verb inversion with different nouns and color.","equal_length":true},
+    {"id":"word_order_05","category":"word_order","grammatical":"The bird sat on a tree.","ungrammatical":"The bird on sat a tree.","rationale":"Moving the preposition before the verb leaves an ill-formed prepositional phrase.","equal_length":true},
+    {"id":"word_order_06","category":"word_order","grammatical":"The cat sat on a bed.","ungrammatical":"The cat on sat a bed.","rationale":"Same preposition/verb inversion in a familiar animal frame.","equal_length":true},
+    {"id":"word_order_07","category":"word_order","grammatical":"She found a little toy.","ungrammatical":"She a found little toy.","rationale":"Object determiner cannot precede found in this ordinary declarative sentence.","equal_length":true},
+    {"id":"word_order_08","category":"word_order","grammatical":"He found a little ball.","ungrammatical":"He a found little ball.","rationale":"Counters the pronoun and object of the same determiner/verb error.","equal_length":true},
+    {"id":"word_order_09","category":"word_order","grammatical":"The girl went to the park.","ungrammatical":"The girl to went the park.","rationale":"The preposition to cannot precede went while its object remains after went.","equal_length":true},
+    {"id":"word_order_10","category":"word_order","grammatical":"The boy went to the shop.","ungrammatical":"The boy to went the shop.","rationale":"Same preposition/verb inversion with another subject and destination.","equal_length":true},
+    {"id":"word_order_11","category":"word_order","grammatical":"They played with a ball.","ungrammatical":"They with played a ball.","rationale":"Swapping with and played breaks the verb/prepositional phrase order.","equal_length":true},
+    {"id":"word_order_12","category":"word_order","grammatical":"We played with a toy.","ungrammatical":"We with played a toy.","rationale":"Same verb/preposition inversion with a different pronoun and object.","equal_length":true}
+  ]
+}

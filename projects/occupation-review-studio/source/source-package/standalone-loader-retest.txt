@@ -1,0 +1,7 @@
+Standalone loader: failure, correction, retest
+Baseline path rule from previous implementation: <model-repository>/model/model.json
+Baseline FAIL: FileNotFoundError; weights are adjacent at <model-repository>/model.json
+Correction: prefer adjacent model.json; fall back to the project model/model.json.
+Retest PASS: Classifier() loads the standalone repository without an explicit path.
+Prediction smoke check PASS: SOFTWARE, route AUTO_ACCEPT
+Regression suite: test_inference.py validates standalone loading, artifact guards and sklearn parity.
