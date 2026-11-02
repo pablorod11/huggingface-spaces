@@ -1,11 +1,12 @@
 # Hugging Face Spaces
 
-Source snapshots of my seven public [Hugging Face Spaces](https://huggingface.co/PabloRod11/spaces), collected on October 31, 2026.
+Seven public [Hugging Face Space](https://huggingface.co/PabloRod11/spaces) source snapshots, collected on October 31, 2026, plus a project overview for the private Napolean Cyber Command prototype. Project catalog updated November 2, 2026.
 
-Each project contains the original deployed files, documentation, tests, and available assets. Downloadable source ZIPs are preserved and also unpacked under each project’s `source/` directory so their code can be browsed directly on GitHub.
+Each of the seven public snapshots contains the original deployed files, documentation, tests, and available assets. Downloadable source ZIPs are preserved and also unpacked under each project’s `source/` directory so their code can be browsed directly on GitHub.
 
 | Project | Source | Live Space |
 | --- | --- | --- |
+| Napolean Cyber Command | [Overview only](projects/napolean-cyber-command/) | [Private — access required](https://huggingface.co/spaces/PabloRod11/napolean-cyber-command) |
 | Imperial ML Laboratory | [Browse](projects/imperial-ml-laboratory/) | [Open](https://huggingface.co/spaces/PabloRod11/imperial-ml-laboratory) |
 | Pocket PhD | [Browse](projects/pocket-phd/) | [Open](https://huggingface.co/spaces/PabloRod11/pocket-phd) |
 | Intake Desk | [Browse](projects/intake-desk/) | [Open](https://huggingface.co/spaces/PabloRod11/intake-desk) |
@@ -14,7 +15,20 @@ Each project contains the original deployed files, documentation, tests, and ava
 | Imperial LLM | [Browse](projects/imperial-llm/) | [Open](https://huggingface.co/spaces/PabloRod11/imperial-llm) |
 | QuantLab Probability Research | [Browse](projects/quantlab-probability-research/) | [Open](https://huggingface.co/spaces/PabloRod11/quantlab-probability-research) |
 
+## Recent additions — November 2, 2026
+
+- **Napolean Cyber Command:** analyst-led security review with five perspectives, evidence decisions, remediation ownership and frozen reports. Its new project overview records the release checks and prototype limits; private source is not included.
+- **Animated portfolio preview:** [five perspectives → scoped evidence → analyst review → owner and retest](https://pablo-rodriguez-portfolio.sanjusri2002.chatgpt.site/#cyber-command), with local/global pause controls, reduced-motion support and mobile steps. This is an illustrative workflow, not app footage or a live scanner.
+- **Imperial LLM Model 005:** the current [model card](https://huggingface.co/spaces/PabloRod11/imperial-llm/blob/main/MODEL_CARD.md) and [release checks](https://huggingface.co/spaces/PabloRod11/imperial-llm/blob/main/RELEASE_CHECKS.json) document browser inference engineering and a failed prose-quality review. The October 31 source snapshot below has not been refreshed by this catalog update.
+
+[Portfolio](https://pablo-rodriguez-portfolio.sanjusri2002.chatgpt.site/#work) · [Explainable ML, demos and human review collection](https://huggingface.co/collections/PabloRod11/explainable-ml-models-demos-and-human-review)
+
 ## Projects
+
+### [Napolean Cyber Command](projects/napolean-cyber-command/)
+
+Private browser-local workbench for scoped security engagements, red/blue/white/black/purple perspectives, analyst-reviewed findings, remediation tracking, and executive reports. The November 2 release recorded 42 Node engine tests, 16 Chromium storage checks and two browser workflows using synthetic fixtures. These checks establish neither real-world security effectiveness nor production readiness. No ML model, autonomous agent or live scanner runs. [Read the overview and limits](projects/napolean-cyber-command/).
+
 
 ### [Imperial ML Laboratory](projects/imperial-ml-laboratory/)
 
@@ -56,7 +70,7 @@ Additional source: [forecast-study](projects/quantlab-probability-research/sourc
 
 ## Run a demo locally
 
-All seven deployed Spaces use static HTML, CSS, and JavaScript. From this repository:
+The seven public source snapshots use static HTML, CSS, and JavaScript. The Cyber Command folder is documentation only and cannot be launched from this repository. From this repository:
 
 ```bash
 python3 -m http.server 8000
@@ -66,7 +80,8 @@ Open `http://localhost:8000/projects/<project-name>/`. See each project’s READ
 
 ## Provenance and scope
 
-- `source-manifest.json` records every original file, its pinned Hugging Face revision, byte count, and SHA-256 digest.
+- The November 2 catalog additions do not refresh the October 31 source snapshots or their integrity manifests. Cyber Command has an overview only; its private Space source and browser records are not part of this repository.
+- `source-manifest.json` records every original snapshot file, its pinned Hugging Face revision, byte count, and SHA-256 digest.
 - `extracted-source-manifest.json` maps unpacked files to their original archive members and records SHA-256 digests.
 - This is a snapshot of the public Spaces, including source archives attached there. Separate Hugging Face model and dataset repositories are outside this snapshot; project documentation retains their links.
 - Git history, deployment secrets, Space settings, and hosted runtime state are not copied. Future Hugging Face changes do not automatically sync.
