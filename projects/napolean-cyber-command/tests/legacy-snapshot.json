@@ -1,0 +1,172 @@
+{
+  "format": "napolean-cyber-command",
+  "version": 2,
+  "records": [
+    {
+      "id": "b1ca56d6703e9f8ab712c382a37e4819",
+      "name": "Legacy snapshot compatibility fixture",
+      "client": "Unassigned",
+      "workflow": "code",
+      "scope": "Synthetic owned fixture",
+      "created_at": "2026-11-02T12:45:06.127Z",
+      "revision": 1,
+      "roles": [
+        "white"
+      ],
+      "findings": [
+        {
+          "id": "b5d34399524c41dca8f5edece6a18c95",
+          "severity": "high",
+          "confidence": "low",
+          "verdict": "unresolved",
+          "revision": 0,
+          "origin": "heuristic",
+          "title": "Possible dynamic Python evaluation",
+          "location": "Submitted snippet line 1",
+          "root_cause": "A direct eval/exec call-like pattern was observed after comment/string masking.",
+          "input_to_impact": "Analyst must trace input control, reachability and business impact.",
+          "prerequisites": "No syntax, scope, taint or reachability proof. Shadowed names or invalid code can produce false positives.",
+          "mitigations": "Not evaluated. Inspect validation, authorization, isolation and compensating controls.",
+          "evidence": "Lexical pattern matched; arguments and source text omitted.",
+          "remediation": "Trace input reachability and builtin shadowing; replace dynamic evaluation with explicit parsing.",
+          "review_note": "",
+          "review": {
+            "reviewer": "",
+            "reference": "",
+            "prerequisites": "",
+            "mitigations": "",
+            "method": ""
+          },
+          "tracking": {
+            "owner": "",
+            "due_date": "",
+            "status": "open",
+            "retest": ""
+          }
+        }
+      ],
+      "missions": [
+        {
+          "role": "white",
+          "title": "Independent application review",
+          "objective": "Validate source-level candidates and document remediation. Workflow: code.",
+          "steps": [
+            "Review the 1 unresolved ledger candidate(s), inspect source in your controlled system and trace input reachability.",
+            "Trace inputs through authentication, authorization and trust boundaries.",
+            "Attempt to refute each candidate using validation, reachability and compensating controls.",
+            "Record a verdict with evidence and a scoped regression test before declaring a fix."
+          ],
+          "deliverable": "An evidence-backed review ledger and remediation checklist.",
+          "limitations": [
+            "Planning guidance only; requires a qualified analyst and separate approval for live actions.",
+            "No executable agents, scanners, model inference or upstream security tools are running."
+          ]
+        }
+      ],
+      "scenario_category": null,
+      "summary": "1 unresolved candidate(s) from limited browser-local checks. Human validation required; this is not a security certification.",
+      "coverage": [
+        "Limited lexical regex/pattern nomination: quoted strings/comments masked for call detection, direct eval/exec, simple subprocess import aliases and bounded multiline literal shell=True arguments.",
+        "No Python AST or syntax parser, scope/rebinding resolution, taint/dataflow, dependency audit, execution or exploit validation. Wildcard/dynamic imports, f-string expressions, complex assignments and computed shell flags may be missed.",
+        "Maximum 500 call-like constructs, 8192 characters per subprocess call and 100 candidates. No matches do not establish security; manual review is required."
+      ],
+      "activity": [
+        {
+          "at": "2026-11-02T12:45:06.128Z",
+          "action": "created",
+          "note": "Scope authorization attested; bounded local analysis completed. Raw submission discarded."
+        },
+        {
+          "at": "2026-11-02T12:45:06.136Z",
+          "action": "report_snapshot_created",
+          "note": "a8bb2bbaf0021f4d49553ef1323006a6: report version 1; source revision 0; SHA-256 fb880be317d7937185bafad10bd058aab57d58332ecc54eba379d9c859cabec3. Digest detects corruption, not authorship."
+        }
+      ],
+      "snapshots": [
+        {
+          "id": "a8bb2bbaf0021f4d49553ef1323006a6",
+          "version": 1,
+          "created_at": "2026-11-02T12:45:06.130Z",
+          "source_revision": 0,
+          "sha256": "fb880be317d7937185bafad10bd058aab57d58332ecc54eba379d9c859cabec3",
+          "data": {
+            "id": "b1ca56d6703e9f8ab712c382a37e4819",
+            "name": "Legacy snapshot compatibility fixture",
+            "client": "Unassigned",
+            "workflow": "code",
+            "scope": "Synthetic owned fixture",
+            "created_at": "2026-11-02T12:45:06.127Z",
+            "revision": 0,
+            "roles": [
+              "white"
+            ],
+            "findings": [
+              {
+                "id": "b5d34399524c41dca8f5edece6a18c95",
+                "severity": "high",
+                "confidence": "low",
+                "verdict": "unresolved",
+                "revision": 0,
+                "origin": "heuristic",
+                "title": "Possible dynamic Python evaluation",
+                "location": "Submitted snippet line 1",
+                "root_cause": "A direct eval/exec call-like pattern was observed after comment/string masking.",
+                "input_to_impact": "Analyst must trace input control, reachability and business impact.",
+                "prerequisites": "No syntax, scope, taint or reachability proof. Shadowed names or invalid code can produce false positives.",
+                "mitigations": "Not evaluated. Inspect validation, authorization, isolation and compensating controls.",
+                "evidence": "Lexical pattern matched; arguments and source text omitted.",
+                "remediation": "Trace input reachability and builtin shadowing; replace dynamic evaluation with explicit parsing.",
+                "review_note": "",
+                "review": {
+                  "reviewer": "",
+                  "reference": "",
+                  "prerequisites": "",
+                  "mitigations": "",
+                  "method": ""
+                },
+                "tracking": {
+                  "owner": "",
+                  "due_date": "",
+                  "status": "open",
+                  "retest": ""
+                }
+              }
+            ],
+            "missions": [
+              {
+                "role": "white",
+                "title": "Independent application review",
+                "objective": "Validate source-level candidates and document remediation. Workflow: code.",
+                "steps": [
+                  "Review the 1 unresolved ledger candidate(s), inspect source in your controlled system and trace input reachability.",
+                  "Trace inputs through authentication, authorization and trust boundaries.",
+                  "Attempt to refute each candidate using validation, reachability and compensating controls.",
+                  "Record a verdict with evidence and a scoped regression test before declaring a fix."
+                ],
+                "deliverable": "An evidence-backed review ledger and remediation checklist.",
+                "limitations": [
+                  "Planning guidance only; requires a qualified analyst and separate approval for live actions.",
+                  "No executable agents, scanners, model inference or upstream security tools are running."
+                ]
+              }
+            ],
+            "scenario_category": null,
+            "summary": "1 unresolved candidate(s) from limited browser-local checks. Human validation required; this is not a security certification.",
+            "coverage": [
+              "Limited lexical regex/pattern nomination: quoted strings/comments masked for call detection, direct eval/exec, simple subprocess import aliases and bounded multiline literal shell=True arguments.",
+              "No Python AST or syntax parser, scope/rebinding resolution, taint/dataflow, dependency audit, execution or exploit validation. Wildcard/dynamic imports, f-string expressions, complex assignments and computed shell flags may be missed.",
+              "Maximum 500 call-like constructs, 8192 characters per subprocess call and 100 candidates. No matches do not establish security; manual review is required."
+            ],
+            "activity": [
+              {
+                "at": "2026-11-02T12:45:06.128Z",
+                "action": "created",
+                "note": "Scope authorization attested; bounded local analysis completed. Raw submission discarded."
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

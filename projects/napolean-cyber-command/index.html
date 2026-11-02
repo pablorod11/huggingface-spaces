@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'" http-equiv="Content-Security-Policy"/>
+  <meta content="width=device-width,initial-scale=1" name="viewport"/>
+  <meta content="dark" name="color-scheme"/>
+  <meta content="#171719" name="theme-color"/>
+  <title>
+   Napolean · Cyber Command
+  </title>
+  <link href="./static/favicon.svg" rel="icon" type="image/svg+xml"/>
+  <link href="./static/style.css?v=20261102-engagement" rel="stylesheet"/>
+  <script defer="" src="./static/playbooks.js?v=20261102-engagement">
+  </script>
+  <script defer="" src="./static/local.js?v=20261102-engagement">
+  </script>
+  <script defer="" src="./static/app.js?v=20261102-engagement">
+  </script>
+ </head>
+ <body>
+  <a class="skip" href="#main">
+   Skip to content
+  </a>
+  <div aria-live="polite" id="notice" role="status">
+  </div>
+  <div id="shell">
+   <aside>
+    <a aria-label="Napolean home" class="brand" href="#">
+     <img alt="Napolean Cyber Command" class="brand-logo" height="64" src="./static/logo.svg" width="168"/>
+    </a>
+    <p class="eyebrow workspace-label">
+     WORKSPACE
+    </p>
+    <nav aria-label="Main">
+     <button class="nav active" id="nav-overview">
+      01
+      <span>
+       Assessments
+      </span>
+     </button>
+     <button class="nav" id="nav-new">
+      02
+      <span>
+       New assessment
+      </span>
+     </button>
+    </nav>
+    <div class="rail-bottom">
+     <div class="workspace-name" id="workspace-name">
+      Browser workspace
+     </div>
+     <p class="fine">
+      Records stay in this browser profile.
+     </p>
+    </div>
+   </aside>
+   <main id="main" tabindex="-1">
+    <header class="topline">
+     <span class="mono">
+      SECURITY OPERATIONS / WORKBENCH
+     </span>
+     <span class="mono" id="local-status">
+      LOCAL / NO SERVER
+     </span>
+    </header>
+    <section aria-label="Browser storage notice" class="local-notice">
+     <strong>
+      Your browser is the workspace.
+     </strong>
+     <p>
+      Results are stored locally in IndexedDB for this browser profile and site origin. No shared team database, model, or server is running. Raw source, alerts, and scenario input are not stored. Export JSON backups: clearing site data or changing browsers can remove access to records.
+     </p>
+    </section>
+    <div id="view">
+    </div>
+    <footer>
+     <span class="mono">
+      NAPOLEAN / EVIDENCE BEFORE VERDICTS
+     </span>
+     <span>
+      Pattern checks · No model or server
+     </span>
+    </footer>
+   </main>
+  </div>
+  <dialog aria-labelledby="create-title" id="create-dialog">
+   <form autocomplete="off" id="create-form">
+    <p class="error-inline" hidden="" id="create-form-error" role="alert">
+    </p>
+    <div class="dialog-head">
+     <div>
+      <p class="eyebrow">
+       NEW ENGAGEMENT
+      </p>
+      <h2 id="create-title">
+       Define the assessment.
+      </h2>
+     </div>
+     <button aria-label="Close assessment form" class="close" data-close="" type="button">
+      ×
+     </button>
+    </div>
+    <div class="form-grid">
+     <div>
+      <label for="assessment-name">
+       Assessment name
+      </label>
+      <input id="assessment-name" maxlength="120" name="name" placeholder="Q4 application review" required=""/>
+     </div>
+     <div>
+      <label for="workflow">
+       Workflow
+      </label>
+      <select id="workflow" name="workflow">
+       <option value="code">
+        Code review / Python
+       </option>
+       <option value="alerts">
+        Alert triage / JSON
+       </option>
+       <option value="exercise">
+        Team exercise / Scenario
+       </option>
+      </select>
+     </div>
+    </div>
+    <label for="scope">
+     Authorized scope
+    </label>
+    <label for="client">
+     Client label (optional)
+    </label>
+    <input id="client" maxlength="120" name="client" placeholder="Unassigned"/>
+    <p class="fine">
+     Client labels organize records in this browser. They do not restrict access.
+    </p>
+    <input id="scope" maxlength="1000" name="scope" placeholder="Owned service, repository, or exercise boundary" required=""/>
+    <fieldset>
+     <legend>
+      Assign perspectives
+     </legend>
+     <div class="role-checks">
+      <label>
+       <input checked="" name="roles" type="checkbox" value="red"/>
+       Red
+      </label>
+      <label>
+       <input checked="" name="roles" type="checkbox" value="blue"/>
+       Blue
+      </label>
+      <label>
+       <input checked="" name="roles" type="checkbox" value="white"/>
+       White
+      </label>
+      <label>
+       <input checked="" name="roles" type="checkbox" value="black"/>
+       Black
+      </label>
+      <label>
+       <input checked="" name="roles" type="checkbox" value="purple"/>
+       Purple
+      </label>
+     </div>
+    </fieldset>
+    <div class="input-heading">
+     <label for="content" id="input-label">
+      Python source
+     </label>
+     <button class="text-button" id="sample" type="button">
+      Use sample input ↙
+     </button>
+    </div>
+    <textarea id="content" maxlength="64000" name="content" required="" rows="9" spellcheck="false"></textarea>
+    <p class="fine" id="input-help">
+     Paste a Python snippet for limited text-pattern checks. This is not a Python parser or data-flow analysis. Input is never executed.
+    </p>
+    <label class="attestation">
+     <input id="authorization" required="" type="checkbox"/>
+     <span>
+      I am authorized to review this material within the scope above. I have removed credentials and unnecessary personal data.
+     </span>
+    </label>
+    <p class="fine">
+     Raw input is not stored. Findings and analyst notes are saved in this browser. Redaction is best effort; remove secrets before submitting.
+    </p>
+    <div class="dialog-actions">
+     <button data-close="" type="button">
+      Cancel
+     </button>
+     <button class="primary" type="submit">
+      Create assessment ↗
+     </button>
+    </div>
+   </form>
+  </dialog>
+  <dialog aria-labelledby="finding-title" id="finding-dialog">
+   <div class="dialog-head">
+    <p class="eyebrow">
+     EVIDENCE RECORD
+    </p>
+    <button aria-label="Close finding" class="close" data-close="" type="button">
+     ×
+    </button>
+   </div>
+   <div id="finding-body">
+   </div>
+   <form autocomplete="off" id="verdict-form">
+    <p class="error-inline" hidden="" id="verdict-form-error" role="alert">
+    </p>
+    <button hidden="" id="reload-finding" type="button">
+     Reload latest finding
+    </button>
+    <label for="verdict">
+     Analyst verdict
+    </label>
+    <select id="verdict">
+     <option value="unresolved">
+      Unresolved
+     </option>
+     <option value="confirmed-static">
+      Confirmed static
+     </option>
+     <option value="confirmed-runtime">
+      Confirmed runtime
+     </option>
+     <option value="rejected">
+      Rejected
+     </option>
+    </select>
+    <label for="review-note">
+     Decision evidence / note
+    </label>
+    <fieldset class="review-fields">
+     <legend>
+      Analyst attestation · required for confirmations
+     </legend>
+     <p class="fine">
+      These entries are analyst assertions, not independent proof or verified identity.
+     </p>
+     <div class="form-grid">
+      <div>
+       <label for="reviewer">
+        Reviewer label
+       </label>
+       <input id="reviewer" maxlength="120"/>
+      </div>
+      <div>
+       <label for="reference">
+        Evidence reference / revision
+       </label>
+       <input id="reference" maxlength="500" placeholder="Ticket, commit, test record"/>
+      </div>
+     </div>
+     <label for="review-prerequisites">
+      Verified prerequisites
+     </label>
+     <textarea id="review-prerequisites" maxlength="2000" rows="2"></textarea>
+     <label for="review-mitigations">
+      Mitigations inspected
+     </label>
+     <textarea id="review-mitigations" maxlength="2000" rows="2"></textarea>
+     <label for="review-method">
+      Validation method / result
+     </label>
+     <textarea aria-describedby="review-method-help" id="review-method" maxlength="2000" rows="3"></textarea>
+     <p class="fine" id="review-method-help">
+      For confirmed verdicts, describe the method and result in at least 20 characters, including at least 10 letters or digits.
+     </p>
+    </fieldset>
+    <fieldset>
+     <legend>
+      Remediation tracking
+     </legend>
+     <div class="form-grid">
+      <div>
+       <label for="tracking-owner">
+        Owner
+       </label>
+       <input id="tracking-owner" maxlength="120"/>
+      </div>
+      <div>
+       <label for="tracking-due">
+        Target date
+       </label>
+       <input id="tracking-due" type="date"/>
+      </div>
+      <div>
+       <label for="tracking-status">
+        Status
+       </label>
+       <select id="tracking-status">
+        <option value="open">
+         Open
+        </option>
+        <option value="in-progress">
+         In progress
+        </option>
+        <option value="resolved">
+         Resolved
+        </option>
+        <option value="retest">
+         Retest
+        </option>
+       </select>
+      </div>
+     </div>
+     <label for="tracking-retest">
+      Retest evidence / note
+     </label>
+     <textarea id="tracking-retest" maxlength="2000" rows="2"></textarea>
+    </fieldset>
+    <textarea id="review-note" maxlength="4000" minlength="20" placeholder="Describe the evidence supporting your decision." required="" rows="4"></textarea>
+    <p class="fine">
+     A runtime verdict requires evidence you obtained independently. This workbench does not execute source or validate exploitation.
+    </p>
+    <div class="dialog-actions">
+     <button id="next-unresolved" type="button">
+      Next unresolved →
+     </button>
+     <button data-close="" type="button">
+      Close
+     </button>
+     <button class="primary" type="submit">
+      Record decision ↗
+     </button>
+    </div>
+   </form>
+  </dialog>
+  <dialog aria-labelledby="delete-title" id="delete-dialog">
+   <h2 id="delete-title">
+    Delete this assessment?
+   </h2>
+   <p>
+    Its findings, missions, and analyst decisions will be removed from this browser workspace. Exported files and backups are unaffected.
+   </p>
+   <div class="dialog-actions">
+    <button data-close="" type="button">
+     Keep assessment
+    </button>
+    <button class="danger" id="confirm-delete">
+     Delete assessment
+    </button>
+   </div>
+  </dialog>
+  <dialog aria-labelledby="restore-title" id="restore-dialog">
+   <form id="restore-form">
+    <div class="dialog-head">
+     <h2 id="restore-title">
+      Restore workspace backup
+     </h2>
+     <button aria-label="Close restore" class="close" data-close="" type="button">
+      ×
+     </button>
+    </div>
+    <p class="error-inline" hidden="" role="alert">
+    </p>
+    <p class="fine">
+     Choose a versioned JSON backup, up to 5 MB. Valid records are added as new copies; existing assessments are never replaced.
+    </p>
+    <label for="restore-file">
+     Backup file
+    </label>
+    <input accept=".json,application/json" id="restore-file" required="" type="file"/>
+    <div class="record-section" id="restore-preview" role="status">
+    </div>
+    <label class="attestation">
+     <input id="restore-confirm" required="" type="checkbox"/>
+     <span>
+      I reviewed the preview and want to add these records to this browser workspace.
+     </span>
+    </label>
+    <div class="dialog-actions">
+     <button data-close="" type="button">
+      Cancel
+     </button>
+     <button class="primary" disabled="" id="restore-submit" type="submit">
+      Restore copies ↗
+     </button>
+    </div>
+   </form>
+  </dialog>
+  <dialog aria-labelledby="handoff-title" id="handoff-dialog">
+   <form id="handoff-form">
+    <div class="dialog-head">
+     <h2 id="handoff-title">
+      Record a role handoff
+     </h2>
+     <button aria-label="Close handoff" class="close" data-close="" type="button">
+      ×
+     </button>
+    </div>
+    <p class="error-inline" hidden="" role="alert">
+    </p>
+    <p class="fine">
+     Records a local coordination note. This does not notify another person or run a role agent.
+    </p>
+    <div class="form-grid">
+     <div>
+      <label for="handoff-from">
+       From perspective
+      </label>
+      <select id="handoff-from">
+      </select>
+     </div>
+     <div>
+      <label for="handoff-to">
+       To perspective
+      </label>
+      <select id="handoff-to">
+      </select>
+     </div>
+    </div>
+    <label for="handoff-note">
+     Evidence, challenge, and next action
+    </label>
+    <textarea id="handoff-note" maxlength="2000" minlength="20" required="" rows="4"></textarea>
+    <div class="dialog-actions">
+     <button data-close="" type="button">
+      Cancel
+     </button>
+     <button class="primary" type="submit">
+      Record handoff ↗
+     </button>
+    </div>
+   </form>
+  </dialog>
+  <section aria-label="Executive assessment report" id="print-report">
+  </section>
+  <dialog aria-labelledby="manual-title" id="manual-dialog">
+   <form id="manual-form">
+    <div class="dialog-head">
+     <h2 id="manual-title">
+      Add analyst finding
+     </h2>
+     <button aria-label="Close manual finding" class="close" data-close="" type="button">
+      ×
+     </button>
+    </div>
+    <p class="error-inline" hidden="" role="alert">
+    </p>
+    <p class="fine">
+     Records a bounded analyst candidate. New findings are always unresolved with low confidence; no code is executed.
+    </p>
+    <label for="manual-title-input">
+     Finding title
+    </label>
+    <input id="manual-title-input" maxlength="500" name="title" required=""/>
+    <label for="manual-severity">
+     Severity
+    </label>
+    <select id="manual-severity" name="severity">
+     <option value="low">
+      Low
+     </option>
+     <option value="medium">
+      Medium
+     </option>
+     <option value="high">
+      High
+     </option>
+    </select>
+    <div id="manual-fields">
+     <label for="manual-location">
+      Location / source revision
+     </label>
+     <textarea id="manual-location" maxlength="4000" name="location" required="" rows="2"></textarea>
+     <label for="manual-root_cause">
+      Root cause
+     </label>
+     <textarea id="manual-root_cause" maxlength="4000" name="root_cause" required="" rows="2"></textarea>
+     <label for="manual-input_to_impact">
+      Input-to-impact path
+     </label>
+     <textarea id="manual-input_to_impact" maxlength="4000" name="input_to_impact" required="" rows="2"></textarea>
+     <label for="manual-prerequisites">
+      Prerequisites
+     </label>
+     <textarea id="manual-prerequisites" maxlength="4000" name="prerequisites" required="" rows="2"></textarea>
+     <label for="manual-mitigations">
+      Mitigations inspected
+     </label>
+     <textarea id="manual-mitigations" maxlength="4000" name="mitigations" required="" rows="2"></textarea>
+     <label for="manual-evidence">
+      Supporting evidence
+     </label>
+     <textarea id="manual-evidence" maxlength="4000" name="evidence" required="" rows="2"></textarea>
+     <label for="manual-remediation">
+      Recommended remediation
+     </label>
+     <textarea id="manual-remediation" maxlength="4000" name="remediation" required="" rows="2"></textarea>
+    </div>
+    <div class="dialog-actions">
+     <button data-close="" type="button">
+      Cancel
+     </button>
+     <button class="primary" type="submit">
+      Add unresolved finding ↗
+     </button>
+    </div>
+   </form>
+  </dialog>
+  <dialog aria-labelledby="workbook-title" id="workbook-dialog">
+   <form id="workbook-form">
+    <div class="dialog-head">
+     <h2 id="workbook-title">
+      Role workbook
+     </h2>
+     <button aria-label="Close role workbook" class="close" data-close="" type="button">
+      ×
+     </button>
+    </div>
+    <p class="error-inline" hidden="" role="alert">
+    </p>
+    <button hidden="" id="reload-workbook" type="button">
+     Reload latest workbook
+    </button>
+    <p class="fine">
+     Analyst-maintained work records. Completing a role requires evidence, an observed result, and a decision. No role agent runs automatically.
+    </p>
+    <label for="workbook-role">
+     Assigned role
+    </label>
+    <input id="workbook-role" readonly=""/>
+    <label for="workbook-owner">
+     Owner
+    </label>
+    <input id="workbook-owner" maxlength="120"/>
+    <label for="workbook-status">
+     Status
+    </label>
+    <select id="workbook-status">
+     <option value="planned">
+      Planned
+     </option>
+     <option value="in-progress">
+      In progress
+     </option>
+     <option value="complete">
+      Complete
+     </option>
+    </select>
+    <div id="workbook-fields">
+     <label for="workbook-evidence">
+      Evidence reference
+     </label>
+     <textarea id="workbook-evidence" maxlength="2000" rows="3"></textarea>
+     <label for="workbook-expected">
+      Expected result
+     </label>
+     <textarea id="workbook-expected" maxlength="2000" rows="3"></textarea>
+     <label for="workbook-observed">
+      Observed result
+     </label>
+     <textarea id="workbook-observed" maxlength="2000" rows="3"></textarea>
+     <label for="workbook-decision">
+      Review decision
+     </label>
+     <textarea id="workbook-decision" maxlength="2000" rows="3"></textarea>
+    </div>
+    <div class="dialog-actions">
+     <button data-close="" type="button">
+      Cancel
+     </button>
+     <button class="primary" type="submit">
+      Save role workbook ↗
+     </button>
+    </div>
+   </form>
+  </dialog>
+  <dialog aria-labelledby="recovery-title" id="recovery-dialog">
+   <div class="dialog-head">
+    <h2 id="recovery-title">
+     Local workspace recovery
+    </h2>
+    <button aria-label="Close recovery guide" class="close" data-close="" type="button">
+     ×
+    </button>
+   </div>
+   <ol>
+    <li>
+     Export a workspace JSON backup before clearing browser data, changing browsers, or moving devices. Choose All clients for a complete backup.
+    </li>
+    <li>
+     Export initiates a browser download. Confirm the file exists in an approved location yourself; this app cannot check that it was saved.
+    </li>
+    <li>
+     In the destination browser, choose Restore backup, inspect clients and record counts, and confirm. Restore adds copies with new IDs and preserves existing records.
+    </li>
+    <li>
+     Snapshot digests are checked before restore writes. A digest detects corruption; it does not authenticate identity or evidence.
+    </li>
+    <li>
+     Keep customer records in approved browser profiles. Client labels organize records but provide no tenant isolation. Removing site data removes local records; this app has no server backup.
+    </li>
+   </ol>
+   <p class="fine">
+    Approximate record size and optional browser-origin quota estimates are advisory. Browser storage policies vary. Metadata failures do not block assessments.
+   </p>
+   <button data-close="" type="button">
+    Close guide
+   </button>
+  </dialog>
+ </body>
+</html>

@@ -1,0 +1,2 @@
+# Optional helper for new native Gradio deployments.
+huggingface_hub==2.4.0

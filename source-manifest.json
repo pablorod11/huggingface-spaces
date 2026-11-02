@@ -906,6 +906,221 @@
           "sha256": "48fbaf970e474baf24a6637e4fd2b6f1d3e5b0bd3d12704f55394416d05a1e7d"
         }
       ]
+    },
+    {
+      "id": "PabloRod11/napolean-cyber-command",
+      "title": "Napolean Cyber Command",
+      "revision": "4afe6db679805534dc69e730a563ccd9ec6d1be3",
+      "space_url": "https://huggingface.co/spaces/PabloRod11/napolean-cyber-command",
+      "snapshot_date": "2026-11-02",
+      "files": [
+        {
+          "path": "projects/napolean-cyber-command/.env.example",
+          "bytes": 362,
+          "sha256": "e4f8f1eb57843124e6e33e9d247861868690e8561d5f1165c5a94b19cb617d21"
+        },
+        {
+          "path": "projects/napolean-cyber-command/.gitattributes",
+          "bytes": 1519,
+          "sha256": "11ad7efa24975ee4b0c3c3a38ed18737f0658a5f75a0a96787b576a78a023361"
+        },
+        {
+          "path": "projects/napolean-cyber-command/.gitignore",
+          "bytes": 88,
+          "sha256": "fd7084b9c23888d913b37b7c6c03c0306b8f8aaf31cb00c683642584c8c2352e"
+        },
+        {
+          "path": "projects/napolean-cyber-command/DEPENDENCY-ADVISORIES.json",
+          "bytes": 6407,
+          "sha256": "64d8a6b8c72ac85920d6e535ccf8df2b7eea2555b636154906575fb5b85d04bb"
+        },
+        {
+          "path": "projects/napolean-cyber-command/IMPROVEMENTS.md",
+          "bytes": 6631,
+          "sha256": "eb26380eb8cb9bcf6964acd002ab8c1cb3d16de8109c89d832aa9578235eb673"
+        },
+        {
+          "path": "projects/napolean-cyber-command/PROVENANCE.md",
+          "bytes": 2855,
+          "sha256": "f7211a8170c1d7a854a0afc4a00085134e196079a403b7e66dd066b6ad65dfc3"
+        },
+        {
+          "path": "projects/napolean-cyber-command/README.md",
+          "bytes": 8200,
+          "sha256": "d214fe0ab2687b4407cc2c72494467aecf1c09fd74484406ea8354d294dc23dc"
+        },
+        {
+          "path": "projects/napolean-cyber-command/SECURITY.md",
+          "bytes": 6255,
+          "sha256": "105ac97b2c07ca5b8b20e4162bfb311bc30a6c332354648d71b65feac1d9181b"
+        },
+        {
+          "path": "projects/napolean-cyber-command/SERVICE.md",
+          "bytes": 4387,
+          "sha256": "7bdd60baeca50ef6b6c0ef72c277f3fbbc6e02a16203f19a171eeb47e79faeca"
+        },
+        {
+          "path": "projects/napolean-cyber-command/SOURCE-MANIFEST.json",
+          "bytes": 3005,
+          "sha256": "40183ef1654689000f3ae1f8b7fd3505dec2dc69e5f505ca913e6d4bbe543703"
+        },
+        {
+          "path": "projects/napolean-cyber-command/VERIFICATION.md",
+          "bytes": 12953,
+          "sha256": "b4948765c0345a89f2c75f7c3a6b72614fff6298f7544358e94b8dcba159d5f3"
+        },
+        {
+          "path": "projects/napolean-cyber-command/app.py",
+          "bytes": 10741,
+          "sha256": "08a24515be7df90aab8946a85c9fe33e0764e5f60630ed87183b0e080aaa550c"
+        },
+        {
+          "path": "projects/napolean-cyber-command/deploy_hf.py",
+          "bytes": 2848,
+          "sha256": "5cb49b840d7077b01a3c50f41953d573274475d6f9fc5f4c7c12be5f4b13ae5f"
+        },
+        {
+          "path": "projects/napolean-cyber-command/docs/superpowers/plans/2026-10-31-business-improvements.md",
+          "bytes": 2552,
+          "sha256": "ea62d134e27d136491bb07eaafcabc70e27b4c1a7554869fcfa2ae48214b141c"
+        },
+        {
+          "path": "projects/napolean-cyber-command/docs/superpowers/plans/2026-11-02-analyst-reliability.md",
+          "bytes": 3595,
+          "sha256": "3bdf439649b81d4d4103e29fcd7b93532c136005a3391daccb013b7c7fd6bc8d"
+        },
+        {
+          "path": "projects/napolean-cyber-command/docs/superpowers/plans/2026-11-02-engagement-workflows.md",
+          "bytes": 3895,
+          "sha256": "edb546e22a04106ac1aa5fec9b0964983ab5aa6554f6d69c455e5dfae274251b"
+        },
+        {
+          "path": "projects/napolean-cyber-command/docs/superpowers/specs/2026-10-31-business-improvements-design.md",
+          "bytes": 2375,
+          "sha256": "036f59ddfb6733bd46209681e1342f1380625adde151a6bfb859f2526647a069"
+        },
+        {
+          "path": "projects/napolean-cyber-command/docs/superpowers/specs/2026-11-02-analyst-reliability-design.md",
+          "bytes": 2737,
+          "sha256": "060254765a96aabece0b3388585273d05abed1e280ab6abe18633e5d2d9349e6"
+        },
+        {
+          "path": "projects/napolean-cyber-command/docs/superpowers/specs/2026-11-02-engagement-workflows-design.md",
+          "bytes": 3055,
+          "sha256": "3b78b277df3cf59001cbf7b0a69d515143b057a4914bd53946bfcd565eb1d4dd"
+        },
+        {
+          "path": "projects/napolean-cyber-command/engine.py",
+          "bytes": 22109,
+          "sha256": "91773de87481029342f25f5ba96510356db2974f6faa2a8af636c6419b640210"
+        },
+        {
+          "path": "projects/napolean-cyber-command/gradio_app.py",
+          "bytes": 15548,
+          "sha256": "ef593c9f32586e93ba11b6f7a54a6cbd152865fd2d24b5029353a378400d6fe8"
+        },
+        {
+          "path": "projects/napolean-cyber-command/index.html",
+          "bytes": 19079,
+          "sha256": "3f3ca9c20597739ff5f52486639735e9193de0d0fe54b2fc885c3f3e9e749a29"
+        },
+        {
+          "path": "projects/napolean-cyber-command/requirements-deploy.txt",
+          "bytes": 76,
+          "sha256": "81672301ff63877bdaf3f00b06ebed759f2d2e04f4372c57024fef78c0ea42bf"
+        },
+        {
+          "path": "projects/napolean-cyber-command/requirements.txt",
+          "bytes": 1081,
+          "sha256": "815a4a407614513f09713a4b8312ac02a22412f4d507e8249a16cb967dc0d5b1"
+        },
+        {
+          "path": "projects/napolean-cyber-command/static/app.js",
+          "bytes": 62605,
+          "sha256": "17611b65180c61a335afd8bf4db57011ec8afcdf9ea0e03626f9c79bb0487f6a"
+        },
+        {
+          "path": "projects/napolean-cyber-command/static/favicon.svg",
+          "bytes": 374,
+          "sha256": "eb535ad41f1e22491f0c7613aae75b08724128fbc05789d1606eac54b3f520a7"
+        },
+        {
+          "path": "projects/napolean-cyber-command/static/index.html",
+          "bytes": 19037,
+          "sha256": "33bf757d22f9c7f18d9e7ff483a2412322f350b7ac3a0023fe7486fa25be102a"
+        },
+        {
+          "path": "projects/napolean-cyber-command/static/local.js",
+          "bytes": 56078,
+          "sha256": "a341a64d2a4671bc80e104e52877d9bcad7b0d572839e4c3d614532e8d85f0d3"
+        },
+        {
+          "path": "projects/napolean-cyber-command/static/logo-print.svg",
+          "bytes": 8760,
+          "sha256": "aa5c551d2cb6f8c7131a8b24948fdd31667913e97a2ea08f51795069487ef273"
+        },
+        {
+          "path": "projects/napolean-cyber-command/static/logo.svg",
+          "bytes": 8760,
+          "sha256": "03adb4e95e4c9ccfe438d9d8a47dddaa960bd8a3633b82149f3061757c3c096a"
+        },
+        {
+          "path": "projects/napolean-cyber-command/static/playbooks.js",
+          "bytes": 8940,
+          "sha256": "3907230561f4573801651297fde26d835d964783a175363b6434c8a4e312e80c"
+        },
+        {
+          "path": "projects/napolean-cyber-command/static/style.css",
+          "bytes": 16564,
+          "sha256": "1c76cbdaf5d7583506050cf67469ca4bf794aad2166128450dcb6dd44fca35ce"
+        },
+        {
+          "path": "projects/napolean-cyber-command/tests/browser_engagement.cjs",
+          "bytes": 12804,
+          "sha256": "94e2dd518c40797c76e010d70b6f6d66fc26d3180c3efc9a47f8d9269132f36f"
+        },
+        {
+          "path": "projects/napolean-cyber-command/tests/browser_storage.cjs",
+          "bytes": 20133,
+          "sha256": "fe3ad720d8d8a6137907b790bff5220735c556a7a914d2608f141fef431a3ee2"
+        },
+        {
+          "path": "projects/napolean-cyber-command/tests/browser_ui.cjs",
+          "bytes": 17686,
+          "sha256": "836b6d5bad9830ec53ba2e521d8a0d1182b7287befbf80ba21d9becd1e33fe4f"
+        },
+        {
+          "path": "projects/napolean-cyber-command/tests/detection-fixtures.cjs",
+          "bytes": 2070,
+          "sha256": "1d9fed45afab9f37d7d2715a8dcf0c2e1e6c80c57821509df44d07e22b12383b"
+        },
+        {
+          "path": "projects/napolean-cyber-command/tests/legacy-snapshot.json",
+          "bytes": 8744,
+          "sha256": "8422678b6caf5268cd8cdbc59cee2a6cf03ab00310e6923133ca24cd63a82c2d"
+        },
+        {
+          "path": "projects/napolean-cyber-command/tests/test_backend.py",
+          "bytes": 15224,
+          "sha256": "79a0eb8412d5d97f32967fbfdda7f19a26cc83e59053e99ceb7218f26386f7c3"
+        },
+        {
+          "path": "projects/napolean-cyber-command/tests/test_deploy.py",
+          "bytes": 1728,
+          "sha256": "95fcbd4f01ade35dd55f35c589fce3c6043f8c95197ab23d84aea032a0321416"
+        },
+        {
+          "path": "projects/napolean-cyber-command/tests/test_gradio.py",
+          "bytes": 11391,
+          "sha256": "5ad152aee2d52c33c4cbd108b244ae8e4a20474a0e4736f8c9b344b8b89f65f7"
+        },
+        {
+          "path": "projects/napolean-cyber-command/tests/test_local.cjs",
+          "bytes": 47789,
+          "sha256": "5610014c165d662f83706570db6f47a34929cb1c44017a8d809be2038739cabb"
+        }
+      ]
     }
-  ]
+  ],
+  "updated_at": "2026-11-02"
 }

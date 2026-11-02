@@ -1,12 +1,12 @@
 # Hugging Face Spaces
 
-Seven public [Hugging Face Space](https://huggingface.co/PabloRod11/spaces) source snapshots, collected on October 31, 2026, plus a project overview for the private Napolean Cyber Command prototype. Project catalog updated November 2, 2026.
+Source snapshots of eight public [Hugging Face Spaces](https://huggingface.co/PabloRod11/spaces): seven collected October 31, 2026, and Napolean Cyber Command added November 2, 2026. Project catalog updated November 2, 2026.
 
-Each of the seven public snapshots contains the original deployed files, documentation, tests, and available assets. Downloadable source ZIPs are preserved and also unpacked under each project’s `source/` directory so their code can be browsed directly on GitHub.
+Each public snapshot contains the original deployed files, documentation, tests, and available assets. Downloadable source ZIPs are preserved and also unpacked under each project’s `source/` directory so their code can be browsed directly on GitHub.
 
 | Project | Source | Live Space |
 | --- | --- | --- |
-| Napolean Cyber Command | [Overview only](projects/napolean-cyber-command/) | [Private — access required](https://huggingface.co/spaces/PabloRod11/napolean-cyber-command) |
+| Napolean Cyber Command | [Browse](projects/napolean-cyber-command/) | [Open](https://huggingface.co/spaces/PabloRod11/napolean-cyber-command) |
 | Imperial ML Laboratory | [Browse](projects/imperial-ml-laboratory/) | [Open](https://huggingface.co/spaces/PabloRod11/imperial-ml-laboratory) |
 | Pocket PhD | [Browse](projects/pocket-phd/) | [Open](https://huggingface.co/spaces/PabloRod11/pocket-phd) |
 | Intake Desk | [Browse](projects/intake-desk/) | [Open](https://huggingface.co/spaces/PabloRod11/intake-desk) |
@@ -17,7 +17,7 @@ Each of the seven public snapshots contains the original deployed files, documen
 
 ## Recent additions — November 2, 2026
 
-- **Napolean Cyber Command:** analyst-led security review with five perspectives, evidence decisions, remediation ownership and frozen reports. Its new project overview records the release checks and prototype limits; private source is not included.
+- **Napolean Cyber Command:** analyst-led security review with five perspectives, evidence decisions, remediation ownership and frozen reports. Its public source snapshot includes the deployed static app, tests, documentation and historical Python experiments.
 - **Animated portfolio preview:** [five perspectives → scoped evidence → analyst review → owner and retest](https://pablo-rodriguez-portfolio.sanjusri2002.chatgpt.site/#cyber-command), with local/global pause controls, reduced-motion support and mobile steps. This is an illustrative workflow, not app footage or a live scanner.
 - **Imperial LLM Model 005:** the current [model card](https://huggingface.co/spaces/PabloRod11/imperial-llm/blob/main/MODEL_CARD.md) and [release checks](https://huggingface.co/spaces/PabloRod11/imperial-llm/blob/main/RELEASE_CHECKS.json) document browser inference engineering and a failed prose-quality review. The October 31 source snapshot below has not been refreshed by this catalog update.
 
@@ -27,7 +27,7 @@ Each of the seven public snapshots contains the original deployed files, documen
 
 ### [Napolean Cyber Command](projects/napolean-cyber-command/)
 
-Private browser-local workbench for scoped security engagements, red/blue/white/black/purple perspectives, analyst-reviewed findings, remediation tracking, and executive reports. The November 2 release recorded 42 Node engine tests, 16 Chromium storage checks and two browser workflows using synthetic fixtures. These checks establish neither real-world security effectiveness nor production readiness. No ML model, autonomous agent or live scanner runs. [Read the overview and limits](projects/napolean-cyber-command/).
+Public browser-local workbench for scoped security engagements, red/blue/white/black/purple perspectives, analyst-reviewed findings, remediation tracking, and executive reports. The November 2 release recorded 42 Node engine tests, 16 Chromium storage checks and two browser workflows using synthetic fixtures. These checks establish neither real-world security effectiveness nor production readiness. No ML model, autonomous agent or live scanner runs. [Read the project documentation](projects/napolean-cyber-command/).
 
 
 ### [Imperial ML Laboratory](projects/imperial-ml-laboratory/)
@@ -70,7 +70,7 @@ Additional source: [forecast-study](projects/quantlab-probability-research/sourc
 
 ## Run a demo locally
 
-The seven public source snapshots use static HTML, CSS, and JavaScript. The Cyber Command folder is documentation only and cannot be launched from this repository. From this repository:
+All eight public Space snapshots use static HTML, CSS, and JavaScript. From this repository:
 
 ```bash
 python3 -m http.server 8000
@@ -80,7 +80,7 @@ Open `http://localhost:8000/projects/<project-name>/`. See each project’s READ
 
 ## Provenance and scope
 
-- The November 2 catalog additions do not refresh the October 31 source snapshots or their integrity manifests. Cyber Command has an overview only; its private Space source and browser records are not part of this repository.
+- Cyber Command was added from a pinned public Hugging Face revision on November 2. The other seven projects retain their October 31 snapshots. Browser records and customer evidence are not copied.
 - `source-manifest.json` records every original snapshot file, its pinned Hugging Face revision, byte count, and SHA-256 digest.
 - `extracted-source-manifest.json` maps unpacked files to their original archive members and records SHA-256 digests.
 - This is a snapshot of the public Spaces, including source archives attached there. Separate Hugging Face model and dataset repositories are outside this snapshot; project documentation retains their links.
