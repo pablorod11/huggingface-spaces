@@ -7,8 +7,9 @@ import sys
 SOURCE_FILES=(
     'README.md','index.html','static/index.html','static/style.css','static/app.js',
     'static/local.js','static/playbooks.js','static/logo.svg','static/logo-print.svg',
-    'static/favicon.svg','tests/test_local.cjs',
-    'tests/browser_storage.cjs','tests/browser_ui.cjs','tests/browser_engagement.cjs',
+    'static/favicon.svg','static/fonts/Manrope.ttf','static/fonts/OFL.txt',
+    'PRODUCT.md','DESIGN.md','.impeccable/design.json','tests/test_local.cjs',
+    'tests/browser_storage.cjs','tests/browser_ui.cjs','tests/browser_engagement.cjs','tests/browser_usability.cjs',
     'tests/legacy-snapshot.json','tests/detection-fixtures.cjs',
     'SECURITY.md','SERVICE.md','PROVENANCE.md','VERIFICATION.md','IMPROVEMENTS.md',
 )

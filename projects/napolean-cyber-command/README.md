@@ -1,5 +1,5 @@
 ---
-title: Napolean Cyber Command
+title: Veyra — Security Workbench
 short_description: Cybersecurity reviews, evidence and remediation tracking
 emoji: 🛡️
 colorFrom: gray
@@ -9,17 +9,37 @@ app_file: index.html
 pinned: false
 ---
 
-# Napolean Cyber Command
+# Veyra Security Workbench
 
-A no-cost, browser-based cybersecurity workbench for analyst-led business security reviews. Five perspectives share one local evidence ledger: red, blue, white, black and purple hats.
+A browser-based workspace for reviewing Python snippets or alert logs, planning security exercises, and recording analyst decisions. Five review perspectives help people organize the work; they do not launch AI agents, scanners, or attacks.
 
-Public project: [PabloRod11/napolean-cyber-command](https://huggingface.co/spaces/PabloRod11/napolean-cyber-command).
+Public app: [PabloRod11/napolean-cyber-command](https://huggingface.co/spaces/PabloRod11/napolean-cyber-command). The hosted app and source are public; your saved assessment records remain in your own browser.
+
+Veyra is the new product identity for Napolean Cyber Command. The public Space URL, IndexedDB database name and JSON backup format identifiers remain unchanged so existing assessments and backups remain compatible. The new identity uses an open typographic wordmark, coordinated with Orbis through typography and materials.
+
+## Start a review
+
+1. **Choose your material and scope.** Create an assessment, choose Python code, JSON alerts, or an exercise scenario, and describe what you are authorized to review. Use the sample input to try the workflow before entering your own material.
+2. **Review the results and role tasks.** Possible issues need a person to check the evidence and record a decision. The five perspectives provide suggested tasks for people, including when no possible issues are found.
+3. **Track fixes and keep a copy.** Record owners, decisions and follow-up work, then export a report. Download a JSON backup to preserve your workspace.
+
+Saved only in this browser: changing browsers or clearing site data can remove access to records. A report is for sharing results; a JSON backup lets you restore saved work. Raw submissions are discarded after processing. Names, scopes, generated evidence and notes can still contain sensitive information.
+
+## What the five hats mean
+
+- **Red — Plan authorized tests:** challenge security assumptions within the agreed scope.
+- **Blue — Review alerts and response:** investigate signals and plan defensive action.
+- **White — Check evidence and fixes:** review causes, evidence and remediation.
+- **Black — Model attacker paths:** consider hypothetical abuse paths in a bounded exercise.
+- **Purple — Improve detection together:** connect exercise outcomes with detection improvements.
+
+Selecting a hat adds its suggested tasks and workbook. These are review perspectives, not separate agents, scanners, permission roles or independently verified conclusions. People supply evidence and record what they observed.
 
 ## Zero-cost runtime
 
 The deployed app is HTML, CSS and JavaScript. It uses no Docker, backend server, GPU, paid plan, model API, application keys or runtime packages. Hugging Face documents that [Static Spaces are free and use no compute](https://huggingface.co/docs/hub/spaces-sdks-static). Platform terms can change; this project does not provision chargeable resources or subscribe to anything.
 
-All assessment processing runs in your browser. Results and analyst notes are saved in IndexedDB for that browser profile and app origin. They are not uploaded to a shared customer database. The hosted Space is public. Browser storage is local to each browser profile and origin; it is not application authentication, encryption, or tenant isolation.
+All assessment processing runs in your browser. Results and analyst notes are saved in IndexedDB for that browser profile and app origin. They are not uploaded to a shared customer database. The current Hugging Face project is public. Browser storage is not application authentication, encryption, or tenant isolation; public hosting does not make your local records a shared team workspace.
 
 ## Working flows
 
@@ -43,7 +63,7 @@ Raw source, alerts and scenario prose are not retained. Generated evidence omits
 
 ## Open and run
 
-Open the public Space; a Hugging Face account is not required to view the app. No application password or Space Secrets are needed. Keep the same browser profile and app URL to access the same local records. Browser storage restrictions or iframe partitioning can prevent persistence; use the top-level app URL when necessary. The app reports storage failures rather than silently pretending records were saved.
+Open the public Space. No application password or Space Secrets are needed. Keep the same browser profile and app URL to access the same local records. Browser storage restrictions or iframe partitioning can prevent persistence; use the top-level app URL when necessary. The app reports storage failures rather than silently pretending records were saved.
 
 To run locally without a build step:
 
@@ -51,7 +71,7 @@ To run locally without a build step:
 python3 -m http.server 7860 --bind 127.0.0.1
 ```
 
-Open http://127.0.0.1:7860/static/index.html. Python only serves files; there is no Python assessment backend. Use workspace backups regularly: clearing site data, changing browser/profile/origin, private browsing or storage eviction can remove local records. Exports contain assessment metadata and analyst notes and must be handled accordingly.
+Open http://127.0.0.1:7860/index.html (the same entry point selected by the hosted app). Python only serves files; there is no Python assessment backend. Use workspace backups regularly: clearing site data, changing browser/profile/origin, private browsing or storage eviction can remove local records. Exports contain assessment metadata and analyst notes and must be handled accordingly.
 
 ## Verify
 
@@ -64,6 +84,7 @@ PLAYWRIGHT_MODULE=/absolute/path/to/playwright node tests/browser_storage.cjs
 # With the local server running:
 PLAYWRIGHT_MODULE=/absolute/path/to/playwright node tests/browser_ui.cjs
 PLAYWRIGHT_MODULE=/absolute/path/to/playwright node tests/browser_engagement.cjs
+PLAYWRIGHT_MODULE=/absolute/path/to/playwright node tests/browser_usability.cjs
 ```
 
 Browser checks use an existing Playwright installation and its Chromium binary; they add no runtime dependency. Set `PLAYWRIGHT_EXECUTABLE_PATH` if using an existing compatible Chromium executable.

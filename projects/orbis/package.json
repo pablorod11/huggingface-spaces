@@ -1,0 +1,14 @@
+{
+  "name": "orbis",
+  "version": "5.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node --test tests/*.test.js",
+    "serve": "python3 -m http.server 4173 --bind 127.0.0.1",
+    "check": "node --check src/analytics.js && node --check src/app.js && node --check src/chart-ui.js && node --check src/chart.js && node --check src/contracts.js && node --check src/decisions.js && node --check src/demo-source.js && node --check src/finance.js && node --check src/forecast-ui.js && node --check src/infra-state.js && node --check src/infra.js && node --check src/investigation.js && node --check src/runner.js && node --check src/scope-ui.js && node --check src/state.js && node --check src/workspace-actions.js"
+  },
+  "engines": {
+    "node": ">=22"
+  }
+}

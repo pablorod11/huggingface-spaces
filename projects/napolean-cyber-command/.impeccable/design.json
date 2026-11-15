@@ -1,0 +1,78 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-11-08T01:21:20.704030+00:00",
+  "title": "Design System: Veyra",
+  "extensions": {
+    "shadows": [
+      {
+        "name": "dialog",
+        "value": "0 20px 60px #24272526",
+        "purpose": "Modal elevation above the protected working context."
+      }
+    ],
+    "motion": [
+      {
+        "name": "control-feedback",
+        "value": "background-color 140ms ease, border-color 140ms ease, transform 100ms ease",
+        "purpose": "Brief pointer feedback; disabled with reduced motion."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "desktop-compact",
+        "value": "1100px"
+      },
+      {
+        "name": "tablet",
+        "value": "800px"
+      },
+      {
+        "name": "mobile",
+        "value": "700px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary action",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Commit or begin a defined workflow.",
+      "html": "<button class=\"ds-primary\">New assessment</button>",
+      "css": ".ds-primary{font:650 12px Manrope,sans-serif;background:#242725;color:#fffefa;border:1px solid #242725;border-radius:6px;padding:10px 16px;min-height:42px}.ds-primary:hover{background:#3b403b}.ds-primary:focus-visible{outline:2px solid #284fc9;outline-offset:4px}"
+    },
+    {
+      "name": "Text input",
+      "kind": "input",
+      "refersTo": "input",
+      "description": "Evidence and assessment fields use visible labels.",
+      "html": "<label class=\"ds-label\">Assessment name<input class=\"ds-input\" placeholder=\"Q4 application review\"></label>",
+      "css": ".ds-label{font:600 12px Manrope,sans-serif;color:#242725}.ds-input{display:block;margin-top:8px;font:13px Manrope,sans-serif;background:#fffefa;color:#242725;border:1px solid #bfc2b9;border-radius:6px;padding:11px 12px;min-height:44px;width:100%}.ds-input:focus-visible{outline:2px solid #284fc9;outline-offset:4px}"
+    }
+  ],
+  "narrative": {
+    "northStar": "Quiet evidence workbench",
+    "overview": "Warm ivory, graphite typography, an open outlined wordmark and hairline working divisions support security review. Shared typography links Veyra to Orbis.",
+    "keyCharacteristics": [
+      "Precise typography",
+      "Human evidence and decisions",
+      "Warm paper surfaces",
+      "An open typographic identity"
+    ],
+    "rules": [
+      {
+        "name": "Evidence remains readable",
+        "body": "Use consistent light surfaces across every state, including dialogs and reports.",
+        "section": "colors"
+      }
+    ],
+    "dos": [
+      "Keep evidence and report copy intact.",
+      "Use cobalt to identify active state and key data."
+    ],
+    "donts": [
+      "Do not imply autonomous agents or security certification.",
+      "Do not add external asset requests or weaken CSP."
+    ]
+  }
+}

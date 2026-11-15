@@ -1,0 +1,16 @@
+{
+  "version": 1,
+  "currency": "USD",
+  "grain": "one synthetic date-country-product observation; channel rotates in sample",
+  "dimensions": ["date", "region", "country", "channel", "category", "product"],
+  "requiredFields": ["id", "date", "region", "country", "channel", "category", "product", "revenue", "cost", "orders", "units"],
+  "metrics": {
+    "revenue": {"formula": "SUM(revenue)", "unit": "USD"},
+    "cost": {"formula": "SUM(cost)", "unit": "USD", "description": "variable cost only"},
+    "profit": {"formula": "SUM(revenue) - SUM(cost)", "unit": "USD", "description": "contribution profit before fixed cost except scenario input"},
+    "margin": {"formula": "100 * profit / revenue", "unit": "percent", "zeroDenominator": null},
+    "orders": {"formula": "SUM(orders)", "unit": "orders", "description": "non-overlapping counts at supplied fact grain"},
+    "units": {"formula": "SUM(units)", "unit": "units"},
+    "aov": {"formula": "SUM(revenue) / SUM(orders)", "unit": "USD/order", "zeroDenominator": null}
+  }
+}

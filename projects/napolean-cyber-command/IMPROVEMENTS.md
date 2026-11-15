@@ -45,3 +45,10 @@ Use Add analyst finding for discoveries outside the heuristic patterns. Entries 
 5. Continue engagement atomically creates a fresh linked record while preserving the source history and frozen reports, even at the 200-event limit. Current evidence/tracking/workbooks/delivery copy; old history and snapshots remain in the source.
 6. Delivery stores an analyst-written executive summary, business impact and prioritized recommendations. Client remediation filters confirmed records across local assessments by client, owner, state and overdue UTC date, with 50 rows per page. Continuations can repeat source findings; inspect lineage before combining counts.
 7. Workspace status shows counts, approximate serialized bytes and optional browser-origin usage/quota estimates. Unknown metadata is shown as unavailable. Warnings flag approaching record/history/size/report limits. Recovery guide and last backup export initiated time improve operator visibility without claiming a file was saved.
+
+
+## Full workbench polish · 2026-11-07
+
+Saved-work guidance folds into a disclosure once records exist. Assessment instructions, exports/maintenance and record capacity use labeled disclosures, preserving visible review progress and capacity warnings. Tables, empty-result recovery, mobile navigation and touch targets are clearer. Tabs retain keyboard focus and horizontal visibility. Workflow input descriptions are programmatically associated.
+
+Asynchronous page reads discard obsolete navigation results; export names and backup notices retain their starting scope. Restore previews clear stale errors and announce validation. Print content clears after printing and navigation, and manual browser Print receives safe guidance when no report is prepared. Report headings wrap. The existing browser-only security model, evidence requirements and conflict safeguards are unchanged.

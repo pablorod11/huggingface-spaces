@@ -1,12 +1,14 @@
 'use strict';
 const $ = (selector, root = document) => root.querySelector(selector);
+let navigationSequence = 0;
 const state = {
   assessments: [], assessment: null, finding: null, tab: 'ledger', client: '', ledgerSearch: '', verdict: '', severity: '', restoreText: '', originalReview: ''
 };
-const roles = [ ['red', '01', 'Red hat', 'Test assumptions', 'Authorized adversary perspective.'], ['blue', '02', 'Blue hat', 'Strengthen defense', 'Triage signals and plan response.'], ['white', '03', 'White hat', 'Validate evidence', 'Review causes and remediation.'], ['black', '04', 'Black hat', 'Think like an attacker', 'Bounded threat modeling only.'], ['purple', '05', 'Purple hat', 'Close the loop', 'Connect scenarios to detection.'] ];
+const roles = [ ['red', '01', 'Red hat', 'Test assumptions', 'Test how scoped weaknesses could be misused.'], ['blue', '02', 'Blue hat', 'Strengthen defense', 'Triage alerts and plan the response.'], ['white', '03', 'White hat', 'Validate evidence', 'Check evidence, causes, and proposed fixes.'], ['black', '04', 'Black hat', 'Think like an attacker', 'Map attacker paths within the authorized scope.'], ['purple', '05', 'Purple hat', 'Close the loop', 'Connect team exercises to detection improvements.'] ];
 const workflows = {
   code: 'Code review', alerts: 'Alert triage', exercise: 'Team exercise'
 };
+const verdictLabels = {unresolved: 'Needs review', 'confirmed-static': 'Confirmed by source review', 'confirmed-runtime': 'Confirmed by independent testing', rejected: 'Rejected after review'};
 function el(tag, text, cls) {
   const node = document.createElement(tag);
   if (text !== undefined) node.textContent = String(text);
@@ -130,34 +132,57 @@ function openCreate() {
 }
 async function loadOverview() {
   if (!allowDeliveryDiscard()) return;
+  const navigation = ++navigationSequence;
+  $('#print-report').replaceChildren();
   activate();
   state.assessment = null;
   $('#view').replaceChildren(el('p', 'Opening browser storage…', 'muted'));
   try {
-    state.assessments = (await api('/api/assessments')).assessments;
+    const result = await api('/api/assessments');
+    if (navigation !== navigationSequence) return;
+    state.assessments = result.assessments;
     renderOverview();
+    if (navigation > 1) $('#main').focus({ preventScroll: true });
   }
   catch (error) {
+    if (navigation !== navigationSequence) return;
     $('#view').replaceChildren(empty('Browser storage is unavailable', `${error.message} Enable site storage and retry. Records belong to this browser and origin; this app has no server backup.`, button('Try again', loadOverview)));
     notify(error.message, true);
   }
+}
+function openSampleReview() {
+  openCreate();
+  if ($('#create-dialog').open) $('#sample').click();
 }
 function renderOverview() {
   const view = $('#view');
   if (state.client && !state.assessments.some(a => (a.client || 'Unassigned') === state.client)) state.client = '';
   view.replaceChildren();
-  append(view, heading('COMMAND CENTER / OVERVIEW', 'Your security work, in evidence.', 'Scope a review. Challenge the findings. Record the decision.', button('+ New assessment', openCreate, 'primary')), strip());
+  append(view, heading('WORKSPACE', 'Security reviews, step by step.', 'Review Python code, review alert logs, or plan a team exercise. Keep the evidence and decisions together.', button('+ New assessment', openCreate, 'primary')));
+  const intro = el(state.assessments.length ? 'details' : 'section', undefined, 'quick-start');
+  if (state.assessments.length) intro.append(el('summary', 'Review guide and sample'));
+  append(intro, el('h2', 'How a review works'), el('p', 'You make the decisions. Suggested issues need human review and supporting evidence; this workbench does not certify that a system is secure.'));
+  const steps = el('ol');
+  ['Choose a review type and describe the scope you are authorized to assess.', 'Inspect each suggested issue, add evidence, and save a review decision.', 'Track confirmed fixes and prepare a report or client summary.'].forEach(text => steps.append(el('li', text)));
+  append(intro, steps, button('Try a sample review', openSampleReview), el('p', 'The sample opens the assessment form. Review its scope and authorization before saving. Records stay in this browser; download a backup to keep a separate copy.', 'fine'));
+  view.append(intro);
+  const perspectives = el('details', undefined, 'perspective-help');
+  append(perspectives, el('summary', 'How the five security perspectives help'), el('p', 'Five checklists help people look at the same review from different angles. They do not run agents, scans, or attacks.'), strip());
+  view.append(perspectives);
   const title = el('div', undefined, 'section-title');
-  append(title, el('h2', 'Assessment register'), el('span', `${String(state.assessments.length).padStart(2, '0')} ENGAGEMENTS`, 'count'));
+  append(title, el('h2', 'Your assessments'), el('span', `${state.assessments.length} SAVED`, 'count'));
   view.append(title);
   const workspaceActions = el('div', undefined, 'detail-actions');
   const backupAction = button('↓ Backup all clients JSON', backupWorkspace);
   append(workspaceActions, backupAction, button('↑ Restore backup', openRestore), button('Client remediation', openClientRemediation), button('Recovery guide', openRecovery), button('Refresh register', loadOverview));
-  view.append(workspaceActions);
+  const tools = el('details', undefined, 'workspace-tools');
+  tools.append(el('summary', 'Workspace tools and backup'));
+  tools.append(workspaceActions);
+  view.append(tools);
   const statusPanel = el('section', 'Loading local storage status (100 assessment limit)…', 'workspace-status fine');
   statusPanel.id = 'workspace-status';
   statusPanel.setAttribute('aria-live', 'polite');
-  view.append(statusPanel);
+  tools.append(statusPanel);
   renderWorkspaceStatus(statusPanel);
   if (!state.assessments.length) {
     const box = empty('Start with a defined scope.', 'Review a Python snippet, triage structured alerts, or prepare a five-perspective security exercise.', button('Create first assessment ↗', openCreate, 'primary'));
@@ -185,7 +210,7 @@ function renderOverview() {
     count.textContent = `${matches.length} of ${state.assessments.length}`;
     const table = el('table');
     const head = el('tr');
-    ['Assessment / scope', 'Workflow', 'Created', 'Candidates', 'Open'].forEach(t => head.append(el('th', t)));
+    ['Assessment / scope', 'Workflow', 'Created', 'Possible issues', 'Needs review'].forEach(t => head.append(el('th', t)));
     append(table, append(el('thead'), head));
     const body = el('tbody');
     matches.forEach(a => {
@@ -193,39 +218,55 @@ function renderOverview() {
       const identity = el('td');
       append(identity, button(a.name, () => openAssessment(a.id), 'row-button'), el('span', `${a.client || 'Unassigned'} / ${a.scope}`, 'subline'));
       append(row, identity, el('td', workflows[a.workflow] || a.workflow), el('td', date(a.created_at), 'mono'), el('td', a.finding_count, 'mono'), el('td', a.unresolved_count, 'mono'));
-      labelCells(row, ['Assessment / scope', 'Workflow', 'Created', 'Candidates', 'Open']);
+      labelCells(row, ['Assessment / scope', 'Workflow', 'Created', 'Possible issues', 'Needs review']);
       body.append(row);
     });
     table.append(body);
     wrap.replaceChildren(table);
-    if (!matches.length) wrap.append(el('p', 'No matching assessments.', 'muted'));
+    if (!matches.length) wrap.append(empty('No matching assessments.', 'Broaden the search or client filter to see saved work.', button('Clear filters', () => { search.value = ''; clients.value = state.client = ''; draw(); search.focus(); })));
   }
   search.addEventListener('input', draw);
   draw();
 }
 async function openAssessment(id) {
+  const navigation = ++navigationSequence;
+  $('#print-report').replaceChildren();
   $('#view').replaceChildren(el('p', 'Loading evidence…', 'muted'));
   try {
-    state.assessment = (await api(`/api/assessments/${encodeURIComponent(id)}`)).assessment;
+    const result = await api(`/api/assessments/${encodeURIComponent(id)}`);
+    if (navigation !== navigationSequence) return;
+    state.assessment = result.assessment;
     state.externalChange = false;
     state.tab = 'ledger';
     state.ledgerSearch = state.verdict = state.severity = '';
     renderAssessment();
+    $('#main').focus({ preventScroll: true });
   }
   catch (error) {
+    if (navigation !== navigationSequence) return;
     notify(error.message, true);
     await loadOverview();
   }
 }
 function renderAssessment() {
+  $('#print-report').replaceChildren();
   activate();
   const a = state.assessment;
+  const tabScroll = $('.tabs')?.scrollLeft || 0;
+  const toolsOpen = $('.assessment-tools')?.open || false;
   const view = $('#view');
   view.replaceChildren(button('← Assessment register', loadOverview, 'text-button back'));
-  append(view, heading(`${workflows[a.workflow] || a.workflow} / ${date(a.created_at)}`, a.name, `${a.client || 'Unassigned'} / ${a.scope}`), strip(a.roles));
+  append(view, heading(`${workflows[a.workflow] || a.workflow} / ${date(a.created_at)}`, a.name, `${a.client || 'Unassigned'} / ${a.scope}`));
+  const assignedPerspectives = el('details', undefined, 'perspective-help');
+  append(assignedPerspectives, el('summary', `${a.roles.length} assigned security perspectives`), strip(a.roles));
+  view.append(assignedPerspectives);
   const actions = el('div', undefined, 'detail-actions');
   append(actions, button('↓ Export JSON', () => download('json')), button('↓ Export Markdown', () => download('markdown')), button('Print executive report', printCurrentReport), button('Add analyst finding', openManual), button('Refresh saved assessment', refreshAssessment, 'refresh-assessment'), button('Continue engagement', continueEngagement, 'continue-engagement'), button('Record handoff', openHandoff), button('Delete assessment', () => $('#delete-dialog').showModal(), 'text-button'));
-  view.append(actions);
+  const assessmentTools = el('details', undefined, 'assessment-tools');
+  assessmentTools.open = toolsOpen;
+  append(assessmentTools, el('summary', 'Assessment tools and exports'), actions);
+  view.append(button('Add analyst finding', openManual), assessmentTools);
+  [...actions.querySelectorAll('button')].find(node => node.textContent === 'Add analyst finding').remove();
   $('.refresh-assessment', actions).id = 'refresh-assessment';
   $('.continue-engagement', actions).id = 'continue-engagement';
   const changeHint = el('p', '', 'change-hint fine');
@@ -235,25 +276,52 @@ function renderAssessment() {
   changeHint.textContent = 'Saved workspace data changed in another tab. Use Refresh saved assessment to load it. Unsaved dialog inputs are preserved until you choose to discard.';
   view.append(changeHint);
   const stats = el('div', undefined, 'stats');
-  [['Candidates', a.findings.length], ['Awaiting decision', a.findings.filter(f => f.verdict === 'unresolved').length], ['Perspectives assigned', a.roles.length]].forEach(([label, value]) => {
+  [['Possible issues', a.findings.length], ['Needs review', a.findings.filter(f => f.verdict === 'unresolved').length], ['Perspectives assigned', a.roles.length]].forEach(([label, value]) => {
     const cell = el('div', undefined, 'stat');
     append(cell, el('span', label), el('strong', String(value).padStart(2, '0')));
     stats.append(cell);
   });
   append(view, stats, el('p', a.summary, 'muted'));
   const recordBytes = new TextEncoder().encode(JSON.stringify(a)).length;
-  view.append(el('p', `Record limits: ${(a.activity || []).length} / 200 events · ${(a.snapshots || []).length} / 3 report snapshots · approximately ${recordBytes.toLocaleString()} serialized bytes. Continue the engagement to start fresh event/report capacity; export backups before retention changes.`, 'fine'));
+  const recordDetails = el('details', undefined, 'record-details');
+  recordDetails.append(el('summary', 'Record capacity and retention'));
+  recordDetails.append(el('p', `Record limits: ${(a.activity || []).length} / 200 events · ${(a.snapshots || []).length} / 3 report snapshots · approximately ${recordBytes.toLocaleString()} serialized bytes. Continue the engagement to start fresh event/report capacity; export backups before retention changes.`, 'fine'));
+  assessmentTools.append(recordDetails);
   if ((a.activity || []).length >= 180 || (a.snapshots || []).length >= 3 || recordBytes >= 4 * 1024 * 1024) view.append(el('p', 'This engagement is nearing an event, frozen-report, or backup-size limit. Export a backup and continue the engagement for fresh history/report capacity.', 'fine')); 
+  const guide = el('section', undefined, 'review-guide');
+  guide.setAttribute('aria-label', 'Assessment review guide');
+  guide.append(el('h2', 'Work through this assessment'));
+  const unresolved = a.findings.filter(f => f.verdict === 'unresolved');
+  const reviewed = a.findings.length - unresolved.length;
+  guide.append(el('p', a.findings.length ? `${reviewed} of ${a.findings.length} issues have a saved decision. ${unresolved.length} await review.` : 'No issues were suggested. Complete the assigned role tasks and record what you checked; this does not establish that the scope is secure.'));
+  const guideSteps = el('ol');
+  ['Review: open an issue and inspect its location, impact, and limitations.', 'Evidence: check the supporting material and record your review notes.', 'Decision: save a verdict. Confirmed issues require evidence and a review method.', 'Report: check the saved decisions, track confirmed fixes, and prepare the report.'].forEach(text => guideSteps.append(el('li', text)));
+  const guideDetails = el('details');
+  append(guideDetails, el('summary', 'Review steps'), guideSteps);
+  guide.append(guideDetails);
+  const nextTab = key => {
+    if (!allowDeliveryDiscard()) return;
+    state.tab = key;
+    renderAssessment();
+    $(`#tab-${key}`).focus();
+  };
+  guide.append(unresolved.length
+    ? button('Review next issue', () => { if (allowDeliveryDiscard()) openFinding(unresolved[0]); }, 'primary')
+    : a.findings.length
+      ? button('Prepare report', () => nextTab('reports'), 'primary')
+      : button('Open role tasks', () => nextTab('missions'), 'primary'));
+  view.insertBefore(guide, assignedPerspectives);
   const tabs = el('div', undefined, 'tabs');
   tabs.setAttribute('role', 'tablist');
   const panel = el('section');
   panel.id = 'assessment-panel';
   panel.setAttribute('role', 'tabpanel');
-  [['ledger', 'Evidence ledger'], ['queue', 'Remediation'], ['reports', 'Reports'], ['delivery', 'Delivery'], ['missions', 'Missions'], ['coverage', 'Coverage & activity']].forEach(([key, label]) => {
+  [['ledger', 'Issues to review'], ['queue', 'Fix tracking'], ['reports', 'Reports'], ['delivery', 'Client summary'], ['missions', 'Role tasks'], ['coverage', 'Checks and history']].forEach(([key, label]) => {
     const node = button(label, () => {
       if (!allowDeliveryDiscard()) return;
       state.tab = key;
       renderAssessment();
+      $(`#tab-${key}`).focus({ preventScroll: true });
     }, `tab${state.tab === key ? ' active' : ''}`);
     node.id = `tab-${key}`;
     node.setAttribute('role', 'tab');
@@ -276,6 +344,10 @@ function renderAssessment() {
     tab.tabIndex = tab.getAttribute('aria-selected') === 'true' ? 0 : -1;
   });
   append(view, tabs, panel);
+  tabs.scrollLeft = tabScroll;
+  const selectedTab = $(`#tab-${state.tab}`, tabs);
+  if (selectedTab.offsetLeft < tabs.scrollLeft) tabs.scrollLeft = selectedTab.offsetLeft;
+  else if (selectedTab.offsetLeft + selectedTab.offsetWidth > tabs.scrollLeft + tabs.clientWidth) tabs.scrollLeft = selectedTab.offsetLeft + selectedTab.offsetWidth - tabs.clientWidth;
   if (state.tab === 'ledger') renderLedger(panel, a);
   if (state.tab === 'queue') renderQueue(panel, a);
   if (state.tab === 'reports') renderReports(panel, a);
@@ -313,7 +385,7 @@ function renderLedger(panel, a) {
   append(title, el('h2', 'Candidate findings'), el('span', 'ANALYST VERDICT REQUIRED', 'count'));
   panel.append(title);
   if (!a.findings.length) {
-    panel.append(empty('No candidates from this input.', 'This result covers only the limited checks listed under Coverage. Use the assigned missions to continue the review.'));
+    panel.append(empty('No possible issues from this input.', 'This result covers only the limited checks listed under Checks and history. Open Role tasks to continue the review.', button('Review assigned tasks', () => $('#tab-missions').click())));
     return;
   }
   const toolbar = el('div', undefined, 'toolbar');
@@ -323,7 +395,7 @@ function renderLedger(panel, a) {
   search.value = state.ledgerSearch;
   search.setAttribute('aria-label', 'Search findings');
   const count = el('span', '', 'count');
-  const verdictFilter = selectControl('Filter by verdict', [['', 'All verdicts'], ...['unresolved', 'confirmed-static', 'confirmed-runtime', 'rejected'].map(v => [v, v])]);
+  const verdictFilter = selectControl('Filter by verdict', [['', 'All decisions'], ...Object.entries(verdictLabels)]);
   const severityFilter = selectControl('Filter by severity', [['', 'All severities'], ...['high', 'medium', 'low'].map(v => [v, v])]);
   verdictFilter.value = state.verdict;
   severityFilter.value = state.severity;
@@ -349,13 +421,13 @@ function renderLedger(panel, a) {
       const findingButton = button(f.title, () => openFinding(f), 'row-button');
       findingButton.dataset.finding = f.id;
       append(identity, findingButton, el('span', f.location, 'subline mono'));
-      append(row, identity, el('td', f.severity, 'tag'), el('td', f.confidence, 'tag'), el('td', f.verdict, 'tag'));
+      append(row, identity, el('td', f.severity, 'tag'), el('td', f.confidence, 'tag'), el('td', verdictLabels[f.verdict] || f.verdict, 'tag'));
       labelCells(row, ['Candidate / location', 'Severity', 'Confidence', 'Verdict']);
       body.append(row);
     });
     table.append(body);
     wrap.replaceChildren(table);
-    if (!matches.length) wrap.append(el('p', 'No matching findings.', 'muted'));
+    if (!matches.length) wrap.append(empty('No matching findings.', 'Broaden the search or decision and severity filters.', button('Clear filters', () => { search.value = state.ledgerSearch = ''; verdictFilter.value = state.verdict = ''; severityFilter.value = state.severity = ''; draw(); search.focus(); })));
   }
   search.addEventListener('input', draw);
   draw();
@@ -389,12 +461,13 @@ function openFinding(f) {
 }
 async function download(format) {
   try {
-    const text = await CyberLocal.exportText(state.assessment.id, format);
+    const assessmentId = state.assessment.id;
+    const text = await CyberLocal.exportText(assessmentId, format);
     const blob = new Blob([text], { type: format === 'json' ? 'application/json;charset=utf-8' : 'text/markdown;charset=utf-8' });
     const url = URL.createObjectURL(blob);
     const link = el('a');
     link.href = url;
-    link.download = `assessment-${state.assessment.id}.${format === 'json' ? 'json' : 'md'}`;
+    link.download = `assessment-${assessmentId}.${format === 'json' ? 'json' : 'md'}`;
     document.body.append(link);
     link.click();
     link.remove();
@@ -454,7 +527,7 @@ $('#sample').addEventListener('click', () => {
     })), null, 2), exercise: 'A fictional retailer must respond to a suspected account takeover affecting its customer support portal. Scope: tabletop discussion only. Test escalation, identity verification, evidence preservation, and detection handoffs. No production systems or external targets.'
   };
   $('#content').value = samples[w];
-  if (!$('#assessment-name').value) $('#assessment-name').value = `Sample ${workflows[w].toLowerCase()}`;
+  if (!$('#assessment-name').value || Object.values(workflows).some(label => $('#assessment-name').value === `Sample ${label.toLowerCase()}`)) $('#assessment-name').value = `Sample ${workflows[w].toLowerCase()}`;
   if (!$('#scope').value) $('#scope').value = 'Fictional sample input only; no external systems';
   notify('Sample input loaded. Review scope and authorization before creating.');
 });
@@ -478,10 +551,12 @@ $('#create-form').addEventListener('submit', event => {
     $('#input-label').textContent = help.code[0];
     $('#input-help').textContent = help.code[1];
     $('#create-dialog').close();
+    ++navigationSequence;
     state.assessment = result.assessment;
     state.tab = 'ledger';
     state.ledgerSearch = state.verdict = state.severity = '';
     renderAssessment();
+    $('#main').focus({ preventScroll: true });
     notify('Assessment created. Candidates await analyst review.');
   });
 });
@@ -541,6 +616,8 @@ function reviewSnapshot() {
 }
 function updateReviewRequirements() {
   const confirmed = $('#verdict').value.startsWith('confirmed-');
+  const confirmationFields = $('#confirmation-fields');
+  if (confirmationFields) confirmationFields.hidden = !confirmed;
   Object.values(reviewFields).forEach(id => { $(`#${id}`).required = confirmed; });
   const method = $('#review-method');
   method.minLength = confirmed ? 20 : 0;
@@ -574,10 +651,11 @@ function saveText(text, filename, type = 'application/json;charset=utf-8') {
 }
 async function backupWorkspace() {
   try {
-    const text = await CyberLocal.backupText(state.client || undefined);
-    saveText(text, `napolean-backup-${new Date().toISOString().slice(0, 10)}.json`);
+    const client = state.client;
+    const text = await CyberLocal.backupText(client || undefined);
+    saveText(text, `veyra-backup-${new Date().toISOString().slice(0, 10)}.json`);
     recordBackupInitiated();
-    notify(`Backup export initiated for ${state.client || 'all clients'}. This app cannot confirm that the file was saved.`);
+    notify(`Backup export initiated for ${client || 'all clients'}. This app cannot confirm that the file was saved.`);
   } catch (error) { notify(error.message, true); }
 }
 function openRestore() {
@@ -595,8 +673,10 @@ $('#restore-file').addEventListener('change', async () => {
   $('#restore-submit').disabled = true;
   $('#restore-confirm').checked = false;
   $('#restore-preview').textContent = '';
+  $('#restore-form .error-inline').hidden = true;
   const file = $('#restore-file').files[0];
   if (!file) return;
+  $('#restore-preview').textContent = 'Validating backup…';
   try {
     if (file.size > 5 * 1024 * 1024) throw new Error('Backup exceeds the 5 MB file limit.');
     const text = await file.text();
@@ -608,7 +688,10 @@ $('#restore-file').addEventListener('change', async () => {
     $('#restore-form .error-inline').hidden = true;
     $('#restore-submit').disabled = false;
   } catch (error) {
-    if (sequence === previewSequence) formError($('#restore-form'), error.message);
+    if (sequence === previewSequence) {
+      $('#restore-preview').textContent = '';
+      formError($('#restore-form'), error.message);
+    }
   }
 });
 $('#restore-form').addEventListener('submit', event => {
@@ -672,8 +755,8 @@ function printReport(data = state.assessment, snapshot = null) {
   const a = data;
   const report = $('#print-report');
   const reportLogo = el('img', undefined, 'report-logo');
-  reportLogo.src = new URL('logo-print.svg', $('.brand-logo').src).href;
-  reportLogo.alt = 'Napolean Cyber Command';
+  reportLogo.src = new URL('logo-print.svg', $('.brand-wordmark').src).href;
+  reportLogo.alt = 'Veyra Security workbench';
   reportLogo.width = 210;
   reportLogo.height = 80;
   report.replaceChildren(reportLogo, el('p', 'CLIENT ASSESSMENT', 'eyebrow'), el('h1', a.name));
@@ -1059,11 +1142,14 @@ async function renderWorkspaceStatus(panel) {
 }
 async function openClientRemediation() {
   if (!allowDeliveryDiscard()) return;
+  const navigation = ++navigationSequence;
+  $('#print-report').replaceChildren();
   $('#view').replaceChildren(el('p', 'Loading saved remediation across local assessments…', 'muted'));
   try {
     const summaries = (await api('/api/assessments')).assessments;
     const records = [];
     for (const summary of summaries) records.push((await api(`/api/assessments/${summary.id}`)).assessment);
+    if (navigation !== navigationSequence) return;
     const view = $('#view'); view.replaceChildren(button('← Assessment register', loadOverview, 'text-button back'));
     const panel = el('section'); panel.id = 'client-remediation';
     append(panel, heading('BROWSER WORKSPACE / CONFIRMED ONLY', 'Client remediation', 'Client labels organize this browser; they do not provide access control or tenant isolation.'));
@@ -1111,6 +1197,13 @@ async function openClientRemediation() {
       draw();
     });
     [owners, statuses, late].forEach(control => control.addEventListener('change', () => { queuePage = 0; draw(); })); draw();
-  } catch (error) { notify(error.message, true); await loadOverview(); }
+    $('#main').focus({ preventScroll: true });
+  } catch (error) { if (navigation !== navigationSequence) return; notify(error.message, true); await loadOverview(); }
 }
 loadOverview();
+
+window.addEventListener('afterprint', () => $('#print-report').replaceChildren());
+window.addEventListener('beforeprint', () => {
+  const report = $('#print-report');
+  if (!report.childElementCount) report.append(el('h1', 'No report prepared'), el('p', 'Open an assessment and choose Print executive report, or print a frozen report from Reports.'));
+});

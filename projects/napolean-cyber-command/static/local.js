@@ -308,7 +308,7 @@
         .replace(/[\\`*_{}\[\]()#+.!|>~-]/g,'\\$&').replace(/[\r\n]/g,' ');
     }
     const totals=summarize(assessment);
-    const lines = ['# Napolean Cyber Command assessment','',`Name: ${safe(assessment.name)}`,`Scope: ${safe(assessment.scope)}`,
+    const lines = ['# Veyra assessment','',`Name: ${safe(assessment.name)}`,`Scope: ${safe(assessment.scope)}`,
       `Client: ${safe(assessment.client || 'Unassigned')}`,`Workflow: ${assessment.workflow}`,`Created: ${safe(assessment.created_at)}`,
       '','## Executive summary',safe(assessment.summary),
       ...VERDICTS.map(verdict=>`${verdict}: ${totals[verdict.replaceAll('-','_')]}`),

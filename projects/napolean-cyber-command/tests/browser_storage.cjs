@@ -197,6 +197,7 @@ async function main() {
     console.log('PASS tampered snapshot digest rejects the whole backup before any IndexedDB mutation');
 
     await page.reload();
+    await page.locator('.workspace-tools summary').click();
     await page.getByRole('button', { name: /Backup all clients JSON/ }).waitFor();
     const downloaded = page.waitForEvent('download');
     await page.getByRole('button', { name: /Backup all clients JSON/ }).click();

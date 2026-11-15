@@ -14,6 +14,7 @@ try{
  });
  await page.reload();await page.getByRole('button',{name:'Engagement acceptance fixture',exact:true}).click();
  await page.evaluate(()=>{window.print=()=>{}});
+ if (!(await page.getByRole('button',{name:'Print executive report',exact:true}).isVisible())) await page.locator('.assessment-tools > summary').click();
  await page.getByRole('button',{name:'Print executive report',exact:true}).click();
  await page.waitForFunction(()=>document.querySelector('#print-report').textContent.includes('ROOT CAUSE ACCEPTANCE MARKER'));
  const report=await page.locator('#print-report').textContent();
@@ -52,6 +53,7 @@ try{
  assert.equal(await page.locator('#delivery-business_impact').inputValue(),'Unsaved local business impact draft.','change hint preserves drafts');
  await page.locator('#delivery-form button[type=submit]').click();await page.locator('#reload-delivery').waitFor();
  assert.equal(await page.locator('#delivery-business_impact').inputValue(),'Unsaved local business impact draft.','delivery conflict preserves draft');
+ if (!(await page.getByRole('button',{name:'Print executive report',exact:true}).isVisible())) await page.locator('.assessment-tools > summary').click();
  await page.getByRole('button',{name:'Print executive report',exact:true}).click();
  await page.waitForFunction(()=>document.querySelector('#print-report').textContent.includes('Newer synthetic review from another tab.'));
  assert.equal(await page.locator('#delivery-business_impact').inputValue(),'Unsaved local business impact draft.','fresh printing leaves unsaved delivery intact');
@@ -59,6 +61,7 @@ try{
  assert.equal(await page.locator('#delivery-business_impact').inputValue(),'Unsaved local business impact draft.','canceled refresh preserves draft');
  page.once('dialog',d=>d.accept());await page.locator('#refresh-assessment').click();
  await page.waitForFunction(()=>document.querySelector('#delivery-business_impact').value!=='Unsaved local business impact draft.');
+ if (!(await page.getByRole('button',{name:'Print executive report',exact:true}).isVisible())) await page.locator('.assessment-tools > summary').click();
  await page.getByRole('button',{name:'Print executive report',exact:true}).click();
  await page.waitForFunction(()=>document.querySelector('#print-report').textContent.includes('Newer synthetic review from another tab.'));
  assert.match(await page.locator('#print-report').textContent(),/Synthetic executive summary/);
@@ -69,6 +72,7 @@ try{
  assert.notEqual(continued.findings[0].id,fixture.first);
  console.log('PASS engagement continuation keeps provenance and starts fresh history');
  await page.locator('#nav-overview').click();
+ await page.locator('.workspace-tools summary').click();
  await page.locator('#workspace-status').waitFor();assert.match(await page.locator('#workspace-status').textContent(),/100/);
  await page.getByRole('button',{name:'Recovery guide',exact:true}).click();await page.locator('#recovery-dialog').waitFor();
  await page.locator('#recovery-dialog [data-close]').first().click();

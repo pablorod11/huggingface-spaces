@@ -6,6 +6,8 @@ const {chromium} = require(process.env.PLAYWRIGHT_MODULE || 'playwright');
   const browser = await chromium.launch({headless:true, ...(process.env.PLAYWRIGHT_EXECUTABLE_PATH ? {executablePath:process.env.PLAYWRIGHT_EXECUTABLE_PATH} : {})});
   try {
     const context = await browser.newContext({viewport:{width:1440,height:1000}});
+    // Isolate the native OS print dialog; retain report DOM and print-media assertions.
+    await context.addInitScript(() => { window.print = () => {}; });
     const page = await context.newPage();
     const errors=[]; page.on('pageerror',error=>errors.push(error.message));
     async function assertProtectedDraft(dialogId) {
@@ -35,6 +37,7 @@ const {chromium} = require(process.env.PLAYWRIGHT_MODULE || 'playwright');
     await page.locator('#review-note').fill('Reviewed only against this synthetic owned fixture.');
     await page.getByRole('button',{name:'Record decision ↗',exact:true}).click();
     assert.equal(await page.locator('#finding-dialog').evaluate(e=>e.open),true,'incomplete confirmation stays open');
+    await page.locator('.tracking-details summary').click();
     for (const [selector,value] of Object.entries({'#reviewer':'Synthetic analyst','#reference':'fixture revision 1','#review-prerequisites':'Caller controls command in the fixture.','#review-mitigations':'No validation in this bounded fixture.','#review-method':'Manual source trace of the synthetic owned fixture.','#tracking-owner':'Fictional application team','#tracking-due':'2000-01-01','#tracking-retest':'Recheck argument-list replacement in owned fixture.'})) await page.locator(selector).fill(value);
     await page.locator('#tracking-status').selectOption('in-progress');
     await page.evaluate(()=>{
@@ -65,6 +68,7 @@ const {chromium} = require(process.env.PLAYWRIGHT_MODULE || 'playwright');
     await second.getByRole('button',{name:'Possible shell-enabled process invocation',exact:true}).click();
     await second.locator('#reviewer').fill('Newer synthetic analyst');
     await second.locator('#reference').fill('fixture revision 2');
+    await second.locator('.tracking-details summary').click();
     await second.locator('#tracking-owner').fill('Newer application team');
     await second.locator('#tracking-status').selectOption('retest');
     await second.locator('#review-note').fill('Newer saved synthetic evidence from the second tab.');
@@ -89,6 +93,7 @@ const {chromium} = require(process.env.PLAYWRIGHT_MODULE || 'playwright');
     console.log('PASS stale UI save preserves draft/current tracking until explicit latest-record reload');
 
     await candidate.click();
+    if (!await page.locator('#tracking-owner').isVisible()) await page.locator('.tracking-details summary').click();
     for(const [selector,value] of Object.entries({'#review-note':'Unsaved synthetic draft note retained for close checks.','#reviewer':'Unsaved reviewer','#reference':'Unsaved reference','#review-prerequisites':'Unsaved prerequisites','#review-mitigations':'Unsaved mitigation details','#review-method':'Unsaved validation method details long enough.','#tracking-owner':'Unsaved remediation owner','#tracking-due':'2001-01-01','#tracking-retest':'Unsaved synthetic retest details'})) await page.locator(selector).fill(value);
     await page.locator('#verdict').selectOption('confirmed-runtime');
     await page.locator('#tracking-status').selectOption('in-progress');
@@ -109,6 +114,7 @@ const {chromium} = require(process.env.PLAYWRIGHT_MODULE || 'playwright');
     await page.locator('#next-unresolved').click();
     assert.match(await page.locator('#finding-title').innerText(),/dynamic Python/);
     await page.getByRole('button',{name:'Close finding',exact:true}).click();
+    await page.locator('.assessment-tools > summary').click();
     await page.getByRole('button',{name:'Record handoff',exact:true}).click();
     await page.locator('#handoff-note').fill('Blue team: verify detection for the bounded shell invocation scenario.');
     await assertProtectedDraft('#handoff-dialog');
@@ -166,6 +172,7 @@ const {chromium} = require(process.env.PLAYWRIGHT_MODULE || 'playwright');
     if(process.env.ARTIFACT_DIR) await page.screenshot({path:process.env.ARTIFACT_DIR+'/business-workflows.png',fullPage:true});
     await page.getByRole('button',{name:'← Assessment register',exact:true}).click();
     await page.getByRole('combobox',{name:'Filter by client'}).selectOption('Fictional retailer');
+    await page.locator('.workspace-tools summary').click();
     const downloadPromise=page.waitForEvent('download');
     await page.getByRole('button',{name:/Backup.*JSON/}).click();
     const download=await downloadPromise;
@@ -186,6 +193,7 @@ const {chromium} = require(process.env.PLAYWRIGHT_MODULE || 'playwright');
     await page.getByRole('combobox',{name:'Filter by client'}).selectOption('Fictional retailer');
     for(let index=0;index<2;index++) {
       await page.getByRole('button',{name:'Synthetic retailer review',exact:true}).first().click();
+      if (!(await page.getByRole('button',{name:'Delete assessment',exact:true}).isVisible())) await page.locator('.assessment-tools > summary').click();
       await page.getByRole('button',{name:'Delete assessment',exact:true}).click();
       await page.locator('#confirm-delete').click();
       await page.locator('#delete-dialog').waitFor({state:'hidden'});
@@ -194,6 +202,7 @@ const {chromium} = require(process.env.PLAYWRIGHT_MODULE || 'playwright');
     assert.equal(await page.getByRole('combobox',{name:'Filter by client'}).inputValue(),'','last filtered client deletion resets visible selection');
     assert.equal(await page.locator('tbody tr').count(),1);
     await page.getByRole('button',{name:'Other client fixture',exact:true}).waitFor();
+    await page.locator('.workspace-tools summary').click();
     assert.match(await page.getByRole('button',{name:/Backup.*JSON/}).innerText(),/all clients/,'backup scope agrees with reset selection');
     const alertAndReport=await page.evaluate(()=>{
       const fixture={name:'Synthetic totals',scope:'Owned fixture',workflow:'alerts',roles:['blue'],authorization:true,content:JSON.stringify(Array.from({length:5},()=>({event:'login_failed'})))};

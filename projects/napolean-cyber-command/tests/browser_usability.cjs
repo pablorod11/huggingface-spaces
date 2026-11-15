@@ -1,0 +1,62 @@
+'use strict';
+const assert = require('node:assert/strict');
+const fs = require('node:fs/promises');
+const {chromium} = require(process.env.PLAYWRIGHT_MODULE || 'playwright');
+(async () => {
+  const browser = await chromium.launch({headless: true});
+  try {
+    const context = await browser.newContext({viewport: {width: 1440, height: 1000}});
+    const page = await context.newPage();
+    const errors = [];
+    page.on('pageerror', error => errors.push(error.message));
+    await page.goto(process.env.APP_URL || 'http://127.0.0.1:7861/');
+    await page.getByRole('button', {name: 'Try a sample review', exact: true}).click();
+    assert.equal(await page.locator('#authorization').isChecked(), false, 'sample never grants authorization');
+    assert.match(await page.locator('#content').inputValue(), /subprocess/);
+    assert.match(await page.locator('#scope').inputValue(), /Fictional sample/);
+    await page.locator('#authorization').check();
+    await page.locator('#create-form button[type=submit]').click();
+    await page.getByRole('button', {name: 'Review next issue', exact: true}).click();
+    assert.equal(await page.locator('#confirmation-fields').isVisible(), false);
+    await page.locator('#verdict').selectOption('confirmed-static');
+    assert.equal(await page.locator('#confirmation-fields').isVisible(), true);
+    await page.locator('#verdict').selectOption('rejected');
+    assert.equal(await page.locator('#confirmation-fields').isVisible(), false);
+    await page.locator('#review-note').fill('Synthetic tutorial review only; rejecting this example to exercise saved decision navigation.');
+    await page.locator('#verdict-form button[type=submit]').click();
+    await page.getByRole('button', {name: 'Prepare report', exact: true}).click();
+    assert.equal(await page.locator('#tab-reports').getAttribute('aria-selected'), 'true');
+    console.log('PASS sample authorization, conditional evidence fields and saved-decision report path');
+    await page.locator('#nav-overview').click();
+    await page.locator('details.quick-start > summary').click();
+    await page.getByRole('button', {name: 'Try a sample review', exact: true}).click();
+    page.once('dialog', dialog => dialog.accept());
+    await page.locator('#workflow').selectOption('exercise');
+    await page.locator('#sample').click();
+    assert.equal(await page.locator('#assessment-name').inputValue(), 'Sample team exercise');
+    await page.locator('#authorization').check();
+    await page.locator('#create-form button[type=submit]').click();
+    await page.getByRole('button', {name: 'Open role tasks', exact: true}).click();
+    assert.equal(await page.locator('#tab-missions').getAttribute('aria-selected'), 'true');
+    assert.match(await page.locator('.review-guide').innerText(), /does not establish.*secure/);
+    await page.locator('#tab-missions').focus();
+    await page.keyboard.press('ArrowRight');
+    assert.equal(await page.locator('#tab-coverage').getAttribute('aria-selected'), 'true');
+    console.log('PASS zero-issue exercise guidance and keyboard tab navigation');
+    await page.locator('#nav-overview').click();
+    await page.locator('.workspace-tools summary').focus();
+    await page.keyboard.press('Enter');
+    assert.equal(await page.getByRole('button', {name: 'Recovery guide', exact: true}).isVisible(), true);
+    if (process.env.ARTIFACT_DIR) {
+      await fs.mkdir(process.env.ARTIFACT_DIR, {recursive: true});
+      await page.locator('.workspace-tools summary').click();
+      await page.waitForFunction(() => !document.querySelector('#notice').classList.contains('visible'));
+      await page.screenshot({path: process.env.ARTIFACT_DIR + '/usability-desktop.png', fullPage: true});
+      await page.setViewportSize({width: 390, height: 844});
+      assert.equal(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth + 1), true);
+      await page.screenshot({path: process.env.ARTIFACT_DIR + '/usability-mobile.png', fullPage: true});
+    }
+    assert.deepEqual(errors, []);
+    console.log('PASS accessible backup disclosure, mobile overflow and no page errors');
+  } finally { await browser.close(); }
+})().catch(error => {console.error(error); process.exitCode = 1;});

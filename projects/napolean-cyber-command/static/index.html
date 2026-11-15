@@ -4,18 +4,18 @@
   <meta charset="utf-8"/>
   <meta content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'" http-equiv="Content-Security-Policy"/>
   <meta content="width=device-width,initial-scale=1" name="viewport"/>
-  <meta content="dark" name="color-scheme"/>
-  <meta content="#171719" name="theme-color"/>
+  <meta content="light" name="color-scheme"/>
+  <meta content="#f6f4ef" name="theme-color"/>
   <title>
-   Napolean · Cyber Command
+   Veyra · Security workbench
   </title>
   <link href="./favicon.svg" rel="icon" type="image/svg+xml"/>
-  <link href="./style.css?v=20261102-engagement" rel="stylesheet"/>
-  <script defer="" src="./playbooks.js?v=20261102-engagement">
+  <link href="./style.css?v=20261107-veyra1" rel="stylesheet"/>
+  <script defer="" src="./playbooks.js?v=20261107-veyra1">
   </script>
-  <script defer="" src="./local.js?v=20261102-engagement">
+  <script defer="" src="./local.js?v=20261107-veyra1">
   </script>
-  <script defer="" src="./app.js?v=20261102-engagement">
+  <script defer="" src="./app.js?v=20261107-veyra1">
   </script>
  </head>
  <body>
@@ -26,11 +26,11 @@
   </div>
   <div id="shell">
    <aside>
-    <a aria-label="Napolean home" class="brand" href="#">
-     <img alt="Napolean Cyber Command" class="brand-logo" height="64" src="./logo.svg" width="168"/>
+    <a aria-label="Veyra home" class="brand" href="#">
+     <span class="brand-copy"><img alt="Veyra" class="brand-wordmark" height="52" src="./logo.svg" width="137"/><span class="brand-subline">Security workbench</span></span>
     </a>
     <p class="eyebrow workspace-label">
-     WORKSPACE
+     Workspace
     </p>
     <nav aria-label="Main">
      <button class="nav active" id="nav-overview">
@@ -58,25 +58,28 @@
    <main id="main" tabindex="-1">
     <header class="topline">
      <span class="mono">
-      SECURITY OPERATIONS / WORKBENCH
+      Security operations / Workbench
      </span>
      <span class="mono" id="local-status">
-      LOCAL / NO SERVER
+      Local / No server
      </span>
     </header>
     <section aria-label="Browser storage notice" class="local-notice">
      <strong>
-      Your browser is the workspace.
+      Saved only in this browser. Download a backup to keep a copy.
      </strong>
-     <p>
+     <details>
+      <summary>How local storage works</summary>
+      <p>
       Results are stored locally in IndexedDB for this browser profile and site origin. No shared team database, model, or server is running. Raw source, alerts, and scenario input are not stored. Export JSON backups: clearing site data or changing browsers can remove access to records.
-     </p>
+      </p>
+     </details>
     </section>
     <div id="view">
     </div>
     <footer>
      <span class="mono">
-      NAPOLEAN / EVIDENCE BEFORE VERDICTS
+      Veyra / Evidence before verdicts
      </span>
      <span>
       Pattern checks · No model or server
@@ -128,6 +131,7 @@
     <label for="scope">
      Authorized scope
     </label>
+    <input id="scope" maxlength="1000" name="scope" placeholder="Owned service, repository, or exercise boundary" required=""/>
     <label for="client">
      Client label (optional)
     </label>
@@ -135,31 +139,31 @@
     <p class="fine">
      Client labels organize records in this browser. They do not restrict access.
     </p>
-    <input id="scope" maxlength="1000" name="scope" placeholder="Owned service, repository, or exercise boundary" required=""/>
     <fieldset>
      <legend>
       Assign perspectives
      </legend>
+     <p class="fine">Choose human review checklists for this assessment. These perspectives guide your team; they do not run agents or attacks.</p>
      <div class="role-checks">
       <label>
        <input checked="" name="roles" type="checkbox" value="red"/>
-       Red
+       Red · Test assumptions
       </label>
       <label>
        <input checked="" name="roles" type="checkbox" value="blue"/>
-       Blue
+       Blue · Strengthen defense
       </label>
       <label>
        <input checked="" name="roles" type="checkbox" value="white"/>
-       White
+       White · Validate evidence
       </label>
       <label>
        <input checked="" name="roles" type="checkbox" value="black"/>
-       Black
+       Black · Model attacker thinking
       </label>
       <label>
        <input checked="" name="roles" type="checkbox" value="purple"/>
-       Purple
+       Purple · Connect testing and defense
       </label>
      </div>
     </fieldset>
@@ -171,7 +175,7 @@
       Use sample input ↙
      </button>
     </div>
-    <textarea id="content" maxlength="64000" name="content" required="" rows="9" spellcheck="false"></textarea>
+    <textarea aria-describedby="input-help" id="content" maxlength="64000" name="content" required="" rows="9" spellcheck="false"></textarea>
     <p class="fine" id="input-help">
      Paste a Python snippet for limited text-pattern checks. This is not a Python parser or data-flow analysis. Input is never executed.
     </p>
@@ -216,22 +220,24 @@
     </label>
     <select id="verdict">
      <option value="unresolved">
-      Unresolved
+      Needs review
      </option>
      <option value="confirmed-static">
-      Confirmed static
+      Confirmed by source review
      </option>
      <option value="confirmed-runtime">
-      Confirmed runtime
+      Confirmed by independent testing
      </option>
      <option value="rejected">
-      Rejected
+      Rejected after review
      </option>
     </select>
+    <p class="fine">Source review means you checked the code and its conditions. Independent testing means you obtained runtime evidence outside this workbench.</p>
     <label for="review-note">
      Decision evidence / note
     </label>
-    <fieldset class="review-fields">
+    <textarea id="review-note" maxlength="4000" minlength="20" placeholder="Describe the evidence supporting your decision." required="" rows="4"></textarea>
+    <fieldset class="review-fields" id="confirmation-fields">
      <legend>
       Analyst attestation · required for confirmations
      </legend>
@@ -268,6 +274,8 @@
       For confirmed verdicts, describe the method and result in at least 20 characters, including at least 10 letters or digits.
      </p>
     </fieldset>
+    <details class="tracking-details">
+     <summary>Fix tracking (optional)</summary>
     <fieldset>
      <legend>
       Remediation tracking
@@ -310,7 +318,7 @@
      </label>
      <textarea id="tracking-retest" maxlength="2000" rows="2"></textarea>
     </fieldset>
-    <textarea id="review-note" maxlength="4000" minlength="20" placeholder="Describe the evidence supporting your decision." required="" rows="4"></textarea>
+    </details>
     <p class="fine">
      A runtime verdict requires evidence you obtained independently. This workbench does not execute source or validate exploitation.
     </p>

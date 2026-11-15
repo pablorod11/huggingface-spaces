@@ -1,0 +1,42 @@
+[
+  {
+    "id": "DEMO-AWS",
+    "provider": "aws",
+    "owner": "Procurement",
+    "renewalDate": "2026-11-20",
+    "noticeDays": 30,
+    "term": "Illustrative annual review term; confirm against the signed agreement.",
+    "notes": "Illustrative demo only. Reference date 2026-11-03. Provider-level review reminder; no pricing or service-level credit entitlement is represented.",
+    "illustrative": true
+  },
+  {
+    "id": "DEMO-GCP",
+    "provider": "gcp",
+    "owner": "FinOps",
+    "renewalDate": "2026-11-25",
+    "noticeDays": 30,
+    "term": "Illustrative annual review term; confirm against the signed agreement.",
+    "notes": "Illustrative demo only. Reference date 2026-11-03. Provider-level review reminder; no pricing or service-level credit entitlement is represented.",
+    "illustrative": true
+  },
+  {
+    "id": "DEMO-AZURE",
+    "provider": "azure",
+    "owner": "Procurement",
+    "renewalDate": "2026-11-30",
+    "noticeDays": 30,
+    "term": "Illustrative annual review term; confirm against the signed agreement.",
+    "notes": "Illustrative demo only. Reference date 2026-11-03. Provider-level review reminder; no pricing or service-level credit entitlement is represented.",
+    "illustrative": true
+  },
+  {
+    "id": "DEMO-EQUINIX",
+    "provider": "equinix",
+    "owner": "FinOps",
+    "renewalDate": "2026-12-03",
+    "noticeDays": 30,
+    "term": "Illustrative annual review term; confirm against the signed agreement.",
+    "notes": "Illustrative demo only. Reference date 2026-11-03. Provider-level review reminder; no pricing or service-level credit entitlement is represented.",
+    "illustrative": true
+  }
+]

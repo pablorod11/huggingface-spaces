@@ -908,11 +908,395 @@
       ]
     },
     {
+      "id": "PabloRod11/ledgerline-business-analyst",
+      "title": "Orbis",
+      "revision": "78fd60fb5735d66ae6ec5da430b600a930aedf75",
+      "space_url": "https://huggingface.co/spaces/PabloRod11/ledgerline-business-analyst",
+      "snapshot_date": "2026-11-07",
+      "files": [
+        {
+          "path": "projects/orbis/.gitattributes",
+          "bytes": 1579,
+          "sha256": "f8ffb0149ad54db88989142597ec705d2d9c7f098e02b270e99cd7051f1262ea"
+        },
+        {
+          "path": "projects/orbis/.gitignore",
+          "bytes": 168,
+          "sha256": "18ece6720c8dd39bd5ca7767253cd85bdc5bb4b6ff422b4dca8b427c31bfa452"
+        },
+        {
+          "path": "projects/orbis/.impeccable/design.json",
+          "bytes": 912,
+          "sha256": "38beff82bef17e89f14d3ea2ce2d137cc6513b3642a6d5976d3e40c57b3ab992"
+        },
+        {
+          "path": "projects/orbis/DESIGN.md",
+          "bytes": 3478,
+          "sha256": "44ec86c645467c26ef4e8f37048d67089d009852bc61bef991436e6da08a127e"
+        },
+        {
+          "path": "projects/orbis/LICENSE",
+          "bytes": 1072,
+          "sha256": "46dca01d7d56d02cf4b2d7bbf99ea4a319b988d6c2b4d3d397cbd4cad2435aa5"
+        },
+        {
+          "path": "projects/orbis/PRODUCT.md",
+          "bytes": 1743,
+          "sha256": "a266da0cf20bec578aa018b517881ea1d9aa689f483091eebac45cd2e4aa3cc2"
+        },
+        {
+          "path": "projects/orbis/README.md",
+          "bytes": 14390,
+          "sha256": "db806adeb7c2d70151043f7115cd2a73d557e3462d00659340426508ebf51ef8"
+        },
+        {
+          "path": "projects/orbis/assets/favicon.svg",
+          "bytes": 3449,
+          "sha256": "3ddb22a3c698a42fc9f47e5b4ec8dcbb30b6171bc8cd30a6df17940a365c62c9"
+        },
+        {
+          "path": "projects/orbis/assets/fonts/Manrope.ttf",
+          "bytes": 164700,
+          "sha256": "3ae11c49db0455a3cc33e37d380f20fdb8c7f8b41dc07625c177e3d87a9d6ae6"
+        },
+        {
+          "path": "projects/orbis/assets/fonts/OFL.txt",
+          "bytes": 4387,
+          "sha256": "58172e0c0fac2cda8a37b348164bb55e44b0e69051e557e92b1d3f6910141f7b"
+        },
+        {
+          "path": "projects/orbis/assets/orbis.svg",
+          "bytes": 6766,
+          "sha256": "69d7a14ce00d3fcc7a2b95d8d5e1a4c238f0c94b85b1da7f2932643fbb9d9593"
+        },
+        {
+          "path": "projects/orbis/companion/README.md",
+          "bytes": 13144,
+          "sha256": "182bcde7d20b71dbaa69a052858f6a05f19703f936b364299fa48d9f6253b623"
+        },
+        {
+          "path": "projects/orbis/companion/__init__.py",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": "projects/orbis/companion/config.example.json",
+          "bytes": 600,
+          "sha256": "165d01c65979b1af360a4dbf6941ddcae195126ab97e56324ecd62793ace8fbc"
+        },
+        {
+          "path": "projects/orbis/companion/infrastructure.py",
+          "bytes": 9018,
+          "sha256": "835fddcace3e6ca3067ca0fd45641247d2ce8a81e4113657baecb3acfc200b96"
+        },
+        {
+          "path": "projects/orbis/companion/receiver.py",
+          "bytes": 2335,
+          "sha256": "b6770039545b612862d89ced14764e54678bdd2e768287cf68685dc83cd27ecd"
+        },
+        {
+          "path": "projects/orbis/companion/runner.py",
+          "bytes": 37788,
+          "sha256": "b4e9fef0dd856829e5a31ef242c12320008bd51b6273b16a3e2789b6cf3cc533"
+        },
+        {
+          "path": "projects/orbis/data/contracts.example.json",
+          "bytes": 1645,
+          "sha256": "cccc491d86ab667c570f96298de6d4fc39a2c0c9de93087132f33d67ce6dfc1e"
+        },
+        {
+          "path": "projects/orbis/data/demo.csv",
+          "bytes": 1304002,
+          "sha256": "056aeaea7e7a0932dea6bb1b7ceb632d798b2ebbfa0ff42d8cab0aa853f9d270"
+        },
+        {
+          "path": "projects/orbis/data/generate_demo.py",
+          "bytes": 3990,
+          "sha256": "e3d6581815c8434283d939eb3b966ba7e49355daaea822d708368a4aa5f39114"
+        },
+        {
+          "path": "projects/orbis/data/generate_infra.py",
+          "bytes": 9784,
+          "sha256": "dd978ebd89b19435f98cd4e5b394ee5c6f460290a684e23d27ed95fd38828968"
+        },
+        {
+          "path": "projects/orbis/data/infrastructure-metrics.json",
+          "bytes": 1563,
+          "sha256": "354684eeba6e35252c75ce4a90744fb38469e53d4d1d7a798bab6915e7d7410b"
+        },
+        {
+          "path": "projects/orbis/data/infrastructure.csv",
+          "bytes": 11966888,
+          "sha256": "55706a2c7759c35bc3f6c309aa5bd7e608fdfea94060be38059a1b6956f22801"
+        },
+        {
+          "path": "projects/orbis/data/metrics.json",
+          "bytes": 1032,
+          "sha256": "3513534c95e4bc2aac51565024406f555226f25158e1edd40582ec0a9b49bb4c"
+        },
+        {
+          "path": "projects/orbis/docs/2026-11-07-reliability-improvements.md",
+          "bytes": 3514,
+          "sha256": "59a8115880f91932f0699f9ec5c471b36ff7e88dd96fb4f11732e1b1d9baff07"
+        },
+        {
+          "path": "projects/orbis/docs/architecture.md",
+          "bytes": 2708,
+          "sha256": "7632dc751271600c68ebff3efb2641f1123fa30313e65969108ff152007c93d2"
+        },
+        {
+          "path": "projects/orbis/docs/data-contract.md",
+          "bytes": 3436,
+          "sha256": "7078fd90a105c19986d9f3328d3250ffdfe8d5dc087f2266e4026e8f5c574655"
+        },
+        {
+          "path": "projects/orbis/docs/design-system.md",
+          "bytes": 4804,
+          "sha256": "3d53d4742ecae05dde24cce0eb5032c2e581f41aa51a59778cb8ba34fbae42a7"
+        },
+        {
+          "path": "projects/orbis/docs/infrastructure-contract.md",
+          "bytes": 5779,
+          "sha256": "48ef64c83ecdbcd5272096a5b09bcf7939f48d671e32f96b1b34d6947d1ad2f8"
+        },
+        {
+          "path": "projects/orbis/docs/infrastructure-design.md",
+          "bytes": 5040,
+          "sha256": "6aec0e13ea59db79d165a3b1fb0a3c4b0e3649385755f08b12c1c4fa9b3597cd"
+        },
+        {
+          "path": "projects/orbis/docs/launch-readiness.md",
+          "bytes": 2835,
+          "sha256": "5e31f343b479808cb1e2022f7d110754ee0622a417be98658bb4d824ece94415"
+        },
+        {
+          "path": "projects/orbis/docs/superpowers/plans/2026-11-04-dashboard-improvements.md",
+          "bytes": 3665,
+          "sha256": "8bd613ca34d61ab6830f212a3b182b8e15760dc525f10f122332f6fb67add5af"
+        },
+        {
+          "path": "projects/orbis/docs/superpowers/plans/2026-11-04-v22-hardening.md",
+          "bytes": 3178,
+          "sha256": "e4dea8ddc4401e8f9b832f33528c067d5ff264f4aa3dfbcae7e2e310b8718923"
+        },
+        {
+          "path": "projects/orbis/docs/verification.md",
+          "bytes": 12872,
+          "sha256": "1bd3644ac59d90c6cb17d288e50c829e14d3ac36dc3be43bad84a6cab5545bcf"
+        },
+        {
+          "path": "projects/orbis/index.html",
+          "bytes": 819,
+          "sha256": "f9ab5dc9c9d31f0bd9ce954e1d4c3f7a5ab500f9b0f6b3d831c793111fec49f8"
+        },
+        {
+          "path": "projects/orbis/package.json",
+          "bytes": 779,
+          "sha256": "804cdeb7c8f3d76d322e60efa46cea0ab7cbc214cd9336b33eb2383379798597"
+        },
+        {
+          "path": "projects/orbis/src/analytics.js",
+          "bytes": 18646,
+          "sha256": "e8b0648f454b17fef875874228b49dddba10289215256b774f259a3d6fd852ac"
+        },
+        {
+          "path": "projects/orbis/src/app.js",
+          "bytes": 79785,
+          "sha256": "0b292134c6744bec7cb87d7f78a3ca3c172140581bc7ff58b767b42156a3ca96"
+        },
+        {
+          "path": "projects/orbis/src/chart-ui.js",
+          "bytes": 8838,
+          "sha256": "7b3012d0ed89941cbe004a134ba1129c4875eda160c5165e33cacee8d2476da2"
+        },
+        {
+          "path": "projects/orbis/src/chart.js",
+          "bytes": 964,
+          "sha256": "cb57a54dc55e7d9865d868f4b38596ed0e564f0026361be404fd88d13fa5b821"
+        },
+        {
+          "path": "projects/orbis/src/contracts.js",
+          "bytes": 5658,
+          "sha256": "4a607c6ceb5c35ea5b062c357293ac3d1e3c5664e9c2eff235c1ffa18629d70e"
+        },
+        {
+          "path": "projects/orbis/src/decisions.js",
+          "bytes": 8526,
+          "sha256": "576b1fa1bdcdd71084ecebfd97df565e1a84670dd11f1727fdbb810d062c7bae"
+        },
+        {
+          "path": "projects/orbis/src/demo-source.js",
+          "bytes": 2145,
+          "sha256": "17845fa713310521ebb73cb0c2287734f78a3b36098b02ff8f790cf0ad46d4c3"
+        },
+        {
+          "path": "projects/orbis/src/finance.js",
+          "bytes": 1688,
+          "sha256": "f19ab87012b2619573899f81a5c8520522d74d367a69b3aaf4e609ff4a68389e"
+        },
+        {
+          "path": "projects/orbis/src/forecast-ui.js",
+          "bytes": 6088,
+          "sha256": "f2bf059fc372ff653f80c0caf547cc5186166d459fedacf911d7a173c593232c"
+        },
+        {
+          "path": "projects/orbis/src/infra-state.js",
+          "bytes": 2846,
+          "sha256": "92dcb3a8f4c1c935a29d53165d29c4cdafc7953b00d8e0601e556215bd3bcaf2"
+        },
+        {
+          "path": "projects/orbis/src/infra.js",
+          "bytes": 23755,
+          "sha256": "dbf03382cca0d66ee0806cadec0e2724dc84b6668542300da9a80d9260e574fe"
+        },
+        {
+          "path": "projects/orbis/src/investigation.js",
+          "bytes": 2517,
+          "sha256": "458bbeef9500a9d6757c859fb3689731d8b628afdf8822c883d51d6f5f4fc0c1"
+        },
+        {
+          "path": "projects/orbis/src/orbis.css",
+          "bytes": 9816,
+          "sha256": "f23c14dbae5c7f870c25b1f6b2d33b28914cc5507d5513505ba0d6de17e5fc1b"
+        },
+        {
+          "path": "projects/orbis/src/runner.js",
+          "bytes": 2067,
+          "sha256": "7afe05fb9653d51175aa5ce337110f08cc4c0ade547418a905aaa33781220ea6"
+        },
+        {
+          "path": "projects/orbis/src/scope-ui.js",
+          "bytes": 1885,
+          "sha256": "77ea8be4b52b96535556bbd81785525f2adce010b8c8370b82caf91ac768bb30"
+        },
+        {
+          "path": "projects/orbis/src/state.js",
+          "bytes": 2784,
+          "sha256": "037d32e4fbcc88e9ff2c4d2d050f7ae8a201d6f3f0919b979ab750e16818d4c0"
+        },
+        {
+          "path": "projects/orbis/src/styles.css",
+          "bytes": 29924,
+          "sha256": "52d8b9bd915d6dd98e39ae6748402953b48b808f8bed59a39006814fc1f21819"
+        },
+        {
+          "path": "projects/orbis/src/workspace-actions.js",
+          "bytes": 497,
+          "sha256": "27f9886ee2bfe854f3e5b612564c174f6181182fc1913b2d7b5e830686d5b905"
+        },
+        {
+          "path": "projects/orbis/style.css",
+          "bytes": 388,
+          "sha256": "789bfd541c9f06658ac410d968e9c39fa8c63a48a08643b36071b984c699a9f4"
+        },
+        {
+          "path": "projects/orbis/tests/analytics.test.js",
+          "bytes": 11417,
+          "sha256": "335c6350c5dde70a8f07374be0bc2ecf1b7dd01e90de2429a91e0ea0dabab5fc"
+        },
+        {
+          "path": "projects/orbis/tests/chart-ui.test.js",
+          "bytes": 7444,
+          "sha256": "7bb41fedb273c52c70275e518a6979a22ada40695c7ab424f0d0820f9a90014a"
+        },
+        {
+          "path": "projects/orbis/tests/chart.test.js",
+          "bytes": 1534,
+          "sha256": "988af945f1d703dab9af03d45ff8f4728a67b04081cc27ba57d703ea02598e58"
+        },
+        {
+          "path": "projects/orbis/tests/contracts.test.js",
+          "bytes": 10219,
+          "sha256": "390303b0d6132d29ad2d25cffb394a11ed1cf5f4fc1df03d28043357b6471b84"
+        },
+        {
+          "path": "projects/orbis/tests/decisions.test.js",
+          "bytes": 8986,
+          "sha256": "1c03c9e9f787e9194e80fd3cea9f9b13242ee38c64641bb9673d27b48a8916b3"
+        },
+        {
+          "path": "projects/orbis/tests/demo-source.test.js",
+          "bytes": 4108,
+          "sha256": "93bf7c54f057942789c84eec7226994fe2d3f94c0d06f4ed6db2642e37e097e3"
+        },
+        {
+          "path": "projects/orbis/tests/finance.test.js",
+          "bytes": 2792,
+          "sha256": "0225f6b7eedd86f6ce0a8c3aeb7ebf2eba2894d98998d88a890a8ef7ee836763"
+        },
+        {
+          "path": "projects/orbis/tests/forecast-ui.test.js",
+          "bytes": 7114,
+          "sha256": "564600b0b807583d62f848d21774d3410a2432fad192078f54f87273cc972ce8"
+        },
+        {
+          "path": "projects/orbis/tests/infra-state.test.js",
+          "bytes": 2490,
+          "sha256": "68e1d712070bf14809459ddd0ee09f103b4f35eeb6030b789d513f960d7a17c2"
+        },
+        {
+          "path": "projects/orbis/tests/infra.test.js",
+          "bytes": 15001,
+          "sha256": "e45ccc60400f5a7726acc70e56249f37ba390b6f72802659ea384849e45f82d7"
+        },
+        {
+          "path": "projects/orbis/tests/integration.test.js",
+          "bytes": 1490,
+          "sha256": "6afdee0d02db6f4d2fea53b5f5b4d14d4db3215d693a74c5d004acfa4886e5bc"
+        },
+        {
+          "path": "projects/orbis/tests/investigation.test.js",
+          "bytes": 4635,
+          "sha256": "75b7aa136a5dadba22a88ef81e6fd18933f83688d6a54375a56d9e416c7c8022"
+        },
+        {
+          "path": "projects/orbis/tests/runner.test.js",
+          "bytes": 4537,
+          "sha256": "e1e5f0937624463e1f16a06a547da43357c60c0484f1bb85a6ea13e318e7eed5"
+        },
+        {
+          "path": "projects/orbis/tests/scope-ui.test.js",
+          "bytes": 4056,
+          "sha256": "dbaad1db581410a2eb0c1327551bf950234cef6c18ac32634050c16f9d954bb7"
+        },
+        {
+          "path": "projects/orbis/tests/state.test.js",
+          "bytes": 2854,
+          "sha256": "ece563cb66304a44906c607a4d5cef9074e86738e9cc011730a06d0e4126b6cf"
+        },
+        {
+          "path": "projects/orbis/tests/test_companion.py",
+          "bytes": 26082,
+          "sha256": "172e6aede93f43f5857b6150321c72a99507bfeef7332284b404c2d98d7d296b"
+        },
+        {
+          "path": "projects/orbis/tests/test_infrastructure_companion.py",
+          "bytes": 10598,
+          "sha256": "2d9304c9690fd4dd302297bf5d0ccd2f8fce6c08cfef2e861046f9446c0cc946"
+        },
+        {
+          "path": "projects/orbis/tests/test_receiver_limits.py",
+          "bytes": 4351,
+          "sha256": "c259f08c190bfd9968ab06585ddc2600cf5200e335b34cfb63feb228025cc077"
+        },
+        {
+          "path": "projects/orbis/tests/test_static_assets.py",
+          "bytes": 3847,
+          "sha256": "c0114fbbc71e811f1f064bfb56005b0be44b1f245d891ee958b42a74aeed3106"
+        },
+        {
+          "path": "projects/orbis/tests/workspace-actions.test.js",
+          "bytes": 3132,
+          "sha256": "46e6088fba31e8e76df629c1f1207b6f859468e70f8eb8af57ec1a651bac1f22"
+        }
+      ]
+    },
+    {
       "id": "PabloRod11/napolean-cyber-command",
-      "title": "Napolean Cyber Command",
-      "revision": "4afe6db679805534dc69e730a563ccd9ec6d1be3",
+      "title": "Veyra",
+      "revision": "0a66e52681f6d523d014d19ec266d46891585d7a",
       "space_url": "https://huggingface.co/spaces/PabloRod11/napolean-cyber-command",
-      "snapshot_date": "2026-11-02",
+      "snapshot_date": "2026-11-07",
       "files": [
         {
           "path": "projects/napolean-cyber-command/.env.example",
@@ -930,24 +1314,44 @@
           "sha256": "fd7084b9c23888d913b37b7c6c03c0306b8f8aaf31cb00c683642584c8c2352e"
         },
         {
+          "path": "projects/napolean-cyber-command/.impeccable/design.json",
+          "bytes": 2857,
+          "sha256": "b462e91f52d4595ef2085a40ab9f353ef97a57b10d92d71bd8949e5d576165cc"
+        },
+        {
+          "path": "projects/napolean-cyber-command/CONTRACT.md",
+          "bytes": 7457,
+          "sha256": "7eaaab92c8af7bfe7817a62417a2ec2830893f84921dda5caf9948a066dcf23b"
+        },
+        {
           "path": "projects/napolean-cyber-command/DEPENDENCY-ADVISORIES.json",
           "bytes": 6407,
           "sha256": "64d8a6b8c72ac85920d6e535ccf8df2b7eea2555b636154906575fb5b85d04bb"
         },
         {
+          "path": "projects/napolean-cyber-command/DESIGN.md",
+          "bytes": 3864,
+          "sha256": "2fcd8896bcde63241e23e091b31d0f5e7eafd27dbad095d50a13e2aa2abc7269"
+        },
+        {
           "path": "projects/napolean-cyber-command/IMPROVEMENTS.md",
-          "bytes": 6631,
-          "sha256": "eb26380eb8cb9bcf6964acd002ab8c1cb3d16de8109c89d832aa9578235eb673"
+          "bytes": 7517,
+          "sha256": "a31147b3c60263e26a16038de078fdc4b7a15902b5f0b1636d4df76cc606d9da"
+        },
+        {
+          "path": "projects/napolean-cyber-command/PRODUCT.md",
+          "bytes": 1784,
+          "sha256": "964285b9f8ff7cea6e6e2bef2a6e9543bca16572ec8a634cd879574138ca39ef"
         },
         {
           "path": "projects/napolean-cyber-command/PROVENANCE.md",
-          "bytes": 2855,
-          "sha256": "f7211a8170c1d7a854a0afc4a00085134e196079a403b7e66dd066b6ad65dfc3"
+          "bytes": 5183,
+          "sha256": "4c97a589374a36c43d0e4e023b0b60fde5ea5abf59944f6a1d6d0e98802cf03c"
         },
         {
           "path": "projects/napolean-cyber-command/README.md",
-          "bytes": 8200,
-          "sha256": "d214fe0ab2687b4407cc2c72494467aecf1c09fd74484406ea8354d294dc23dc"
+          "bytes": 10453,
+          "sha256": "1d5dcc57699bb121320202d3a4682fcdced0062f3f36efe429d7ea97ae531cd0"
         },
         {
           "path": "projects/napolean-cyber-command/SECURITY.md",
@@ -961,13 +1365,13 @@
         },
         {
           "path": "projects/napolean-cyber-command/SOURCE-MANIFEST.json",
-          "bytes": 3005,
-          "sha256": "40183ef1654689000f3ae1f8b7fd3505dec2dc69e5f505ca913e6d4bbe543703"
+          "bytes": 3767,
+          "sha256": "15170f38673e7f44135dee13d450b604992f24305b78419e73096af8783577a4"
         },
         {
           "path": "projects/napolean-cyber-command/VERIFICATION.md",
-          "bytes": 12953,
-          "sha256": "b4948765c0345a89f2c75f7c3a6b72614fff6298f7544358e94b8dcba159d5f3"
+          "bytes": 17768,
+          "sha256": "66c8a44bb563abff13bb66705cdb81e76777370323b578e301643b47380a285c"
         },
         {
           "path": "projects/napolean-cyber-command/app.py",
@@ -976,8 +1380,8 @@
         },
         {
           "path": "projects/napolean-cyber-command/deploy_hf.py",
-          "bytes": 2848,
-          "sha256": "5cb49b840d7077b01a3c50f41953d573274475d6f9fc5f4c7c12be5f4b13ae5f"
+          "bytes": 2984,
+          "sha256": "1530c6263dba66fe8bed25cde2b0cad7b04e6ecba8b566baa3d07b8ca0d87aa3"
         },
         {
           "path": "projects/napolean-cyber-command/docs/superpowers/plans/2026-10-31-business-improvements.md",
@@ -993,6 +1397,11 @@
           "path": "projects/napolean-cyber-command/docs/superpowers/plans/2026-11-02-engagement-workflows.md",
           "bytes": 3895,
           "sha256": "edb546e22a04106ac1aa5fec9b0964983ab5aa6554f6d69c455e5dfae274251b"
+        },
+        {
+          "path": "projects/napolean-cyber-command/docs/superpowers/plans/2026-11-03-usability.md",
+          "bytes": 2420,
+          "sha256": "89a5ee99bf6568462c7c3ea72d9d7eaeffe84d03b38c0c216d4ac7719faff15a"
         },
         {
           "path": "projects/napolean-cyber-command/docs/superpowers/specs/2026-10-31-business-improvements-design.md",
@@ -1021,8 +1430,8 @@
         },
         {
           "path": "projects/napolean-cyber-command/index.html",
-          "bytes": 19079,
-          "sha256": "3f3ca9c20597739ff5f52486639735e9193de0d0fe54b2fc885c3f3e9e749a29"
+          "bytes": 19876,
+          "sha256": "338adc27ca1c8e2b4c76f0f6e24fd16940b1e1795f75196b02d913b517b7f7d5"
         },
         {
           "path": "projects/napolean-cyber-command/requirements-deploy.txt",
@@ -1036,33 +1445,43 @@
         },
         {
           "path": "projects/napolean-cyber-command/static/app.js",
-          "bytes": 62605,
-          "sha256": "17611b65180c61a335afd8bf4db57011ec8afcdf9ea0e03626f9c79bb0487f6a"
+          "bytes": 69485,
+          "sha256": "cdc4659f09252639bf764255e558f7d1ed72b85d7e8272199e339d33c4e21ba5"
         },
         {
           "path": "projects/napolean-cyber-command/static/favicon.svg",
-          "bytes": 374,
-          "sha256": "eb535ad41f1e22491f0c7613aae75b08724128fbc05789d1606eac54b3f520a7"
+          "bytes": 212,
+          "sha256": "383137dda771135680e30ffdb5c0e4d7fbd313dc8276495522837590421e6bd2"
+        },
+        {
+          "path": "projects/napolean-cyber-command/static/fonts/Manrope.ttf",
+          "bytes": 164700,
+          "sha256": "3ae11c49db0455a3cc33e37d380f20fdb8c7f8b41dc07625c177e3d87a9d6ae6"
+        },
+        {
+          "path": "projects/napolean-cyber-command/static/fonts/OFL.txt",
+          "bytes": 4387,
+          "sha256": "58172e0c0fac2cda8a37b348164bb55e44b0e69051e557e92b1d3f6910141f7b"
         },
         {
           "path": "projects/napolean-cyber-command/static/index.html",
-          "bytes": 19037,
-          "sha256": "33bf757d22f9c7f18d9e7ff483a2412322f350b7ac3a0023fe7486fa25be102a"
+          "bytes": 19834,
+          "sha256": "f451674f40bd2dd00cf38ede3980974a872da06b53ce3b29290b2f017237ed01"
         },
         {
           "path": "projects/napolean-cyber-command/static/local.js",
-          "bytes": 56078,
-          "sha256": "a341a64d2a4671bc80e104e52877d9bcad7b0d572839e4c3d614532e8d85f0d3"
+          "bytes": 56061,
+          "sha256": "d833047ee92fc0302cb1a7e6566358e141640e20455d2ccd5c658b886d4a5ab9"
         },
         {
           "path": "projects/napolean-cyber-command/static/logo-print.svg",
-          "bytes": 8760,
-          "sha256": "aa5c551d2cb6f8c7131a8b24948fdd31667913e97a2ea08f51795069487ef273"
+          "bytes": 5678,
+          "sha256": "ef7fea34c882d0d547d9c265496e679837c2cdc573448cb363e813b0594908bc"
         },
         {
           "path": "projects/napolean-cyber-command/static/logo.svg",
-          "bytes": 8760,
-          "sha256": "03adb4e95e4c9ccfe438d9d8a47dddaa960bd8a3633b82149f3061757c3c096a"
+          "bytes": 5659,
+          "sha256": "0a4cec4974c2f88a8d7b9cd60cacec45782b8d9d320cedff185ead990432329c"
         },
         {
           "path": "projects/napolean-cyber-command/static/playbooks.js",
@@ -1071,23 +1490,28 @@
         },
         {
           "path": "projects/napolean-cyber-command/static/style.css",
-          "bytes": 16564,
-          "sha256": "1c76cbdaf5d7583506050cf67469ca4bf794aad2166128450dcb6dd44fca35ce"
+          "bytes": 27956,
+          "sha256": "f3084fbc2e02a510f66b85ac8d90a94fe7712c2c57e23bcc52f7ada663510162"
         },
         {
           "path": "projects/napolean-cyber-command/tests/browser_engagement.cjs",
-          "bytes": 12804,
-          "sha256": "94e2dd518c40797c76e010d70b6f6d66fc26d3180c3efc9a47f8d9269132f36f"
+          "bytes": 13323,
+          "sha256": "427e400891b77475b4803d7b8ce71e68a0f681275f5121ee9505656103eda5e3"
         },
         {
           "path": "projects/napolean-cyber-command/tests/browser_storage.cjs",
-          "bytes": 20133,
-          "sha256": "fe3ad720d8d8a6137907b790bff5220735c556a7a914d2608f141fef431a3ee2"
+          "bytes": 20193,
+          "sha256": "fe7327875e08c4cc51f5f0ca32f25b2365362634180cac02af907e115344aa40"
         },
         {
           "path": "projects/napolean-cyber-command/tests/browser_ui.cjs",
-          "bytes": 17686,
-          "sha256": "836b6d5bad9830ec53ba2e521d8a0d1182b7287befbf80ba21d9becd1e33fe4f"
+          "bytes": 18422,
+          "sha256": "c55a4b6164ec398e9b3670a23589f14175e5475d935f0632e049ee66449fa740"
+        },
+        {
+          "path": "projects/napolean-cyber-command/tests/browser_usability.cjs",
+          "bytes": 4228,
+          "sha256": "a47b3274b43452319b22a6938c5f1518c861475fed592013f4219ceaffafddd6"
         },
         {
           "path": "projects/napolean-cyber-command/tests/detection-fixtures.cjs",
@@ -1122,5 +1546,5 @@
       ]
     }
   ],
-  "updated_at": "2026-11-02"
+  "updated_at": "2026-11-07"
 }

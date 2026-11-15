@@ -1,0 +1,36 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-11-08T01:21:20.698283+00:00",
+  "title": "Design System: Orbis",
+  "extensions": {
+    "shadows": [],
+    "motion": [
+      {
+        "name": "control-feedback",
+        "value": "background 130ms ease-out",
+        "purpose": "Brief hover feedback, no decorative movement."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "navigation-fold",
+        "value": "1100px"
+      },
+      {
+        "name": "mobile",
+        "value": "700px"
+      }
+    ]
+  },
+  "components": [],
+  "narrative": {
+    "northStar": "Clarity, all around.",
+    "overview": "An outlined typographic wordmark and warm editorial canvas organize a complete view of infrastructure cost, capacity and evidence.",
+    "keyCharacteristics": [
+      "Typographic precision",
+      "Readable analytical evidence",
+      "Shared persistent scope",
+      "Warm paper surfaces"
+    ]
+  }
+}

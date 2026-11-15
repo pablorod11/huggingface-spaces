@@ -76,3 +76,33 @@ The engagement browser workflow checks full printed evidence and missions, role 
 Source review covered optional-field import allowlists, canonical old snapshot preservation, assessment CAS, atomic continuation read/count/add, safe text rendering, no new external asset/network/runtime dependency, optional diagnostic failure handling and client-label limitations. No exploitable vulnerability was confirmed in this bounded local synthetic scope. Other browser engines, real disk exhaustion/eviction, a full accessibility audit and real customer workflows remain unverified. Graphify/upstream scanner runtimes did not run; direct source and regression evidence were used for this known small tree.
 
 Final integrated result: 42 engine tests, 16 Chromium storage checks, original browser UI workflow, new engagement browser workflow (including optional-channel and unknown-metadata fault injection), 4 publisher tests and syntax/HTML checks all pass. Original print tests now await fresh-read completion; the optional metadata test waits for the asynchronously rebuilt status panel. No application failure remained in the final reruns. Clean desktop/mobile screenshots were inspected before publication.
+
+
+## 2026-11-03 — usability release
+
+Added plain-language onboarding, an explicit synthetic sample entry point, functional hat descriptions, task-first tabs, saved-state review guidance, and expandable storage and optional tracking details. No schema or detection-engine changes. Both HTML entrypoints remain equivalent except for asset paths.
+
+Verification: 42 Node tests pass; JavaScript syntax checks pass. All four Chromium suites pass: browser_ui.cjs, browser_storage.cjs, browser_engagement.cjs and browser_usability.cjs. The new suite checks sample input without auto-authorization, confirmation field visibility, saved decision to report navigation, zero-issue exercise guidance, keyboard navigation, backup disclosure and 390px overflow. Desktop (1440px) and mobile (390px) screenshots were inspected. Independent source review found no blocking defects.
+
+Browser suites needed unsandboxed local Chromium launch and a loopback server. Existing tests were updated to open the new disclosures before interacting with their controls. The mechanical design detector emitted heuristic warnings (including inferred white backgrounds on the dark theme); these do not represent a clean accessibility certification. Actual dark palette and visible focus were inspected.
+
+Graphify did not run; bounded direct source inspection was sufficient. Live release verification is recorded separately after publishing.
+
+
+## 2026-11-07 polish evidence
+
+The local Node suite passed 42/42 tests and deploy-helper tests passed 4/4. Syntax checked the three runtime scripts and touched browser scripts. Browser acceptance used an isolated loopback origin with fictional code, alert and exercise samples: creation/authorization, rejected decision persistence, frozen report creation, role-task navigation, all six tabs, refresh focus, search recovery, backup download and additive-restore preview. All 24 combinations of six tabs and widths 320/390/768/1440 kept the document within viewport and selected tabs visible. Native print pagination, physical touch devices, other engines and screen-reader hardware remain untested. Navigation races and export scope captures received source review; delayed storage was not browser-injected.
+
+The existing browser script checklists were updated for the new disclosures; those Playwright scripts were syntax checked rather than launched. Host browser automation provided acceptance evidence. The regex design detector returned no findings; it did not run parsed-page contrast rules. Graphify was not run; targeted reads and specialist source reviews were used. No live stored assessment was changed by QA.
+
+
+## Local Veyra rebrand verification — 2026-11-07
+
+- Runtime Node tests: 42/42 passed. Optional deployment-helper tests: 4/4 passed. Runtime JavaScript syntax and git diff whitespace checks passed.
+- All four complete browser suites passed after the Veyra rename: browser_ui.cjs, browser_engagement.cjs, browser_storage.cjs (16 storage checks), and browser_usability.cjs. They cover draft protection, stale-save conflicts, evidence and decisions, role workbooks, reports, print totals, backup/restore, cross-tab updates, keyboard navigation, mobile overflow and error-free startup.
+- Earlier headless runs exposed two harness assumptions: the native print dialog immediately triggered report cleanup, and some tests tried to click Print inside a closed disclosure. The harness now stubs only window.print and explicitly opens the disclosure. Every report-content and print-media assertion remains. OS printer dialogs and physical pagination are not verified by these checks.
+- Replacing the old logo element initially broke a print selector. The engagement suite reproduced the failure; the selector now uses the current brand-wordmark element, and complete UI/engagement suites pass.
+- Final Orbis/Veyra wordmarks replace the rejected circular emblems. Screenshots at 1440, 768 and 390px were inspected; each app has zero global horizontal overflow and no console errors in those captures. Independent source review found no material issue after the print-selector fix.
+- Inspector warnings concern intentional warm ivory, supporting text sizes, introductory heading scale, and overview density. They are heuristic style warnings, not clean accessibility certification. Interactive keyboard and mobile flows received browser checks.
+- Assets, wordmarks and Manrope are self-hosted; CSP, record formats, IndexedDB identifiers and runtime dependencies remain compatible. The font license is bundled. Visible reports/backup filenames use Veyra; technical legacy format IDs retain compatibility.
+- This is local verification. No hosted Space was renamed, updated or deployed. Real customer data, external endpoints, OS screen readers and physical touch devices were not exercised.

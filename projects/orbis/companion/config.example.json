@@ -1,0 +1,21 @@
+{
+  "token": "REPLACE_WITH_A_RANDOM_TOKEN_AT_LEAST_24_CHARACTERS",
+  "eventSecret": "REPLACE_WITH_A_DIFFERENT_RANDOM_SECRET_24_CHARACTERS",
+  "allowedOrigins": [
+    "http://127.0.0.1:8765",
+    "http://localhost:8765",
+    "http://localhost:8000"
+  ],
+  "database": "companion/state/infrastructure-v1.db",
+  "outputDir": "companion/state/infrastructure-exports",
+  "sources": [
+    {
+      "id": "infra-demo",
+      "label": "Infrastructure multi-resolution demo",
+      "type": "sqlite",
+      "schema": "infrastructure-v1",
+      "mode": "demo",
+      "csv": "data/infrastructure.csv"
+    }
+  ]
+}
