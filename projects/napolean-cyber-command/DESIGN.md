@@ -83,3 +83,8 @@ At 800px, headings and actions stack. At 700px, navigation becomes a compact top
 Motion is limited to brief 100–140ms button feedback; reduced-motion disables transitions and press scaling. Selection, caret, scrollbar, and native color scheme are themed. Focus uses a 2px cobalt outline with offset.
 
 Printed reports use white paper, graphite type, outlined Veyra wordmark branding, deliberate type hierarchy, and preserved report content. Interactive chrome is hidden. CSP remains unchanged: every shipped asset is local.
+
+
+## Protocol context
+
+The optional study inset keeps a native disclosure and labelled protocol selector. Above 1100px, a reading column contains the summary, boundaries, questions and learning references; a narrower column groups unsaved workbook draft actions. A single hairline separates the columns. At intermediate widths the groups stack and actions use two columns; below 600px, controls form one full-width column. The 23px topic heading follows the existing section-heading scale. Visible action text is also its accessible name. Prompt drafts open at the start of Expected result. Existing storage and save behavior remain unchanged.

@@ -398,6 +398,7 @@ function renderProtocolContext(panel, assessment) {
   const section = el('details', undefined, 'protocol-context');
   section.id = 'protocol-context';
   append(section, el('summary', 'Protocol context'), el('p', 'Optional study guidance for this review. Learning material is not evidence that a control was tested.', 'fine'));
+  const picker = el('div', undefined, 'protocol-picker');
   const label = el('label', 'Protocol topic');
   label.htmlFor = 'protocol-topic';
   const select = el('select');
@@ -427,35 +428,43 @@ function renderProtocolContext(panel, assessment) {
     card.replaceChildren();
     card.hidden = !topic;
     if (!topic) return;
-    append(card, el('h3', topic.title), el('p', topic.summary), el('p', topic.boundary, 'fine'), el('h4', 'Questions to review'));
+    const reading = el('div', undefined, 'protocol-reading');
+    append(reading, el('h3', topic.title), el('p', topic.summary), el('p', topic.boundary, 'fine'), el('h4', 'Questions to review'));
     const questions = el('ul');
     topic.questions.forEach(question => questions.append(el('li', question)));
     const explorer = reference('Open Protocol Explorer ↗', catalog.explorerUrl);
     explorer.id = 'protocol-explorer';
     const sources = el('div', undefined, 'protocol-sources');
     topic.sources.forEach(source => sources.append(reference(source.label + ' ↗', source.href)));
-    append(card, questions, explorer, el('p', `External learning tool by Dilum Sanjaya. Choose ${topic.explorerLesson} in its protocol list. The link includes no assessment details.`, 'fine'), sources, el('h4', 'Draft study prompts in a role workbook'), el('p', 'Adds context to Expected result and keeps your existing notes. Enter your own evidence, observed result and decision, then save when ready.', 'fine'));
+    const resources = el('div', undefined, 'protocol-resources');
+    append(resources, el('h4', 'Continue learning'), explorer, el('p', `External learning tool by Dilum Sanjaya. Choose ${topic.explorerLesson} in its protocol list. The link includes no assessment details.`, 'fine'), sources);
+    append(reading, questions, resources);
+    const drafting = el('div', undefined, 'protocol-drafting');
+    append(drafting, el('h4', 'Draft study prompts in a role workbook'), el('p', 'Adds context to Expected result and keeps your existing notes. Enter your own evidence, observed result and decision, then save when ready.', 'fine'));
     const actions = el('div', undefined, 'protocol-actions');
     assessment.missions.forEach(mission => {
-      const roleLabel = roles.find(role => role[0] === mission.role)?.[2] || mission.role;
-      const action = button(`${roleLabel} workbook`, () => {
+      const action = button(`Add ${topic.title} prompts to ${mission.role} workbook`, () => {
         const entry = (assessment.workbook || []).find(item => item.role === mission.role) || workbookDefault(mission.role);
         try {
           const drafted = catalog.draftExpected(entry.expected || '', topic.id);
           openWorkbook(entry);
-          $('#workbook-expected').value = drafted;
-          $('#workbook-expected').focus();
+          const expected = $('#workbook-expected');
+          expected.value = drafted;
+          expected.setSelectionRange(0, 0);
+          expected.focus();
+          expected.scrollTop = 0;
         } catch (error) {
           notify(error.message, true);
         }
       });
-      action.setAttribute('aria-label', `Add ${topic.title} prompts to ${mission.role} workbook`);
       actions.append(action);
     });
-    card.append(actions);
+    drafting.append(actions);
+    append(card, reading, drafting);
   }
   select.addEventListener('change', drawTopic);
-  append(section, label, select, card);
+  append(picker, label, select);
+  append(section, picker, card);
   drawTopic();
   panel.append(section);
 }

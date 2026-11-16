@@ -1294,7 +1294,7 @@
     {
       "id": "PabloRod11/napolean-cyber-command",
       "title": "Veyra",
-      "revision": "4b84f18844f95d29ef6e654f62748c14268960bb",
+      "revision": "44b4260be18defb5ccb33fecfb4fd4548eaf2e92",
       "space_url": "https://huggingface.co/spaces/PabloRod11/napolean-cyber-command",
       "snapshot_date": "2026-11-15",
       "files": [
@@ -1330,8 +1330,8 @@
         },
         {
           "path": "projects/napolean-cyber-command/DESIGN.md",
-          "bytes": 3864,
-          "sha256": "2fcd8896bcde63241e23e091b31d0f5e7eafd27dbad095d50a13e2aa2abc7269"
+          "bytes": 4508,
+          "sha256": "efb2860d958be431b1001e780621d8acc8650756c22004adad706e159265bbfd"
         },
         {
           "path": "projects/napolean-cyber-command/IMPROVEMENTS.md",
@@ -1345,8 +1345,8 @@
         },
         {
           "path": "projects/napolean-cyber-command/PROVENANCE.md",
-          "bytes": 6179,
-          "sha256": "a89832285c58f3d38d9e2350925d32c688fe691809a88cc2db73fc2b4005271c"
+          "bytes": 6628,
+          "sha256": "b0c7d8c91909fab9691300fe0f7330a5dc6886eb2262a36a083c5db81d18b2ca"
         },
         {
           "path": "projects/napolean-cyber-command/README.md",
@@ -1366,12 +1366,12 @@
         {
           "path": "projects/napolean-cyber-command/SOURCE-MANIFEST.json",
           "bytes": 4168,
-          "sha256": "2428711ef984a6aaaeef721073d3f498ab0c3af94383fba972d4b6eafa5c00a6"
+          "sha256": "5ee8e9caea8ec70f20be8b7b1079f1fda211d18968ea819593f45609efd11f1c"
         },
         {
           "path": "projects/napolean-cyber-command/VERIFICATION.md",
-          "bytes": 19039,
-          "sha256": "433bed26655ca2b27d482f3ed0f17d6824695378adb986edd478c81997034fba"
+          "bytes": 20215,
+          "sha256": "8e66fba672bf27ee9807dc92bbc42c59374d2f440787d942c5ff957ac582b79b"
         },
         {
           "path": "projects/napolean-cyber-command/app.py",
@@ -1435,8 +1435,8 @@
         },
         {
           "path": "projects/napolean-cyber-command/index.html",
-          "bytes": 20125,
-          "sha256": "7c2b0146d43b2cbc78ec5af6007203befa92662489f5c75ba9f04d5824ed3f82"
+          "bytes": 20119,
+          "sha256": "0663fab7f0fe8f9630a74f8841b657facdfe38cb8c6528ea0c3749917d376ecf"
         },
         {
           "path": "projects/napolean-cyber-command/requirements-deploy.txt",
@@ -1450,8 +1450,8 @@
         },
         {
           "path": "projects/napolean-cyber-command/static/app.js",
-          "bytes": 73281,
-          "sha256": "8cf18412edda83505fb775471d7f602c51f35a49cf777686073156222252b33c"
+          "bytes": 73634,
+          "sha256": "66586060fdf71d75c61f33c03a979725697bb92192d938fd590ad0ded2364280"
         },
         {
           "path": "projects/napolean-cyber-command/static/favicon.svg",
@@ -1470,8 +1470,8 @@
         },
         {
           "path": "projects/napolean-cyber-command/static/index.html",
-          "bytes": 20076,
-          "sha256": "c46aea13f5ac862bfb606152b9c96a532d6f7c571a5f67216bfb0964c781f6b2"
+          "bytes": 20070,
+          "sha256": "88a21e0e0b5ec55054e8f872495e0348c8356c6be874e538a3ab4f0c291b344a"
         },
         {
           "path": "projects/napolean-cyber-command/static/local.js",
@@ -1500,8 +1500,8 @@
         },
         {
           "path": "projects/napolean-cyber-command/static/style.css",
-          "bytes": 28937,
-          "sha256": "464992f71acae1af1fa3e201d0c207991509cbba34db561b5f4317a99f37f46c"
+          "bytes": 30055,
+          "sha256": "49001d3d26f523a5ec334a376b1c2ef48d9aa20ba89b610d0b74a1b99e9449b4"
         },
         {
           "path": "projects/napolean-cyber-command/tests/browser_engagement.cjs",

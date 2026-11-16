@@ -1615,5 +1615,43 @@ html {
   .brand-subline { margin-top: -3px; font-size: 11px; }
 }
 
-/* Optional local study inset, using the existing Veyra controls and spacing. */
-.protocol-context{border-block:1px solid var(--border);padding:20px 0;margin:0 0 24px}.protocol-context>summary{font-weight:600;cursor:pointer;min-height:44px;display:list-item;padding:10px 0}.protocol-context>label{display:block;margin:16px 0 8px}.protocol-context>select{max-width:400px}.protocol-card{margin-top:24px}.protocol-card h3{margin-bottom:12px}.protocol-card h4{margin:24px 0 8px}.protocol-card li{margin-bottom:8px}.protocol-sources{display:flex;flex-wrap:wrap;gap:8px 20px;margin-top:12px}.protocol-sources a{overflow-wrap:anywhere}.protocol-actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}.protocol-actions button{white-space:normal}.protocol-context .fine{max-width:76ch}@media(max-width:600px){.protocol-context>select{width:100%;max-width:none}.protocol-actions{display:grid;grid-template-columns:1fr}.protocol-sources{display:block}.protocol-sources a{display:flex}}
+/* Protocol study: references and draft actions share a clear reading order. */
+.protocol-context {
+  border-block:1px solid var(--border);
+  margin:0 0 28px;
+  padding:12px 0 28px;
+}
+.protocol-context>summary { font-size:14px; }
+.protocol-context>.fine { max-width:75ch; margin-bottom:20px; }
+.protocol-picker { max-width:400px; }
+.protocol-picker label { display:block; margin-bottom:8px; }
+.protocol-picker select { width:100%; }
+.protocol-card { display:grid; grid-template-columns:minmax(0,1fr) minmax(240px,280px); gap:44px; margin-top:28px; }
+.protocol-card[hidden] { display:none; }
+.protocol-card>div { min-width:0; }
+.protocol-card h3 { font-size:23px; margin-bottom:12px; }
+.protocol-card h4 { font-size:14px; font-weight:650; line-height:1.5; margin:24px 0 12px; }
+.protocol-reading p { max-width:70ch; }
+.protocol-reading ul { padding-left:20px; margin:0; }
+.protocol-reading li { line-height:1.7; padding-left:4px; margin-bottom:12px; }
+.protocol-resources { border-top:1px solid var(--border); margin-top:24px; }
+.protocol-resources .text-button { display:inline-flex; align-items:center; min-height:44px; }
+.protocol-resources>p { margin:4px 0 8px; }
+.protocol-sources { display:flex; flex-direction:column; align-items:flex-start; gap:4px; }
+.protocol-sources a { overflow-wrap:anywhere; }
+.protocol-drafting { border-left:1px solid var(--border); padding-left:28px; }
+.protocol-drafting h4 { margin-top:0; }
+.protocol-drafting .fine { margin-bottom:16px; }
+.protocol-actions { display:grid; gap:8px; }
+.protocol-actions button { width:100%; min-height:44px; text-align:left; white-space:normal; }
+@media(max-width:1100px) {
+  .protocol-card { grid-template-columns:minmax(0,1fr); gap:28px; }
+  .protocol-drafting { border-left:0; border-top:1px solid var(--border); padding:24px 0 0; }
+  .protocol-actions { grid-template-columns:repeat(2,minmax(0,1fr)); }
+}
+@media(max-width:600px) {
+  .protocol-picker { max-width:none; }
+  .protocol-context { padding-bottom:24px; }
+  .protocol-card { gap:24px; margin-top:24px; }
+  .protocol-actions { grid-template-columns:minmax(0,1fr); }
+}

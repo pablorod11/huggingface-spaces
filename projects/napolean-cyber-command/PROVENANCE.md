@@ -43,3 +43,8 @@ The user rejected the first concentric-circle symbols as too close to a target. 
 The four local protocol summaries and review questions are original content based on RFC 9110 (HTTP), RFC 9846 (TLS 1.3; obsoletes RFC 8446), RFC 1035 (DNS), RFC 4033 (DNSSEC) and RFC 4251 (SSH). Each card links to its primary references. Protocol Explorer by Dilum Sanjaya is linked as an external learning resource at https://protocol-explorer-alpha.vercel.app/. No Explorer source code, lesson prose or packet traces are bundled. Its deployed frame restriction precludes embedding; no API or reuse license was established.
 
 Topic selection stays in temporary UI state. The external root URL contains no record-derived parameters and uses no-referrer/noopener/noreferrer. Draft prompts use the existing Expected result field and require an explicit workbook save. Storage identifiers, schema, backup versions, findings and exercise routing are unchanged. The app adds no remote asset, dependency, connection permission or automatic external request.
+
+
+## Protocol workflow polish — 2026-11-15
+
+A scoped refinement groups original protocol reading and references separately from workbook draft actions, uses the existing heading scale, preserves native controls and disclosure, and aligns visible button labels with accessible names. Layout changes adapt to desktop, intermediate and mobile widths. No content source, network behavior, dependency, schema, protocol summary or finding rule changed.
