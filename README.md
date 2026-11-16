@@ -1,6 +1,6 @@
 # Hugging Face Spaces
 
-Source snapshots of nine public [Hugging Face Spaces](https://huggingface.co/PabloRod11/spaces). Orbis and Veyra were refreshed November 7, 2026; the other seven projects retain their October 31 snapshots.
+Source snapshots of nine public [Hugging Face Spaces](https://huggingface.co/PabloRod11/spaces). Veyra was refreshed November 15, 2026, and Orbis November 7, 2026; the other seven projects retain their October 31 snapshots.
 
 Each public snapshot contains the original deployed files, documentation, tests, and available assets. Downloadable source ZIPs are preserved and also unpacked under each project’s `source/` directory so their code can be browsed directly on GitHub.
 
@@ -16,7 +16,11 @@ Each public snapshot contains the original deployed files, documentation, tests,
 | Imperial LLM | [Browse](projects/imperial-llm/) | [Open](https://huggingface.co/spaces/PabloRod11/imperial-llm) |
 | QuantLab Probability Research | [Browse](projects/quantlab-probability-research/) | [Open](https://huggingface.co/spaces/PabloRod11/quantlab-probability-research) |
 
-## Latest releases — November 7, 2026
+## Latest release — November 15, 2026
+
+Veyra adds original HTTP/HTTPS, TLS, DNS and SSH study cards, RFC references, a separate Protocol Explorer link, and optional unsaved workbook prompts under Role tasks. Existing records and backups remain compatible. [Release verification](RELEASE-2026-11-15-veyra-protocol-context.md).
+
+## Previous releases — November 7, 2026
 
 - **[Orbis](projects/orbis/):** infrastructure analytics, capacity planning and vendor unit economics, with explicit synthetic demo data, accessible chart tables and an optional Python companion.
 - **[Veyra](projects/napolean-cyber-command/):** the renamed security workbench, with analyst-reviewed evidence, remediation tracking and frozen reports. The source folder and live URL retain their previous names to preserve existing links.

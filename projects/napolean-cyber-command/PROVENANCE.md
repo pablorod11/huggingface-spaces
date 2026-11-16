@@ -36,3 +36,10 @@ The publishing helper's allowlist includes the local font and license. SOURCE-MA
 ## Current Veyra identity
 
 The user rejected the first concentric-circle symbols as too close to a target. The final Orbis and Veyra identities use typography rather than circular emblems. Veyra replaces the visible Napolean Cyber Command name; storage and backup identifiers remain unchanged. The Veyra wordmark and print logo are outlined from self-hosted Manrope at weight 680. The compact open V favicon is authored SVG geometry. All artwork is local; the bundled SIL Open Font License remains applicable to the font. Earlier identity descriptions above are historical.
+
+
+## Protocol study context — 2026-11-15
+
+The four local protocol summaries and review questions are original content based on RFC 9110 (HTTP), RFC 9846 (TLS 1.3; obsoletes RFC 8446), RFC 1035 (DNS), RFC 4033 (DNSSEC) and RFC 4251 (SSH). Each card links to its primary references. Protocol Explorer by Dilum Sanjaya is linked as an external learning resource at https://protocol-explorer-alpha.vercel.app/. No Explorer source code, lesson prose or packet traces are bundled. Its deployed frame restriction precludes embedding; no API or reuse license was established.
+
+Topic selection stays in temporary UI state. The external root URL contains no record-derived parameters and uses no-referrer/noopener/noreferrer. Draft prompts use the existing Expected result field and require an explicit workbook save. Storage identifiers, schema, backup versions, findings and exercise routing are unchanged. The app adds no remote asset, dependency, connection permission or automatic external request.

@@ -1614,3 +1614,6 @@ html {
   .brand-wordmark { width: 126px; height: 48px; }
   .brand-subline { margin-top: -3px; font-size: 11px; }
 }
+
+/* Optional local study inset, using the existing Veyra controls and spacing. */
+.protocol-context{border-block:1px solid var(--border);padding:20px 0;margin:0 0 24px}.protocol-context>summary{font-weight:600;cursor:pointer;min-height:44px;display:list-item;padding:10px 0}.protocol-context>label{display:block;margin:16px 0 8px}.protocol-context>select{max-width:400px}.protocol-card{margin-top:24px}.protocol-card h3{margin-bottom:12px}.protocol-card h4{margin:24px 0 8px}.protocol-card li{margin-bottom:8px}.protocol-sources{display:flex;flex-wrap:wrap;gap:8px 20px;margin-top:12px}.protocol-sources a{overflow-wrap:anywhere}.protocol-actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}.protocol-actions button{white-space:normal}.protocol-context .fine{max-width:76ch}@media(max-width:600px){.protocol-context>select{width:100%;max-width:none}.protocol-actions{display:grid;grid-template-columns:1fr}.protocol-sources{display:block}.protocol-sources a{display:flex}}

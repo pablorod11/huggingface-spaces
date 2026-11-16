@@ -4,6 +4,8 @@ let navigationSequence = 0;
 const state = {
   assessments: [], assessment: null, finding: null, tab: 'ledger', client: '', ledgerSearch: '', verdict: '', severity: '', restoreText: '', originalReview: ''
 };
+// Study selection is temporary UI state, never part of an assessment or backup.
+const protocolSelection = { assessmentId: null, topicId: '' };
 const roles = [ ['red', '01', 'Red hat', 'Test assumptions', 'Test how scoped weaknesses could be misused.'], ['blue', '02', 'Blue hat', 'Strengthen defense', 'Triage alerts and plan the response.'], ['white', '03', 'White hat', 'Validate evidence', 'Check evidence, causes, and proposed fixes.'], ['black', '04', 'Black hat', 'Think like an attacker', 'Map attacker paths within the authorized scope.'], ['purple', '05', 'Purple hat', 'Close the loop', 'Connect team exercises to detection improvements.'] ];
 const workflows = {
   code: 'Code review', alerts: 'Alert triage', exercise: 'Team exercise'
@@ -352,20 +354,23 @@ function renderAssessment() {
   if (state.tab === 'queue') renderQueue(panel, a);
   if (state.tab === 'reports') renderReports(panel, a);
   if (state.tab === 'delivery') renderDelivery(panel, a);
-  if (state.tab === 'missions') a.missions.forEach(m => {
-    const article = el('article', undefined, 'mission');
-    const head = el('div', undefined, 'mission-header');
-    append(head, el('p', `${m.role.toUpperCase()} HAT`, 'eyebrow'), el('h3', m.title));
-    append(article, head, el('p', m.objective));
-    const steps = el('ol');
-    m.steps.forEach(s => steps.append(el('li', s)));
-    append(article, steps, el('p', `Deliverable: ${m.deliverable}`));
-    m.limitations.forEach(l => article.append(el('p', `Limit: ${l}`, 'fine')));
-    const entry = (a.workbook || []).find(item => item.role === m.role) || workbookDefault(m.role);
-    article.append(el('p', `Workbook: ${entry.status} / Owner: ${entry.owner || 'Unassigned'}`, 'fine'));
-    article.append(button(`Edit ${m.role} workbook`, () => openWorkbook(entry)));
-    panel.append(article);
-  });
+  if (state.tab === 'missions') {
+    renderProtocolContext(panel, a);
+    a.missions.forEach(m => {
+      const article = el('article', undefined, 'mission');
+      const head = el('div', undefined, 'mission-header');
+      append(head, el('p', `${m.role.toUpperCase()} HAT`, 'eyebrow'), el('h3', m.title));
+      append(article, head, el('p', m.objective));
+      const steps = el('ol');
+      m.steps.forEach(s => steps.append(el('li', s)));
+      append(article, steps, el('p', `Deliverable: ${m.deliverable}`));
+      m.limitations.forEach(l => article.append(el('p', `Limit: ${l}`, 'fine')));
+      const entry = (a.workbook || []).find(item => item.role === m.role) || workbookDefault(m.role);
+      article.append(el('p', `Workbook: ${entry.status} / Owner: ${entry.owner || 'Unassigned'}`, 'fine'));
+      article.append(button(`Edit ${m.role} workbook`, () => openWorkbook(entry)));
+      panel.append(article);
+    });
+  }
   if (state.tab === 'coverage') {
     const section = el('div', undefined, 'coverage');
     append(section, el('h3', 'Checked boundaries & limitations'));
@@ -379,6 +384,80 @@ function renderAssessment() {
     });
     panel.append(section);
   }
+}
+function renderProtocolContext(panel, assessment) {
+  const catalog = globalThis.VeyraProtocols;
+  if (!catalog) {
+    panel.append(el('p', 'Protocol study cards are unavailable. Reload to check that the local reference file loaded.', 'fine'));
+    return;
+  }
+  if (protocolSelection.assessmentId !== assessment.id) {
+    protocolSelection.assessmentId = assessment.id;
+    protocolSelection.topicId = '';
+  }
+  const section = el('details', undefined, 'protocol-context');
+  section.id = 'protocol-context';
+  append(section, el('summary', 'Protocol context'), el('p', 'Optional study guidance for this review. Learning material is not evidence that a control was tested.', 'fine'));
+  const label = el('label', 'Protocol topic');
+  label.htmlFor = 'protocol-topic';
+  const select = el('select');
+  select.id = 'protocol-topic';
+  const placeholder = el('option', 'Choose a protocol');
+  placeholder.value = '';
+  select.append(placeholder);
+  catalog.topics.forEach(topic => {
+    const option = el('option', topic.title);
+    option.value = topic.id;
+    select.append(option);
+  });
+  select.value = protocolSelection.topicId;
+  const card = el('div', undefined, 'protocol-card');
+  card.id = 'protocol-card';
+  function reference(label, href) {
+    const link = el('a', label, 'text-button');
+    link.href = href;
+    link.target = '_blank';
+    link.rel = 'noopener noreferrer';
+    link.referrerPolicy = 'no-referrer';
+    return link;
+  }
+  function drawTopic() {
+    const topic = catalog.getTopic(select.value);
+    protocolSelection.topicId = topic?.id || '';
+    card.replaceChildren();
+    card.hidden = !topic;
+    if (!topic) return;
+    append(card, el('h3', topic.title), el('p', topic.summary), el('p', topic.boundary, 'fine'), el('h4', 'Questions to review'));
+    const questions = el('ul');
+    topic.questions.forEach(question => questions.append(el('li', question)));
+    const explorer = reference('Open Protocol Explorer ↗', catalog.explorerUrl);
+    explorer.id = 'protocol-explorer';
+    const sources = el('div', undefined, 'protocol-sources');
+    topic.sources.forEach(source => sources.append(reference(source.label + ' ↗', source.href)));
+    append(card, questions, explorer, el('p', `External learning tool by Dilum Sanjaya. Choose ${topic.explorerLesson} in its protocol list. The link includes no assessment details.`, 'fine'), sources, el('h4', 'Draft study prompts in a role workbook'), el('p', 'Adds context to Expected result and keeps your existing notes. Enter your own evidence, observed result and decision, then save when ready.', 'fine'));
+    const actions = el('div', undefined, 'protocol-actions');
+    assessment.missions.forEach(mission => {
+      const roleLabel = roles.find(role => role[0] === mission.role)?.[2] || mission.role;
+      const action = button(`${roleLabel} workbook`, () => {
+        const entry = (assessment.workbook || []).find(item => item.role === mission.role) || workbookDefault(mission.role);
+        try {
+          const drafted = catalog.draftExpected(entry.expected || '', topic.id);
+          openWorkbook(entry);
+          $('#workbook-expected').value = drafted;
+          $('#workbook-expected').focus();
+        } catch (error) {
+          notify(error.message, true);
+        }
+      });
+      action.setAttribute('aria-label', `Add ${topic.title} prompts to ${mission.role} workbook`);
+      actions.append(action);
+    });
+    card.append(actions);
+  }
+  select.addEventListener('change', drawTopic);
+  append(section, label, select, card);
+  drawTopic();
+  panel.append(section);
 }
 function renderLedger(panel, a) {
   const title = el('div', undefined, 'section-title');

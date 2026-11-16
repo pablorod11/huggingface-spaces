@@ -106,3 +106,10 @@ The existing browser script checklists were updated for the new disclosures; tho
 - Inspector warnings concern intentional warm ivory, supporting text sizes, introductory heading scale, and overview density. They are heuristic style warnings, not clean accessibility certification. Interactive keyboard and mobile flows received browser checks.
 - Assets, wordmarks and Manrope are self-hosted; CSP, record formats, IndexedDB identifiers and runtime dependencies remain compatible. The font license is bundled. Visible reports/backup filenames use Veyra; technical legacy format IDs retain compatibility.
 - This is local verification. No hosted Space was renamed, updated or deployed. Real customer data, external endpoints, OS screen readers and physical touch devices were not exercised.
+
+
+## Protocol context release — 2026-11-15
+
+The integrated source passes 50 Node checks (42 existing engine checks and eight protocol catalog/draft checks), four optional publisher tests, JavaScript syntax checks, and all five Chromium harnesses: storage, UI, engagement, usability and protocol context. The protocol harness also passed against static/index.html. Synthetic fixtures verify all four topics, fixed external link privacy attributes, no requests on topic selection, existing workbook preservation, unsaved discard, explicit save, duplicate prevention, the 2000-character boundary, Markdown export, JSON backup restore, keyboard focus and 390px overflow. Desktop rendering was inspected through the in-app browser; the mobile protocol screenshot was inspected separately.
+
+A bounded independent source review found no blocking issue. Storage and playbook modules remain byte-identical to the preceding release. These checks do not establish protocol configuration security, RFC implementation conformance or broad browser compatibility. The cards provide study questions, not evidence or findings. Graphify was not run; direct source inspection covered this small known module relationship. Hosted publication is verified separately in the release receipt.

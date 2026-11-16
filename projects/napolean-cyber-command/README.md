@@ -21,6 +21,7 @@ Veyra is the new product identity for Napolean Cyber Command. The public Space U
 
 1. **Choose your material and scope.** Create an assessment, choose Python code, JSON alerts, or an exercise scenario, and describe what you are authorized to review. Use the sample input to try the workflow before entering your own material.
 2. **Review the results and role tasks.** Possible issues need a person to check the evidence and record a decision. The five perspectives provide suggested tasks for people, including when no possible issues are found.
+   For protocol-focused work, open **Protocol context** under Role tasks. Choose HTTP/HTTPS, TLS, DNS or SSH, consult the original summaries and RFC references, and optionally add study prompts to an unsaved role workbook draft. Protocol Explorer opens separately; no assessment details are included in its link.
 3. **Track fixes and keep a copy.** Record owners, decisions and follow-up work, then export a report. Download a JSON backup to preserve your workspace.
 
 Saved only in this browser: changing browsers or clearing site data can remove access to records. A report is for sharing results; a JSON backup lets you restore saved work. Raw submissions are discarded after processing. Names, scopes, generated evidence and notes can still contain sensitive information.
@@ -76,15 +77,17 @@ Open http://127.0.0.1:7860/index.html (the same entry point selected by the host
 ## Verify
 
 ```sh
-node --test tests/test_local.cjs
+node --test tests/test_local.cjs tests/test_protocols.cjs
 node --check static/app.js
 node --check static/local.js
+node --check static/protocols.js
 # Optional real Chromium checks; supply an existing Playwright module path:
 PLAYWRIGHT_MODULE=/absolute/path/to/playwright node tests/browser_storage.cjs
 # With the local server running:
 PLAYWRIGHT_MODULE=/absolute/path/to/playwright node tests/browser_ui.cjs
 PLAYWRIGHT_MODULE=/absolute/path/to/playwright node tests/browser_engagement.cjs
 PLAYWRIGHT_MODULE=/absolute/path/to/playwright node tests/browser_usability.cjs
+PLAYWRIGHT_MODULE=/absolute/path/to/playwright node tests/browser_protocols.cjs
 ```
 
 Browser checks use an existing Playwright installation and its Chromium binary; they add no runtime dependency. Set `PLAYWRIGHT_EXECUTABLE_PATH` if using an existing compatible Chromium executable.
